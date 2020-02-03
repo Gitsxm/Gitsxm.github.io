@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-03T16:53:48.166Z</updated>
+  <updated>2020-02-03T17:19:34.318Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/02/04/hello-world2/"/>
     <id>http://yoursite.com/2020/02/04/hello-world2/</id>
     <published>2020-02-03T16:52:48.690Z</published>
-    <updated>2020-02-03T16:53:48.166Z</updated>
+    <updated>2020-02-03T17:19:34.318Z</updated>
     
     <content type="html"><![CDATA[<p>Hello World2</p>]]></content>
     
@@ -44,7 +44,7 @@
     <link href="http://yoursite.com/2020/02/02/hello-world/"/>
     <id>http://yoursite.com/2020/02/02/hello-world/</id>
     <published>2020-02-02T04:13:07.345Z</published>
-    <updated>2020-02-03T16:45:27.159Z</updated>
+    <updated>2020-02-03T17:18:38.404Z</updated>
     
     <content type="html"><![CDATA[<p>Hello World</p>]]></content>
     
