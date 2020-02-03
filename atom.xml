@@ -2,15 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>MggBlog</title>
   
-  <subtitle>my first blogs</subtitle>
+  <subtitle>MggBlog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.mggblog.ink/"/>
   <updated>2020-02-03T17:19:34.318Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.mggblog.ink/</id>
   
   <author>
-    <name>芒果干</name>
+    <name>Mgg</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World2</title>
-    <link href="http://yoursite.com/2020/02/04/hello-world2/"/>
-    <id>http://yoursite.com/2020/02/04/hello-world2/</id>
+    <link href="http://www.mggblog.ink/2020/02/04/hello-world2/"/>
+    <id>http://www.mggblog.ink/2020/02/04/hello-world2/</id>
     <published>2020-02-03T16:52:48.690Z</published>
     <updated>2020-02-03T17:19:34.318Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/02/02/hello-world/"/>
-    <id>http://yoursite.com/2020/02/02/hello-world/</id>
+    <link href="http://www.mggblog.ink/2020/02/02/hello-world/"/>
+    <id>http://www.mggblog.ink/2020/02/02/hello-world/</id>
     <published>2020-02-02T04:13:07.345Z</published>
     <updated>2020-02-03T17:18:38.404Z</updated>
     
