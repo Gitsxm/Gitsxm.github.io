@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/lxbg.jpg">
 <meta property="article:published_time" content="2020-02-06T10:55:50.000Z">
-<meta property="article:modified_time" content="2020-02-06T14:43:30.593Z">
+<meta property="article:modified_time" content="2020-02-06T14:47:20.623Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -183,8 +183,9 @@
 <li>流程控制：if、else、do、while、for、switch、case、default、break、continue、return、try、catch、finally。</li>
 <li>修饰符：public、protected、private、final、void、static、strict、abstract、transient、synchronized、volatile、native。</li>
 <li>动作：package、import、throw、throws、extends、implements、this、supper、instanceof、new。</li>
-<li>保留字：true、false、null、goto、const。<br>提个醒：虽然有区分大小写，但是也尽量不要用“Public”、“True”等类似标识符，容易产生歧义。  <h2 id="常量与变量"><a href="#常量与变量" class="headerlink" title="常量与变量"></a>常量与变量</h2><h3 id="常量和常量值"><a href="#常量和常量值" class="headerlink" title="常量和常量值"></a>常量和常量值</h3>常量就是不变的量，常量值是常量的值（解释的很蠢，但是就是这个意思）。代码中可以使用定义过的常量，也可以直接使用常量值。<strong>定义常量的方法就是在类型前面加关键字“final”。</strong>下面练习定义常量和认识常量值。</li>
+<li>保留字：true、false、null、goto、const。<br>提个醒：虽然有区分大小写，但是也尽量不要用“Public”、“True”等类似标识符，容易产生歧义。  </li>
 </ul>
+<h2 id="常量与变量"><a href="#常量与变量" class="headerlink" title="常量与变量"></a>常量与变量</h2><h3 id="常量和常量值"><a href="#常量和常量值" class="headerlink" title="常量和常量值"></a>常量和常量值</h3><p>常量就是不变的量，常量值是常量的值（解释的很蠢，但是就是这个意思）。代码中可以使用定义过的常量，也可以直接使用常量值。<strong>定义常量的方法就是在类型前面加关键字“final”。</strong>下面练习定义常量和认识常量值。</p>
 <ol>
 <li>整型常量值，按进制分八进制、十进制、十六进制定义方法直接上图：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/dyzx.png" alt="定义整型与整型常量值"><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/cl.png" alt="常量无法更改"><br>整型（int）常量默认在内存中占 32 位，是具有整数类型的值，当运算过程中所需值超过 32 位长度时，可以把它表示为长整型（long）数值。长整型类型则要在数字后面加L或1，如697L表示一个长整型数，它在内存中占 64 位。</li>
 <li>实型常量值，两种形式，十进制型小数点形式如9.9，科学计数法如1.1e5或10&amp;E3,其中 e 之前必须有数字，且 e 之后的数字必须为整数。<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/sx.png" alt="实型常量值"><br>注意：小数定义有单精度和双精度只分，单精度在末尾要加上 f 。</li>
@@ -198,8 +199,13 @@
 <li>标识符的长度没有限制。</li>
 <li>标识符区分大小写。<br>Java 中初始化变量时需要注意以下事项：</li>
 <li>变量是类或者结构中的字段，如果没有显式地初始化，默认状态下创建变量并默认初始值为 0。</li>
-<li>方法中的变量必须显式地初始化，否则在使用该变量时就会出错。<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2>Java中数据类型分为<strong>基本型</strong>和<strong>引用型</strong>我们用几张图就能搞定了，多用就能记住，不要死记硬背：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/lxgx.png" alt="数据类型关系"><h3 id="基本型"><a href="#基本型" class="headerlink" title="基本型"></a>基本型</h3>基本数据类型可分为 4 大类，即整数类型（包括 byte、short，int 和 long）、浮点类型（包括 float 和 double）、布尔类型和字符类型（char）：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jblx.png" alt="基本数据类型"><br>Java 定义了 4 种整数类型变量：字节型（byte）、短整型（short）、整型（int）和长整型（long）。这些都是有符号的值，正数或负数。具体说明看图：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zxbl.png" alt="整数类型"><br>根据要求使用合适的类型，严格按照变量声明方式，Java中没有无类型变量，不再举例，上面的变量声明练习足够了，可以试着自己把所有类型敲一下。<h3 id="引用型"><a href="#引用型" class="headerlink" title="引用型"></a>引用型</h3>引用数据类型建立在基本数据类型的基础上，包括数组、类和接口。引用数据类型是由用户自定义，用来限制其他数据的类型。另外，Java 语言中不支持 C++ 中的指针类型、结构类型、联合类型和枚举类型。引用类型还有一种特殊的 null 类型。所谓引用数据类型就是对一个对象的引用，对象包括实例和数组两种。实际上，引用类型变量就是一个指针，只是 Java 语言里不再使用指针这个说法。空类型（null type）就是 null 值的类型，这种类型没有名称。因为 null 类型没有名称，所以不可能声明一个 null 类型的变量或者转换到 null 类型。空引用（null）是 null 类型变量唯一的值。空引用（null）可以转换为任何引用类型。在实际开发中，程序员可以忽略 null 类型，假定 null 只是引用类型的一个特殊直接量（不听不听和尚念经……）。<br>注意：空引用（null）只能被转换成引用类型，不能转换成基本类型，因此不要把一个 null 值赋给基本数据类型的变量。<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2>分隐式转换与显示转换两种。<h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3>如果以下 2 个条件都满足，那么将一种类型的数据赋给另外一种类型变量的时，将执行自动类型转换：</li>
+<li>方法中的变量必须显式地初始化，否则在使用该变量时就会出错。</li>
 </ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Java中数据类型分为<strong>基本型</strong>和<strong>引用型</strong>我们用几张图就能搞定了，多用就能记住，不要死记硬背：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/lxgx.png" alt="数据类型关系"></p>
+<h3 id="基本型"><a href="#基本型" class="headerlink" title="基本型"></a>基本型</h3><p>基本数据类型可分为 4 大类，即整数类型（包括 byte、short，int 和 long）、浮点类型（包括 float 和 double）、布尔类型和字符类型（char）：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jblx.png" alt="基本数据类型"><br>Java 定义了 4 种整数类型变量：字节型（byte）、短整型（short）、整型（int）和长整型（long）。这些都是有符号的值，正数或负数。具体说明看图：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zxbl.png" alt="整数类型"><br>根据要求使用合适的类型，严格按照变量声明方式，Java中没有无类型变量，不再举例，上面的变量声明练习足够了，可以试着自己把所有类型敲一下。</p>
+<h3 id="引用型"><a href="#引用型" class="headerlink" title="引用型"></a>引用型</h3><p>引用数据类型建立在基本数据类型的基础上，包括数组、类和接口。引用数据类型是由用户自定义，用来限制其他数据的类型。另外，Java 语言中不支持 C++ 中的指针类型、结构类型、联合类型和枚举类型。引用类型还有一种特殊的 null 类型。所谓引用数据类型就是对一个对象的引用，对象包括实例和数组两种。实际上，引用类型变量就是一个指针，只是 Java 语言里不再使用指针这个说法。空类型（null type）就是 null 值的类型，这种类型没有名称。因为 null 类型没有名称，所以不可能声明一个 null 类型的变量或者转换到 null 类型。空引用（null）是 null 类型变量唯一的值。空引用（null）可以转换为任何引用类型。在实际开发中，程序员可以忽略 null 类型，假定 null 只是引用类型的一个特殊直接量（不听不听和尚念经……）。<br>注意：空引用（null）只能被转换成引用类型，不能转换成基本类型，因此不要把一个 null 值赋给基本数据类型的变量。</p>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><p>分隐式转换与显示转换两种。</p>
+<h3 id="隐式转换"><a href="#隐式转换" class="headerlink" title="隐式转换"></a>隐式转换</h3><p>如果以下 2 个条件都满足，那么将一种类型的数据赋给另外一种类型变量的时，将执行自动类型转换：</p>
 <ol>
 <li>两种数据类型彼此兼容</li>
 <li>目标类型的取值范围大于源数据类型（低级类型数据转换成高级类型数据）<br>例如 byte 类型向 short 类型转换时，由于 short 类型的取值范围较大，会自动将 byte 转换为 short 类型。<br>在运算过程中，由于不同的数据类型会转换成同一种数据类型，所以整型、浮点型以及字符型都可以参与混合运算。自动转换的规则是从低级类型数据转换成高级类型数据。转换规则如下：</li>
