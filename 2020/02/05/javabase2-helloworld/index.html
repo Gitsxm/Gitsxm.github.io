@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/helloworld-bg.jpg">
 <meta property="article:published_time" content="2020-02-05T06:25:29.000Z">
-<meta property="article:modified_time" content="2020-02-05T10:42:34.608Z">
+<meta property="article:modified_time" content="2020-02-07T02:48:58.009Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    22 分钟 读完 (大约 3297 个字)
+                    22 分钟 读完 (大约 3364 个字)
                 </span>
                 
                 
@@ -188,7 +188,7 @@
 <li>String[]是字符串类型的数组；</li>
 <li>在Java中，类名称一般首字母大写；</li>
 <li>使用System.out.println()将信息输出到控制台上，即打印出来。<br>解析完代码，你是否对Java代码规范有了一知半解了呢，试着修改代码按照刚才的步骤在控制台打出更多内容吧。这次我们使用上注释，注释不会被编译，有两种形式一种为“// ……”,可以注释掉同行的代码，一种是代码段注释“/<em>……</em>/”，注释掉一段代码（注意使用英文，当前开发环境简陋，使用中文可能导致编码异常）：<figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* This class mean to print "Hello world!"</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">// print Hello world!</span></span><br><span class="line">		System.out.println(<span class="string">"Hello world!"</span>);</span><br><span class="line">		System.out.println(<span class="string">"I am Zhangsan"</span>);</span><br><span class="line">		<span class="comment">/*System</span></span><br><span class="line"><span class="comment">			.out</span></span><br><span class="line"><span class="comment">				.println("I am a girl");*/</span></span><br><span class="line">		<span class="comment">//System.out.println("I am a boy");</span></span><br><span class="line">		System.out.println(<span class="string">"I am a boy"</span>);</span><br><span class="line">		System.out.println(<span class="string">"I am 10 years old "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-编译运行！<br><img src="/2020/02/05/javabase2-helloworld/java1.png" alt="注释掉的代码不会执行"><br>通过”javadoc”命令可以将注释内容提取，生成一个文件方便查阅，来试试看：<br><img src="/2020/02/05/javabase2-helloworld/javadoc.png" alt="javadoc"><br>生成了一堆文件<br><img src="/2020/02/05/javabase2-helloworld/javadoc2.png" alt="javadoc"><br>打开index.html<br><img src="/2020/02/05/javabase2-helloworld/javadoc3.png" alt="javadoc"><br>到此为止，对Java初体验结束，初学者是不是感觉收货满满，这是是Java的冰山一角，她的众多优秀特性我们到后面再慢慢了解。<h2 id="集成开发环境（IDE）"><a href="#集成开发环境（IDE）" class="headerlink" title="集成开发环境（IDE）"></a>集成开发环境（IDE）</h2>Java开发人员常用的开发软件有三个，分别是Eclipse、Myeclipse、Idea（剩下的都是些小众的，我也不了解）我说一说我对这三个软件的理解：<h3 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h3>Eclipse轻量，简洁，操作简便，对电脑配置要求较低，并且开源免费，更适合Java初学者。缺点是简洁到几乎没有插件，后面很多开发必须插件都需要自己安装，好在eclipse提供插件支持，可以再软件里一键安装。<br><img src="/2020/02/05/javabase2-helloworld/eclipse1.png" alt="eclipse"><br><img src="/2020/02/05/javabase2-helloworld/eclipse2.png" alt="eclipse工作界面"><h3 id="Myeclipse"><a href="#Myeclipse" class="headerlink" title="Myeclipse"></a>Myeclipse</h3>它是Eclipse的定制版本，对电脑配置要求较高，而且收费，集众多生产插件于一身，免除了自己装插件的烦恼，相比eclipse功能更完善（毕竟花了钱的）。<br><img src="/2020/02/05/javabase2-helloworld/myeclipse.png" alt="Myeclipse"><br><img src="/2020/02/05/javabase2-helloworld/myeclipse1.png" alt="Myeclipse工作界面基本和eclipse一样"><h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3>相对于先前两个，IDEA是重量级的集成开发工具，对电脑配置要求高，支持多种语言开发，拥有丰富的开源插件生态，功能相当完善，是众多开发者的首选工具，大佬必备（意义简单粗暴），这么优秀的工具肯定是需要掏钱的，官方推出了完整版和社区版（阉割版），社区版是免费的。但是在我们国内网络现在的大环境下，搜索破解方法还是相当简单的（我们这么喜欢你你竟然要收我们钱？哈哈哈……），不过在国人版权意识逐渐苏醒的今天，我呼吁有能力的开发者尽量使用正版软件（哎吆我插会儿腰……嘿嘿嘿）。<br><img src="/2020/02/05/javabase2-helloworld/idea.png" alt="IDEA"><br><img src="/2020/02/05/javabase2-helloworld/idea1.png" alt="IDEA工作界面（我使用了主题插件）"><br>开发工具介绍完毕，作为Java初学者建议使用eclipse，虽然一步到位使用IDEA更好，但是IDEA相对来说对电脑配置要求高，如果配置跟不上会卡顿，严重影响开发体验，撇去性能不谈，IDEA自动保存，但是没有自动编译，需要手动编译（虽然可以自己设置自动编译，但我劝你别），eclipse点击保存的时候自动编译。所以等以后碰到语言多了，比如学习Spring boot或者开发项目需要同时操作好几门语言，这时候一个IDEA就可以完全搞定了。好了开发工具搞定，我们顺便在eclipse上撸个”Hello world!”吧。  <h2 id="在eclipse上运行Hello-world"><a href="#在eclipse上运行Hello-world" class="headerlink" title="在eclipse上运行Hello world"></a>在eclipse上运行Hello world</h2>安装eclipse需要验证环境变量，如果环境变量没安装好，eclipse无法正常安装。<br>安装完成首次打开会让你选择工作空间，也就是你的项目要放的目录,默认或自己设都行。<br><img src="/2020/02/05/javabase2-helloworld/eclipse3.png" alt="设置工作空间"><br>进入界面点击工具栏File&gt;new&gt;java project(如果没有选择project然后搜索java project)&gt;填写项目信息&gt;完成，如图：<br><img src="/2020/02/05/javabase2-helloworld/eclipse4.png" alt="新建Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava.png" alt="选择Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava1.png" alt="填写工程信息"><br><img src="/2020/02/05/javabase2-helloworld/newjava2.png" alt="完成"><br>若遇到弹窗提示点Ok就可以了。<br>点开工程&gt;右击src&gt;new&gt;class&gt;填写类信息&gt;finish<br><img src="/2020/02/05/javabase2-helloworld/newclass.png" alt="new class"><br>打开Demo类<br><img src="/2020/02/05/javabase2-helloworld/demojava.png" alt="入口代码都已经生成好了"><br>在光标处敲入System.out.println(“Hello world!”); 保存，代码正确会自动编译，代码错误会有提示，没有错误点运行。<br><img src="/2020/02/05/javabase2-helloworld/rundemo.png" alt="运行"><br>运行成功<br><img src="/2020/02/05/javabase2-helloworld/rundemo2.png" alt="运行成功"> </li>
+编译运行！<br><img src="/2020/02/05/javabase2-helloworld/java1.png" alt="注释掉的代码不会执行"><br>通过”javadoc”命令可以将注释内容提取，生成一个文件方便查阅，来试试看：<br><img src="/2020/02/05/javabase2-helloworld/javadoc.png" alt="javadoc"><br>生成了一堆文件<br><img src="/2020/02/05/javabase2-helloworld/javadoc2.png" alt="javadoc"><br>打开index.html<br><img src="/2020/02/05/javabase2-helloworld/javadoc3.png" alt="javadoc"><br>到此为止，对Java初体验结束，初学者是不是感觉收货满满，这是是Java的冰山一角，她的众多优秀特性我们到后面再慢慢了解。<h2 id="集成开发环境（IDE）"><a href="#集成开发环境（IDE）" class="headerlink" title="集成开发环境（IDE）"></a>集成开发环境（IDE）</h2>Java开发人员常用的开发软件有三个，分别是Eclipse、Myeclipse、Idea（剩下的都是些小众的，我也不了解）我说一说我对这三个软件的理解：<h3 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h3>Eclipse轻量，简洁，操作简便，对电脑配置要求较低，并且开源免费，更适合Java初学者。缺点是简洁到几乎没有插件，后面很多开发必须插件都需要自己安装，好在eclipse提供插件支持，可以再软件里一键安装。<br><img src="/2020/02/05/javabase2-helloworld/eclipse1.png" alt="eclipse"><br><img src="/2020/02/05/javabase2-helloworld/eclipse2.png" alt="eclipse工作界面"><h3 id="Myeclipse"><a href="#Myeclipse" class="headerlink" title="Myeclipse"></a>Myeclipse</h3>它是Eclipse的定制版本，对电脑配置要求较高，而且收费，集众多生产插件于一身，免除了自己装插件的烦恼，相比eclipse功能更完善（毕竟花了钱的）。<br><img src="/2020/02/05/javabase2-helloworld/myeclipse.png" alt="Myeclipse"><br><img src="/2020/02/05/javabase2-helloworld/myeclipse1.png" alt="Myeclipse工作界面基本和eclipse一样"><h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3>相对于先前两个，IDEA是重量级的集成开发工具，对电脑配置要求高，支持多种语言开发，拥有丰富的开源插件生态，功能相当完善，是众多开发者的首选工具，大佬必备（意义简单粗暴），这么优秀的工具肯定是需要掏钱的，官方推出了完整版和社区版（阉割版），社区版是免费的。但是在我们国内网络现在的大环境下，搜索破解方法还是相当简单的（我们这么喜欢你你竟然要收我们钱？哈哈哈……），不过在国人版权意识逐渐苏醒的今天，我呼吁有能力的开发者尽量使用正版软件（哎吆我插会儿腰……嘿嘿嘿）。<br><img src="/2020/02/05/javabase2-helloworld/idea.png" alt="IDEA"><br><img src="/2020/02/05/javabase2-helloworld/idea1.png" alt="IDEA工作界面（我使用了主题插件）"><br>开发工具介绍完毕，作为Java初学者建议使用eclipse，虽然一步到位使用IDEA更好，但是IDEA相对来说对电脑配置要求高，如果配置跟不上会卡顿，严重影响开发体验，撇去性能不谈，IDEA自动保存，但是没有自动编译，需要手动编译（虽然可以自己设置自动编译，但我劝你别），eclipse点击保存的时候自动编译。所以等以后碰到语言多了，比如学习Spring boot或者开发项目需要同时操作好几门语言，这时候一个IDEA就可以完全搞定了。好了开发工具搞定，我们顺便在eclipse上撸个”Hello world!”吧。  <h2 id="在eclipse上运行Hello-world"><a href="#在eclipse上运行Hello-world" class="headerlink" title="在eclipse上运行Hello world"></a>在eclipse上运行Hello world</h2>安装eclipse需要验证环境变量，如果环境变量没安装好，eclipse无法正常安装，<a href="https://www.eclipse.org/downloads/">下载地址</a>。<br>安装过程（这种种边下载边安装的形式，耐心等待安装完成，也可以点击下载页下载按钮地下的 Download Packages 整包下载）：<br><img src="/2020/02/05/javabase2-helloworld/eclipseinstall.png" alt="安装eclipse"><br>安装完成首次打开会让你选择工作空间，也就是你的项目要放的目录,默认或自己设都行。<br><img src="/2020/02/05/javabase2-helloworld/eclipse3.png" alt="设置工作空间"><br>进入界面点击工具栏File&gt;new&gt;java project(如果没有选择project然后搜索java project)&gt;填写项目信息&gt;完成，如图：<br><img src="/2020/02/05/javabase2-helloworld/eclipse4.png" alt="新建Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava.png" alt="选择Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava1.png" alt="填写工程信息"><br><img src="/2020/02/05/javabase2-helloworld/newjava2.png" alt="完成"><br>若遇到弹窗提示点Ok就可以了。<br>点开工程&gt;右击src&gt;new&gt;class&gt;填写类信息&gt;finish<br><img src="/2020/02/05/javabase2-helloworld/newclass.png" alt="new class"><br>打开Demo类<br><img src="/2020/02/05/javabase2-helloworld/demojava.png" alt="入口代码都已经生成好了"><br>在光标处敲入System.out.println(“Hello world!”); 保存，代码正确会自动编译，代码错误会有提示，没有错误点运行。<br><img src="/2020/02/05/javabase2-helloworld/rundemo.png" alt="运行"><br>运行成功<br><img src="/2020/02/05/javabase2-helloworld/rundemo2.png" alt="运行成功"> </li>
 </ul>
 <p>以上是这篇博客的全部内容，从环境变量配置到集成环境运行代码都很顺利，初学者如果哪里有不懂，欢迎邮件交流，感谢您的阅读。</p>
 <hr>
@@ -239,7 +239,7 @@
         <div class="level-start">
             <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/06/javabase3-bsfgjzclbltj/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换</span>
+                <span class="level-item">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换</span>
             </a>
         </div>
         
@@ -433,14 +433,14 @@
             
             <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换</a>
+                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -579,14 +579,14 @@
             
             <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换</a>
+                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>

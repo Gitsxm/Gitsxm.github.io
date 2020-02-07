@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换 - MggBlog</title>
+<title>JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换 - MggBlog</title>
 
 
     <meta name="description" content="本篇内容包括Java语言中标识符、关键字、常量、变量和数据类型的讲解，学任何一门语言，这些内容都是最基础也是最重要的，就像盖房子，不同的材料有不同的用处，让材料物尽其用才能盖好房子。实践是检验真理的唯一标准，学知识就要多实践，学计算机语言就要多敲代码，只有这样知识才能学得会，记得牢，技巧也用的熟。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+<meta property="og:title" content="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
 <meta property="og:url" content="http://www.mggblog.ink/2020/02/06/javabase3-bsfgjzclbltj/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="本篇内容包括Java语言中标识符、关键字、常量、变量和数据类型的讲解，学任何一门语言，这些内容都是最基础也是最重要的，就像盖房子，不同的材料有不同的用处，让材料物尽其用才能盖好房子。实践是检验真理的唯一标准，学知识就要多实践，学计算机语言就要多敲代码，只有这样知识才能学得会，记得牢，技巧也用的熟。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/lxbg.jpg">
 <meta property="article:published_time" content="2020-02-06T10:55:50.000Z">
-<meta property="article:modified_time" content="2020-02-06T14:47:20.623Z">
+<meta property="article:modified_time" content="2020-02-07T04:07:51.142Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换" height="28">
             
             </a>
         </div>
@@ -136,7 +136,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+            <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
         </span>
     </div>
     
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    21 分钟 读完 (大约 3134 个字)
+                    27 分钟 读完 (大约 3990 个字)
                 </span>
                 
                 
@@ -163,7 +163,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换
+                JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换
             
         </h1>
         <div class="content">
@@ -201,6 +201,25 @@
 <li>变量是类或者结构中的字段，如果没有显式地初始化，默认状态下创建变量并默认初始值为 0。</li>
 <li>方法中的变量必须显式地初始化，否则在使用该变量时就会出错。</li>
 </ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域界定了声明变量的使用范围，在Java中认准花括弧”{}”就行。在括弧内声明的变量只能在括弧内使用。根据作用域的不同，把变量分为成员变量和局部变量（当然这都是概念知识，敲多了自然懂）。</p>
+<h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h3><p>成员变量包含全局变量和静态变量：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/cybl.png" alt="成员变量"><br>撸个代码看一下如何调用两种变量</p>
+<figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Boy</span> </span>&#123;</span><br><span class="line">	<span class="comment">/*以下都是Boy类里的成员变量*/</span></span><br><span class="line">	<span class="keyword">public</span> String name;<span class="comment">//boy 姓名 （实例变量）</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> age;<span class="comment">//年龄 （实例变量）</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String home = <span class="string">"Hebei"</span>;<span class="comment">//家庭住址 静态常量（类变量）</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String tel = <span class="string">"8888-6666666"</span>;<span class="comment">//电话 静态变量（类变量）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编个测试类看一下</p>
+<figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Boy boy1 = <span class="keyword">new</span> Boy();<span class="comment">//将Boy类实例化为boy1</span></span><br><span class="line">		<span class="comment">//实例变量必须用实例调用(全局变量)</span></span><br><span class="line">		System.out.println(boy1.name);</span><br><span class="line">		System.out.println(boy1.age);</span><br><span class="line">		<span class="comment">//实例.变量名 调用类变量(类变量)</span></span><br><span class="line">		System.out.println(boy1.home);</span><br><span class="line">		System.out.println(boy1.tel);</span><br><span class="line">		<span class="comment">//类变量不用实例化对象也可以直接 类.变量(类变量)</span></span><br><span class="line">		System.out.println(Boy.home);</span><br><span class="line">		System.out.println(Boy.tel);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/qjbl.png" alt="全局变量与类变量"><br>全局变量有默认初始值，static final修饰的变量必须赋予初始值，类变量的方便之处就是不用实例化对象，直接用[类.变量名]调用。</p>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>局部变量是指在方法或者方法代码块中定义的变量，其作用域是其所在的代码块。可分为以下三种：</p>
+<ol>
+<li>方法参数变量（形参）：在整个方法内有效。</li>
+<li>方法局部变量（方法内定义）： 从定义这个变量开始到方法结束这一段时间内有效。</li>
+<li>代码块局部变量（代码块内定义）：从定义这个变量开始到代码块结束这一段时间内有效。</li>
+</ol>
+<p><strong>局部变量在使用前必须被程序员主动初始化值。</strong><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jberr.png" alt="局部变量没初始值无法通过编译"></p>
+<h4 id="方法局部变量"><a href="#方法局部变量" class="headerlink" title="方法局部变量"></a>方法局部变量</h4><figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">3</span>,j = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span> (i &gt; <span class="number">2</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"i="</span>+i);</span><br><span class="line">			System.out.println(<span class="string">"j="</span>+j);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"i="</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"j="</span>+j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/06/javabase3-bsfgjzclbltj/jbbl.png" alt="方法局部变量"></p>
+<h4 id="方法参数变量"><a href="#方法参数变量" class="headerlink" title="方法参数变量"></a>方法参数变量</h4><figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//调用方法</span></span><br><span class="line">		Test.add(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i)</span><span class="comment">//方法参数变量 </span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">10</span>;<span class="comment">//方法局部变量</span></span><br><span class="line">		System.out.println(<span class="string">"i+j="</span>+i+j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/06/javabase3-bsfgjzclbltj/csbl.png" alt="方法参数变量"></p>
+<h4 id="代码块局部变量"><a href="#代码块局部变量" class="headerlink" title="代码块局部变量"></a>代码块局部变量</h4><figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">// 调用方法</span></span><br><span class="line">		Test.test(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;<span class="comment">// 方法参数变量</span></span><br><span class="line">		<span class="keyword">try</span> &#123;<span class="comment">// 使用try catch 代码块 异常处理代码块，后面异常篇再详细说</span></span><br><span class="line">			<span class="keyword">int</span> j = <span class="number">10</span>;代码块 局部变量</span><br><span class="line">			System.out.println(<span class="string">"i+j="</span> + i + j);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;<span class="comment">// 异常处理块，参数为 Exception 类型</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/06/javabase3-bsfgjzclbltj/dmkjb.png" alt="代码块局部变量"><br>作用域讲完了，是不是很简单，看准”{}”，多练比看概念要好得多。</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Java中数据类型分为<strong>基本型</strong>和<strong>引用型</strong>我们用几张图就能搞定了，多用就能记住，不要死记硬背：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/lxgx.png" alt="数据类型关系"></p>
 <h3 id="基本型"><a href="#基本型" class="headerlink" title="基本型"></a>基本型</h3><p>基本数据类型可分为 4 大类，即整数类型（包括 byte、short，int 和 long）、浮点类型（包括 float 和 double）、布尔类型和字符类型（char）：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jblx.png" alt="基本数据类型"><br>Java 定义了 4 种整数类型变量：字节型（byte）、短整型（short）、整型（int）和长整型（long）。这些都是有符号的值，正数或负数。具体说明看图：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zxbl.png" alt="整数类型"><br>根据要求使用合适的类型，严格按照变量声明方式，Java中没有无类型变量，不再举例，上面的变量声明练习足够了，可以试着自己把所有类型敲一下。</p>
 <h3 id="引用型"><a href="#引用型" class="headerlink" title="引用型"></a>引用型</h3><p>引用数据类型建立在基本数据类型的基础上，包括数组、类和接口。引用数据类型是由用户自定义，用来限制其他数据的类型。另外，Java 语言中不支持 C++ 中的指针类型、结构类型、联合类型和枚举类型。引用类型还有一种特殊的 null 类型。所谓引用数据类型就是对一个对象的引用，对象包括实例和数组两种。实际上，引用类型变量就是一个指针，只是 Java 语言里不再使用指针这个说法。空类型（null type）就是 null 值的类型，这种类型没有名称。因为 null 类型没有名称，所以不可能声明一个 null 类型的变量或者转换到 null 类型。空引用（null）是 null 类型变量唯一的值。空引用（null）可以转换为任何引用类型。在实际开发中，程序员可以忽略 null 类型，假定 null 只是引用类型的一个特殊直接量（不听不听和尚念经……）。<br>注意：空引用（null）只能被转换成引用类型，不能转换成基本类型，因此不要把一个 null 值赋给基本数据类型的变量。</p>
@@ -451,14 +470,14 @@
             
             <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换</a>
+                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -597,14 +616,14 @@
             
             <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换">
+                    <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换</a>
+                    <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -734,7 +753,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、数据类型和类型转换" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础从入门到放弃（三）————标识符与关键字、常量与变量、作用域、数据类型和类型转换" height="28">
                 
                 </a>
                 <p class="is-size-7">
