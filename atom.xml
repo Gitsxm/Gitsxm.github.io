@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.mggblog.ink/"/>
-  <updated>2020-02-10T16:12:00.411Z</updated>
+  <updated>2020-02-10T17:57:23.783Z</updated>
   <id>http://www.mggblog.ink/</id>
   
   <author>
@@ -17,17 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>javabase7-debug</title>
+    <title>JAVA零基础从入门到放弃（话外篇）————Debug</title>
     <link href="http://www.mggblog.ink/2020/02/11/javabase7-debug/"/>
     <id>http://www.mggblog.ink/2020/02/11/javabase7-debug/</id>
     <published>2020-02-10T16:12:00.000Z</published>
-    <updated>2020-02-10T16:12:00.411Z</updated>
+    <updated>2020-02-10T17:57:23.783Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”我们把给程序找毛病的行为叫“Debug”，中文叫调试。</em></p><a id="more"></a><p>咱们生病了有专门的医生看病，但是程序病了可没有专门帮你调bug的人，所以debug的事在是太重要了，说着我就打开了eclipse。<br>eclipse 上 debug 的操作比较简单我们先使用debug来查看一下程序如何运行，变量如何变化，熟悉一下使用到的各个按钮，我们用一个简单的循环，昨天的俯卧撑：<br>使用调试首先要打断点，在代码行最前双击，举个最简单的例子，我们看一下循环中，变量 i 如何变化：<br><img src="/2020/02/11/javabase7-debug/ddd.png" alt="打上断点"><br><img src="/2020/02/11/javabase7-debug/zan.png" alt="工具栏里找run，然后点debug"><br><img src="/2020/02/11/javabase7-debug/dkts.png" alt="遇到弹框点打开"><br><img src="/2020/02/11/javabase7-debug/qj.png" alt="简单看一下全局页面"><br>因为当前代码里没有实例方法调用，直接点下一步就行了step into 用在比如有一行代码是 jump()方法 可以通过into 跳到jump()方法内部查看。这里我们直接点step over就行了。<br><img src="/2020/02/11/javabase7-debug/into.png" alt="step into"><br><img src="/2020/02/11/javabase7-debug/over.png" alt="step over"><br><img src="/2020/02/11/javabase7-debug/jj.png" alt="随着不断点击变量i一直在增加"><br>偶们知道了，i++后，i增加了1。<br><img src="/2020/02/11/javabase7-debug/kzt.png" alt="控制台一段一段打出来"><br>疯狂点完二十下<br><img src="/2020/02/11/javabase7-debug/over1.png" alt="debug完了"><br>好了本次debug就算完成了，最重要的是要在debug中观察变量的变化是否符合逻辑，通常都会有恍然大悟的感觉。后面我回再补充遇到问题代码如何调试，本篇先告诉读者有这个东西，简单怎么使用。（我实在熬不动了）</p><hr><h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>今天想把博客从github移到服务器上，本来想用gitlab的，但是调了半天搭好gitlab，page页总是配不好，不能用，最后晚上放弃了，采用了git仓库+nginx的方法，也有很多坑要填，熬到现在，熬不动了，特殊时期不敢生病啊。晚安！！</p>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”我们把给程序找毛病的行为叫“Debug”，中文叫调试。&lt;/em&gt;&lt;/p&gt;
     
     </summary>
     
     
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
   </entry>
   
