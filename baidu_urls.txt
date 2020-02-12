@@ -1,3 +1,3 @@
-http://www.mggblog.ink/2020/02/11/javabase8-zfccl1/
-http://www.mggblog.ink/2020/02/10/javabase7-debug/
-http://www.mggblog.ink/2020/02/09/javabase6-xh/
+https://gitsxm.github.io/2020/02/11/javabase8-zfccl1/
+https://gitsxm.github.io/2020/02/10/javabase7-debug/
+https://gitsxm.github.io/2020/02/09/javabase6-xh/
