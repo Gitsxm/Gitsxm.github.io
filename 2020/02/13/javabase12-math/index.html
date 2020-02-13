@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal） - MggBlog</title>
+
+
+    <meta name="description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/13/javabase12-math/index.html">
+<meta property="og:site_name" content="MggBlog">
+<meta property="og:description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86279.png">
+<meta property="article:published_time" content="2020-02-13T11:52:36.456Z">
+<meta property="article:modified_time" content="2020-02-13T16:40:13.266Z">
+<meta property="article:author" content="Mgg">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java核心内容">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86279.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/m-icon.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="MggBlog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/mggimage.jpg" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Gitsxm/Gitsxm.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-13T11:52:36.456Z">2020-02-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    21 分钟 读完 (大约 3206 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）
+            
+        </h1>
+        <div class="content">
+            <p><em>只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，<strong>本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。</strong></em></p>
+<a id="more"></a>
+<h2 id="Math类常用方法"><a href="#Math类常用方法" class="headerlink" title="Math类常用方法"></a>Math类常用方法</h2><p>挑一些容易用到的，有静态常量（自然数e，圆周率π）、求最大最小值和绝对值、求整、三角函数、指数运算，其实最常用的就是最大最小值和求整了。</p>
+<h3 id="静态常量"><a href="#静态常量" class="headerlink" title="静态常量"></a>静态常量</h3><p>自然数e和圆周率π：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//e</span></span><br><span class="line">Math.E;</span><br><span class="line"><span class="comment">//π</span></span><br><span class="line">Math.PI;</span><br></pre></td></tr></table></figure>
+<p>我们控制台输出看看：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"e="</span>+Math.E);</span><br><span class="line">System.out.println(<span class="string">"π="</span>+Math.PI);</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/epi.png" alt="输出结果"></p>
+<h2 id="求最大最小值和绝对值"><a href="#求最大最小值和绝对值" class="headerlink" title="求最大最小值和绝对值"></a>求最大最小值和绝对值</h2><p>最常用功能，几个函数搞定，使用方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.方法名;</span><br></pre></td></tr></table></figure>
+
+<p>函数与说明：   </p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static int abs(int a)</td>
+<td>返回 a 的绝对值</td>
+</tr>
+<tr>
+<td>static long abs(long a)</td>
+<td>返回 a 的绝对值</td>
+</tr>
+<tr>
+<td>static float abs(float a)</td>
+<td>返回 a 的绝对值</td>
+</tr>
+<tr>
+<td>static double abs(double a)</td>
+<td>返回 a 的绝对值</td>
+</tr>
+<tr>
+<td>static int max(int x,int y)</td>
+<td>返回 x 和 y 中的最大值</td>
+</tr>
+<tr>
+<td>static double max(double x,double y)</td>
+<td>返回 x 和 y 中的最大值</td>
+</tr>
+<tr>
+<td>static long max(long x,long y)</td>
+<td>返回 x 和 y 中的最大值</td>
+</tr>
+<tr>
+<td>static float max(float x,float y)</td>
+<td>返回 x 和 y 中的最大值</td>
+</tr>
+<tr>
+<td>static int min(int x,int y)</td>
+<td>返回 x 和 y 中的最小值</td>
+</tr>
+<tr>
+<td>static long min(long x,long y)</td>
+<td>返回 x 和 y 中的最小值</td>
+</tr>
+<tr>
+<td>static double min(double x,double y)</td>
+<td>返回 x 和 y 中的最小值</td>
+</tr>
+<tr>
+<td>static float min(float x,float y)</td>
+<td>返回 x 和 y 中的最小值</td>
+</tr>
+</tbody></table>
+<p>实践一下，分别求一下最大值最小值与绝对值：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">29</span>;</span><br><span class="line">  <span class="keyword">int</span> j = <span class="number">98</span>;</span><br><span class="line">  <span class="keyword">int</span> k = -<span class="number">200</span>;</span><br><span class="line">  System.out.println(Math.max(i, j));</span><br><span class="line">  System.out.println(Math.min(i, j));</span><br><span class="line">  System.out.println(Math.abs(k));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/jd.png" alt="输出结果"></p>
+<h3 id="求整运算"><a href="#求整运算" class="headerlink" title="求整运算"></a>求整运算</h3><p>多用在需要不要求高精度数据展示的时候，使用方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.方法名;</span><br></pre></td></tr></table></figure>
+<p>函数与说明：  </p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static double ceil(double a)</td>
+<td>返回大于或等于 a 的最小整数</td>
+</tr>
+<tr>
+<td>static double floor(double a)</td>
+<td>返回小于或等于 a 的最大整数</td>
+</tr>
+<tr>
+<td>static double rint(double a)</td>
+<td>返回最接近 a 的整数值，如果有两个同样接近的整数，则结果取偶数</td>
+</tr>
+<tr>
+<td>static int round(float a)</td>
+<td>将参数加上 1/2 后返回与参数最近的整数</td>
+</tr>
+<tr>
+<td>static long round(double a)</td>
+<td>将参数加上 1/2 后返回与参数最近的整数，然后强制转换为长整型</td>
+</tr>
+</tbody></table>
+<p>实践一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">      Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">      <span class="keyword">double</span> num = input.nextDouble();</span><br><span class="line">      System.out.println(<span class="string">"大于或等于 "</span>+ num +<span class="string">" 的最小整数："</span> + Math.ceil(num));</span><br><span class="line">      System.out.println(<span class="string">"小于或等于 "</span>+ num +<span class="string">" 的最大整数："</span> + Math.floor(num));</span><br><span class="line">      System.out.println(<span class="string">"将 "</span>+ num +<span class="string">" 加上 0.5 之后最接近的整数："</span> + Math.round(num));</span><br><span class="line">      System.out.println(<span class="string">"最接近 "</span>+num+<span class="string">" 的整数："</span> + Math.rint(num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/qz.png" alt="输出结果"></p>
+<h3 id="三角函数运算"><a href="#三角函数运算" class="headerlink" title="三角函数运算"></a>三角函数运算</h3><p>大概要做加密，或者数学运算软件才会用到：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.方法名;</span><br></pre></td></tr></table></figure>
+<p>函数与说明：   </p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static double sin(double a)</td>
+<td>返回角的三角正弦值，参数以孤度为单位</td>
+</tr>
+<tr>
+<td>static double cos(double a)</td>
+<td>返回角的三角余弦值，参数以孤度为单位</td>
+</tr>
+<tr>
+<td>static double asin(double a)</td>
+<td>返回一个值的反正弦值，参数域在 [-1,1]，值域在 [-PI/2,PI/2]</td>
+</tr>
+<tr>
+<td>static double acos(double a)</td>
+<td>返回一个值的反余弦值，参数域在 [-1,1]，值域在 [0.0,PI]</td>
+</tr>
+<tr>
+<td>static double tan(double a)</td>
+<td>返回角的三角正切值，参数以弧度为单位</td>
+</tr>
+<tr>
+<td>static double atan(double a)</td>
+<td>返回一个值的反正切值，值域在 [-PI/2,PI/2]</td>
+</tr>
+<tr>
+<td>static double toDegrees(double angrad)</td>
+<td>将用孤度表示的角转换为近似相等的用角度表示的角</td>
+</tr>
+<tr>
+<td>staticdouble toRadians(double angdeg)</td>
+<td>将用角度表示的角转换为近似相等的用弧度表示的角</td>
+</tr>
+</tbody></table>
+<p>来实践一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  System.out.println(<span class="string">"90 度的正弦值："</span> + Math.sin(Math.PI/<span class="number">2</span>));</span><br><span class="line">      System.out.println(<span class="string">"0 度的余弦值："</span> + Math.cos(<span class="number">0</span>));</span><br><span class="line">      System.out.println(<span class="string">"0.5 的反正切值："</span> + Math.atan(<span class="number">0.5</span>));</span><br><span class="line">      System.out.println(<span class="string">"120 度的弧度值："</span> + Math.toRadians(<span class="number">120.0</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/pi.png" alt="输出结果"></p>
+<h3 id="指数与对数运算"><a href="#指数与对数运算" class="headerlink" title="指数与对数运算"></a>指数与对数运算</h3><p>也是很少用到。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.方法名;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>static double exp(double a)</td>
+<td>返回 e 的 a 次幂</td>
+</tr>
+<tr>
+<td>static double pow(double a,double b)</td>
+<td>返回以 a 为底数，以 b 为指数的幂值</td>
+</tr>
+<tr>
+<td>static double sqrt(double a)</td>
+<td>返回 a 的平方根</td>
+</tr>
+<tr>
+<td>static double cbrt(double a)</td>
+<td>返回 a 的立方根</td>
+</tr>
+<tr>
+<td>static double log(double a)</td>
+<td>返回 a 的自然对数，即 lna 的值</td>
+</tr>
+<tr>
+<td>static double log10(double a)</td>
+<td>返回以 10 为底 a 的对数</td>
+</tr>
+</tbody></table>
+<p>实践一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">      System.out.println(<span class="string">"2 的立方值："</span> + Math.pow(<span class="number">2</span>, <span class="number">3</span>));</span><br><span class="line">      System.out.println(<span class="string">"10 的平方根："</span> + Math.sqrt(<span class="number">10</span>));</span><br><span class="line">      System.out.println(<span class="string">"10 为底 2 的对数："</span> + Math.log10(<span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/log.png" alt="输出结果"></p>
+<blockquote>
+<p>观察发现Java并没有提供log a（b）的方法，因为Java提供的两个对数方法已经足够计算机算对数用了，如果需要计算普通对数，我们可以变通一下，利用高中数学里用到的换底公式，log a (b) = log n (b) / log n (a) ,我们把 n 代为自然数 e 就可以了,当然log10()也是可以的。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">  &#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">    System.out.println(&quot;8 为底 2 的对数：&quot; + (Math.log(8) &#x2F; Math.log(2))); &#x2F;&#x2F; 3.0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h2 id="随机数生成"><a href="#随机数生成" class="headerlink" title="随机数生成"></a>随机数生成</h2><p>随机数也是非常常用的功能，比如需要从数据库随机抓取数据，Java中的 Random 类提供众多生成随机数的方法，另外 Math 类也提供了一个生成随机数的方法 Math.random()，还有一种野路子，使用 currentTimeMillis（时间处理会用到，可以先了解一下） 获取毫秒值 取模生成随机数。一般情况下生成整数随机数的需求比较多一点。</p>
+<h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h3><p>如果只是随便生成一个 float 随机数，那用这个是非常合适的选择，因为 Math 是静态类，不用new 来新建对象。这个方法返回带正号的 double 值，该值大于等于 0.0 且小于 1.0，但是我们可以通过乘法来扩大数值，然后通过加减运算再取整函数来获得一个符合预期的随机数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  System.out.println(Math.random()); <span class="comment">//0.24037287785722083</span></span><br><span class="line">  <span class="comment">//比如我想要一个100 以内的随机数</span></span><br><span class="line">  System.out.println((<span class="keyword">int</span>)(Math.random()*<span class="number">100</span>)); <span class="comment">//39</span></span><br><span class="line">  <span class="comment">//想得到一个50-100的随机数</span></span><br><span class="line">  System.out.println((<span class="keyword">int</span>)(<span class="number">50</span>+(Math.random()*(<span class="number">100</span>-<span class="number">50</span>)))); <span class="comment">//68</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>无论是这个方法取随机还是用 Random类 生成特定范围内的随机数，算法都是一样的 <strong>( int )(min + ( 方法 *( max - main )))</strong> 。用 currentTimeMillis() 略有不同 把中间乘号改为取模( % )。</p>
+</blockquote>
+<h3 id="Random-类方法"><a href="#Random-类方法" class="headerlink" title="Random 类方法"></a>Random 类方法</h3><p>Random 类为我们提供了整套的随机数生成方案，足够日常业务需求使用。我们打开JDK帮助文档看看吧（变懒了不想手写表格了），首先是用法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先需要新建 Random 对象</span></span><br><span class="line">Random rd = newRandom();</span><br><span class="line"><span class="comment">//重载构造 带种子的对象</span></span><br><span class="line">Random rd = newRandom(<span class="keyword">long</span> seed);</span><br><span class="line"><span class="comment">//然后调用方法</span></span><br><span class="line">类型 变量名 = rd.方法;</span><br></pre></td></tr></table></figure>
+<p>看图：<br><img src="/2020/02/13/javabase12-math/rd.png" alt="random 类"></p>
+<p>方法我们不做详细说明等会直接写个demo，我们说一下这个种子是什么鬼。种子在这里可能是翻译问题，用标识说更贴切，如 new Random(1) 当运行的时候用 1 的标识生成的随机数，即使再运行也不会变；如果是 new Random() 同个方法每次运行生成的随机数都会不一样。  </p>
+<p>我们把这段代码运行两次：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  Random rd1 = <span class="keyword">new</span> Random(<span class="number">1</span>);</span><br><span class="line">  Random rd2 = <span class="keyword">new</span> Random();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">5</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">    System.out.print(rd1.nextInt(<span class="number">100</span>)+<span class="string">" "</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  System.out.println(<span class="string">"\n~~~~~~~~~~~~~~"</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">5</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">    System.out.print(rd2.nextInt(<span class="number">100</span>)+<span class="string">" "</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行第一次<br><img src="/2020/02/13/javabase12-math/r1.png" alt="第一次"><br>运行第二次<br><img src="/2020/02/13/javabase12-math/r2.png" alt="第二次">  </p>
+<p>我们看到使用种子创建对象的类方法产生的随机数是一样的，在实际使用的时候还是不带种子的多一些。</p>
+<p>把其他方法都跑一下，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  Random r = <span class="keyword">new</span> Random();</span><br><span class="line">  <span class="keyword">double</span> d1 = r.nextDouble(); <span class="comment">// 生成[0,1.0]区间的小数</span></span><br><span class="line">  <span class="keyword">double</span> d2 = r.nextDouble() * <span class="number">7</span>; <span class="comment">// 生成[0,7.0]区间的小数</span></span><br><span class="line">  <span class="keyword">int</span> i1 = r.nextInt(<span class="number">10</span>); <span class="comment">// 生成[0,10]区间的整数</span></span><br><span class="line">  <span class="keyword">int</span> i2 = r.nextInt(<span class="number">18</span>) - <span class="number">3</span>; <span class="comment">// 生成[-3,15]区间的整数</span></span><br><span class="line">  <span class="keyword">long</span> l1 = r.nextLong(); <span class="comment">// 生成一个随机长整型值</span></span><br><span class="line">  <span class="keyword">boolean</span> b1 = r.nextBoolean(); <span class="comment">// 生成一个随机布尔型值</span></span><br><span class="line">  <span class="keyword">float</span> f1 = r.nextFloat(); <span class="comment">// 生成一个随机浮点型值</span></span><br><span class="line">  System.out.println(<span class="string">"生成的[0,1.0]区间的小数是："</span> + d1);</span><br><span class="line">  System.out.println(<span class="string">"生成的[0,7.0]区间的小数是："</span> + d2);</span><br><span class="line">  System.out.println(<span class="string">"生成的[0,10]区间的整数是："</span> + i1);</span><br><span class="line">  System.out.println(<span class="string">"生成的[-3,15]区间的整数是："</span> + i2);</span><br><span class="line">  System.out.println(<span class="string">"生成一个随机长整型值："</span> + l1);</span><br><span class="line">  System.out.println(<span class="string">"生成一个随机布尔型值："</span> + b1);</span><br><span class="line">  System.out.println(<span class="string">"生成一个随机浮点型值："</span> + f1);</span><br><span class="line">  System.out.print(<span class="string">"下期七星彩开奖号码预测："</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> num = r.nextInt(<span class="number">9</span>); <span class="comment">// 生成[0,9]区间的整数</span></span><br><span class="line">    System.out.print(num);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/sj.png" alt="运行结果"></p>
+<h3 id="currentTimeMillis"><a href="#currentTimeMillis" class="headerlink" title="currentTimeMillis()"></a>currentTimeMillis()</h3><p>这是个牛逼的野路子，大佬的思路我们不懂，一般我们也不会用这个，不详细说了，举个例子带过吧。</p>
+<p>方法返回从1970年1月1日0时0分0秒（这与UNIX系统有关）到现在的一个long型的毫秒数，取模之后即可得到所需范围内的随机数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> max = <span class="number">100</span>, min = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">long</span> randomNum = System.currentTimeMillis();</span><br><span class="line">  <span class="keyword">int</span> ran3 = (<span class="keyword">int</span>) (randomNum % (max - min) + min);</span><br><span class="line">  System.out.println(ran3);<span class="comment">// 60</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h2><p>数字的格式在解决实际问题时使用非常普遍，这时可以使用 DecimalFormat 类对结果进行格式化处理。例如，将小数位统一成 2 位，不足 2 位的以 0 补齐。<br>DecimalFormat 是 NumberFormat 的一个子类，用于格式化十进制数字。DecimalFormat 类包含一个模式和一组符号，常用符号看图<br><img src="/2020/02/13/javabase12-math/sjgs.png" alt="常用符号"><br>举个例子：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 实例化DecimalFormat类的对象，并指定格式</span></span><br><span class="line">  DecimalFormat df1 = <span class="keyword">new</span> DecimalFormat(<span class="string">"0.0"</span>);</span><br><span class="line">  DecimalFormat df2 = <span class="keyword">new</span> DecimalFormat(<span class="string">"#.#"</span>);</span><br><span class="line">  DecimalFormat df3 = <span class="keyword">new</span> DecimalFormat(<span class="string">"000.000"</span>);</span><br><span class="line">  DecimalFormat df4 = <span class="keyword">new</span> DecimalFormat(<span class="string">"###.###"</span>);</span><br><span class="line">  Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">  System.out.print(<span class="string">"请输入一个float类型的数字："</span>);</span><br><span class="line">  <span class="keyword">float</span> f = scan.nextFloat();</span><br><span class="line">  <span class="comment">// 对输入的数字应用格式，并输出结果</span></span><br><span class="line">  System.out.println(<span class="string">"0.0 格式："</span> + df1.format(f));</span><br><span class="line">  System.out.println(<span class="string">"#.# 格式："</span> + df2.format(f));</span><br><span class="line">  System.out.println(<span class="string">"000.000 格式："</span> + df3.format(f));</span><br><span class="line">  System.out.println(<span class="string">"###.### 格式："</span> + df4.format(f));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/sjgsh.png" alt="运行结果"></p>
+<h2 id="大数字运算"><a href="#大数字运算" class="headerlink" title="大数字运算"></a>大数字运算</h2><p>Java提供两个类进行大数字处理，BigInteger 类和 BigDecimal 类，解决 int 范围问题（任何数字数据类型都有范围 Java中 int 是-2147483648 ~ 2147483647 这和计算机二进制补码计算有关，感兴趣可以了解一下，用2147483647+1看看会得到什么结果）。</p>
+<h3 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h3><p>使用方法：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建对象  val 是十进制数字 但是注意参数格式是字符串</span></span><br><span class="line">BigInteger bi = BigInteger(String val)</span><br></pre></td></tr></table></figure>
+<p>文档里方法太多了我挑些常用的方法（和 int不同的地方在于不能使用运算符计算，要用方法计算）：<br><img src="/2020/02/13/javabase12-math/bi.png" alt="BigInteger 类方法"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    BigInteger bi = <span class="keyword">new</span> BigInteger(<span class="string">"999999999999999"</span>);</span><br><span class="line">    <span class="comment">// 加一</span></span><br><span class="line">    System.out.println(<span class="string">"加1结果："</span> + bi.add(<span class="keyword">new</span> BigInteger(<span class="string">"1"</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/bi1.png" alt="运行结果"></p>
+<h3 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h3><p>BigDecimal 多用于算钱，在数量较大时又能保证高精度（支持任何精度），比 BigInteger 更为实用，用法和 BigInteger 基本一样，先建对象，再使用方法计算。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建对象  val 是十进制数字 但是注意参数格式是字符串</span></span><br><span class="line">BigDecimal bd = <span class="keyword">new</span> BigDecimal(String val)</span><br></pre></td></tr></table></figure>
+<p>计算方法(文档里太难看了我放到excel)：<br><img src="/2020/02/13/javabase12-math/bdjs.png" alt="加减乘除"><br>其中，divide() 方法的 3 个参数分别表示除数、商的小数点后的位数和近似值处理模式。</p>
+<p>BigDecimal 还提供了计算模式，各种模式满足你算钱的需求（看了文档才知道这么厉害，我以前也就用它加加减减）：<br><img src="/2020/02/13/javabase12-math/bdjsms.png" alt="计算模式"></p>
+<p>举个例子描述结束今天的学习：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  BigDecimal bi = <span class="keyword">new</span> BigDecimal(<span class="string">"999999999999999.345678"</span>);</span><br><span class="line">  <span class="comment">// 加法</span></span><br><span class="line">  System.out.println(<span class="string">"加法结果："</span> + bi.add(<span class="keyword">new</span> BigDecimal(<span class="string">"1.3465"</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/13/javabase12-math/bdjf.png" alt="运行结果"></p>
+<hr>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>这些内容可以分俩博客讲的，但是我觉得东西不多，就直接塞一块儿了，夜深了，睡觉了。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" rel="tag">Java核心内容</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/13/javabase11-zzbds/">
+                <span class="level-item">Java零基础筑基到修仙（十一）——Java正则表达式</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/mggimage.jpg" alt="Mgg">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>XingTai,HeBei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            12
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            1
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            3
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Gitsxm" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Gitsxm">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Envelop" href="mailto:837564471@qq.com">
+                
+                <i class="fa fa-envelope-open"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
+            <span class="level-start">
+                <span class="level-item">Java基础学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java字符串处理</a> <a href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" style="font-size: 15px;">Java核心内容</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/13/javabase12-math/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T11:52:36.456Z">2020-02-13</time></div>
+                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/13/javabase11-zzbds/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86271.png" alt="Java零基础筑基到修仙（十一）——Java正则表达式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T01:55:42.000Z">2020-02-13</time></div>
+                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十一）——Java正则表达式</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/javabase10-zfccl3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl3bg.jpg" alt="JAVA零基础筑基到修仙（十）——字符串处理（3）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T13:49:55.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/javabase10-zfccl3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十）——字符串处理（3）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/javabase9-zfccl2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl2bg.jpg" alt="JAVA零基础筑基到修仙（九）——字符串处理（2）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T05:45:47.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/javabase9-zfccl2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（九）——字符串处理（2）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/11/javabase8-zfccl1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time></div>
+                    <a href="/2020/02/11/javabase8-zfccl1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/">
+                        <span class="tag">Java核心内容</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/13/javabase12-math/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T11:52:36.456Z">2020-02-13</time></div>
+                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/13/javabase11-zzbds/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86271.png" alt="Java零基础筑基到修仙（十一）——Java正则表达式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T01:55:42.000Z">2020-02-13</time></div>
+                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十一）——Java正则表达式</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/javabase10-zfccl3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl3bg.jpg" alt="JAVA零基础筑基到修仙（十）——字符串处理（3）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T13:49:55.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/javabase10-zfccl3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十）——字符串处理（3）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/12/javabase9-zfccl2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl2bg.jpg" alt="JAVA零基础筑基到修仙（九）——字符串处理（2）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-12T05:45:47.000Z">2020-02-12</time></div>
+                    <a href="/2020/02/12/javabase9-zfccl2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（九）——字符串处理（2）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/11/javabase8-zfccl1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time></div>
+                    <a href="/2020/02/11/javabase8-zfccl1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/">
+                        <span class="tag">Java核心内容</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/mggimage.jpg" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mgg&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://www.mggblog.ink',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
