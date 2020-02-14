@@ -7,25 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（十五）——Object类和System类 - MggBlog</title>
 
 
-    <meta name="description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MggBlog">
-<meta property="og:url" content="http://www.mggblog.ink/tags/index.html">
+    <meta name="description" content="Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（十五）——Object类和System类">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/14/javabase15-obj-sys/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
+<meta property="og:description" content="Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86274.png">
+<meta property="article:published_time" content="2020-02-14T14:36:42.000Z">
+<meta property="article:modified_time" content="2020-02-14T17:04:49.741Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="Java字符串处理">
-<meta property="article:tag" content="Java数字处理">
 <meta property="article:tag" content="Java内置包装类">
-<meta property="article:tag" content="Java时间日期处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86274.png">
 
 
 
@@ -84,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十五）——Object类和System类" height="28">
             
             </a>
         </div>
@@ -101,7 +100,7 @@
                 <a class="navbar-item"
                 href="/categories">分类</a>
                 
-                <a class="navbar-item is-active"
+                <a class="navbar-item"
                 href="/tags">标签</a>
                 
                 <a class="navbar-item"
@@ -133,53 +132,254 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                标签
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java/">
-                        <span class="tag">Java</span>
-                        <span class="tag is-grey">15</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/">
-                        <span class="tag">Java内置包装类</span>
-                        <span class="tag is-grey">2</span>
-                    </a>
-                </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
-                        <span class="tag">Java字符串处理</span>
-                        <span class="tag is-grey">3</span>
-                    </a>
-                </div>
+                <span class="level-item has-text-grey">
+                    
+                    
+                    13 分钟 读完 (大约 2001 个字)
+                </span>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
-                        <span class="tag">Java数字处理</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
-                        <span class="tag">Java时间日期处理</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JAVA零基础筑基到修仙（十五）——Object类和System类
+            
+        </h1>
+        <div class="content">
+            <p><em>Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。</em></p>
+<a id="more"></a>
+<hr>
+<h2 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h2><p>类 Object 是类层次结构的根类。每个类都使用 Object 作为超类。所有对象（包括数组）都实现这个类的方法（他是所有类的爸爸）。<br>比如随便新建一个类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实等价于</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span> <span class="keyword">extends</span> <span class="title">Object</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们看一下他的类方法有哪些：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object clone()</td>
+<td>创建与该对象的类相同的新对象</td>
+</tr>
+<tr>
+<td>boolean equals(Object)</td>
+<td>比较两对象是否相等</td>
+</tr>
+<tr>
+<td>void finalize()</td>
+<td>当垃圾回收器确定不存在对该对象的更多引用时，对象垃圾回收器调用该方法</td>
+</tr>
+<tr>
+<td>Class getClass()</td>
+<td>返回一个对象运行时的实例类</td>
+</tr>
+<tr>
+<td>int hashCode()</td>
+<td>返回该对象的散列码值</td>
+</tr>
+<tr>
+<td>void notify()</td>
+<td>激活等待在该对象的监视器上的一个线程</td>
+</tr>
+<tr>
+<td>void notifyAll()</td>
+<td>激活等待在该对象的监视器上的全部线程</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>返回该对象的字符串表示</td>
+</tr>
+<tr>
+<td>void wait()</td>
+<td>在其他线程调用此对象的 notify() 方法或 notifyAll() 方法前，导致当前线程等待</td>
+</tr>
+</tbody></table>
+<p>因为 Object 类是所有类的父类，所以这些方法所有类都可以直接用，其中 getClass、equals、toString比较常用。线程相关方法不会出现在业务代码里，用的也比较少，我们写到线程再学：  </p>
+<h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString() 方法"></a>toString() 方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p = <span class="keyword">new</span> Person();</span><br><span class="line">		System.out.println(p.toString());</span><br><span class="line">		System.out.println(p);	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> age;</span><br><span class="line">		String name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/02/14/javabase15-obj-sys/ts.png" alt="运行结果"><br>结果发现用不用 toString 方法输出结果都是一样的，，这时候我们可以在 Person 类里重写 toString 方法，让他输出一些有价值的东西（这里涉及后面继承的知识，先看看，不理解后面再学，当前重点在 toString ）。如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Person p = <span class="keyword">new</span> Person();</span><br><span class="line">		System.out.println(p.toString());</span><br><span class="line">		System.out.println(p);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">10</span>;</span><br><span class="line">		String name = <span class="string">"kangkang"</span>;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">"Person [age="</span> + age + <span class="string">", name="</span> + name + <span class="string">"]"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再次运行<br><img src="/2020/02/14/javabase15-obj-sys/ts2.png" alt="运行结果">  </p>
+<h3 id="equals-方法"><a href="#equals-方法" class="headerlink" title="equals() 方法"></a>equals() 方法</h3><p>文档中解释：</p>
+<blockquote>
+<p>指示其他某个对象是否与此对象“相等”。<br>equals 方法在非空对象引用上实现相等关系： </p>
+<ul>
+<li>自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true。 </li>
+<li>对称性：对于任何非空引用值 x 和 y，当且仅当 y.equals(x) 返回 true 时，x.equals(y) 才应返回 true。 </li>
+<li>传递性：对于任何非空引用值 x、y 和 z，如果 x.equals(y) 返回 true，并且 y.equals(z) 返回 true，那么 x.equals(z) 应返回 true。 </li>
+<li>一致性：对于任何非空引用值 x 和 y，多次调用 x.equals(y) 始终返回 true 或始终返回 false，前提是对象上 equals 比较中所用的信息没有被修改。 </li>
+<li>对于任何非空引用值 x，x.equals(null) 都应返回 false。 </li>
+<li>Object 类的 equals 方法实现对象上差别可能性最大的相等关系；即，对于任何非空引用值 x 和 y，当且仅当 x 和 y 引用同一个对象时，此方法才返回 true（x == y 具有值 true）。<br>注意：当此方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。 </li>
+</ul>
+</blockquote>
+<p>巴拉巴拉一大堆，以我理解，就是相当于 == 的效果，没什么用，我们在各个包装类里的 equals 方法都被重写了，没什么好说的，拿出来说的目的是提醒这个方法和我们平时用的 equals 不一样。</p>
+<h3 id="getClass-方法"><a href="#getClass-方法" class="headerlink" title="getClass() 方法"></a>getClass() 方法</h3><p>getClass 返回一个 Class 对象，所以这个方法要配合Class 类方法使用，举个小例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	String str = <span class="string">""</span>;</span><br><span class="line">	System.out.println(str.getClass());<span class="comment">// 获取Class对象</span></span><br><span class="line">	Method[] ms = str.getClass().getMethods();<span class="comment">//获取所有方法</span></span><br><span class="line">	System.out.println(str.getClass().getName()); <span class="comment">//获取Class对象名称</span></span><br><span class="line">	<span class="keyword">for</span> (Method m :ms ) &#123;</span><br><span class="line">		System.out.println(m.getName()); <span class="comment">// 遍历方法名</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase15-obj-sys/ff.png" alt="运行结果">  </p>
+<p>这个 getclass 到后面反射机制的时候会用到。</p>
+<h2 id="System-类"><a href="#System-类" class="headerlink" title="System 类"></a>System 类</h2><p>System 类包含一些有用的类字段和方法。它不能被实例化。   </p>
+<p>在 System 类提供的设施中，有标准输入、标准输出和错误输出流；对外部定义的属性和环境变量的访问；加载文件和库的方法；还有快速复制数组的一部分的实用方法。 </p>
+<p>我们经常用的 System.out.println() 以及 在控制台输入时 System.in ，那么我们再来了解了解其他常用的系统级方法：</p>
+<h3 id="arraycopy-方法"><a href="#arraycopy-方法" class="headerlink" title="arraycopy() 方法"></a>arraycopy() 方法</h3><p>该方法的作用是数组复制，即从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束。该方法的具体定义如下：   </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">arraycopy</span><span class="params">(Object src,<span class="keyword">int</span> srcPos,Object dest,<span class="keyword">int</span> destPos,<span class="keyword">int</span> length)</span></span></span><br></pre></td></tr></table></figure>
+<p>其中，src 表示源数组，srcPos 表示从源数组中复制的起始位置，dest 表示目标数组，destPos 表示要复制到的目标数组的起始位置，length 表示复制的个数。<br>来试一下：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] srcArray = &#123;<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>&#125;;</span><br><span class="line">        <span class="keyword">char</span>[] destArray = &#123;<span class="string">'E'</span>,<span class="string">'F'</span>,<span class="string">'G'</span>,<span class="string">'H'</span>&#125;;</span><br><span class="line">        System.arraycopy(srcArray,<span class="number">1</span>,destArray,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">"源数组："</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; srcArray.length;i++) &#123;</span><br><span class="line">            System.out.print(srcArray[i]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"\n目标数组："</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; destArray.length;j++) &#123;</span><br><span class="line">            System.out.print(destArray[j]+<span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">```  </span><br><span class="line">   </span><br><span class="line">![运行结果](javabase15-obj-sys/cp.png)  </span><br><span class="line">  </span><br><span class="line">### currentTimeMillis() 方法</span><br><span class="line">返回最准确的可用系统计时器的当前值，以毫微秒为单位。与时钟时间无关系，多用于测试代码执行时间。</span><br><span class="line">```java</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">100000000</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        <span class="keyword">long</span> time = end - start;</span><br><span class="line">        System.out.println(<span class="string">"程序执行时间"</span> + time + <span class="string">"秒"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase15-obj-sys/sj.png" alt="运行结果"> </p>
+<h3 id="exit-方法"><a href="#exit-方法" class="headerlink" title="exit() 方法"></a>exit() 方法</h3><p>终止当前正在运行的 Java 虚拟机。<br>定义：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span></span></span><br></pre></td></tr></table></figure>
+<p>根据惯例，非 0 的状态码表示异常终止。<br>该方法调用 Runtime 类中的 exit 方法。该方法永远不会正常返回。<br>调用 System.exit(n) 实际上等效于调用： Runtime.getRuntime().exit(n)</p>
+<h3 id="gc-方法"><a href="#gc-方法" class="headerlink" title="gc() 方法"></a>gc() 方法</h3><p>定义：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gc</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>运行垃圾回收器。 Java 比 C++ 好的地方之一是有这个 gc 自动回收内存，不用自己管，非要自己调用gc的话用吧，</p>
+<p>调用 gc 方法暗示着 Java 虚拟机做了一些努力来回收未用对象，以便能够快速地重用这些对象当前占用的内存。当控制权从方法调用中返回时，虚拟机已经尽最大努力从所有丢弃的对象中回收了空间。<br>调用 System.gc() 实际上等效于调用： Runtime.getRuntime().gc()</p>
+<h3 id="getProperty-方法"><a href="#getProperty-方法" class="headerlink" title="getProperty() 方法"></a>getProperty() 方法</h3><p>这个方法常用，获取系统中已有的键值对的值。<br>定义：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getProperty</span><span class="params">(String key)</span></span></span><br></pre></td></tr></table></figure>
+<p>常见系统属性：  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>java.version</td>
+<td>Java 运行时环境版本</td>
+</tr>
+<tr>
+<td>java.home</td>
+<td>Java 安装目录</td>
+</tr>
+<tr>
+<td>os.name</td>
+<td>操作系统的名称</td>
+</tr>
+<tr>
+<td>os.version</td>
+<td>操作系统的版本</td>
+</tr>
+<tr>
+<td>user.name</td>
+<td>用户的账户名称</td>
+</tr>
+<tr>
+<td>user.home</td>
+<td>用户的主目录</td>
+</tr>
+<tr>
+<td>user.dir</td>
+<td>用户的当前工作目录</td>
+</tr>
+</tbody></table>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    System.out.println(System.getProperty(<span class="string">"java.home"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase15-obj-sys/jh.png" alt="运行结果"> </p>
+<p>就这样吧，不一一距举例了。</p>
+<hr>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>下一篇一次性把几个数组类型的包装类弄了。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" rel="tag">Java内置包装类</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/14/javabase14-bz-zxcx/">
+                <span class="level-item">JAVA零基础筑基到修仙（十四）——包装类、装箱拆箱</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
                 
 
 
@@ -751,7 +951,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十五）——Object类和System类" height="28">
                 
                 </a>
                 <p class="is-size-7">
