@@ -1,3 +1,3 @@
-https://gitsxm.github.io/2020/02/14/javabase13-szcl/
-https://gitsxm.github.io/2020/02/13/javabase12-math/
-https://gitsxm.github.io/2020/02/13/javabase11-zzbds/
+http://www.mggblog.ink/2020/02/14/javabase13-szcl/
+http://www.mggblog.ink/2020/02/13/javabase12-math/
+http://www.mggblog.ink/2020/02/13/javabase11-zzbds/
