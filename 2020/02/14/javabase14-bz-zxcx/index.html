@@ -7,24 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化） - MggBlog</title>
+<title>JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱 - MggBlog</title>
 
 
-    <meta name="description" content="在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化">
+    <meta name="description" content="Java提倡一切皆对象，Java是面向对象的语言，但是从数据类型来看，引用型数据有对应的对象类，如String，而基本型数据无法被称为对象，为解决这个尴尬问题，Java为每个基本型数据类提供了对应的类，称为包装类，顾名思义就是给它们外面裹一层。本篇内容：装箱拆箱，包装类应用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
-<meta property="og:url" content="http://www.mggblog.ink/2020/02/14/javabase13-szcl/index.html">
+<meta property="og:title" content="JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/14/javabase14-bz-zxcx/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化">
+<meta property="og:description" content="Java提倡一切皆对象，Java是面向对象的语言，但是从数据类型来看，引用型数据有对应的对象类，如String，而基本型数据无法被称为对象，为解决这个尴尬问题，Java为每个基本型数据类提供了对应的类，称为包装类，顾名思义就是给它们外面裹一层。本篇内容：装箱拆箱，包装类应用。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/gallery/sjgshbg.png">
-<meta property="article:published_time" content="2020-02-14T02:04:05.000Z">
-<meta property="article:modified_time" content="2020-02-14T11:17:12.790Z">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/czbzbg.png">
+<meta property="article:published_time" content="2020-02-14T11:02:20.000Z">
+<meta property="article:modified_time" content="2020-02-14T12:21:50.911Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="Java时间日期处理">
+<meta property="article:tag" content="Java内置包装类">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/gallery/sjgshbg.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/czbzbg.png">
 
 
 
@@ -83,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱" height="28">
             
             </a>
         </div>
@@ -137,7 +137,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/sjgshbg.png" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
+            <img class="thumbnail" src="/gallery/czbzbg.png" alt="JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱">
         </span>
     </div>
     
@@ -145,7 +145,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-14T02:04:05.000Z">2020-02-14</time>
+                <time class="level-item has-text-grey" datetime="2020-02-14T11:02:20.000Z">2020-02-14</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    24 分钟 读完 (大约 3550 个字)
+                    5 分钟 读完 (大约 719 个字)
                 </span>
                 
                 
@@ -164,252 +164,72 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）
+                JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱
             
         </h1>
         <div class="content">
-            <p><em>在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。<strong>本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化</strong></em></p>
+            <p><em>Java提倡一切皆对象，Java是面向对象的语言，但是从数据类型来看，引用型数据有对应的对象类，如String，而基本型数据无法被称为对象，为解决这个尴尬问题，Java为每个基本型数据类提供了对应的类，称为包装类，顾名思义就是给它们外面裹一层。<strong>本篇内容：装箱拆箱，包装类应用。</strong></em></p>
 <a id="more"></a>
 <hr>
-<h2 id="Date-类"><a href="#Date-类" class="headerlink" title="Date 类"></a>Date 类</h2><p>类 Date 表示特定的瞬间，精确到毫秒(Java中还有一个 Date 类，全称为java.sql.Date,这个类是sql相关时间类，我们平时用到的是java.util.Date,导包的时候注意别导错了)。它表示时间的顺序是星期、月、日、小时、分、秒、年。打开jdk帮助文档，我们发现 Date 类未过时的构造方法有两个，分别是：</p>
-<ul>
-<li>Date()  分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）。</li>
-<li>Date(long date)  分配 Date 对象并初始化此对象，以表示自从标准基准时间（称为“历元（epoch）”，即 1970 年 1 月 1 日 00:00:00 GMT）以来的指定毫秒数。<br>举个例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d1 = <span class="keyword">new</span> Date();</span><br><span class="line">	Date d2 = <span class="keyword">new</span> Date(<span class="number">80000000</span>);</span><br><span class="line">	System.out.println(d1);</span><br><span class="line">	System.out.println(d2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2020/02/14/javabase13-szcl/sj1.png" alt="输出结果"></li>
-</ul>
-<p>同样我们看到文档中大量方法已经过时，我在下面整理出来可以正常用的：  </p>
+<p>首先我们要对每个基本类型的包装类是什么有所了解，Java提供的包装类除了 int 和 char 的包装类分别为 Integer 和 Character 外，其他包装类都是首字母变大写，还是比较好记的，如下表。</p>
 <table>
 <thead>
 <tr>
-<th>方法</th>
-<th>说明</th>
+<th>类型</th>
+<th>包装类</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>boolean after(Date when)</td>
-<td>判断此日期是否在指定日期之后</td>
+<td>byte</td>
+<td>Byte</td>
 </tr>
 <tr>
-<td>boolean before(Date when)</td>
-<td>判断此日期是否在指定日期之前</td>
+<td>short</td>
+<td>Short</td>
 </tr>
 <tr>
-<td>int compareTo(Date anotherDate)</td>
-<td>比较两个日期的顺序</td>
+<td>int</td>
+<td>Integer</td>
 </tr>
 <tr>
-<td>boolean equals(Object obj)</td>
-<td>比较两个日期的相等性</td>
+<td>long</td>
+<td>Long</td>
 </tr>
 <tr>
-<td>long getTime()</td>
-<td>返回自 1970 年 1 月 1 日 00:00:00 GMT 以来，此 Date 对象表示的毫秒数</td>
+<td>char</td>
+<td>Character</td>
 </tr>
 <tr>
-<td>String toString()</td>
-<td>把此 Date 对象转换为以下形式的 String: dow mon dd  hh:mm:ss zzz yyyy。其中 dow 是一周中的某一天(Sun、Mon、Tue、Wed、Thu、Fri 及 Sat)</td>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
 </tr>
 </tbody></table>
-<p>做个练习：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d1 = <span class="keyword">new</span> Date();</span><br><span class="line">	Date d2 = <span class="keyword">new</span> Date(<span class="number">80000000</span>);</span><br><span class="line">	System.out.println(d1.after(d2));</span><br><span class="line">	System.out.println(d1.before(d2));</span><br><span class="line">	System.out.println(d1.compareTo(d2));<span class="comment">// 相等返回 0 大于返回1 小于返回-1</span></span><br><span class="line">	System.out.println(d1.equals(d2));</span><br><span class="line">	System.out.println(d1.getTime());</span><br><span class="line">	System.out.println(d1.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/14/javabase13-szcl/sj2.png" alt="输出结果"></p>
-<h2 id="Calendar-类"><a href="#Calendar-类" class="headerlink" title="Calendar 类"></a>Calendar 类</h2><p>Calendar 类是一个抽象类，它为特定瞬间与一组诸如 YEAR、MONTH、DAY_OF_MONTH、HOUR 等 日历字段之间的转换提供了一些方法，并为操作日历字段（例如获得下星期的日期）提供了一些方法。瞬间可用毫秒值来表示，它是距历元（即格林威治标准时间 1970 年 1 月 1 日的 00:00:00.000，格里高利历）的偏移量。 </p>
-<p>因为 Calendar 是一个抽象类，无法像普通类一样 new 一个对象出来，它提供了 getInstance() 方法来完成对象创建：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar c  = Calendar.getInstance();</span><br></pre></td></tr></table></figure>
-<p>Calendar 提供了众多时间处理方法，我们有个大致了解： </p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>void add(int field, int amount)</td>
-<td>根据日历的规则，为给定的日历字段 field 添加或减去指定的时间量 amount</td>
-</tr>
-<tr>
-<td>boolean after(Object when)</td>
-<td>判断此 Calendar 表示的时间是否在指定时间 when 之后，并返回判断结果</td>
-</tr>
-<tr>
-<td>boolean before(Object when)</td>
-<td>判断此 Calendar 表示的时间是否在指定时间 when 之前，并返回判断结果</td>
-</tr>
-<tr>
-<td>void clear()</td>
-<td>清空 Calendar 中的日期时间值</td>
-</tr>
-<tr>
-<td>int compareTo(Calendar anotherCalendar)</td>
-<td>比较两个 Calendar 对象表示的时间值（从格林威治时间 1970 年 01 月 01 日00 时 00 分 00 秒至现在的毫秒偏移量），大则返回 1，小则返回 -1，相等返回 0</td>
-</tr>
-<tr>
-<td>int get(int field)</td>
-<td>返回指定日历字段的值</td>
-</tr>
-<tr>
-<td>int getActualMaximum(int field)</td>
-<td>返回指定日历字段可能拥有的最大值</td>
-</tr>
-<tr>
-<td>int getActualMinimum(int field)</td>
-<td>返回指定日历字段可能拥有的最小值</td>
-</tr>
-<tr>
-<td>int getFirstDayOfWeek()</td>
-<td>获取一星期的第一天。根据不同的国家地区，返回不同的值</td>
-</tr>
-<tr>
-<td>static Calendar getInstance()</td>
-<td>使用默认时区和语言坏境获得一个日历</td>
-</tr>
-<tr>
-<td>static Calendar getInstance(TimeZone zone)</td>
-<td>使用指定时区和默认语言环境获得一个日历</td>
-</tr>
-<tr>
-<td>static Calendar getInstance(TimeZone zone,Locale aLocale)</td>
-<td>使用指定时区和语言环境获得一个日历</td>
-</tr>
-<tr>
-<td>Date getTime()</td>
-<td>返回一个表示此 Calendar 时间值（从格林威治时间 1970 年 01 月 01 日 00 时00 分 00 秒至现在的毫秒偏移量）的 Date 对象</td>
-</tr>
-<tr>
-<td>long getTimeInMillis()</td>
-<td>返回此 Calendar 的时间值，以毫秒为单位</td>
-</tr>
-<tr>
-<td>void set(int field, int value)</td>
-<td>为指定的日历字段设置给定值</td>
-</tr>
-<tr>
-<td>void set(int year, int month, int date)</td>
-<td>设置日历字段 YEAR、MONTH 和 DAY_OF_MONTH 的值</td>
-</tr>
-<tr>
-<td>void set(int year, int month, int date, int hourOfDay,int minute, int second)</td>
-<td>设置字段 YEAR、MONTH、DAY_OF_MONTH、HOUR、 MINUTE 和 SECOND 的值</td>
-</tr>
-<tr>
-<td>void setFirstDayOfWeek(int value)</td>
-<td>设置一星期的第一天是哪一天</td>
-</tr>
-<tr>
-<td>void setTimeInMillis(long millis)</td>
-<td>用给定的 long 值设置此 Calendar 的当前时间值</td>
-</tr>
-</tbody></table>
-<p>Calendar 对象可以调用 set() 方法将日历翻到任何一个时间，当参数 year 取负数时表示公元前。Calendar 对象调用 get() 方法可以获取有关年、月、日等时间信息，参数 field 的有效值由 Calendar 静态常量指定。</p>
-<p><strong>Calendar 类中定义了许多常量，分别表示不同的意义。</strong></p>
-<ul>
-<li>Calendar.YEAR：年份。</li>
-<li>Calendar.MONTH：月份。</li>
-<li>Calendar.DATE：日期。</li>
-<li>Calendar.DAY_OF_MONTH：日期，和上面的字段意义完全相同。</li>
-<li>Calendar.HOUR：12小时制的小时。</li>
-<li>Calendar.HOUR_OF_DAY：24 小时制的小时。</li>
-<li>Calendar.MINUTE：分钟。</li>
-<li>Calendar.SECOND：秒。</li>
-<li>Calendar.DAY_OF_WEEK：星期几。</li>
-</ul>
-<p>例如我们要获取当前月份：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> month = Calendar.getInstance().get(Calendar.MONTH);</span><br></pre></td></tr></table></figure>
-<p>方法都用用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Calendar calendar = Calendar.getInstance(); <span class="comment">// 如果不设置时间，则默认为当前时间</span></span><br><span class="line">	calendar.setTime(<span class="keyword">new</span> Date()); <span class="comment">// 将系统当前时间赋值给 Calendar 对象</span></span><br><span class="line">	System.out.println(<span class="string">"现在时刻："</span> + calendar.getTime()); <span class="comment">// 获取当前时间</span></span><br><span class="line">	<span class="keyword">int</span> year = calendar.get(Calendar.YEAR); <span class="comment">// 获取当前年份</span></span><br><span class="line">	System.out.println(<span class="string">"现在是"</span> + year + <span class="string">"年"</span>);</span><br><span class="line">	<span class="keyword">int</span> month = calendar.get(Calendar.MONTH) + <span class="number">1</span>; <span class="comment">// 获取当前月份（月份从 0 开始，所以加 1）</span></span><br><span class="line">	System.out.print(month + <span class="string">"月"</span>);</span><br><span class="line">	<span class="keyword">int</span> day = calendar.get(Calendar.DATE); <span class="comment">// 获取日</span></span><br><span class="line">	System.out.print(day + <span class="string">"日"</span>);</span><br><span class="line">	<span class="keyword">int</span> week = calendar.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>; <span class="comment">// 获取今天星期几（以星期日为第一天）</span></span><br><span class="line">	System.out.print(<span class="string">"星期"</span> + week);</span><br><span class="line">	<span class="keyword">int</span> hour = calendar.get(Calendar.HOUR_OF_DAY); <span class="comment">// 获取当前小时数（24 小时制）</span></span><br><span class="line">	System.out.print(hour + <span class="string">"时"</span>);</span><br><span class="line">	<span class="keyword">int</span> minute = calendar.get(Calendar.MINUTE); <span class="comment">// 获取当前分钟</span></span><br><span class="line">	System.out.print(minute + <span class="string">"分"</span>);</span><br><span class="line">	<span class="keyword">int</span> second = calendar.get(Calendar.SECOND); <span class="comment">// 获取当前秒数</span></span><br><span class="line">	System.out.print(second + <span class="string">"秒"</span>);</span><br><span class="line">	<span class="keyword">int</span> millisecond = calendar.get(Calendar.MILLISECOND); <span class="comment">// 获取毫秒数</span></span><br><span class="line">	System.out.print(millisecond + <span class="string">"毫秒"</span>);</span><br><span class="line">	<span class="keyword">int</span> dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); <span class="comment">// 获取今天是本月第几天</span></span><br><span class="line">	System.out.println(<span class="string">"今天是本月的第 "</span> + dayOfMonth + <span class="string">" 天"</span>);</span><br><span class="line">	<span class="keyword">int</span> dayOfWeekInMonth = calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH); <span class="comment">// 获取今天是本月第几周</span></span><br><span class="line">	System.out.println(<span class="string">"今天是本月第 "</span> + dayOfWeekInMonth + <span class="string">" 周"</span>);</span><br><span class="line">	<span class="keyword">int</span> many = calendar.get(Calendar.DAY_OF_YEAR); <span class="comment">// 获取今天是今年第几天</span></span><br><span class="line">	System.out.println(<span class="string">"今天是今年第 "</span> + many + <span class="string">" 天"</span>);</span><br><span class="line">	Calendar c = Calendar.getInstance();</span><br><span class="line">	c.set(<span class="number">2008</span>, <span class="number">8</span>, <span class="number">8</span>); <span class="comment">// 设置年月日，时分秒将默认采用当前值</span></span><br><span class="line">	System.out.println(<span class="string">"设置日期为 2008-8-8 后的时间："</span> + c.getTime()); <span class="comment">// 输出时间</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="/2020/02/14/javabase13-szcl/sj3.png" alt="输出结果"></p>
-<p>到后面我们专门写个日历的博客，以现在的进度放在这里写有点不合适（先挖个坑）。</p>
-<h2 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h2><p>大多数时候我们不能直接使用 Date 类提供的时间格式，Date 原时间格式用的最多的时候应该是写系统日志，这是专门给人看的，只要可以分辨就可以了。但是大多数业务逻辑下，时间都是要存入数据库，要通过时间来查询，如果直接存时间戳进去，数据库sql写着比较麻烦，还要转格式，比如我把日期用String格式存起来（20200214000000），写查询sql的时候就可以直接用了。</p>
-<p>Java为我们提供了 DateFormat 类和它的子类 SimpleDateFormat 类来完成日期格式化，下面我们一起来看一看。</p>
-<h3 id="DateFormat-类"><a href="#DateFormat-类" class="headerlink" title="DateFormat 类"></a>DateFormat 类</h3><p>DateFormat 是日期/时间格式化子类的抽象类，它以与语言无关的方式格式化并解析日期或时间。日期/时间格式化子类（如 SimpleDateFormat）允许进行格式化（也就是日期 -&gt; 文本）、解析（文本-&gt; 日期）和标准化。将日期表示为 Date 对象，或者表示为从 GMT（格林尼治标准时间）1970 年 1 月 1 日 00:00:00 这一刻开始的毫秒数。 </p>
-<p>因为是抽象类，所以也不能使用 new 来创建实例对象，使用静态类方法 getDateInstance() :</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateFormat df = DateFormat.getDatelnstance();</span><br></pre></td></tr></table></figure>
-<p>创建完对象，我们来看一下它的类方法：</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String format(Date date)    将 Date 格式化日期/时间字符串</td>
-<td></td>
-</tr>
-<tr>
-<td>Calendar getCalendar()</td>
-<td>获取与此日期/时间格式相关联的日历</td>
-</tr>
-<tr>
-<td>static DateFormat getDateInstance()</td>
-<td>获取具有默认格式化风格和默认语言环境的日期格式</td>
-</tr>
-<tr>
-<td>static DateFormat getDateInstance(int style)</td>
-<td>获取具有指定格式化风格和默认语言环境的日期格式</td>
-</tr>
-<tr>
-<td>static DateFormat getDateInstance(int style,Locale locale)</td>
-<td>获取具有指定格式化风格和指定语言环境的日期格式</td>
-</tr>
-<tr>
-<td>static DateFormat getDateTimeInstance()</td>
-<td>获取具有默认格式化风格和默认语言环境的日期/时间格式</td>
-</tr>
-<tr>
-<td>static DateFormat getDateTimeInstance(int dateStyle,int timeStyle)</td>
-<td>获取具有指定日期/时间格式化风格和默认语言环境的日期/时间格式</td>
-</tr>
-<tr>
-<td>static DateFormat getDateTimeInstance(int dateStyle,int timeStyle,Locale locale)</td>
-<td>获取具有指定日期/时间格式化风格和指定语言环境的日期/时间格式</td>
-</tr>
-<tr>
-<td>static DateFormat getTimeInstance()</td>
-<td>获取具有默认格式化风格和默认语言环境的时间格式</td>
-</tr>
-<tr>
-<td>static DateFormat getTimeInstance(int style)</td>
-<td>获取具有指定格式化风格和默认语言环境的时间格式</td>
-</tr>
-<tr>
-<td>static DateFormat getTimeInstance(int style,Locale locale)</td>
-<td>获取具有指定格式化风格和指定语言环境的时间格式</td>
-</tr>
-<tr>
-<td>void setCalendar(Calendar newCalendar)</td>
-<td>为此格式设置日历</td>
-</tr>
-<tr>
-<td>Date parse(String source)</td>
-<td>将给定的字符串解析成日期/时间</td>
-</tr>
-</tbody></table>
-<p>格式化样式主要通过 DateFormat 常量设置。将不同的常量传入到表 1 所示的方法中，以控制结果的长度。DateFormat 类的常量如下。</p>
-<ul>
-<li>SHORT：完全为数字，如 12.5.10 或 5:30pm。</li>
-<li>MEDIUM：较长，如 May 10，2016。</li>
-<li>LONG：更长，如 May 12，2016 或 11:15:32am。</li>
-<li>FULL：是完全指定，如 Tuesday、May 10、2012 AD 或 11:l5:42am CST。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 获取不同格式化风格和中国环境的日期</span></span><br><span class="line">	DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT, Locale.CHINA);</span><br><span class="line">	DateFormat df2 = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);</span><br><span class="line">	DateFormat df3 = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.CHINA);</span><br><span class="line">	DateFormat df4 = DateFormat.getDateInstance(DateFormat.LONG, Locale.CHINA);</span><br><span class="line">	<span class="comment">// 获取不同格式化风格和中国环境的时间</span></span><br><span class="line">	DateFormat df5 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.CHINA);</span><br><span class="line">	DateFormat df6 = DateFormat.getTimeInstance(DateFormat.FULL, Locale.CHINA);</span><br><span class="line">	DateFormat df7 = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.CHINA);</span><br><span class="line">	DateFormat df8 = DateFormat.getTimeInstance(DateFormat.LONG, Locale.CHINA);</span><br><span class="line">	<span class="comment">// 将不同格式化风格的日期格式化为日期字符串</span></span><br><span class="line">	String date1 = df1.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date2 = df2.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date3 = df3.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date4 = df4.format(<span class="keyword">new</span> Date());</span><br><span class="line">	<span class="comment">// 将不同格式化风格的时间格式化为时间字符串</span></span><br><span class="line">	String time1 = df5.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time2 = df6.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time3 = df7.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time4 = df8.format(<span class="keyword">new</span> Date());</span><br><span class="line">	<span class="comment">// 输出日期</span></span><br><span class="line">	System.out.println(<span class="string">"SHORT："</span> + date1 + <span class="string">" "</span> + time1);</span><br><span class="line">	System.out.println(<span class="string">"FULL："</span> + date2 + <span class="string">" "</span> + time2);</span><br><span class="line">	System.out.println(<span class="string">"MEDIUM："</span> + date3 + <span class="string">" "</span> + time3);</span><br><span class="line">	System.out.println(<span class="string">"LONG："</span> + date4 + <span class="string">" "</span> + time4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="/2020/02/14/javabase13-szcl/sj4.png" alt="输出结果"></p>
-<p>虽然输出的时间更容易理解了，但是并不能达到要求，我们还需要更加定制化的时间格式，这时候就要有请 Calendar的儿子 SimpleDateFormat 类上场了。</p>
-<h3 id="SimpleDateFormat-类"><a href="#SimpleDateFormat-类" class="headerlink" title="SimpleDateFormat 类"></a>SimpleDateFormat 类</h3><p>SimpleDateFormat 是一个以与语言环境有关的方式来格式化和解析日期的具体类。它允许进行格式化（日期 -&gt; 文本）、解析（文本 -&gt; 日期）和规范化。</p>
-<p>这个类是最常用的类了，至少我在格式化时间的时候都用它，功能强大，随心所欲。<br>SimpleDateFormat 有四个构造方法，使用方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下三种构造依赖语言环境，可能无法适应特定的语言环境</span></span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat();</span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern);</span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern,Locale locale);</span><br><span class="line"><span class="comment">//用给定的模式和日期符号构造 SimpleDateFormat。</span></span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern,DateFormatSymbols formatSymbols);</span><br></pre></td></tr></table></figure>
-<p>要用文本解析时间或者时间解析文本就要有文本规范，不能随便写，SimpleDateFormat 解析文本通过字母符号组成的文本，字母文本都比较好记：</p>
-<p><img src="/2020/02/14/javabase13-szcl/sjzm.png" alt="字母意义与示例"></p>
-<p>以及解析字符串的例子，以美国时间模式为例（这就是上面说的语言环境）：</p>
-<p><img src="/2020/02/14/javabase13-szcl/sjzfc.png" alt="字符串解析示例"></p>
-<p>我们举一个最常用到方法的例子， 按2020-02-14 12:00:00 形式输出当前时间：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d = <span class="keyword">new</span> Date();</span><br><span class="line">	DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">	String time = df.format(d);</span><br><span class="line">	System.out.print(time);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/02/14/javabase13-szcl/now.png" alt="运行结果">  </p>
-<p>只要记住大小写字母代表的意义就可以了，记不住差文档也可以，反正这种时间格式化的代码不会天天写，而且现在有专门时间格式化的开源包，比如我用过的 <a href="https://www.joda.org/joda-time/userguide.html">JodaTime</a> ,感兴趣可以了解一下，虽然自己不用处理时间，但是我还是感觉 时间统一用 “ yyyyMMddHHmmss “这种格式简单粗暴，省了好多事。</p>
+<p>这些包装类为对应的数据类型提供了丰富的类方法，比如我们在 String 与 int 类型互转用到的 toString 方法，这么多类型不在一一举例，详情可以查看jdk帮助文档。</p>
+<h2 id="装箱与拆箱"><a href="#装箱与拆箱" class="headerlink" title="装箱与拆箱"></a>装箱与拆箱</h2><p>顾名思义，装箱是将东西装进去，拆箱是将东西拿出来，对应到包装类操作就分别是：基本型→包装类和包装类→基本型，从jdk1.5版本以来提供了自动装箱拆箱支持，下面来看看如何操作。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">	Integer integer = i; <span class="comment">//自动装箱</span></span><br><span class="line">	<span class="keyword">int</span> j = integer; <span class="comment">//自动拆箱</span></span><br><span class="line">	System.out.println(<span class="string">"拆箱后j="</span>+j);</span><br><span class="line">	Integer integer2 = <span class="keyword">new</span> Integer(j);<span class="comment">//手动装箱</span></span><br><span class="line">	<span class="keyword">int</span> k = integer2.intValue(); <span class="comment">//手动拆箱</span></span><br><span class="line">	System.out.println(<span class="string">"拆箱后k="</span>+k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase14-bz-zxcx/zxcx.png" alt="运行结果"></p>
+<h2 id="包装类应用"><a href="#包装类应用" class="headerlink" title="包装类应用"></a>包装类应用</h2><p>手动自动拆装都试过了，装箱为的是使用箱子给提供的方法，最常用就是类型转换，在这里用 int String 互转举例，后面我们在详细说各个包装类：</p>
+<ol>
+<li><p>int 类型数据 转为 String ,我们以后都用自动装箱。<br>要用到 Integer 类中 toString();</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">	Integer integer = i; <span class="comment">// 自动装箱</span></span><br><span class="line">	String str = integer.toString();</span><br><span class="line">	System.out.println(<span class="string">"装换后字符串："</span> + str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase14-bz-zxcx/izs.png" alt="运行结果">  </p>
+</li>
+<li><p>String 转 int ，使用 Integer.parseInt</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	String str = <span class="string">"100"</span>;</span><br><span class="line">	<span class="keyword">int</span> i =  Integer.parseInt(str);<span class="comment">// 自动拆箱，不拆也没关系</span></span><br><span class="line">	System.out.println(<span class="string">"str*2="</span>+i*<span class="number">2</span>);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/14/javabase14-bz-zxcx/szi.png" alt="运行结果">  </p>
+</li>
+</ol>
+<p>拆箱装箱的目的就是要使用类方法达到一定目的，到后面封装方法也是一样的目的。</p>
 <hr>
-<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>时间处理知道这些足够了，忘了就翻文档，搜博客，还有一种需求是求特定的哪一天是周几啊，距离现在几天啊这种。这就是思想延伸的东西了，这里就不介绍了。</p>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>这篇内容比较少，主要做个介绍，虽然两个概念词听起来很高大上，其实我们前面已经用到过了，后面的各个包装类，我打算分两次弄完。</p>
 
         </div>
         
@@ -417,7 +237,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" rel="tag">Java时间日期处理</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" rel="tag">Java内置包装类</a>
                 </div>
             </div>
         </div>
@@ -453,17 +273,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/14/javabase14-bz-zxcx/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/13/javabase12-math/">
-                <span class="level-item">JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/14/javabase13-szcl/">
+                <span class="level-item">JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1065,7 +878,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——包装类、装箱拆箱" height="28">
                 
                 </a>
                 <p class="is-size-7">
