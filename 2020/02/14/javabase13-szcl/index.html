@@ -7,23 +7,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（四）——运算符 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化） - MggBlog</title>
 
 
-    <meta name="description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
+    <meta name="description" content="在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（四）——运算符">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/07/javabase4-ysf/index.html">
+<meta property="og:title" content="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
+<meta property="og:url" content="https://gitsxm.github.io/2020/02/14/javabase13-szcl/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
+<meta property="og:description" content="在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/ysfbg.jpg">
-<meta property="article:published_time" content="2020-02-07T06:54:43.000Z">
-<meta property="article:modified_time" content="2020-02-13T16:47:54.377Z">
+<meta property="og:image" content="https://gitsxm.github.io/gallery/sjgshbg.png">
+<meta property="article:published_time" content="2020-02-14T02:04:05.000Z">
+<meta property="article:modified_time" content="2020-02-14T04:55:27.700Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java核心内容">
+<meta property="article:tag" content="Java时间日期处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/ysfbg.jpg">
+<meta name="twitter:image" content="https://gitsxm.github.io/gallery/sjgshbg.png">
 
 
 
@@ -82,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四）——运算符" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）" height="28">
             
             </a>
         </div>
@@ -136,7 +138,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/ysfbg.jpg" alt="JAVA零基础筑基到修仙（四）——运算符">
+            <img class="thumbnail" src="/gallery/sjgshbg.png" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
         </span>
     </div>
     
@@ -144,7 +146,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-07T06:54:43.000Z">2020-02-07</time>
+                <time class="level-item has-text-grey" datetime="2020-02-14T02:04:05.000Z">2020-02-14</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
@@ -154,7 +156,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    18 分钟 读完 (大约 2695 个字)
+                    24 分钟 读完 (大约 3550 个字)
                 </span>
                 
                 
@@ -163,53 +165,252 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（四）——运算符
+                JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）
             
         </h1>
         <div class="content">
-            <p><em>觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。</em>  </p>
+            <p><em>在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。<strong>本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化</strong></em></p>
 <a id="more"></a>
 <hr>
-<h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><p>故名思意，就是算数用的，加减乘除，分为一元和二元两种：</p>
-<h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><p>一元运算符就是一个元素就可以用，有三个 -、++（自增运算符）、--（自减运算符），自增、自减我们一起带过，不再单独说。<br><img src="/2020/02/07/javabase4-ysf/yyysf.png" alt="一元运算符"><br>++a表示a=a+1,--a表示a=a-1，除了 - 其他两个有运算先后之分，在变量前面先计算,在变量后面则要运行完本条代码后再计算，举例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">		System.out.println(-a);<span class="comment">//取反</span></span><br><span class="line">		System.out.println(++a);<span class="comment">//先运算a=a+1，再输出，输出2;  a=2</span></span><br><span class="line">		System.out.println(a++);<span class="comment">//先输出a,输出2,再运算a=a+1,   a=3</span></span><br><span class="line">		System.out.println(--a);<span class="comment">//先运算a=a-1,再输出，输出2;   a=2,</span></span><br><span class="line">		System.out.println(a--);<span class="comment">//先输出a，输出2，再运算a=a-1, a=1;</span></span><br><span class="line">		System.out.println(a);<span class="comment">//输出a,a=1;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/02/07/javabase4-ysf/yyys.png" alt="运行结果"></p>
-<h3 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h3><p>就是常见的加减乘除等形式，另外还有求模。<br><img src="/2020/02/07/javabase4-ysf/eyysf.png" alt="二元运算符"><br>加减乘除的运算优先级和数学上是一样的，括号内有最高优先级。进行算术运算时应注意以下两点：</p>
+<h2 id="Date-类"><a href="#Date-类" class="headerlink" title="Date 类"></a>Date 类</h2><p>类 Date 表示特定的瞬间，精确到毫秒(Java中还有一个 Date 类，全称为java.sql.Date,这个类是sql相关时间类，我们平时用到的是java.util.Date,导包的时候注意别导错了)。它表示时间的顺序是星期、月、日、小时、分、秒、年。打开jdk帮助文档，我们发现 Date 类未过时的构造方法有两个，分别是：</p>
 <ul>
-<li>求余（％）运算要求参与运算的两个操作数均为整型，不能为其他类型。</li>
-<li>两个整数进行除法运算，其结果仍为整数。如果整数与实数进行除法运算，则结果为实数。<br>举个例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">float</span> k = <span class="number">1f</span>;</span><br><span class="line">		System.out.println(j/i);</span><br><span class="line">		System.out.println(k/i);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-运行结果<br><img src="/2020/02/07/javabase4-ysf/zylx.png" alt="变量类型不同结果不同"><br>建议写几个加减乘除综合运算（带上取余），用上不同类型，看看结果是不是和想象中一样，光看或者复制我的代码是效果不会很好。</li>
+<li>Date()  分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）。</li>
+<li>Date(long date)  分配 Date 对象并初始化此对象，以表示自从标准基准时间（称为“历元（epoch）”，即 1970 年 1 月 1 日 00:00:00 GMT）以来的指定毫秒数。<br>举个例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d1 = <span class="keyword">new</span> Date();</span><br><span class="line">	Date d2 = <span class="keyword">new</span> Date(<span class="number">80000000</span>);</span><br><span class="line">	System.out.println(d1);</span><br><span class="line">	System.out.println(d2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2020/02/14/javabase13-szcl/sj1.png" alt="输出结果"></li>
 </ul>
-<h2 id="赋值运算符（-）"><a href="#赋值运算符（-）" class="headerlink" title="赋值运算符（=）"></a>赋值运算符（=）</h2><p>赋值是这种格式 [变量名称=表达式内容] ，不要把 = 想象成数学中的等号，比如 a=b+1 要理解成将b+1的值赋予a,读代码顺序从右往左。<br>赋值运算符可以与算数运算符组合，如 a+=2 等同于 a=a+2 下面列举了常用组合：<br><img src="/2020/02/07/javabase4-ysf/fzzh.png" alt="变量类型不同结果不同"><br>这样的好处是让代码更简洁，易读，易维护，我们动手试一下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">double</span> price = <span class="number">10.25</span>; <span class="comment">// 定义商品的单价，赋值为10.25</span></span><br><span class="line">	    <span class="keyword">double</span> total = <span class="number">0</span>; <span class="comment">// 定义总价初始为0</span></span><br><span class="line">	    <span class="keyword">int</span> count = <span class="number">2</span>; <span class="comment">// 定义购买数量，赋值为2</span></span><br><span class="line">	    price -= <span class="number">1.25</span>; <span class="comment">// 减去降价得到当前单价</span></span><br><span class="line">	    count *= <span class="number">5</span>; <span class="comment">// 现在需要购买10个，即原来数量的5倍</span></span><br><span class="line">	    total = price * count; <span class="comment">// 总价=当前单价*数量</span></span><br><span class="line">	    System.out.printf(<span class="string">"商品当前的单价为：%4.2f \n"</span>, price); <span class="comment">// 输出当前单价</span></span><br><span class="line">	    System.out.printf(<span class="string">"购买商品的数量为：%d \n"</span>, count); <span class="comment">// 输出购买数量</span></span><br><span class="line">	    System.out.printf(<span class="string">"总价为：%4.2f \n"</span>, total); <span class="comment">// 输出总价</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/07/javabase4-ysf/zhys.png" alt="组合运算"></p>
-<h2 id="逻辑运算符（-amp-amp-、-、-）"><a href="#逻辑运算符（-amp-amp-、-、-）" class="headerlink" title="逻辑运算符（&amp;&amp;、||、!）"></a>逻辑运算符（&amp;&amp;、||、!）</h2><p>逻辑运算符把各个运算的关系表达式连接起来组成一个复杂的逻辑表达式，以判断程序中的表达式是否成立，判断的结果是 true 或 false。包含逻辑与、或、非和短路与、或。逻辑运算符是对布尔型变量进行运算，其结果也是布尔型：<br><img src="/2020/02/07/javabase4-ysf/ljysf.png" alt="逻辑运算符"><br>短路的意思我们举个例子解释一下：</p>
+<p>同样我们看到文档中大量方法已经过时，我在下面整理出来可以正常用的：  </p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean after(Date when)</td>
+<td>判断此日期是否在指定日期之后</td>
+</tr>
+<tr>
+<td>boolean before(Date when)</td>
+<td>判断此日期是否在指定日期之前</td>
+</tr>
+<tr>
+<td>int compareTo(Date anotherDate)</td>
+<td>比较两个日期的顺序</td>
+</tr>
+<tr>
+<td>boolean equals(Object obj)</td>
+<td>比较两个日期的相等性</td>
+</tr>
+<tr>
+<td>long getTime()</td>
+<td>返回自 1970 年 1 月 1 日 00:00:00 GMT 以来，此 Date 对象表示的毫秒数</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>把此 Date 对象转换为以下形式的 String: dow mon dd  hh:mm:ss zzz yyyy。其中 dow 是一周中的某一天(Sun、Mon、Tue、Wed、Thu、Fri 及 Sat)</td>
+</tr>
+</tbody></table>
+<p>做个练习：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d1 = <span class="keyword">new</span> Date();</span><br><span class="line">	Date d2 = <span class="keyword">new</span> Date(<span class="number">80000000</span>);</span><br><span class="line">	System.out.println(d1.after(d2));</span><br><span class="line">	System.out.println(d1.before(d2));</span><br><span class="line">	System.out.println(d1.compareTo(d2));<span class="comment">// 相等返回 0 大于返回1 小于返回-1</span></span><br><span class="line">	System.out.println(d1.equals(d2));</span><br><span class="line">	System.out.println(d1.getTime());</span><br><span class="line">	System.out.println(d1.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果<br><img src="/2020/02/14/javabase13-szcl/sj2.png" alt="输出结果"></p>
+<h2 id="Calendar-类"><a href="#Calendar-类" class="headerlink" title="Calendar 类"></a>Calendar 类</h2><p>Calendar 类是一个抽象类，它为特定瞬间与一组诸如 YEAR、MONTH、DAY_OF_MONTH、HOUR 等 日历字段之间的转换提供了一些方法，并为操作日历字段（例如获得下星期的日期）提供了一些方法。瞬间可用毫秒值来表示，它是距历元（即格林威治标准时间 1970 年 1 月 1 日的 00:00:00.000，格里高利历）的偏移量。 </p>
+<p>因为 Calendar 是一个抽象类，无法像普通类一样 new 一个对象出来，它提供了 getInstance() 方法来完成对象创建：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar c  = Calendar.getInstance();</span><br></pre></td></tr></table></figure>
+<p>Calendar 提供了众多时间处理方法，我们有个大致了解： </p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void add(int field, int amount)</td>
+<td>根据日历的规则，为给定的日历字段 field 添加或减去指定的时间量 amount</td>
+</tr>
+<tr>
+<td>boolean after(Object when)</td>
+<td>判断此 Calendar 表示的时间是否在指定时间 when 之后，并返回判断结果</td>
+</tr>
+<tr>
+<td>boolean before(Object when)</td>
+<td>判断此 Calendar 表示的时间是否在指定时间 when 之前，并返回判断结果</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>清空 Calendar 中的日期时间值</td>
+</tr>
+<tr>
+<td>int compareTo(Calendar anotherCalendar)</td>
+<td>比较两个 Calendar 对象表示的时间值（从格林威治时间 1970 年 01 月 01 日00 时 00 分 00 秒至现在的毫秒偏移量），大则返回 1，小则返回 -1，相等返回 0</td>
+</tr>
+<tr>
+<td>int get(int field)</td>
+<td>返回指定日历字段的值</td>
+</tr>
+<tr>
+<td>int getActualMaximum(int field)</td>
+<td>返回指定日历字段可能拥有的最大值</td>
+</tr>
+<tr>
+<td>int getActualMinimum(int field)</td>
+<td>返回指定日历字段可能拥有的最小值</td>
+</tr>
+<tr>
+<td>int getFirstDayOfWeek()</td>
+<td>获取一星期的第一天。根据不同的国家地区，返回不同的值</td>
+</tr>
+<tr>
+<td>static Calendar getInstance()</td>
+<td>使用默认时区和语言坏境获得一个日历</td>
+</tr>
+<tr>
+<td>static Calendar getInstance(TimeZone zone)</td>
+<td>使用指定时区和默认语言环境获得一个日历</td>
+</tr>
+<tr>
+<td>static Calendar getInstance(TimeZone zone,Locale aLocale)</td>
+<td>使用指定时区和语言环境获得一个日历</td>
+</tr>
+<tr>
+<td>Date getTime()</td>
+<td>返回一个表示此 Calendar 时间值（从格林威治时间 1970 年 01 月 01 日 00 时00 分 00 秒至现在的毫秒偏移量）的 Date 对象</td>
+</tr>
+<tr>
+<td>long getTimeInMillis()</td>
+<td>返回此 Calendar 的时间值，以毫秒为单位</td>
+</tr>
+<tr>
+<td>void set(int field, int value)</td>
+<td>为指定的日历字段设置给定值</td>
+</tr>
+<tr>
+<td>void set(int year, int month, int date)</td>
+<td>设置日历字段 YEAR、MONTH 和 DAY_OF_MONTH 的值</td>
+</tr>
+<tr>
+<td>void set(int year, int month, int date, int hourOfDay,int minute, int second)</td>
+<td>设置字段 YEAR、MONTH、DAY_OF_MONTH、HOUR、 MINUTE 和 SECOND 的值</td>
+</tr>
+<tr>
+<td>void setFirstDayOfWeek(int value)</td>
+<td>设置一星期的第一天是哪一天</td>
+</tr>
+<tr>
+<td>void setTimeInMillis(long millis)</td>
+<td>用给定的 long 值设置此 Calendar 的当前时间值</td>
+</tr>
+</tbody></table>
+<p>Calendar 对象可以调用 set() 方法将日历翻到任何一个时间，当参数 year 取负数时表示公元前。Calendar 对象调用 get() 方法可以获取有关年、月、日等时间信息，参数 field 的有效值由 Calendar 静态常量指定。</p>
+<p><strong>Calendar 类中定义了许多常量，分别表示不同的意义。</strong></p>
 <ul>
-<li>&amp;&amp; 与 &amp; 区别：如果 a 为 false，则不计算 b（因为不论 b 为何值，结果都为 false）</li>
-<li>|| 与 | 区别：如果 a 为 true，则不计算 b（因为不论 b 为何值，结果都为 true）<br>我们在敲代码时基本很少用到逻辑与、或，常用的都是短路与、或，而且提倡多用短路，节省系统资源。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">boolean</span> a = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br><span class="line">		System.out.println(!a);</span><br><span class="line">		System.out.println(a&amp;b);</span><br><span class="line">		System.out.println(a&amp;a);</span><br><span class="line">		System.out.println(a&amp;&amp;b);</span><br><span class="line">		System.out.println(a&amp;&amp;a);</span><br><span class="line">		System.out.println(a|b);</span><br><span class="line">		System.out.println(a|a);</span><br><span class="line">		System.out.println(a||b);</span><br><span class="line">		System.out.println(a||a);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2020/02/07/javabase4-ysf/ljys.png" alt="逻辑运算"><br>看看和自己想象中的结果是否相同。</li>
+<li>Calendar.YEAR：年份。</li>
+<li>Calendar.MONTH：月份。</li>
+<li>Calendar.DATE：日期。</li>
+<li>Calendar.DAY_OF_MONTH：日期，和上面的字段意义完全相同。</li>
+<li>Calendar.HOUR：12小时制的小时。</li>
+<li>Calendar.HOUR_OF_DAY：24 小时制的小时。</li>
+<li>Calendar.MINUTE：分钟。</li>
+<li>Calendar.SECOND：秒。</li>
+<li>Calendar.DAY_OF_WEEK：星期几。</li>
 </ul>
-<h2 id="关系运算符（比较运算符）"><a href="#关系运算符（比较运算符）" class="headerlink" title="关系运算符（比较运算符）"></a>关系运算符（比较运算符）</h2><p>关系运算符也叫比较运算符，一个字”比“。大于、小于、等于、不等于、小于等于、大于等于，相比结果为布尔型：<br><img src="/2020/02/07/javabase4-ysf/gxysf.png" alt="关系运算符"><br>关系运算符的优先级为：&gt;、&lt;、&gt;=、&lt;= 具有相同的优先级，并且高于具有相同优先级的 !=、==。关系运算符的优先级高于赋值运算符而低于算术运算符，结合方向是自左向右。<br>关系表达式通常用于 Java 程序的逻辑判断语句的条件表达式中。使用关系表达式要注意以下几点：</p>
+<p>例如我们要获取当前月份：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> month = Calendar.getInstance().get(Calendar.MONTH);</span><br></pre></td></tr></table></figure>
+<p>方法都用用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Calendar calendar = Calendar.getInstance(); <span class="comment">// 如果不设置时间，则默认为当前时间</span></span><br><span class="line">	calendar.setTime(<span class="keyword">new</span> Date()); <span class="comment">// 将系统当前时间赋值给 Calendar 对象</span></span><br><span class="line">	System.out.println(<span class="string">"现在时刻："</span> + calendar.getTime()); <span class="comment">// 获取当前时间</span></span><br><span class="line">	<span class="keyword">int</span> year = calendar.get(Calendar.YEAR); <span class="comment">// 获取当前年份</span></span><br><span class="line">	System.out.println(<span class="string">"现在是"</span> + year + <span class="string">"年"</span>);</span><br><span class="line">	<span class="keyword">int</span> month = calendar.get(Calendar.MONTH) + <span class="number">1</span>; <span class="comment">// 获取当前月份（月份从 0 开始，所以加 1）</span></span><br><span class="line">	System.out.print(month + <span class="string">"月"</span>);</span><br><span class="line">	<span class="keyword">int</span> day = calendar.get(Calendar.DATE); <span class="comment">// 获取日</span></span><br><span class="line">	System.out.print(day + <span class="string">"日"</span>);</span><br><span class="line">	<span class="keyword">int</span> week = calendar.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>; <span class="comment">// 获取今天星期几（以星期日为第一天）</span></span><br><span class="line">	System.out.print(<span class="string">"星期"</span> + week);</span><br><span class="line">	<span class="keyword">int</span> hour = calendar.get(Calendar.HOUR_OF_DAY); <span class="comment">// 获取当前小时数（24 小时制）</span></span><br><span class="line">	System.out.print(hour + <span class="string">"时"</span>);</span><br><span class="line">	<span class="keyword">int</span> minute = calendar.get(Calendar.MINUTE); <span class="comment">// 获取当前分钟</span></span><br><span class="line">	System.out.print(minute + <span class="string">"分"</span>);</span><br><span class="line">	<span class="keyword">int</span> second = calendar.get(Calendar.SECOND); <span class="comment">// 获取当前秒数</span></span><br><span class="line">	System.out.print(second + <span class="string">"秒"</span>);</span><br><span class="line">	<span class="keyword">int</span> millisecond = calendar.get(Calendar.MILLISECOND); <span class="comment">// 获取毫秒数</span></span><br><span class="line">	System.out.print(millisecond + <span class="string">"毫秒"</span>);</span><br><span class="line">	<span class="keyword">int</span> dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); <span class="comment">// 获取今天是本月第几天</span></span><br><span class="line">	System.out.println(<span class="string">"今天是本月的第 "</span> + dayOfMonth + <span class="string">" 天"</span>);</span><br><span class="line">	<span class="keyword">int</span> dayOfWeekInMonth = calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH); <span class="comment">// 获取今天是本月第几周</span></span><br><span class="line">	System.out.println(<span class="string">"今天是本月第 "</span> + dayOfWeekInMonth + <span class="string">" 周"</span>);</span><br><span class="line">	<span class="keyword">int</span> many = calendar.get(Calendar.DAY_OF_YEAR); <span class="comment">// 获取今天是今年第几天</span></span><br><span class="line">	System.out.println(<span class="string">"今天是今年第 "</span> + many + <span class="string">" 天"</span>);</span><br><span class="line">	Calendar c = Calendar.getInstance();</span><br><span class="line">	c.set(<span class="number">2008</span>, <span class="number">8</span>, <span class="number">8</span>); <span class="comment">// 设置年月日，时分秒将默认采用当前值</span></span><br><span class="line">	System.out.println(<span class="string">"设置日期为 2008-8-8 后的时间："</span> + c.getTime()); <span class="comment">// 输出时间</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/14/javabase13-szcl/sj3.png" alt="输出结果"></p>
+<p>到后面我们专门写个日历的博客，以现在的进度放在这里写有点不合适（先挖个坑）。</p>
+<h2 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h2><p>大多数时候我们不能直接使用 Date 类提供的时间格式，Date 原时间格式用的最多的时候应该是写系统日志，这是专门给人看的，只要可以分辨就可以了。但是大多数业务逻辑下，时间都是要存入数据库，要通过时间来查询，如果直接存时间戳进去，数据库sql写着比较麻烦，还要转格式，比如我把日期用String格式存起来（20200214000000），写查询sql的时候就可以直接用了。</p>
+<p>Java为我们提供了 DateFormat 类和它的子类 SimpleDateFormat 类来完成日期格式化，下面我们一起来看一看。</p>
+<h3 id="DateFormat-类"><a href="#DateFormat-类" class="headerlink" title="DateFormat 类"></a>DateFormat 类</h3><p>DateFormat 是日期/时间格式化子类的抽象类，它以与语言无关的方式格式化并解析日期或时间。日期/时间格式化子类（如 SimpleDateFormat）允许进行格式化（也就是日期 -&gt; 文本）、解析（文本-&gt; 日期）和标准化。将日期表示为 Date 对象，或者表示为从 GMT（格林尼治标准时间）1970 年 1 月 1 日 00:00:00 这一刻开始的毫秒数。 </p>
+<p>因为是抽象类，所以也不能使用 new 来创建实例对象，使用静态类方法 getDateInstance() :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DateFormat df = DateFormat.getDatelnstance();</span><br></pre></td></tr></table></figure>
+<p>创建完对象，我们来看一下它的类方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String format(Date date)    将 Date 格式化日期/时间字符串</td>
+<td></td>
+</tr>
+<tr>
+<td>Calendar getCalendar()</td>
+<td>获取与此日期/时间格式相关联的日历</td>
+</tr>
+<tr>
+<td>static DateFormat getDateInstance()</td>
+<td>获取具有默认格式化风格和默认语言环境的日期格式</td>
+</tr>
+<tr>
+<td>static DateFormat getDateInstance(int style)</td>
+<td>获取具有指定格式化风格和默认语言环境的日期格式</td>
+</tr>
+<tr>
+<td>static DateFormat getDateInstance(int style,Locale locale)</td>
+<td>获取具有指定格式化风格和指定语言环境的日期格式</td>
+</tr>
+<tr>
+<td>static DateFormat getDateTimeInstance()</td>
+<td>获取具有默认格式化风格和默认语言环境的日期/时间格式</td>
+</tr>
+<tr>
+<td>static DateFormat getDateTimeInstance(int dateStyle,int timeStyle)</td>
+<td>获取具有指定日期/时间格式化风格和默认语言环境的日期/时间格式</td>
+</tr>
+<tr>
+<td>static DateFormat getDateTimeInstance(int dateStyle,int timeStyle,Locale locale)</td>
+<td>获取具有指定日期/时间格式化风格和指定语言环境的日期/时间格式</td>
+</tr>
+<tr>
+<td>static DateFormat getTimeInstance()</td>
+<td>获取具有默认格式化风格和默认语言环境的时间格式</td>
+</tr>
+<tr>
+<td>static DateFormat getTimeInstance(int style)</td>
+<td>获取具有指定格式化风格和默认语言环境的时间格式</td>
+</tr>
+<tr>
+<td>static DateFormat getTimeInstance(int style,Locale locale)</td>
+<td>获取具有指定格式化风格和指定语言环境的时间格式</td>
+</tr>
+<tr>
+<td>void setCalendar(Calendar newCalendar)</td>
+<td>为此格式设置日历</td>
+</tr>
+<tr>
+<td>Date parse(String source)</td>
+<td>将给定的字符串解析成日期/时间</td>
+</tr>
+</tbody></table>
+<p>格式化样式主要通过 DateFormat 常量设置。将不同的常量传入到表 1 所示的方法中，以控制结果的长度。DateFormat 类的常量如下。</p>
 <ul>
-<li>运算符 &gt;=、==、！=、&lt;= 是两个字符构成的一个运算符，用空格从中分开写就会产生语法错误。例如 x&gt; =y; 是错误的，但是可以写成x &gt;= y; 在运算符的两侧增加空格会提高可读性。同样将运算符写反，例如 =&gt;、=&lt;、=! 等形式会产生语法错误。</li>
-<li>由于计算机内存放的实数与实际的实数存在着一定的误差，如果对浮点数进行 ==（相等）或 !=（不相等）的比较，容易产生错误结果，应该尽量避免。</li>
-<li>不要将“==”写成“=”。（在进行if条件判断时常会写错）</li>
+<li>SHORT：完全为数字，如 12.5.10 或 5:30pm。</li>
+<li>MEDIUM：较长，如 May 10，2016。</li>
+<li>LONG：更长，如 May 12，2016 或 11:15:32am。</li>
+<li>FULL：是完全指定，如 Tuesday、May 10、2012 AD 或 11:l5:42am CST。</li>
 </ul>
-<p>这里我们补充个以后写测试类经常会用到的类，控制台输入类$\color{red}{ Scanner }$，我们打开jdk文档看一下，ctrl+f 搜索 scanner （百度也许更快，不过我觉得自己看文档更有逼格，人生不是为了装逼就毫无意义）：<br><img src="/2020/02/07/javabase4-ysf/scanner.png" alt="Scanner类"><br><img src="/2020/02/07/javabase4-ysf/scanner2.png" alt="Scanner类"><br>文档中给出了用法示例，以及各种方法接下来做个练习在控制台输入两个数比较大小（输完第一个数按回车输第二个）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> number1, number2; <span class="comment">// 定义变量，保存输入的两个数</span></span><br><span class="line">	    System.out.print(<span class="string">"请输入第一个整数(number1)："</span>);</span><br><span class="line">	    Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	    number1 = input.nextInt(); <span class="comment">// 输入第一个数</span></span><br><span class="line">	    System.out.print(<span class="string">"请输入第二个整数(number2)："</span>);</span><br><span class="line">	    input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	    number2 = input.nextInt(); <span class="comment">// 输入第二个数</span></span><br><span class="line">	    System.out.printf(<span class="string">"number1=%d,number2=%d\n"</span>, number1, number2); <span class="comment">// 输出这两个数</span></span><br><span class="line">	    <span class="comment">// 判断用户输入的两个数是否相等</span></span><br><span class="line">	    <span class="keyword">if</span> (number1 == number2) &#123;</span><br><span class="line">	        System.out.println(<span class="string">"number1 和 number2 相等。"</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">// 判断用户输入的两个数据是否相等</span></span><br><span class="line">	    <span class="keyword">if</span> (number1 != number2) &#123;</span><br><span class="line">	        System.out.println(<span class="string">"number1 和 number2 不相等。"</span>);</span><br><span class="line">	        <span class="comment">// 判断用户输入的数1是否大于数2</span></span><br><span class="line">	        <span class="keyword">if</span> (number1 &gt; number2) &#123;</span><br><span class="line">	            System.out.println(<span class="string">"number1 大于 number2。"</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="comment">// 判断用户输入的数1是否小于数2</span></span><br><span class="line">	        <span class="keyword">if</span> (number1 &lt; number2) &#123;</span><br><span class="line">	            System.out.println(<span class="string">"number1 小于 number2。"</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/07/javabase4-ysf/bj.png" alt="比较结果"><br>这里面我们用到了if条件结构，到后面单独说一下吧。</p>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><h3 id="位逻辑运算符"><a href="#位逻辑运算符" class="headerlink" title="位逻辑运算符"></a>位逻辑运算符</h3><p>位逻辑运算用于二进制数的计算，两个数对位上与、或、非、抑或、即位取反。上图：<br><img src="/2020/02/07/javabase4-ysf/wljysf.png" alt="位逻辑运算符"><br>举个例子，计算5&amp;12，我们将计算过程画出来：<br><img src="/2020/02/07/javabase4-ysf/yys.png" alt="5&amp;12"><br>我们看到对位上都为1该位对应的结果为1否则为零，最终计算结果转为十进制为4，那么或（|）运算是对应位置有1就得1，抑或运算（^）是对位相同为1，不同为0，取反（~）是对应位置直接取反，1变0，0变1，我们不再一一举例。</p>
-<h3 id="移位运算符（-gt-gt-、-lt-lt-）"><a href="#移位运算符（-gt-gt-、-lt-lt-）" class="headerlink" title="移位运算符（&gt;&gt;、&lt;&lt;）"></a>移位运算符（&gt;&gt;、&lt;&lt;）</h3><p>移位运算同样对于二进制来说的：</p>
-<ul>
-<li>&gt;&gt; 右移位 例8 &gt;&gt; 1结果为4</li>
-<li>&lt;&lt; 左移位 例9 &lt;&lt; 2结果为36<br>我们联系下左移位运算：例如11 &lt;&lt; 1 结果为22<br><img src="/2020/02/07/javabase4-ysf/zyw.png" alt="11 &lt;&lt; 1"><br>我们发现左移一位结果时原来的二倍，根据二进制转十进制的计算方法，其实就是左移一位就乘二。同理右移一位是除二，我们不再一一举例。</li>
-</ul>
-<h3 id="复合位赋值运算符"><a href="#复合位赋值运算符" class="headerlink" title="复合位赋值运算符"></a>复合位赋值运算符</h3><p>所有的二进制位运算符都有一种将赋值与位运算组合在一起的简写形式。复合位赋值运算符由赋值运算符与位逻辑运算符和位移运算符组合而成：<br><img src="/2020/02/07/javabase4-ysf/fh.png" alt="复合位赋值运算符"><br>其实和+=、-=、一样的理解方法，平时很少用到，不再举例了。</p>
-<h2 id="三目运算符（值-条件-表达式1-表达式2）"><a href="#三目运算符（值-条件-表达式1-表达式2）" class="headerlink" title="三目运算符（值=条件?表达式1:表达式2）"></a>三目运算符（值=条件?表达式1:表达式2）</h2><p>判断是否符合条件，符合运行表达式1，不符合运行表达式2，得出结果。因为右三个因数，所以叫三目运算符，它相当于一个 if……else 条件结构，相比普通if条件结构代码简洁，执行效率高。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> i = input.nextInt();</span><br><span class="line">		System.out.println(i &gt; <span class="number">10</span> ? <span class="string">"i大于十"</span> :<span class="string">"i小于十"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输入几个数试一下<br><img src="/2020/02/07/javabase4-ysf/smys.png" alt="结果"><br>而且三目运算符支持嵌套，比如你可以把“i大于十”换成（ i&gt;15 ? “i大于十五” : “i大于十”），不再举例了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 获取不同格式化风格和中国环境的日期</span></span><br><span class="line">	DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT, Locale.CHINA);</span><br><span class="line">	DateFormat df2 = DateFormat.getDateInstance(DateFormat.FULL, Locale.CHINA);</span><br><span class="line">	DateFormat df3 = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.CHINA);</span><br><span class="line">	DateFormat df4 = DateFormat.getDateInstance(DateFormat.LONG, Locale.CHINA);</span><br><span class="line">	<span class="comment">// 获取不同格式化风格和中国环境的时间</span></span><br><span class="line">	DateFormat df5 = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.CHINA);</span><br><span class="line">	DateFormat df6 = DateFormat.getTimeInstance(DateFormat.FULL, Locale.CHINA);</span><br><span class="line">	DateFormat df7 = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.CHINA);</span><br><span class="line">	DateFormat df8 = DateFormat.getTimeInstance(DateFormat.LONG, Locale.CHINA);</span><br><span class="line">	<span class="comment">// 将不同格式化风格的日期格式化为日期字符串</span></span><br><span class="line">	String date1 = df1.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date2 = df2.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date3 = df3.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String date4 = df4.format(<span class="keyword">new</span> Date());</span><br><span class="line">	<span class="comment">// 将不同格式化风格的时间格式化为时间字符串</span></span><br><span class="line">	String time1 = df5.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time2 = df6.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time3 = df7.format(<span class="keyword">new</span> Date());</span><br><span class="line">	String time4 = df8.format(<span class="keyword">new</span> Date());</span><br><span class="line">	<span class="comment">// 输出日期</span></span><br><span class="line">	System.out.println(<span class="string">"SHORT："</span> + date1 + <span class="string">" "</span> + time1);</span><br><span class="line">	System.out.println(<span class="string">"FULL："</span> + date2 + <span class="string">" "</span> + time2);</span><br><span class="line">	System.out.println(<span class="string">"MEDIUM："</span> + date3 + <span class="string">" "</span> + time3);</span><br><span class="line">	System.out.println(<span class="string">"LONG："</span> + date4 + <span class="string">" "</span> + time4);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/14/javabase13-szcl/sj4.png" alt="输出结果"></p>
+<p>虽然输出的时间更容易理解了，但是并不能达到要求，我们还需要更加定制化的时间格式，这时候就要有请 Calendar的儿子 SimpleDateFormat 类上场了。</p>
+<h3 id="SimpleDateFormat-类"><a href="#SimpleDateFormat-类" class="headerlink" title="SimpleDateFormat 类"></a>SimpleDateFormat 类</h3><p>SimpleDateFormat 是一个以与语言环境有关的方式来格式化和解析日期的具体类。它允许进行格式化（日期 -&gt; 文本）、解析（文本 -&gt; 日期）和规范化。</p>
+<p>这个类是最常用的类了，至少我在格式化时间的时候都用它，功能强大，随心所欲。<br>SimpleDateFormat 有四个构造方法，使用方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下三种构造依赖语言环境，可能无法适应特定的语言环境</span></span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat();</span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern);</span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern,Locale locale);</span><br><span class="line"><span class="comment">//用给定的模式和日期符号构造 SimpleDateFormat。</span></span><br><span class="line">SimpleDateFormat sdf  = SimpleDateFormat(String pattern,DateFormatSymbols formatSymbols);</span><br></pre></td></tr></table></figure>
+<p>要用文本解析时间或者时间解析文本就要有文本规范，不能随便写，SimpleDateFormat 解析文本通过字母符号组成的文本，字母文本都比较好记：</p>
+<p><img src="/2020/02/14/javabase13-szcl/sjzm.png" alt="字母意义与示例"></p>
+<p>以及解析字符串的例子，以美国时间模式为例（这就是上面说的语言环境）：</p>
+<p><img src="/2020/02/14/javabase13-szcl/sjzfc.png" alt="字符串解析示例"></p>
+<p>我们举一个最常用到方法的例子， 按2020-02-14 12:00:00 形式输出当前时间：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date d = <span class="keyword">new</span> Date();</span><br><span class="line">	DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">	String time = df.format(d);</span><br><span class="line">	System.out.print(time);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/02/14/javabase13-szcl/now.png" alt="运行结果">  </p>
+<p>只要记住大小写字母代表的意义就可以了，记不住差文档也可以，反正这种时间格式化的代码不会天天写，而且现在有专门时间格式化的开源包，比如我用过的 <a href="https://www.joda.org/joda-time/userguide.html">JodaTime</a> ,感兴趣可以了解一下，虽然自己不用处理时间，但是我还是感觉 时间统一用 “ yyyyMMddHHmmss “这种格式简单粗暴，省了好多事。</p>
 <hr>
-<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>说了这么多运算符，web业务代码中位运算是很少用到的，可能嵌入式那边会更常用一些，不用背，多写代码就行。加油！！！</p>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>时间处理知道这些足够了，忘了就翻文档，搜博客，还有一种需求是求特定的哪一天是周几啊，距离现在几天啊这种。这就是思想延伸的东西了，这里就不介绍了。</p>
 
         </div>
         
@@ -217,7 +418,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" rel="tag">Java时间日期处理</a>, <a class="has-link-grey -link" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" rel="tag">Java核心内容</a>
                 </div>
             </div>
         </div>
@@ -253,17 +454,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/08/javabase5-tjjg/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础筑基到修仙（五）——条件结构</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/06/javabase3-bsfgjzclbltj/">
-                <span class="level-item">JAVA零基础筑基到修仙（三）——标识符与关键字、常量与变量、作用域、数据类型和类型转换</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/13/javabase12-math/">
+                <span class="level-item">JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -865,7 +1059,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四）——运算符" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）" height="28">
                 
                 </a>
                 <p class="is-size-7">

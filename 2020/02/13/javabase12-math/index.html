@@ -7,22 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal） - MggBlog</title>
+<title>JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal） - MggBlog</title>
 
 
     <meta name="description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+<meta property="og:title" content="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
 <meta property="og:url" content="https://gitsxm.github.io/2020/02/13/javabase12-math/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitsxm.github.io/gallery/86279.png">
 <meta property="article:published_time" content="2020-02-13T11:52:36.456Z">
-<meta property="article:modified_time" content="2020-02-13T16:40:13.266Z">
+<meta property="article:modified_time" content="2020-02-14T02:14:17.195Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java核心内容">
+<meta property="article:tag" content="Java数字处理">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitsxm.github.io/gallery/86279.png">
 
@@ -83,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
             
             </a>
         </div>
@@ -137,7 +138,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+            <img class="thumbnail" src="/gallery/86279.png" alt="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
         </span>
     </div>
     
@@ -164,13 +165,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）
+                JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）
             
         </h1>
         <div class="content">
             <p><em>只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，<strong>本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。</strong></em></p>
 <a id="more"></a>
-<h2 id="Math类常用方法"><a href="#Math类常用方法" class="headerlink" title="Math类常用方法"></a>Math类常用方法</h2><p>挑一些容易用到的，有静态常量（自然数e，圆周率π）、求最大最小值和绝对值、求整、三角函数、指数运算，其实最常用的就是最大最小值和求整了。</p>
+<hr>
+<h2 id="Math类常用方法"><a href="#Math类常用方法" class="headerlink" title="Math类常用方法"></a>Math类常用方法</h2><p>挑一些经常用到的，有静态常量（自然数e，圆周率π）、求最大最小值和绝对值、求整、三角函数、指数运算，其实最常用的就是最大最小值和求整了。</p>
 <h3 id="静态常量"><a href="#静态常量" class="headerlink" title="静态常量"></a>静态常量</h3><p>自然数e和圆周率π：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//e</span></span><br><span class="line">Math.E;</span><br><span class="line"><span class="comment">//π</span></span><br><span class="line">Math.PI;</span><br></pre></td></tr></table></figure>
 <p>我们控制台输出看看：</p>
@@ -408,7 +410,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" rel="tag">Java核心内容</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" rel="tag">Java数字处理</a>, <a class="has-link-grey -link" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" rel="tag">Java核心内容</a>
                 </div>
             </div>
         </div>
@@ -444,10 +446,17 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/14/javabase13-szcl/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/13/javabase11-zzbds/">
-                <span class="level-item">Java零基础筑基到修仙（十一）——Java正则表达式</span>
+                <span class="level-item">JAVA零基础筑基到修仙（十一）——Java正则表达式</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -522,7 +531,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            12
+                            13
                         </p>
                     </a>
                 </div>
@@ -546,7 +555,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            3
+                            5
                         </p>
                     </a>
                 </div>
@@ -604,7 +613,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li>
             </ul>
@@ -617,7 +626,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java字符串处理</a> <a href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" style="font-size: 15px;">Java核心内容</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/" style="font-size: 16.67px;">Java核心内容</a>
     </div>
 </div>
     
@@ -632,16 +641,35 @@
         
         <article class="media">
             
+            <a href="/2020/02/14/javabase13-szcl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/sjgshbg.png" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T02:04:05.000Z">2020-02-14</time></div>
+                    <a href="/2020/02/14/javabase13-szcl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/13/javabase12-math/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+                    <img class="thumbnail" src="/gallery/86279.png" alt="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T11:52:36.456Z">2020-02-13</time></div>
-                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
+                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -653,14 +681,14 @@
             
             <a href="/2020/02/13/javabase11-zzbds/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86271.png" alt="Java零基础筑基到修仙（十一）——Java正则表达式">
+                    <img class="thumbnail" src="/gallery/86271.png" alt="JAVA零基础筑基到修仙（十一）——Java正则表达式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T01:55:42.000Z">2020-02-13</time></div>
-                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十一）——Java正则表达式</a>
+                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十一）——Java正则表达式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -706,25 +734,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/11/javabase8-zfccl1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time></div>
-                    <a href="/2020/02/11/javabase8-zfccl1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -742,7 +751,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -763,7 +772,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -775,9 +784,23 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/">
                         <span class="tag">Java核心内容</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -830,16 +853,35 @@
         
         <article class="media">
             
+            <a href="/2020/02/14/javabase13-szcl/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/sjgshbg.png" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T02:04:05.000Z">2020-02-14</time></div>
+                    <a href="/2020/02/14/javabase13-szcl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/13/javabase12-math/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86279.png" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
+                    <img class="thumbnail" src="/gallery/86279.png" alt="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T11:52:36.456Z">2020-02-13</time></div>
-                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
+                    <a href="/2020/02/13/javabase12-math/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -851,14 +893,14 @@
             
             <a href="/2020/02/13/javabase11-zzbds/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86271.png" alt="Java零基础筑基到修仙（十一）——Java正则表达式">
+                    <img class="thumbnail" src="/gallery/86271.png" alt="JAVA零基础筑基到修仙（十一）——Java正则表达式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-13T01:55:42.000Z">2020-02-13</time></div>
-                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java零基础筑基到修仙（十一）——Java正则表达式</a>
+                    <a href="/2020/02/13/javabase11-zzbds/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十一）——Java正则表达式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
                     </p>
@@ -904,25 +946,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/11/javabase8-zfccl1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time></div>
-                    <a href="/2020/02/11/javabase8-zfccl1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -940,7 +963,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -961,7 +984,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -973,9 +996,23 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%A0%B8%E5%BF%83%E5%86%85%E5%AE%B9/">
                         <span class="tag">Java核心内容</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1021,7 +1058,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="Java零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）" height="28">
                 
                 </a>
                 <p class="is-size-7">
