@@ -7,21 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: Java基础学习 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法 - MggBlog</title>
 
 
-    <meta name="description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MggBlog">
-<meta property="og:url" content="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/2/index.html">
+    <meta name="description" content="一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，本期内容：二维数组、多维数组、数组常用方法（Arrays 类）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/16/javabase18-array2/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
+<meta property="og:description" content="一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，本期内容：二维数组、多维数组、数组常用方法（Arrays 类）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86276.png">
+<meta property="article:published_time" content="2020-02-16T02:14:12.000Z">
+<meta property="article:modified_time" content="2020-02-16T08:56:03.363Z">
 <meta property="article:author" content="Mgg">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86276.png">
 
 
 
@@ -80,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法" height="28">
             
             </a>
         </div>
@@ -129,567 +132,231 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/86276.png" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-16T02:14:12.000Z">2020-02-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 分钟 读完 (大约 2132 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法
+            
+        </h1>
+        <div class="content">
+            <p><em>一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，<strong>本期内容：二维数组、多维数组、数组常用方法（Arrays 类）</strong></em> </p>
+<a id="more"></a>
+<hr>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="二维数组声明"><a href="#二维数组声明" class="headerlink" title="二维数组声明"></a>二维数组声明</h3><p>将二维数组理解成一个一维数组的每个元素都是一维数组就可以了，声明方法就是加 [] :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [][] 像一维数组提到的 可以换位置  int[][] arr   或者是 int arr[][]</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>][<span class="number">5</span>];<span class="comment">//定义五行五列的int数组</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>][];<span class="comment">//第二维可以不预设长度，但是用到时要先设置好，否者空指针异常。</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">int</span> arr[][]; <span class="comment">//等用到了再初始化 直接给值 或者设定长度</span></span><br></pre></td></tr></table></figure>
+<p>Demo：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span> arr1[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">2</span>];<span class="comment">//声明时初始化</span></span><br><span class="line">	<span class="keyword">int</span> arr2[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][]; <span class="comment">//声明时第二维没有初始化</span></span><br><span class="line">	<span class="keyword">int</span> arr3[][]; <span class="comment">//声明时未初始化</span></span><br><span class="line">	arr3 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">	System.out.println(arr1);</span><br><span class="line">	System.out.println(arr2);</span><br><span class="line">	System.out.println(arr3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/16/javabase18-array2/csh.png" alt="运行结果"></p>
+<h3 id="二维数组赋值与遍历"><a href="#二维数组赋值与遍历" class="headerlink" title="二维数组赋值与遍历"></a>二维数组赋值与遍历</h3><p>选择初始化时直接赋值或者通过索引赋值。</p>
+<ol>
+<li>直接赋值：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二维 int 型数组</span></span><br><span class="line"><span class="keyword">int</span> arr[][] = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>for 循环赋值<br>一维数组赋值时使用一个 for 循环，二维时就需要再嵌套一个 for 循环：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length;j++) &#123;</span><br><span class="line">		arr[i][j] = value;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>赋值用了两层，那么遍历也需要两层，来练习一下。</p>
+<p>创建一个二维数组，从控制台输入值并且遍历：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span> arr[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">	Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"请输入第"</span> + (i + <span class="number">1</span>) + <span class="string">"行第"</span> + (j + <span class="number">1</span>) + <span class="string">"列元素："</span>);</span><br><span class="line">			arr[i][j] = input.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(<span class="string">"\n~~~~~~~~~~~~"</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span> + (i + <span class="number">1</span>) + <span class="string">"行第"</span> + (j + <span class="number">1</span>) + <span class="string">"列元素="</span> + arr[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果  </p>
+<p><img src="/2020/02/16/javabase18-array2/fzbl.png" alt="二维数组赋值与遍历"></p>
+<p>遍历也可以使用 foreach ,同样要使用两层：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>[] row : arr )&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> val : row)&#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每个数组元素都会获得了，那获取整行整列也就比较简单了。</p>
+<p>以上面demo为例，获取第一行，只需要使用第一个索引就可以了 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] row = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i : row) System.out.println(i);</span><br></pre></td></tr></table></figure>
+<p>如果要获取某一列的值就有点麻烦了，无法直接通过获取数组来遍历了，需要使用 for 循环，访问下标,比如获取第二列：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">	System.out.println(<span class="string">"第"</span>+<span class="number">2</span>+<span class="string">"列："</span>+arr[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>其实类似二维数组的理解，一维数组的每个元素都是一维以上的数组，如每个元素都是二维数组就是三维数组，就这么套娃套下去，只要内存顶得住，想多少维就多少维。<br>举个三维的例子，直接赋值吧，控制台输入就是三层 for 嵌套了，遍历也是三层 for 嵌套，几维就需要几个嵌套。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[][][] = &#123;&#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;&#125;,&#123;&#123;<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>&#125;&#125;&#125;; <span class="comment">//多维的声明就是加 []</span></span><br></pre></td></tr></table></figure>
+<p>这是一个2X2X2的立体数据块，这么理解就可以了，到了四维数组，脑子是理解不动了，反正将索引 [] 使用数学的排列组合就可以定位到所有元素了。</p>
+<p>说到底无论几维数组，都是一维数组，一直嵌套而已，因为内存存储并没有那么多维度，只分栈和堆。由一维的地址指向值，变成地址指向地址，最后在指向堆内的值。</p>
+<p>掌握一维和二维数组用法足够对付大部分问题了。</p>
+<h2 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h2><p>Arrays 类为数组的处理提供了众多方法，例如排序 sort，比较 equals等，里面重载的方法众多，我们挑出代表，重点在于知道这些方法的使用方式，而不是掌握所有方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>asList(T… a)</td>
+<td>返回一个受指定数组支持的固定大小的列表。</td>
+</tr>
+<tr>
+<td>binarySearch(byte[] a, byte key)</td>
+<td>使用二分搜索法来搜索指定的 byte 型数组，以获得指定的值。</td>
+</tr>
+<tr>
+<td>copyOf(boolean[] original, int newLength)</td>
+<td>复制指定的数组，截取或用 false 填充（如有必要），以使副本具有指定的长度。</td>
+</tr>
+<tr>
+<td>copyOfRange(boolean[] original, int from, int to)</td>
+<td>将指定数组的指定范围复制到一个新数组。</td>
+</tr>
+<tr>
+<td>deepEquals(Object[] a1, Object[] a2)</td>
+<td>如果两个指定数组彼此是深层相等 的，则返回 true。</td>
+</tr>
+<tr>
+<td>deepHashCode(Object[] a)</td>
+<td>基于指定数组的“深层内容”返回哈希码。</td>
+</tr>
+<tr>
+<td>deepToString(Object[] a)</td>
+<td>返回指定数组“深层内容”的字符串表示形式。</td>
+</tr>
+<tr>
+<td>equals(boolean[] a, boolean[] a2)</td>
+<td>如果两个指定的 boolean 型数组彼此相等，则返回 true。</td>
+</tr>
+<tr>
+<td>fill(boolean[] a, boolean val)</td>
+<td>将指定的 boolean 值分配给指定 boolean 型数组的每个元素。</td>
+</tr>
+<tr>
+<td>hashCode(boolean[] a)</td>
+<td>基于指定数组的内容返回哈希码。</td>
+</tr>
+<tr>
+<td>sort(byte[] a)</td>
+<td>对指定的 byte 型数组按数字升序进行排序。</td>
+</tr>
+<tr>
+<td>toString(boolean[] a)</td>
+<td>返回指定数组内容的字符串表示形式。</td>
+</tr>
+</tbody></table>
+<p>这是从jdk1.6文档中获得的数据，在网上看博客时得到 jdk8 中 Arrays 得到加强，添加了许多新方法，这就需要下载jdk8 文档，我从其他博客里转载过来一段。</p>
+<p>由于计算机硬件的飞速发展，目前几乎所有家用 PC 都是 4 核、8 核的 CPU，而服务器的 CPU 则具有更好的性能，因此 Java 8 与时俱进地增加了并发支持，并发支持可以充分利用硬件设备来提高程序的运行性能。</p>
+<ol>
+<li>oid parallelPrefix(xxx[] array, XxxBinaryOperator op)<br>该方法使用 op 参数指定的计算公式计算得到的结果作为新的元素。op 计算公式包括 left、right 两个形参，其中 left 代表数组中前一个索引处的元素，right 代表数组中当前索引处的元素，当计算第一个新数组元素时，left 的值默认为 1。</li>
+<li>void parallelPrefix(xxx[] array, int fromIndex, int toIndex, XxxBinaryOperator op)<br>该方法与上一个方法相似，区别是该方法仅重新计算 fromIndex 到 toIndex 索引的元素。</li>
+<li>void setAll(xxx[] array, IntToXxxFunction generator)<br>该方法使用指定的生成器（generator）为所有数组元素设置值，该生成器控制数组元素的值的生成算法。</li>
+<li>void parallelSetAll(xxx[] array, IntToXxxFunction generator)<br>该方法的功能与上一个方法相同，只是该方法增加了并行能力，可以利用多 CPU 并行来提高性能。</li>
+<li>void parallelSort(xxx[] a)<br>该方法的功能与 Arrays 类以前就有的 sort() 方法相似，只是该方法增加了并行能力，可以利用多 CPU 并行来提高性能。</li>
+<li>void parallelSort(xxx[] a，int fromIndex, int toIndex)<br>该方法与上一个方法相似，区別是该方法仅对 fromIndex 到 toIndex 索引的元素进行排序。</li>
+<li>Spliterator.OfXxx spliterator(xxx[] array)<br>将该数组的所有元素转换成对应的 Spliterator 对象。</li>
+<li>Spliterator.OfXxx spliterator(xxx[] array, int startInclusive, int endExclusive)<br>该方法与上一个方法相似，区别是该方法仅转换 startInclusive 到 endExclusive 索引的元素。</li>
+<li>XxxStream stream(xxx[] array)<br>该方法将数组转换为 Stream，Stream 是 Java 8 新增的流式编程的 API。</li>
+<li>XxxStream stream(xxx[] array, int startInclusive, int endExclusive)<br>该方法与上一个方法相似，区别是该方法仅将 fromIndex 到 toIndex 索引的元索转换为 Stream。</li>
+</ol>
+<p>上面方法列表中，所有以 parallel 开头的方法都表示该方法可利用 CPU 并行的能力来提高性能。上面方法中的 xxx 代表不同的数据类型，比如处理 int[] 型数组时应将 xxx 换成 int，处理 long[] 型数组时应将 XXX 换成 long。</p>
+<hr>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>虽然写了这么多方法，如果不用还是没用，脑袋记和容易网，能做到多翻文档就行了。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%95%B0%E7%BB%84/" rel="tag">Java数组</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-            <li class="is-active"><a href="#" aria-current="page">Java基础学习</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/12/javabase9-zfccl2/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/zfccl2bg.jpg" alt="JAVA零基础筑基到修仙（九）——字符串处理（2）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-12T05:45:47.000Z">2020-02-12</time>
                 
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1292 个字)
-                </span>
-                
-                
-            </div>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/12/javabase9-zfccl2/">JAVA零基础筑基到修仙（九）——字符串处理（2）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>接着上篇字符串处理继续,<strong>本篇内容包括字符串的大小写转换、除去空格、子字符串提取、分割和替换</strong>。我们说这些方法的目的不是记住这个方法如何使用，而是在于看过后心里能有个印象，有这个方法可以用，下次有用到时直接去查文档就行了，由于不想篇幅过长，还剩字符串比较和查找，下一篇再说。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/12/javabase9-zfccl2/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/11/javabase8-zfccl1/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    18 分钟 读完 (大约 2774 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/11/javabase8-zfccl1/">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>我们在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，我们单独拿出来说一说。由于内容较多，需要一点一点讲，<strong>本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换</strong>。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/11/javabase8-zfccl1/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/10/javabase7-debug/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/debugbg.jpg" alt="JAVA零基础筑基到修仙（七）——Debug">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-10T15:34:00.000Z">2020-02-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 668 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/10/javabase7-debug/">JAVA零基础筑基到修仙（七）——Debug</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”我们把给程序找毛病的行为叫“Debug”，中文叫调试。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/10/javabase7-debug/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/09/javabase6-xh/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/xhbg.jpg" alt="JAVA零基础筑基到修仙（六）——循环">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-09T12:30:39.000Z">2020-02-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 分钟 读完 (大约 1811 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/09/javabase6-xh/">JAVA零基础筑基到修仙（六）——循环</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。<strong>本篇要求做到如下几点：理解循环含义;会用while结构;会用for/foreach结构。</strong></em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/09/javabase6-xh/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/08/javabase5-tjjg/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/tjjgbg.jpg" alt="JAVA零基础筑基到修仙（五）——条件结构">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-08T11:57:27.000Z">2020-02-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    14 分钟 读完 (大约 2119 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/08/javabase5-tjjg/">JAVA零基础筑基到修仙（五）——条件结构</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>条件结构和后面的循环结构我们统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/08/javabase5-tjjg/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/07/javabase4-ysf/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/ysfbg.jpg" alt="JAVA零基础筑基到修仙（四）——运算符">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-07T06:54:43.000Z">2020-02-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    18 分钟 读完 (大约 2695 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/07/javabase4-ysf/">JAVA零基础筑基到修仙（四）——运算符</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。</em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/07/javabase4-ysf/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础筑基到修仙（三）——标识符与关键字、常量与变量、作用域、数据类型和类型转换">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    29 分钟 读完 (大约 4370 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/06/javabase3-bsfgjzclbltj/">JAVA零基础筑基到修仙（三）——标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>本篇内容包括Java语言中标识符、关键字、常量、变量和数据类型的讲解，学任何一门语言，这些内容都是最基础也是最重要的，就像盖房子，不同的材料有不同的用处，让材料物尽其用才能盖好房子。实践是检验真理的唯一标准，学知识就要多实践，学计算机语言就要多敲代码，只有这样知识才能学得会，记得牢，技巧也用的熟。</em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/06/javabase3-bsfgjzclbltj/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/05/javabase2-helloworld/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/helloworld-bg.jpg" alt="JAVA零基础筑基到修仙（二）——Hello world!">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-05T06:25:29.000Z">2020-02-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    22 分钟 读完 (大约 3364 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/05/javabase2-helloworld/">JAVA零基础筑基到修仙（二）——Hello world!</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>上一篇博客介绍了Java基本知识，接下来我们以在Windows上开发为例（不同的系统环境只是配置环境变量的方法不一样），正式开始Java的学习。本篇内容包含：Java开发环境配置，年轻人的第一个Java程序和Java集成开发环境（IDE）的使用。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/05/javabase2-helloworld/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/04/javabase1-jj/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/javabase-jj-bg.jpg" alt="JAVA零基础筑基到修仙（一）——JAVA简介">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-04T09:22:05.000Z">2020-02-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1294 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/04/javabase1-jj/">JAVA零基础筑基到修仙（一）——JAVA简介</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>虽然是复习Java知识，可能过于基础的前几个博客都没有必要写，但是本着善始善终原则，以及本身是强迫症患者，所以力求做到尽善尽美，还是写出来吧。书回正传，本篇博客将简单介绍关于JAVA的基础知识，用处不大，我尽量缩短篇幅，减少不必要的时间浪费。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/04/javabase1-jj/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">上一页</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/16/javabase19-array-s-c/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JAVA零基础筑基到修仙（十九）——数组查询、复制</span>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/3/">下一页</a>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/15/javabase17-array/">
+                <span class="level-item">JAVA零基础筑基到修仙（十七）——数组简介和一维数组</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">1</a></li>
-            
-            <li><a class="pagination-link is-current" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
 </div>
 </div>
                 
@@ -1277,7 +944,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法" height="28">
                 
                 </a>
                 <p class="is-size-7">

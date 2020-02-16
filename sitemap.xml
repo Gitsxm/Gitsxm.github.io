@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.mggblog.ink/2020/02/16/javabase19-array-s-c/</loc>
+    
+    <lastmod>2020-02-16T08:59:57.112Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.mggblog.ink/2020/02/15/javabase17-array/</loc>
     
-    <lastmod>2020-02-15T13:51:00.793Z</lastmod>
+    <lastmod>2020-02-16T08:56:24.700Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/16/javabase18-array2/</loc>
+    
+    <lastmod>2020-02-16T08:56:03.363Z</lastmod>
     
   </url>
   
