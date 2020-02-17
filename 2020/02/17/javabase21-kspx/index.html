@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>JAVA零基础筑基到修仙（二十一）——快速排序 - MggBlog</title>
+
+
+    <meta name="description" content="快速排序由C. A. R. Hoare在1960年提出。快速它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（二十一）——快速排序">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/17/javabase21-kspx/index.html">
+<meta property="og:site_name" content="MggBlog">
+<meta property="og:description" content="快速排序由C. A. R. Hoare在1960年提出。快速它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/ks.jpg">
+<meta property="article:published_time" content="2020-02-17T14:47:29.000Z">
+<meta property="article:modified_time" content="2020-02-17T17:32:26.024Z">
+<meta property="article:author" content="Mgg">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java数组">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/ks.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/m-icon.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="MggBlog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Gitsxm/Gitsxm.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    21 分钟 读完 (大约 3188 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JAVA零基础筑基到修仙（二十一）——快速排序
+            
+        </h1>
+        <div class="content">
+            <p><em>快速排序由C. A. R. Hoare在1960年提出。快速它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</em></p>
+<a id="more"></a>
+<hr>
+<h2 id="一、快速排序思路"><a href="#一、快速排序思路" class="headerlink" title="一、快速排序思路"></a>一、快速排序思路</h2><p>快速排序相对于冒泡排序的逻辑复杂了很多，带来的好处就是快速排序在几种算法中排序效率较高，无论是面试还是软考很容易碰到，它采用分治法，思想简单概括为：</p>
+<ul>
+<li><ol>
+<li>于数组中选出一个基数（就是排序时以他为准）。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>分区，比基数大的放右边，小的放左边。</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>对两边分别再进行 1.2. 步，最终排序完成。<blockquote>
+<p>从 3. 可以看出算法中肯定需要用到递归，不然无法完成左右再重新分的需求，新手还不懂递归是什么的点击<a href="https://baike.baidu.com/item/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/5634537?fr=aladdin">递归</a>。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p>从其他博客中看来看去，最终找到了一种很好的理解方式（虽然我也懂得这个算法了，以我三脚猫的功夫怕是说不清啊，我会对博客内容进行整理）：</p>
+<p><em>（</em>以下内容转载自：<a href="https://me.csdn.net/shujuelin">脚丫先生</a>：<a href="https://blog.csdn.net/shujuelin/article/details/82423852">https://blog.csdn.net/shujuelin/article/details/82423852</a> ）_</p>
+<p>假设我们现在对“6 1 2 7 9 3 4 5 10 8”这个10个数进行排序。首先在这个序列中随便找一个数作为<strong>基准数</strong>（不要被这个名词吓到了，就是一个用来参照的数，待会你就知道它用来做啥的了）。为了方便，就让第一个数6作为基准数吧。接下来，需要将这个序列中所有比基准数大的数放在6的右边，比基准数小的数放在6的左边，类似下面这种排列：</p>
+<p>3 1 2 5 4 6 9 7 10 8</p>
+<p>在初始状态下，数字6在序列的第1位。我们的目标是将6挪到序列中间的某个位置，假设这个位置是k。现在就需要寻找这个k，并且以第k位为分界点，左边的数都小于等于6，右边的数都大于等于6。想一想，你有办法可以做到这点吗？</p>
+<p>方法其实很简单：分别从初始序列“6 1 2 7 9 3 4 5 10 8”两端开始“探测”。先从右往左找一个小于6的数，再从左往右找一个大于6的数，然后交换他们。这里可以用两个变量i和j，分别指向序列最左边和最右边。我们为这两个变量起个好听的名字“哨兵i”和“哨兵j”。刚开始的时候让哨兵i指向序列的最左边（即i=1），指向数字6。让哨兵j指向序列的最右边（即=10），指向数字。(直接看图理解就好，文字配图，效果更佳)</p>
+<p><img src="/2020/02/17/javabase21-kspx/kp1.jpg" alt="开始">  </p>
+<p>首先哨兵j开始出动。因为此处设置的基准数是最左边的数，所以需要让哨兵j先出动，这一点非常重要（请自己想一想为什么）。哨兵j一步一步地向左挪动（即j–），直到找到一个小于6的数停下来。接下来哨兵i再一步一步向右挪动（即i++），直到找到一个数大于6的数停下来。最后哨兵j停在了数字5面前，哨兵i停在了数字7面前。</p>
+<p><img src="/2020/02/17/javabase21-kspx/kp2.jpg" alt="两边找到符合条件的值">  </p>
+<p><img src="/2020/02/17/javabase21-kspx/kp3.jpg" alt="交换">  </p>
+<p>现在交换哨兵i和哨兵j所指向的元素的值。交换之后的序列如下：</p>
+<p>6 1 2 5 9 3 4 7 10 8</p>
+<p><img src="/2020/02/17/javabase21-kspx/kp4.jpg" alt="继续寻找">  </p>
+<p><img src="/2020/02/17/javabase21-kspx/kp5.jpg" alt="交换">  </p>
+<p>到此，第一次交换结束。接下来开始哨兵j继续向左挪动（再友情提醒，每次必须是哨兵j先出发）。他发现了4（比基准数6要小，满足要求）之后停了下来。哨兵i也继续向右挪动的，他发现了9（比基准数6要大，满足要求）之后停了下来。此时再次进行交换，交换之后的序列如下：</p>
+<p>6 1 2 5 4 3 9 7 10 8</p>
+<p>第二次交换结束，“探测”继续。哨兵j继续向左挪动，他发现了3（比基准数6要小，满足要求）之后又停了下来。哨兵i继续向右移动，糟啦！此时哨兵i和哨兵j相遇了，哨兵i和哨兵j都走到3面前。说明此时“探测”结束。我们将基准数6和3进行交换。交换之后的序列如下：</p>
+<p>3 1 2 5 4 6 9 7 10 8</p>
+<p><em>两个哨兵碰头，对应数组内两端取到同一个索引：</em><br><img src="/2020/02/17/javabase21-kspx/kp6.jpg" alt="两个哨兵碰头"><br><em>对应索引与基准数交换：</em><br><img src="/2020/02/17/javabase21-kspx/kp7.jpg" alt="交换"><br><em>交换：</em><br><img src="/2020/02/17/javabase21-kspx/kp8.jpg" alt="交换完成">  </p>
+<p><em>交换完成后结束了相当重要的工作，剩下工作就是对左右两边数组再次进行相同操作，这部分操作对应代码中递归调用的阶段。</em></p>
+<p>到此第一轮“探测”真正结束。此时以基准数6为分界点，6左边的数都小于等于6，6右边的数都大于等于6。回顾一下刚才的过程，其实哨兵j的使命就是要找小于基准数的数，而哨兵i的使命就是要找大于基准数的数，直到i和j碰头为止。</p>
+<p>OK，解释完毕。现在基准数6已经归位，它正好处在序列的第6位。此时我们已经将原来的序列，以6为分界点拆分成了两个序列，左边的序列是“3 1 2 5 4”，右边的序列是“9 7 10 8”。接下来还需要分别处理这两个序列。因为6左边和右边的序列目前都还是很混乱的。不过不要紧，我们已经掌握了方法，接下来只要模拟刚才的方法分别处理6左边和右边的序列即可。现在先来处理6左边的序列现吧。</p>
+<p>左边的序列是“3 1 2 5 4”。请将这个序列以3为基准数进行调整，使得3左边的数都小于等于3，3右边的数都大于等于3。好了开始动笔吧</p>
+<p>如果你模拟的没有错，调整完毕之后的序列的顺序应该是：</p>
+<p>2 1 3 5 4</p>
+<p>OK，现在3已经归位。接下来需要处理3左边的序列“2 1”和右边的序列“5 4”。对序列“2 1”以2为基准数进行调整，处理完毕之后的序列为“1 2”，到此2已经归位。序列“1”只有一个数，也不需要进行任何处理。至此我们对序列“2 1”已全部处理完毕，得到序列是“1 2”。序列“5 4”的处理也仿照此方法，最后得到的序列如下：</p>
+<p>1 2 3 4 5 6 9 7 10 8</p>
+<p>对于序列“9 7 10 8”也模拟刚才的过程，直到不可拆分出新的子序列为止。最终将会得到这样的序列，如下</p>
+<p>1 2 3 4 5 6 7 8 9 10</p>
+<p><strong>到此，排序完全结束。</strong> 细心的同学可能已经发现，快速排序的每一轮处理其实就是将这一轮的基准数归位，直到所有的数都归位为止，排序就结束了。下面上个霸气的图来描述下整个算法的处理过程。</p>
+<p><img src="/2020/02/17/javabase21-kspx/kpmap.jpg" alt="过程图解">  </p>
+<p>快速排序之所比较快，因为相比冒泡排序，每次交换是跳跃式的。每次排序的时候设置一个基准点，将小于等于基准点的数全部放到基准点的左边，将大于等于基准点的数全部放到基准点的右边。这样在每次交换的时候就不会像冒泡排序一样每次只能在相邻的数之间进行交换，交换的距离就大的多了。因此总的比较和交换次数就少了，速度自然就提高了。当然在最坏的情况下，仍可能是相邻的两个数进行了交换。因此快速排序的最差时间复杂度和冒泡排序是一样的都是O(N2)，它的平均时间复杂度为O(NlogN)。其实快速排序是基于一种叫做“二分”的思想。我们后面还会遇到“二分”思想，到时候再聊。</p>
+<h2 id="二、构建程序"><a href="#二、构建程序" class="headerlink" title="二、构建程序"></a>二、构建程序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test_qsort</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 主程序入口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span>[] arr = &#123; <span class="number">6</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">8</span> &#125;;</span><br><span class="line">		<span class="comment">// 输入起始参数，数组arr， 基准数索引为0，最右侧索引为 length-1</span></span><br><span class="line">		quickSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">		<span class="comment">// 输出最终结果</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.print(arr[i]+<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 快速排序算法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> arr</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> low</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> high</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 如果不知道要会用到多少变量，可以先往下写，用到了再补到上面，i j 分别代表左右索引</span></span><br><span class="line">		<span class="keyword">int</span> i, j, temp, t;</span><br><span class="line">		<span class="comment">// 如果不满足下面条件说明排序已经完成了</span></span><br><span class="line">		<span class="keyword">if</span> (low &gt; high) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 声明基准数</span></span><br><span class="line">		temp = arr[low];</span><br><span class="line">		<span class="comment">// 因为后面要和基准数做交换，所以需要声明新变量</span></span><br><span class="line">		i = low;</span><br><span class="line">		j = high;</span><br><span class="line">		<span class="comment">// 根据基准数，左右开始找合适的值</span></span><br><span class="line">		<span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">			<span class="comment">// 先从右边开始找小于基准数的元素 自己想想为什么？</span></span><br><span class="line">			<span class="keyword">while</span> (temp &lt;= arr[j] &amp;&amp; i &lt; j) &#123;</span><br><span class="line">				j--;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 然后左边开始找大于基准数的元素</span></span><br><span class="line">			<span class="keyword">while</span> (temp &gt;= arr[i] &amp;&amp; i &lt; j) &#123;</span><br><span class="line">				i++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 右边找到小于基准数的元素，左边找到大于基准数的元素，在两边索引还不一致的情况下，交换位置</span></span><br><span class="line">			<span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">				t = arr[i];</span><br><span class="line">				arr[i] = arr[j];</span><br><span class="line">				arr[j] = t;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 完成了两边交换，此时左右定位到同一个索引上，新型基准数与当前索引元素的交换。</span></span><br><span class="line">		arr[low] = arr[i];</span><br><span class="line">		arr[i] = temp;</span><br><span class="line">		<span class="comment">// 左右分别开始以上步骤</span></span><br><span class="line">		<span class="comment">// 右边数组 虽然此时 i = j 但是在递归调用时 i 会变为 0，所以只能用 j-1 来代表定位同一索引的值</span></span><br><span class="line">		quickSort(arr, low, j - <span class="number">1</span>);</span><br><span class="line">		<span class="comment">// 左边数组</span></span><br><span class="line">		quickSort(arr, j + <span class="number">1</span>, high);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>快速排序结果:<br><img src="/2020/02/17/javabase21-kspx/pxjg.png" alt="过程图解">  </p>
+<p>快速排序不知有一种写法，但是中心思想不变，等熟练了可以试试换种写法。</p>
+<h2 id="三、为什么要先从右边开始找？"><a href="#三、为什么要先从右边开始找？" class="headerlink" title="三、为什么要先从右边开始找？"></a>三、为什么要先从右边开始找？</h2><p>以我们习惯的基准数在左边第一个，排序为升序为例：</p>
+<p>无论是手写示例还是代码调试都可以很容易找到答案</p>
+<p>我们以 b 代表基准数，s 代表与基准数互换的数， sL 代表s左边的数, sR 代表s右边的数</p>
+<p>图解：<br><img src="/2020/02/17/javabase21-kspx/bug.png" alt="问题图解">  </p>
+<p>在基准数与 i = j  所在索引的数对换前： </p>
+<p>在对调前还不会出现问题，问题出在对调的数变了，因为在完成 b 与 s 调换后，要达到 b 的左边都小于 b ，右边都大于 b ，那么在调换前这几个数的关系是  sR&gt;b&gt;sL?s,那么开始调换，如果从左边先，索引 i+1 后到达 s，s &lt; b,明显 i 不能停留在 s 的位置，继续 +1 找到大于 b 的数 sR ，然后 j 从右边开始 正好此时 j=i ，本来应该 s 与 b 交换，现在变成了 sR 与 b 交换，sR 是这几个数里最大的，跑到左边肯定就不对了，从这一步开始，后面排序都乱了，从右边先开始就没有这个问题了。</p>
+<p>至于如何从先左边开始才能正确，我觉得要把 左小右大 的规则反过来，这样代码里的逻辑就要完全改变了。</p>
+<hr>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>更新博客睡觉。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%95%B0%E7%BB%84/" rel="tag">Java数组</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/17/javabase20-px/">
+                <span class="level-item">JAVA零基础筑基到修仙（二十）——冒泡排序</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/mggimage.jpg" alt="Mgg">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>XingTai,HeBei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            21
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            1
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            6
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Gitsxm" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Gitsxm">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Envelop" href="mailto:837564471@qq.com">
+                
+                <i class="fa fa-envelope-open"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
+            <span class="level-start">
+                <span class="level-item">Java基础学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-16T07:23:04.000Z">2020-02-16</time></div>
+                    <a href="/2020/02/16/javabase19-array-s-c/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十九）——数组查询、复制</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/16/javabase18-array2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86276.png" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-16T02:14:12.000Z">2020-02-16</time></div>
+                    <a href="/2020/02/16/javabase18-array2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/15/javabase17-array/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86275.png" alt="JAVA零基础筑基到修仙（十七）——数组简介和一维数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T08:30:43.000Z">2020-02-15</time></div>
+                    <a href="/2020/02/15/javabase17-array/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十七）——数组简介和一维数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">21</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/">
+                        <span class="tag">Java内置包装类</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
+                        <span class="tag">Java数组</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-16T07:23:04.000Z">2020-02-16</time></div>
+                    <a href="/2020/02/16/javabase19-array-s-c/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十九）——数组查询、复制</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/16/javabase18-array2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86276.png" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-16T02:14:12.000Z">2020-02-16</time></div>
+                    <a href="/2020/02/16/javabase18-array2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/15/javabase17-array/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/86275.png" alt="JAVA零基础筑基到修仙（十七）——数组简介和一维数组">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T08:30:43.000Z">2020-02-15</time></div>
+                    <a href="/2020/02/15/javabase17-array/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十七）——数组简介和一维数组</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">21</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/">
+                        <span class="tag">Java内置包装类</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
+                        <span class="tag">Java数组</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mgg&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://www.mggblog.ink',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

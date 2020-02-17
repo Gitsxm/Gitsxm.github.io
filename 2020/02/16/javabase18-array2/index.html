@@ -13,18 +13,18 @@
     <meta name="description" content="一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，本期内容：二维数组、多维数组、数组常用方法（Arrays 类）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/16/javabase18-array2/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/16/javabase18-array2/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，本期内容：二维数组、多维数组、数组常用方法（Arrays 类）">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/86276.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86276.png">
 <meta property="article:published_time" content="2020-02-16T02:14:12.000Z">
-<meta property="article:modified_time" content="2020-02-16T08:56:03.363Z">
+<meta property="article:modified_time" content="2020-02-17T09:54:08.812Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/86276.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86276.png">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 分钟 读完 (大约 2132 个字)
+                    14 分钟 读完 (大约 2138 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
             <p><em>一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，<strong>本期内容：二维数组、多维数组、数组常用方法（Arrays 类）</strong></em> </p>
 <a id="more"></a>
 <hr>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="二维数组声明"><a href="#二维数组声明" class="headerlink" title="二维数组声明"></a>二维数组声明</h3><p>将二维数组理解成一个一维数组的每个元素都是一维数组就可以了，声明方法就是加 [] :</p>
+<h2 id="一、-二维数组"><a href="#一、-二维数组" class="headerlink" title="一、[二维数组]"></a>一、[二维数组]</h2><h3 id="二维数组声明"><a href="#二维数组声明" class="headerlink" title="二维数组声明"></a>二维数组声明</h3><p>将二维数组理解成一个一维数组的每个元素都是一维数组就可以了，声明方法就是加 [] :</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [][] 像一维数组提到的 可以换位置  int[][] arr   或者是 int arr[][]</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>][<span class="number">5</span>];<span class="comment">//定义五行五列的int数组</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>][];<span class="comment">//第二维可以不预设长度，但是用到时要先设置好，否者空指针异常。</span></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">int</span> arr[][]; <span class="comment">//等用到了再初始化 直接给值 或者设定长度</span></span><br></pre></td></tr></table></figure>
 <p>Demo：  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span> arr1[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">2</span>];<span class="comment">//声明时初始化</span></span><br><span class="line">	<span class="keyword">int</span> arr2[][] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][]; <span class="comment">//声明时第二维没有初始化</span></span><br><span class="line">	<span class="keyword">int</span> arr3[][]; <span class="comment">//声明时未初始化</span></span><br><span class="line">	arr3 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>][<span class="number">2</span>];</span><br><span class="line">	System.out.println(arr1);</span><br><span class="line">	System.out.println(arr2);</span><br><span class="line">	System.out.println(arr3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -196,12 +196,12 @@
 <p>如果要获取某一列的值就有点麻烦了，无法直接通过获取数组来遍历了，需要使用 for 循环，访问下标,比如获取第二列：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">	System.out.println(<span class="string">"第"</span>+<span class="number">2</span>+<span class="string">"列："</span>+arr[i][<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><p>其实类似二维数组的理解，一维数组的每个元素都是一维以上的数组，如每个元素都是二维数组就是三维数组，就这么套娃套下去，只要内存顶得住，想多少维就多少维。<br>举个三维的例子，直接赋值吧，控制台输入就是三层 for 嵌套了，遍历也是三层 for 嵌套，几维就需要几个嵌套。</p>
+<h2 id="二、多维数组"><a href="#二、多维数组" class="headerlink" title="二、多维数组"></a>二、多维数组</h2><p>其实类似二维数组的理解，一维数组的每个元素都是一维以上的数组，如每个元素都是二维数组就是三维数组，就这么套娃套下去，只要内存顶得住，想多少维就多少维。<br>举个三维的例子，直接赋值吧，控制台输入就是三层 for 嵌套了，遍历也是三层 for 嵌套，几维就需要几个嵌套。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[][][] = &#123;&#123;&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>&#125;&#125;,&#123;&#123;<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>&#125;&#125;&#125;; <span class="comment">//多维的声明就是加 []</span></span><br></pre></td></tr></table></figure>
 <p>这是一个2X2X2的立体数据块，这么理解就可以了，到了四维数组，脑子是理解不动了，反正将索引 [] 使用数学的排列组合就可以定位到所有元素了。</p>
 <p>说到底无论几维数组，都是一维数组，一直嵌套而已，因为内存存储并没有那么多维度，只分栈和堆。由一维的地址指向值，变成地址指向地址，最后在指向堆内的值。</p>
 <p>掌握一维和二维数组用法足够对付大部分问题了。</p>
-<h2 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h2><p>Arrays 类为数组的处理提供了众多方法，例如排序 sort，比较 equals等，里面重载的方法众多，我们挑出代表，重点在于知道这些方法的使用方式，而不是掌握所有方法：</p>
+<h2 id="三、数组常用方法"><a href="#三、数组常用方法" class="headerlink" title="三、数组常用方法"></a>三、数组常用方法</h2><p>Arrays 类为数组的处理提供了众多方法，例如排序 sort，比较 equals等，里面重载的方法众多，我们挑出代表，重点在于知道这些方法的使用方式，而不是掌握所有方法：</p>
 <table>
 <thead>
 <tr>
@@ -403,7 +403,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            19
+                            21
                         </p>
                     </a>
                 </div>
@@ -485,7 +485,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">19</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li>
             </ul>
@@ -498,7 +498,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 15px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 15px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
     </div>
 </div>
     
@@ -510,6 +510,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -568,44 +606,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -623,7 +623,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -644,7 +644,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -672,7 +672,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -732,6 +732,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
@@ -787,44 +825,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -842,7 +842,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -863,7 +863,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -891,7 +891,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -968,7 +968,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

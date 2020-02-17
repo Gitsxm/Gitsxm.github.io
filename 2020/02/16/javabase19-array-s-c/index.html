@@ -13,18 +13,18 @@
     <meta name="description" content="本篇内容包括：数组查询指定元素，数组复制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（十九）——数组查询、复制">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/16/javabase19-array-s-c/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/16/javabase19-array-s-c/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="本篇内容包括：数组查询指定元素，数组复制">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/86277.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86277.png">
 <meta property="article:published_time" content="2020-02-16T07:23:04.000Z">
-<meta property="article:modified_time" content="2020-02-16T08:59:57.112Z">
+<meta property="article:modified_time" content="2020-02-17T10:06:30.056Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/86277.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86277.png">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    10 分钟 读完 (大约 1533 个字)
+                    10 分钟 读完 (大约 1541 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
             <p><em><strong>本篇内容包括：数组查询指定元素，数组复制</strong></em></p>
 <a id="more"></a>
 <hr>
-<h2 id="数组查询指定元素（binarySearch-方法）"><a href="#数组查询指定元素（binarySearch-方法）" class="headerlink" title="数组查询指定元素（binarySearch() 方法）"></a>数组查询指定元素（binarySearch() 方法）</h2><p>两种搜索，一个是查元素返回索引，一个是限定索引范围查元素返回索引。<br><strong>1. binarySearch(Object[] a,Object key)</strong><br>我们以 int 型数组为例：</p>
+<h2 id="一、数组查询指定元素（binarySearch-方法）"><a href="#一、数组查询指定元素（binarySearch-方法）" class="headerlink" title="一、数组查询指定元素（binarySearch() 方法）"></a>一、数组查询指定元素（binarySearch() 方法）</h2><p>两种搜索，一个是查元素返回索引，一个是限定索引范围查元素返回索引。<br><strong>1. binarySearch(Object[] a,Object key)</strong><br>我们以 int 型数组为例：</p>
 <p>使用二分搜索法来搜索指定的 int 型数组，以获得指定的值。<strong>必须在进行此调用之前对数组进行排序（通过 sort(int[]) 方法）</strong>。如果没有对数组进行排序，则结果是不确定的。如果数组包含多个带有指定值的元素，则无法保证找到的是哪一个。 </p>
 <p>使用方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> index = Arrays.binarySearch(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> i);</span><br></pre></td></tr></table></figure>
@@ -183,9 +183,9 @@
 <p>使用方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> index = Arrays.binarySearch(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> fromIndex，<span class="keyword">int</span> endIndex,<span class="keyword">int</span> i);</span><br></pre></td></tr></table></figure>
 <p>Demo:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span>[] arr = &#123; <span class="number">55</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">77</span>, <span class="number">11</span>, <span class="number">66</span>, <span class="number">35</span>, <span class="number">26</span> &#125;;</span><br><span class="line">	Arrays.sort(arr);<span class="comment">// 我们完全排序</span></span><br><span class="line">	System.out.println(<span class="string">"元素77的索引为："</span> + Arrays.binarySearch(arr, <span class="number">1</span>, <span class="number">5</span>, <span class="number">34</span>));</span><br><span class="line">	System.out.println(<span class="string">"元素77的索引为："</span> + Arrays.binarySearch(arr, <span class="number">1</span>, <span class="number">5</span>, <span class="number">11</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span>[] arr = &#123; <span class="number">55</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">77</span>, <span class="number">11</span>, <span class="number">66</span>, <span class="number">35</span>, <span class="number">26</span> &#125;;</span><br><span class="line">	Arrays.sort(arr);<span class="comment">// 我们完全排序</span></span><br><span class="line">	System.out.println(<span class="string">"元素77的索引为："</span> + Arrays.binarySearch(arr, <span class="number">1</span>, <span class="number">5</span>, <span class="number">34</span>));</span><br><span class="line">	System.out.println(<span class="string">"元素11的索引为："</span> + Arrays.binarySearch(arr, <span class="number">1</span>, <span class="number">5</span>, <span class="number">11</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><img src="/2020/02/16/javabase19-array-s-c/bs2.png" alt="经过排序后34索引为3，范围内没11，返回负值"></p>
-<h2 id="数组复制"><a href="#数组复制" class="headerlink" title="数组复制"></a>数组复制</h2><p>数组复制是编程时常见需求，Java 中提供了四种方法：</p>
+<h2 id="二、数组复制"><a href="#二、数组复制" class="headerlink" title="二、数组复制"></a>二、数组复制</h2><p>数组复制是编程时常见需求，Java 中提供了四种方法：</p>
 <ol>
 <li>Arrays 类的 copyOf() 方法</li>
 <li>Arrays 类的 copyOfRange() 方法</li>
@@ -206,14 +206,14 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span>[] arr = &#123; <span class="number">55</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">77</span>, <span class="number">11</span>, <span class="number">66</span>, <span class="number">35</span>, <span class="number">26</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span>[] newArr = Arrays.copyOfRange(arr,<span class="number">2</span>,<span class="number">10</span>);</span><br><span class="line">	System.out.println(<span class="string">"从索引2-5复制的新数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :newArr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><img src="/2020/02/16/javabase19-array-s-c/fzjg2.png" alt="复制结果"></p>
 <p>元素一共八个，但是我们结束索引的位置是10，新数组中补充了两个 int数组默认值 0 。</p>
-<h2 id="arraycopy-方法"><a href="#arraycopy-方法" class="headerlink" title="arraycopy 方法"></a>arraycopy 方法</h2><p>arraycopy() 方法位于 java.lang.System 类中，其语法形式如下：</p>
+<h2 id="三、arraycopy-方法"><a href="#三、arraycopy-方法" class="headerlink" title="三、arraycopy 方法"></a>三、arraycopy 方法</h2><p>arraycopy() 方法位于 java.lang.System 类中，其语法形式如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.arraycopy(dataType[] srcArray,<span class="keyword">int</span> srcIndex,<span class="keyword">int</span> destArray,<span class="keyword">int</span> destIndex,<span class="keyword">int</span> length)</span><br></pre></td></tr></table></figure>
 <p>从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束。从 src 引用的源数组到 dest 引用的目标数组，数组组件的一个子序列被复制下来。被复制的组件的编号等于 length 参数。源数组中位置在 srcPos 到 srcPos+length-1 之间的组件被分别复制到目标数组中的 destPos 到 destPos+length-1 位置。</p>
 <p><strong>注意：目标数组不会被覆盖，相当于替换目标数组中元素的值</strong></p>
 <p>Demo：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span>[] arr = &#123; <span class="number">55</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">77</span>, <span class="number">11</span>, <span class="number">66</span>, <span class="number">35</span>, <span class="number">26</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span>[] newArr = &#123;<span class="number">23</span>,<span class="number">34</span>,<span class="number">56</span>,<span class="number">78</span>,<span class="number">90</span>,<span class="number">56</span>,<span class="number">78</span>,<span class="number">23</span>,<span class="number">56</span>,<span class="number">26</span>,<span class="number">33</span>,<span class="number">66</span>,<span class="number">77</span>&#125;;</span><br><span class="line">	System.out.println(<span class="string">"原数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :arr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">	System.out.println(<span class="string">"\n目标数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :newArr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">       <span class="comment">//原函数索引从 0 开始，目标函数索引从2开始，替换长度为 5</span></span><br><span class="line">	System.arraycopy(arr, <span class="number">0</span>, newArr, <span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line">	System.out.println(<span class="string">"\n复制后目标数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :newArr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><img src="/2020/02/16/javabase19-array-s-c/ac.png" alt="复制结果"></p>
-<h2 id="clone-方法"><a href="#clone-方法" class="headerlink" title="clone 方法"></a>clone 方法</h2><p>Object类方法，原数组可以直接调用，<strong>目标数组如果已经存在，将会被重构</strong>，由于方法返回值为 Object 型对象，需要强制转换为数组对象（虽然这么说，但是我用过后不用转也可以）。<br>语法：</p>
+<h2 id="四、clone-方法"><a href="#四、clone-方法" class="headerlink" title="四、clone 方法"></a>四、clone 方法</h2><p>Object类方法，原数组可以直接调用，<strong>目标数组如果已经存在，将会被重构</strong>，由于方法返回值为 Object 型对象，需要强制转换为数组对象（虽然这么说，但是我用过后不用转也可以）。<br>语法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type[] newArr = arr.clone();</span><br></pre></td></tr></table></figure>
 <p>Demo:</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span>[] arr = &#123; <span class="number">55</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">77</span>, <span class="number">11</span>, <span class="number">66</span>, <span class="number">35</span>, <span class="number">26</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span>[] newArr =(<span class="keyword">int</span>[]) arr.clone();</span><br><span class="line">	System.out.println(<span class="string">"原数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :arr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">	System.out.println(<span class="string">"\n新数组中的元素为"</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i :newArr) System.out.print(i+<span class="string">" "</span>);</span><br><span class="line">	System.out.println(<span class="string">"\n"</span>+arr.equals(newArr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -265,6 +265,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/17/javabase20-px/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JAVA零基础筑基到修仙（二十）——冒泡排序</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -344,7 +351,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            19
+                            21
                         </p>
                     </a>
                 </div>
@@ -426,7 +433,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">19</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li>
             </ul>
@@ -439,7 +446,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 15px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 15px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
     </div>
 </div>
     
@@ -451,6 +458,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -509,44 +554,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -564,7 +571,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -585,7 +592,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -613,7 +620,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -673,6 +680,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
@@ -728,44 +773,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -783,7 +790,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -804,7 +811,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -832,7 +839,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -909,7 +916,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

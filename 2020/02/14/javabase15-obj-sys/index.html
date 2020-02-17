@@ -13,18 +13,18 @@
     <meta name="description" content="Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（十五）——Object类和System类">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/14/javabase15-obj-sys/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/14/javabase15-obj-sys/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/86274.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86274.png">
 <meta property="article:published_time" content="2020-02-14T14:36:42.000Z">
-<meta property="article:modified_time" content="2020-02-14T17:04:49.741Z">
+<meta property="article:modified_time" content="2020-02-17T09:57:33.766Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java内置包装类">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/86274.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86274.png">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    13 分钟 读完 (大约 2001 个字)
+                    13 分钟 读完 (大约 2005 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
             <p><em>Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。</em></p>
 <a id="more"></a>
 <hr>
-<h2 id="Object-类"><a href="#Object-类" class="headerlink" title="Object 类"></a>Object 类</h2><p>类 Object 是类层次结构的根类。每个类都使用 Object 作为超类。所有对象（包括数组）都实现这个类的方法（他是所有类的爸爸）。<br>比如随便新建一个类：</p>
+<h2 id="一、Object-类"><a href="#一、Object-类" class="headerlink" title="一、Object 类"></a>一、Object 类</h2><p>类 Object 是类层次结构的根类。每个类都使用 Object 作为超类。所有对象（包括数组）都实现这个类的方法（他是所有类的爸爸）。<br>比如随便新建一个类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其实等价于</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">person</span> <span class="keyword">extends</span> <span class="title">Object</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -243,7 +243,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	String str = <span class="string">""</span>;</span><br><span class="line">	System.out.println(str.getClass());<span class="comment">// 获取Class对象</span></span><br><span class="line">	Method[] ms = str.getClass().getMethods();<span class="comment">//获取所有方法</span></span><br><span class="line">	System.out.println(str.getClass().getName()); <span class="comment">//获取Class对象名称</span></span><br><span class="line">	<span class="keyword">for</span> (Method m :ms ) &#123;</span><br><span class="line">		System.out.println(m.getName()); <span class="comment">// 遍历方法名</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2020/02/14/javabase15-obj-sys/ff.png" alt="运行结果">  </p>
 <p>这个 getclass 到后面反射机制的时候会用到。</p>
-<h2 id="System-类"><a href="#System-类" class="headerlink" title="System 类"></a>System 类</h2><p>System 类包含一些有用的类字段和方法。它不能被实例化。   </p>
+<h2 id="二、System-类"><a href="#二、System-类" class="headerlink" title="二、System 类"></a>二、System 类</h2><p>System 类包含一些有用的类字段和方法。它不能被实例化。   </p>
 <p>在 System 类提供的设施中，有标准输入、标准输出和错误输出流；对外部定义的属性和环境变量的访问；加载文件和库的方法；还有快速复制数组的一部分的实用方法。 </p>
 <p>我们经常用的 System.out.println() 以及 在控制台输入时 System.in ，那么我们再来了解了解其他常用的系统级方法：</p>
 <h3 id="arraycopy-方法"><a href="#arraycopy-方法" class="headerlink" title="arraycopy() 方法"></a>arraycopy() 方法</h3><p>该方法的作用是数组复制，即从指定源数组中复制一个数组，复制从指定的位置开始，到目标数组的指定位置结束。该方法的具体定义如下：   </p>
@@ -431,7 +431,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            19
+                            21
                         </p>
                     </a>
                 </div>
@@ -513,7 +513,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">19</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li>
             </ul>
@@ -526,7 +526,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 15px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 15px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
     </div>
 </div>
     
@@ -538,6 +538,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -596,44 +634,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -651,7 +651,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -672,7 +672,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -700,7 +700,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -760,6 +760,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
@@ -815,44 +853,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -870,7 +870,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -891,7 +891,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -919,7 +919,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -996,7 +996,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

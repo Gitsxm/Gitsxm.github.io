@@ -13,17 +13,17 @@
     <meta name="description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（六）——循环">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/09/javabase6-xh/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/09/javabase6-xh/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/xhbg.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
 <meta property="article:published_time" content="2020-02-09T12:30:39.000Z">
-<meta property="article:modified_time" content="2020-02-14T11:17:55.816Z">
+<meta property="article:modified_time" content="2020-02-17T10:02:31.585Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/xhbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
 
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1811 个字)
+                    12 分钟 读完 (大约 1817 个字)
                 </span>
                 
                 
@@ -170,7 +170,7 @@
             <p><em>从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。<strong>本篇要求做到如下几点：理解循环含义;会用while结构;会用for/foreach结构。</strong></em>  </p>
 <a id="more"></a>
 <hr>
-<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><p>while循环的一般形式</p>
+<h2 id="一、while循环"><a href="#一、while循环" class="headerlink" title="一、while循环"></a>一、while循环</h2><p>while循环的一般形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(循环条件) &#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>循环条件判断为true他就一直循环直到为false为止，特点是先判断再执行。<br>为了锻炼肾体，我每天都坚持做俯卧撑和深蹲，各做20个，别嘲笑我菜。我们用while来做20个俯卧撑，</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt;= <span class="number">20</span> ) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -182,7 +182,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个深蹲！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125; <span class="keyword">while</span> (i &lt;= <span class="number">20</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>有没有发现基本和上面while代码一模一样，还多了个do，所以用do……while多此一举，没必要，但是照顾到有些人善于顺时思维，有些人善于逆时思维，想用那个那个，可以达到一样的效果。</p>
 <p>while的代码结构很简单，但是有需要特别注意的问题即使，在写循环条件时一定要谨慎，否则会出现死循环或者不执行循环操作，死循环会导致程序崩溃。</p>
-<h2 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h2><p>除了while循环，还有for循环，for循环的循环条件可以使用局部变量，也可以使用外部变量，当使用局部变量时，程序最多循环多少次是已知的，而while循环只能使用外部变量，无法判断循环多少次。<br>for循环的一般形式</p>
+<h2 id="二、for-循环"><a href="#二、for-循环" class="headerlink" title="二、for 循环"></a>二、for 循环</h2><p>除了while循环，还有for循环，for循环的循环条件可以使用局部变量，也可以使用外部变量，当使用局部变量时，程序最多循环多少次是已知的，而while循环只能使用外部变量，无法判断循环多少次。<br>for循环的一般形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(赋值语句;条件语句;迭代语句)&#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们用for循环来做俯卧撑20下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
@@ -196,7 +196,7 @@
 <h4 id="for-嵌套"><a href="#for-嵌套" class="headerlink" title="for 嵌套"></a>for 嵌套</h4><p>for 也是可以嵌套的，用来解决复杂的循环逻辑，比如冒泡排序，就要用到双层for循环，我们到后面再说冒泡排序，我们今天举个输出九九乘法表的例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//外循环，第一个因数取值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ;i &lt;= <span class="number">9</span> ; i++) &#123;</span><br><span class="line">			<span class="comment">//内循环，第二个因数取值</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= i; j++) &#123;</span><br><span class="line">				<span class="comment">//输出算式</span></span><br><span class="line">				System.out.print(i+<span class="string">"*"</span>+j+<span class="string">"="</span>+i*j+<span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//换行</span></span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/09/javabase6-xh/99cf.png" alt="乘法表"><br>不仅可以嵌套两套，for可以嵌套任意多套，但是随着层数增加，算法复杂度指数增加，也很少有嵌套多层的算法需求。</p>
-<h2 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach 循环"></a>forEach 循环</h2><p>forEach 循环时for循环的特殊形式，多用于数组、列表等数据结构迭代，非常好用。它的一般结构是：</p>
+<h2 id="三、forEach-循环"><a href="#三、forEach-循环" class="headerlink" title="三、forEach 循环"></a>三、forEach 循环</h2><p>forEach 循环时for循环的特殊形式，多用于数组、列表等数据结构迭代，非常好用。它的一般结构是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(类型 变量名:集合) &#123;</span><br><span class="line">    语句块;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们举个数组迭代的例子，还没讲到数据结构，但是在这里必须找个例子用，遍历一个字符串数组：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//举个字符串数组</span></span><br><span class="line">	String[] names = &#123;<span class="string">"kangkang"</span>,<span class="string">"tom"</span>,<span class="string">"john"</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(String name : names) &#123;</span><br><span class="line">		System.out.println(<span class="string">"i am "</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -331,7 +331,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            19
+                            21
                         </p>
                     </a>
                 </div>
@@ -413,7 +413,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">19</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li>
             </ul>
@@ -426,7 +426,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 15px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 15px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
     </div>
 </div>
     
@@ -438,6 +438,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -496,44 +534,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -551,7 +551,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -572,7 +572,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -600,7 +600,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -660,6 +660,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
@@ -715,44 +753,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -770,7 +770,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -791,7 +791,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -819,7 +819,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -896,7 +896,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

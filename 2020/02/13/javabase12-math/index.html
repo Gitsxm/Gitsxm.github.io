@@ -13,18 +13,18 @@
     <meta name="description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（十二）——数字处理类（Math，Random，BigInteger，BigDecimal）">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/13/javabase12-math/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/13/javabase12-math/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/86279.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/86279.png">
 <meta property="article:published_time" content="2020-02-13T11:52:36.456Z">
-<meta property="article:modified_time" content="2020-02-14T11:17:20.167Z">
+<meta property="article:modified_time" content="2020-02-17T09:59:25.778Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java数字处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/86279.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/86279.png">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    21 分钟 读完 (大约 3206 个字)
+                    21 分钟 读完 (大约 3216 个字)
                 </span>
                 
                 
@@ -171,13 +171,13 @@
             <p><em>只用四则运算符无法完成三角、对数、指数等复杂运算，以及非常大的数字运算，Java提供Math等类解决问题，<strong>本篇内容有：Math类常用方法，随机数生成，数字格式化，大数字运算。</strong></em></p>
 <a id="more"></a>
 <hr>
-<h2 id="Math类常用方法"><a href="#Math类常用方法" class="headerlink" title="Math类常用方法"></a>Math类常用方法</h2><p>挑一些经常用到的，有静态常量（自然数e，圆周率π）、求最大最小值和绝对值、求整、三角函数、指数运算，其实最常用的就是最大最小值和求整了。</p>
+<h2 id="一、Math类常用方法"><a href="#一、Math类常用方法" class="headerlink" title="一、Math类常用方法"></a>一、Math类常用方法</h2><p>挑一些经常用到的，有静态常量（自然数e，圆周率π）、求最大最小值和绝对值、求整、三角函数、指数运算，其实最常用的就是最大最小值和求整了。</p>
 <h3 id="静态常量"><a href="#静态常量" class="headerlink" title="静态常量"></a>静态常量</h3><p>自然数e和圆周率π：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//e</span></span><br><span class="line">Math.E;</span><br><span class="line"><span class="comment">//π</span></span><br><span class="line">Math.PI;</span><br></pre></td></tr></table></figure>
 <p>我们控制台输出看看：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="string">"e="</span>+Math.E);</span><br><span class="line">System.out.println(<span class="string">"π="</span>+Math.PI);</span><br></pre></td></tr></table></figure>
 <p><img src="/2020/02/13/javabase12-math/epi.png" alt="输出结果"></p>
-<h2 id="求最大最小值和绝对值"><a href="#求最大最小值和绝对值" class="headerlink" title="求最大最小值和绝对值"></a>求最大最小值和绝对值</h2><p>最常用功能，几个函数搞定，使用方法：</p>
+<h2 id="二、求最大最小值和绝对值"><a href="#二、求最大最小值和绝对值" class="headerlink" title="二、求最大最小值和绝对值"></a>二、求最大最小值和绝对值</h2><p>最常用功能，几个函数搞定，使用方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.方法名;</span><br></pre></td></tr></table></figure>
 
 <p>函数与说明：   </p>
@@ -362,7 +362,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">  &#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">    System.out.println(&quot;8 为底 2 的对数：&quot; + (Math.log(8) &#x2F; Math.log(2))); &#x2F;&#x2F; 3.0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </blockquote>
-<h2 id="随机数生成"><a href="#随机数生成" class="headerlink" title="随机数生成"></a>随机数生成</h2><p>随机数也是非常常用的功能，比如需要从数据库随机抓取数据，Java中的 Random 类提供众多生成随机数的方法，另外 Math 类也提供了一个生成随机数的方法 Math.random()，还有一种野路子，使用 currentTimeMillis（时间处理会用到，可以先了解一下） 获取毫秒值 取模生成随机数。一般情况下生成整数随机数的需求比较多一点。</p>
+<h2 id="三、随机数生成"><a href="#三、随机数生成" class="headerlink" title="三、随机数生成"></a>三、随机数生成</h2><p>随机数也是非常常用的功能，比如需要从数据库随机抓取数据，Java中的 Random 类提供众多生成随机数的方法，另外 Math 类也提供了一个生成随机数的方法 Math.random()，还有一种野路子，使用 currentTimeMillis（时间处理会用到，可以先了解一下） 获取毫秒值 取模生成随机数。一般情况下生成整数随机数的需求比较多一点。</p>
 <h3 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h3><p>如果只是随便生成一个 float 随机数，那用这个是非常合适的选择，因为 Math 是静态类，不用new 来新建对象。这个方法返回带正号的 double 值，该值大于等于 0.0 且小于 1.0，但是我们可以通过乘法来扩大数值，然后通过加减运算再取整函数来获得一个符合预期的随机数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">  System.out.println(Math.random()); <span class="comment">//0.24037287785722083</span></span><br><span class="line">  <span class="comment">//比如我想要一个100 以内的随机数</span></span><br><span class="line">  System.out.println((<span class="keyword">int</span>)(Math.random()*<span class="number">100</span>)); <span class="comment">//39</span></span><br><span class="line">  <span class="comment">//想得到一个50-100的随机数</span></span><br><span class="line">  System.out.println((<span class="keyword">int</span>)(<span class="number">50</span>+(Math.random()*(<span class="number">100</span>-<span class="number">50</span>)))); <span class="comment">//68</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -384,10 +384,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> max = <span class="number">100</span>, min = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">long</span> randomNum = System.currentTimeMillis();</span><br><span class="line">  <span class="keyword">int</span> ran3 = (<span class="keyword">int</span>) (randomNum % (max - min) + min);</span><br><span class="line">  System.out.println(ran3);<span class="comment">// 60</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<h2 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h2><p>数字的格式在解决实际问题时使用非常普遍，这时可以使用 DecimalFormat 类对结果进行格式化处理。例如，将小数位统一成 2 位，不足 2 位的以 0 补齐。<br>DecimalFormat 是 NumberFormat 的一个子类，用于格式化十进制数字。DecimalFormat 类包含一个模式和一组符号，常用符号看图<br><img src="/2020/02/13/javabase12-math/sjgs.png" alt="常用符号"><br>举个例子：  </p>
+<h2 id="四、数字格式化"><a href="#四、数字格式化" class="headerlink" title="四、数字格式化"></a>四、数字格式化</h2><p>数字的格式在解决实际问题时使用非常普遍，这时可以使用 DecimalFormat 类对结果进行格式化处理。例如，将小数位统一成 2 位，不足 2 位的以 0 补齐。<br>DecimalFormat 是 NumberFormat 的一个子类，用于格式化十进制数字。DecimalFormat 类包含一个模式和一组符号，常用符号看图<br><img src="/2020/02/13/javabase12-math/sjgs.png" alt="常用符号"><br>举个例子：  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 实例化DecimalFormat类的对象，并指定格式</span></span><br><span class="line">  DecimalFormat df1 = <span class="keyword">new</span> DecimalFormat(<span class="string">"0.0"</span>);</span><br><span class="line">  DecimalFormat df2 = <span class="keyword">new</span> DecimalFormat(<span class="string">"#.#"</span>);</span><br><span class="line">  DecimalFormat df3 = <span class="keyword">new</span> DecimalFormat(<span class="string">"000.000"</span>);</span><br><span class="line">  DecimalFormat df4 = <span class="keyword">new</span> DecimalFormat(<span class="string">"###.###"</span>);</span><br><span class="line">  Scanner scan = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">  System.out.print(<span class="string">"请输入一个float类型的数字："</span>);</span><br><span class="line">  <span class="keyword">float</span> f = scan.nextFloat();</span><br><span class="line">  <span class="comment">// 对输入的数字应用格式，并输出结果</span></span><br><span class="line">  System.out.println(<span class="string">"0.0 格式："</span> + df1.format(f));</span><br><span class="line">  System.out.println(<span class="string">"#.# 格式："</span> + df2.format(f));</span><br><span class="line">  System.out.println(<span class="string">"000.000 格式："</span> + df3.format(f));</span><br><span class="line">  System.out.println(<span class="string">"###.### 格式："</span> + df4.format(f));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2020/02/13/javabase12-math/sjgsh.png" alt="运行结果"></p>
-<h2 id="大数字运算"><a href="#大数字运算" class="headerlink" title="大数字运算"></a>大数字运算</h2><p>Java提供两个类进行大数字处理，BigInteger 类和 BigDecimal 类，解决 int 范围问题（任何数字数据类型都有范围 Java中 int 是-2147483648 ~ 2147483647 这和计算机二进制补码计算有关，感兴趣可以了解一下，用2147483647+1看看会得到什么结果）。</p>
+<h2 id="五、大数字运算"><a href="#五、大数字运算" class="headerlink" title="五、大数字运算"></a>五、大数字运算</h2><p>Java提供两个类进行大数字处理，BigInteger 类和 BigDecimal 类，解决 int 范围问题（任何数字数据类型都有范围 Java中 int 是-2147483648 ~ 2147483647 这和计算机二进制补码计算有关，感兴趣可以了解一下，用2147483647+1看看会得到什么结果）。</p>
 <h3 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h3><p>使用方法：  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建对象  val 是十进制数字 但是注意参数格式是字符串</span></span><br><span class="line">BigInteger bi = BigInteger(String val)</span><br></pre></td></tr></table></figure>
 <p>文档里方法太多了我挑些常用的方法（和 int不同的地方在于不能使用运算符计算，要用方法计算）：<br><img src="/2020/02/13/javabase12-math/bi.png" alt="BigInteger 类方法"></p>
@@ -530,7 +530,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            19
+                            21
                         </p>
                     </a>
                 </div>
@@ -612,7 +612,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">19</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li>
             </ul>
@@ -625,7 +625,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 15px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 15px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a>
     </div>
 </div>
     
@@ -637,6 +637,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -695,44 +733,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -750,7 +750,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -771,7 +771,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -799,7 +799,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -859,6 +859,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/17/javabase21-kspx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase21-kspx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十一）——快速排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/17/javabase20-px/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time></div>
+                    <a href="/2020/02/17/javabase20-px/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/16/javabase19-array-s-c/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
@@ -914,44 +952,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/15/javabase16-sjfzl/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time></div>
-                    <a href="/2020/02/15/javabase16-sjfzl/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/14/javabase15-obj-sys/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time></div>
-                    <a href="/2020/02/14/javabase15-obj-sys/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -969,7 +969,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">21</span>
                 </span>
             </a>
         </li>
@@ -990,7 +990,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">19</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -1018,7 +1018,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
                         <span class="tag">Java数组</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -1095,7 +1095,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {
