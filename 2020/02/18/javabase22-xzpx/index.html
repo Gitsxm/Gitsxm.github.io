@@ -7,21 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: Java - MggBlog</title>
+<title>JAVA零基础筑基到修仙（二十二）——选择排序 - MggBlog</title>
 
 
-    <meta name="description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MggBlog">
-<meta property="og:url" content="http://www.mggblog.ink/tags/Java/index.html">
+    <meta name="description" content="本篇内容包括：选择排序，三种排序方法总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（二十二）——选择排序">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/18/javabase22-xzpx/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
+<meta property="og:description" content="本篇内容包括：选择排序，三种排序方法总结">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/xz.jpg">
+<meta property="article:published_time" content="2020-02-18T01:43:31.000Z">
+<meta property="article:modified_time" content="2020-02-18T08:06:19.239Z">
 <meta property="article:author" content="Mgg">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java数组">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/xz.jpg">
 
 
 
@@ -80,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十二）——选择排序" height="28">
             
             </a>
         </div>
@@ -129,24 +132,13 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-image">
-        <a href="/2020/02/18/javabase22-xzpx/" class="image is-7by1">
+        <span  class="image is-7by1">
             <img class="thumbnail" src="/gallery/xz.jpg" alt="JAVA零基础筑基到修仙（二十二）——选择排序">
-        </a>
+        </span>
     </div>
     
     <div class="card-content article ">
@@ -172,21 +164,54 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/02/18/javabase22-xzpx/">JAVA零基础筑基到修仙（二十二）——选择排序</a>
+                JAVA零基础筑基到修仙（二十二）——选择排序
             
         </h1>
         <div class="content">
             <p><em>本篇内容包括：选择排序，三种排序方法总结</em></p>
+<a id="more"></a>
+<hr>
+<h2 id="一、选择排序"><a href="#一、选择排序" class="headerlink" title="一、选择排序"></a>一、选择排序</h2><h3 id="选择排序思路"><a href="#选择排序思路" class="headerlink" title="选择排序思路"></a>选择排序思路</h3><p>选择排序思路比较简单，从第一次开始，每次都找到数组中最小的值，互换掉索引最小的那个，我们举例说明：<br>如数组 int arr[] = {6,5,4,3,2,1} ,从第一个元素开始不断寻找最小值来互换：</p>
+<p>第一步，找到最小值为 1 ，互换 6 结果为 1 5 4 3 2 6；</p>
+<p>第二步，从剩下的 5 4 3 2 6 中找到最小值 2 ，互换 5 结果为 1 2 4 3 5 6；</p>
+<p>第三步，从剩下的 4 3 5 6 中找到最小值 3 ，互换 4 结果为 1 2 3 4 5 6 ，排序完成了？</p>
+<p>其实排序并没有完成，第三步完成后未排序元素为 4，5，6 ，只不过每次寻找最小都是自身了，但是程序依旧要执行后面的两步：</p>
+<p>第四步，从 4 5 6 找出 4，</p>
+<p>第五步，从 5 6 中 找出 5，</p>
+<p>当只剩下 6 一个元素时 就没必要在运行下去了，因为没有下一个元素个可以比较了。最终排序结果 1 2 3 4 5 6。</p>
+<p>分析例子：</p>
+<p>6 个元素的数组需要找 5 次最小，每一次找到最小要和未被互换过的第一个元素互换，那么程序就理顺了：</p>
+<ol>
+<li>确定循环互换次数，</li>
+<li>找最小值</li>
+<li>互换直到当前元素下标与数组长度-1相等。</li>
+</ol>
+<h3 id="构建程序"><a href="#构建程序" class="headerlink" title="构建程序"></a>构建程序</h3><p>通过上面的分析可以确定，程序需要两层循环，外层循环控制互换次数，并执行互换操作，内层循环寻找最小值。</p>
+<p>Demo：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span> arr[] = &#123; <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">1</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;<span class="comment">//外层确定次数</span></span><br><span class="line">		<span class="keyword">int</span> min = arr[i];<span class="comment">//最小值</span></span><br><span class="line">		<span class="keyword">int</span> index = i;<span class="comment">//最小值索引</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;<span class="comment">//找到最小值</span></span><br><span class="line">			<span class="keyword">if</span> (min &gt; arr[j]) &#123;</span><br><span class="line">				min = arr[j];</span><br><span class="line">				index = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[index] = arr[i];<span class="comment">//最小值与当前元素交换</span></span><br><span class="line">		arr[i] = min;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//输出排序完成结果</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i : arr)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/18/javabase22-xzpx/px.png" alt="排序完成"><br>别的没什么好说的，接下来谈谈冒泡、快速、选择排序的特点做个总结。</p>
+<h2 id="二、总结三种排序方法"><a href="#二、总结三种排序方法" class="headerlink" title="二、总结三种排序方法"></a>二、总结三种排序方法</h2><p>三种方法的时间空间复杂度稳定性比较：<br><img src="/2020/02/18/javabase22-xzpx/td.png" alt="算法特点"></p>
+<p>总结就是：</p>
+<ul>
+<li>冒泡稳定，速度一般；</li>
+<li>快速快，不稳定；</li>
+<li>选择速度一般且不稳定，元素越多效率越低。</li>
+</ul>
+<p>排序算法有七八种呢，这三种较为常见，别的有时间再去了解。</p>
+<hr>
+<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>接下来学 java 类和对象，java 语言的立足之本。</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/18/javabase22-xzpx/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E6%95%B0%E7%BB%84/" rel="tag">Java数组</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -194,562 +219,62 @@
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/17/javabase21-kspx/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/ks.jpg" alt="JAVA零基础筑基到修仙（二十一）——快速排序">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-17T14:47:29.000Z">2020-02-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    21 分钟 读完 (大约 3188 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2020/02/17/javabase21-kspx/">JAVA零基础筑基到修仙（二十一）——快速排序</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>快速排序由C. A. R. Hoare在1960年提出。快速它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</em></p>
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
         </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/17/javabase21-kspx/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/17/javabase20-px/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/mp.jpg" alt="JAVA零基础筑基到修仙（二十）——冒泡排序">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-17T07:32:04.000Z">2020-02-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1228 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/17/javabase20-px/">JAVA零基础筑基到修仙（二十）——冒泡排序</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>本篇学习数组三种排序方法中的冒泡排序，名字很形象了，冒泡，像汽水里的泡泡一个一个冒到液面。冒泡排序的思想是从第一个元素开始，和相邻的元素比较，如果大于后面元素就交换位置，最终完成排序。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/17/javabase20-px/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/16/javabase19-array-s-c/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86277.png" alt="JAVA零基础筑基到修仙（十九）——数组查询、复制">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-16T07:23:04.000Z">2020-02-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10 分钟 读完 (大约 1541 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/16/javabase19-array-s-c/">JAVA零基础筑基到修仙（十九）——数组查询、复制</a>
-            
-        </h1>
-        <div class="content">
-            <p><em><strong>本篇内容包括：数组查询指定元素，数组复制</strong></em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/16/javabase19-array-s-c/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/16/javabase18-array2/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86276.png" alt="JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-16T02:14:12.000Z">2020-02-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    14 分钟 读完 (大约 2138 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/16/javabase18-array2/">JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>一维数组显然还无法满足日常数据的存储，最常用的 Excel 有行有列就可以满足普通数据的存储需要，二维数组就是我们需要的表格形式，<strong>本期内容：二维数组、多维数组、数组常用方法（Arrays 类）</strong></em> </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/16/javabase18-array2/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/15/javabase17-array/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86275.png" alt="JAVA零基础筑基到修仙（十七）——数组简介和一维数组">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-15T08:30:43.000Z">2020-02-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1033 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/15/javabase17-array/">JAVA零基础筑基到修仙（十七）——数组简介和一维数组</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>一个数据用变量存储，如果10个人名呢，建十个变量也谈不上麻烦，那100个呢？这时候就需要引入一个新的工具来存储数据了，Java为我们提供了数组工具，<strong>本篇内容：数组简介，一维数组。</strong></em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/15/javabase17-array/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/15/javabase16-sjfzl/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86273.png" alt="JAVA零基础筑基到修仙（十六）——数据类型封装类">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-15T02:00:05.000Z">2020-02-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    19 分钟 读完 (大约 2833 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/15/javabase16-sjfzl/">JAVA零基础筑基到修仙（十六）——数据类型封装类</a>
-            
-        </h1>
-        <div class="content">
-            <p><em><strong>本篇内容：Integer 类、Float 类、Double 类、Number 类、Character 类、Boolean 类、 Byte 类。</strong></em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/15/javabase16-sjfzl/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/14/javabase15-obj-sys/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/86274.png" alt="JAVA零基础筑基到修仙（十五）——Object类和System类">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-14T14:36:42.000Z">2020-02-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13 分钟 读完 (大约 2005 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/14/javabase15-obj-sys/">JAVA零基础筑基到修仙（十五）——Object类和System类</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>Object类是所有类的父类，System类是系统类，把这俩类放一块写。剩下的数据类型包装类放一块，下回写。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/14/javabase15-obj-sys/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/14/javabase14-bz-zxcx/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/czbzbg.png" alt="JAVA零基础筑基到修仙（十四）——包装类、装箱拆箱">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-14T11:02:20.000Z">2020-02-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 720 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/14/javabase14-bz-zxcx/">JAVA零基础筑基到修仙（十四）——包装类、装箱拆箱</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>Java提倡一切皆对象，是面向对象的语言，但是从数据类型来看，引用型数据有对应的对象类，如String，而基本型数据无法被称为对象，为解决这个尴尬问题，Java为每个基本型数据类提供了对应的类，称为包装类，顾名思义就是给它们外面裹一层。<strong>本篇内容：装箱拆箱，包装类应用。</strong></em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/14/javabase14-bz-zxcx/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/14/javabase13-szcl/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/sjgshbg.png" alt="JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-14T02:04:05.000Z">2020-02-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    24 分钟 读完 (大约 3556 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/14/javabase13-szcl/">JAVA零基础筑基到修仙（十三）——时间日期处理（Date、Calendar、时间格式化）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>在开发中做数据持久化时常常需要统一的时间格式，统一查询口径，方便查询，Java提供了日期处理类 Date 和 Calendar ，Date类封装了系统时间，Calendar 根据系统日历解释 Date 对象，两个类处理时间的思路不一样。<strong>本篇内容包括：Date 类与 Calendar 类使用介绍，日期格式化</strong></em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/14/javabase13-szcl/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/Java/page/0/">上一页</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/17/javabase21-kspx/">
+                <span class="level-item">JAVA零基础筑基到修仙（二十一）——快速排序</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/Java/page/2/">下一页</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/tags/Java/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
 </div>
 </div>
                 
@@ -1337,7 +862,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十二）——选择排序" height="28">
                 
                 </a>
                 <p class="is-size-7">
