@@ -1,3 +1,3 @@
-http://www.mggblog.ink/2020/02/19/javabase25-this/
-http://www.mggblog.ink/2020/02/19/javabase24-oop-class/
-http://www.mggblog.ink/2020/02/18/javabase23-oop1/
+http://www.mggblog.ink/2020/02/20/javabase28-lgjz/
+http://www.mggblog.ink/2020/02/20/javabase27-doc/
+http://www.mggblog.ink/2020/02/20/javabase26-newobj/
