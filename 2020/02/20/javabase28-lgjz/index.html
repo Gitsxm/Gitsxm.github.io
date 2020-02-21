@@ -13,18 +13,18 @@
     <meta name="description" content="本篇把类中常用的关键字单独拿出来说说，内容包含：访问权限控制关键字 private、friendly、protected、public，静态关键字 static，完结器 final 关键字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/20/javabase28-lgjz/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/20/javabase28-lgjz/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="本篇把类中常用的关键字单独拿出来说说，内容包含：访问权限控制关键字 private、friendly、protected、public，静态关键字 static，完结器 final 关键字">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/ys.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/ys.jpg">
 <meta property="article:published_time" content="2020-02-20T11:49:51.000Z">
-<meta property="article:modified_time" content="2020-02-20T13:54:04.349Z">
+<meta property="article:modified_time" content="2020-02-21T02:27:38.571Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java面向对象">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/ys.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/ys.jpg">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 分钟 读完 (大约 2051 个字)
+                    13 分钟 读完 (大约 2005 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
             <p><em>本篇把类中常用的关键字单独拿出来说说，<strong>内容包含：访问权限控制关键字 private、friendly、protected、public，静态关键字 static，完结器 final 关键字</strong></em></p>
 <a id="more"></a>
 <hr>
-<h2 id="一、访问权限控制修饰符（private、friendly、protected、public）"><a href="#一、访问权限控制修饰符（private、friendly、protected、public）" class="headerlink" title="一、访问权限控制修饰符（private、friendly、protected、public）"></a>一、访问权限控制修饰符（private、friendly、protected、public）</h2><p>前面我们提到，类是对对象的封装，既然是封装，那出发点肯定是不想让箱子外部随机接触箱内，所以设置访问权限，想让你看的给你看，不想的外部怎么都访看不见。</p>
+<h2 id="一、访问权限控制修饰符（private、friendly、protected、public）"><a href="#一、访问权限控制修饰符（private、friendly、protected、public）" class="headerlink" title="一、访问权限控制修饰符（private、friendly、protected、public）"></a>一、访问权限控制修饰符（private、friendly、protected、public）</h2><p>前面提到，类是对对象的封装，既然是封装，那出发点肯定是不想让箱子外部随机接触箱内，所以设置访问权限，想让你看的给你看，不想的外部怎么都访看不见。</p>
 <ol>
 <li><p>类修饰符：public，default（不用写出来）<br>这四个关键字并不是随处都能用，其中 public 只能用在类声明中，在类声明中，除了使用 public 还可以什么都不写，不写的话权限默认为 default ，两者的不同为：<strong>public 声明的类可以被其他包调用，default（不加修饰符） 权限的类只能在包内使用</strong>。</p>
 </li>
@@ -237,11 +237,11 @@
 <p>前面有用到了 static 修饰的属性和方法，调用语法为：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名.方法/属性;</span><br></pre></td></tr></table></figure>
 
-<p>我们再举个例子加深印象</p>
+<p>再举个例子加深印象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Boy</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String name = <span class="string">"kangkang"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: run   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 男孩跑步 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(name + <span class="string">" is running！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: jump   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 男孩跳 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(name + <span class="string">" is jumpping！"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后编写测试类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//创建两个 boy 对象</span></span><br><span class="line">		Boy boy1 = <span class="keyword">new</span> Boy();</span><br><span class="line">		Boy boy2 = <span class="keyword">new</span> Boy();</span><br><span class="line">		System.out.println(<span class="string">"静态变量 name 值："</span>+Boy.name);</span><br><span class="line">		boy1.jump();</span><br><span class="line">		boy2.jump();</span><br><span class="line">		<span class="comment">// 在这里我们改变静态变量值</span></span><br><span class="line">		Boy.name = <span class="string">"jhon"</span>;</span><br><span class="line">		System.out.println(<span class="string">"------静态变量值改变--------"</span>);</span><br><span class="line">		System.out.println(<span class="string">"静态变量 name 值："</span>+Boy.name);</span><br><span class="line">		boy1.jump();</span><br><span class="line">		boy2.jump();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//创建两个 boy 对象</span></span><br><span class="line">		Boy boy1 = <span class="keyword">new</span> Boy();</span><br><span class="line">		Boy boy2 = <span class="keyword">new</span> Boy();</span><br><span class="line">		System.out.println(<span class="string">"静态变量 name 值："</span>+Boy.name);</span><br><span class="line">		boy1.jump();</span><br><span class="line">		boy2.jump();</span><br><span class="line">		<span class="comment">// 在这里改变静态变量值</span></span><br><span class="line">		Boy.name = <span class="string">"jhon"</span>;</span><br><span class="line">		System.out.println(<span class="string">"------静态变量值改变--------"</span>);</span><br><span class="line">		System.out.println(<span class="string">"静态变量 name 值："</span>+Boy.name);</span><br><span class="line">		boy1.jump();</span><br><span class="line">		boy2.jump();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>运行结果：</p>
 <p><img src="/2020/02/20/javabase28-lgjz/s.png" alt="静态成员不依赖对象"></p>
@@ -279,11 +279,10 @@
 <ol>
 <li>在变量中，如果使用 final ，成为常量，可以不赋值，但是在使用前必须先赋值，赋值之后就无法改变了。</li>
 <li>对基本类型变量来说是其值不可变，而对对象引用类型变量来说其引用不可再变。</li>
-<li>我们在开发中约定，如果使用 final 定义常量，常量的名字使用全大写字符，如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String IP = <span class="string">"192.168.1.1"</span>;</span><br></pre></td></tr></table></figure></li>
+<li>在开发中我们约定，如果使用 final 定义常量，常量的名字使用全大写字符，如：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String IP = <span class="string">"192.168.1.1"</span>;</span><br></pre></td></tr></table></figure></li>
 <li>如果 final 修饰了类，就不需要在类方法前加 final 操作没有意义。</li>
 </ol>
 <hr>
-<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>大部分是概念知识，前面多多少少都有碰到过，但是这些确实是基础内容，要会用。</p>
 
         </div>
         
@@ -326,6 +325,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/21/javabase29-main/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JAVA零基础筑基到修仙（二十九）—— main() 方法</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -405,7 +411,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -487,7 +493,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">28</span>
+                <span class="level-item tag">29</span>
             </span>
         </a></li>
             </ul>
@@ -500,7 +506,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 16.67px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.5px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.5px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 17.5px;">Java面向对象</a>
     </div>
 </div>
     
@@ -512,6 +518,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -589,25 +614,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -625,7 +631,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -646,7 +652,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -688,7 +694,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -741,6 +747,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/20/javabase28-lgjz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/ys.jpg" alt="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
@@ -815,25 +840,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -851,7 +857,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -872,7 +878,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -914,7 +920,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -984,7 +990,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

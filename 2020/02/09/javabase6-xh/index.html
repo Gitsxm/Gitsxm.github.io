@@ -13,17 +13,17 @@
     <meta name="description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（六）——循环">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/09/javabase6-xh/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/09/javabase6-xh/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/xhbg.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
 <meta property="article:published_time" content="2020-02-09T12:30:39.000Z">
-<meta property="article:modified_time" content="2020-02-17T10:02:31.585Z">
+<meta property="article:modified_time" content="2020-02-21T01:12:00.326Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/xhbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
 
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1817 个字)
+                    12 分钟 读完 (大约 1797 个字)
                 </span>
                 
                 
@@ -172,33 +172,33 @@
 <hr>
 <h2 id="一、while循环"><a href="#一、while循环" class="headerlink" title="一、while循环"></a>一、while循环</h2><p>while循环的一般形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(循环条件) &#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>循环条件判断为true他就一直循环直到为false为止，特点是先判断再执行。<br>为了锻炼肾体，我每天都坚持做俯卧撑和深蹲，各做20个，别嘲笑我菜。我们用while来做20个俯卧撑，</p>
+<p>循环条件判断为true他就一直循环直到为false为止，特点是先判断再执行。<br>为了锻炼肾体，我每天都坚持做俯卧撑和深蹲，各做20个，别嘲笑我菜。用while来做20个俯卧撑，</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt;= <span class="number">20</span> ) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/fwc.png" alt="运行结果"><br>就是这么简单，如果没有循环，我需要20个 System.out.println 改中间的数值烦死了，有没有发现，现在科技的的进步都是”懒“来驱动的，尤其在it行业，哈哈哈。<br>趁热打铁，再做个练习，计算一下5门考试科目的平均成绩，具体哪科就不说了啊，我们控制台输入五个数求平均值。</p>
+<p>运行结果<br><img src="/2020/02/09/javabase6-xh/fwc.png" alt="运行结果"><br>就是这么简单，如果没有循环，我需要20个 System.out.println 改中间的数值烦死了，有没有发现，现在科技的的进步都是”懒“来驱动的，尤其在it行业，哈哈哈。<br>趁热打铁，再做个练习，计算一下5门考试科目的平均成绩，具体哪科就不说了啊，控制台输入五个数求平均值。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>,score = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt; <span class="number">5</span> ) &#123;</span><br><span class="line">			score += input.nextInt();</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">double</span> avg = score/i;</span><br><span class="line">		System.out.println(<span class="string">"五科的平均分是："</span>+avg);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/pjf.png" alt="运行结果"><br>我们上面用的是 while 的常见形式，先判断后执行，它还有另一种先执行后判断的形式————“ do……while”形式，不过基本上很少用到。<br>do……while循环的一般形式</p>
+<p>运行结果<br><img src="/2020/02/09/javabase6-xh/pjf.png" alt="运行结果"><br>上面用的是 while 的常见形式，先判断后执行，它还有另一种先执行后判断的形式————“ do……while”形式，不过基本上很少用到。<br>do……while循环的一般形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">循环操作</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(循环条件)</span><br></pre></td></tr></table></figure>
-<p>才做了20个俯卧撑，还有20个深蹲要做，我们用do……while来做一下</p>
+<p>才做了20个俯卧撑，还有20个深蹲要做，用do……while来做一下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个深蹲！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125; <span class="keyword">while</span> (i &lt;= <span class="number">20</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>有没有发现基本和上面while代码一模一样，还多了个do，所以用do……while多此一举，没必要，但是照顾到有些人善于顺时思维，有些人善于逆时思维，想用那个那个，可以达到一样的效果。</p>
 <p>while的代码结构很简单，但是有需要特别注意的问题即使，在写循环条件时一定要谨慎，否则会出现死循环或者不执行循环操作，死循环会导致程序崩溃。</p>
 <h2 id="二、for-循环"><a href="#二、for-循环" class="headerlink" title="二、for 循环"></a>二、for 循环</h2><p>除了while循环，还有for循环，for循环的循环条件可以使用局部变量，也可以使用外部变量，当使用局部变量时，程序最多循环多少次是已知的，而while循环只能使用外部变量，无法判断循环多少次。<br>for循环的一般形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(赋值语句;条件语句;迭代语句)&#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们用for循环来做俯卧撑20下：</p>
+<p>用for循环来做俯卧撑20下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/for.png" alt="运行结果"><br>不一样的实现方法，和 while 循环对比记忆，效果更佳。另外，for 语句中赋值、循环条件以及迭代部分都可以为空语句（但分号不能省略），三者均为空的时候，相当于一个无限循环。我们来思考一下当赋值语句，条件语句，迭代语句分别为空时，做20个俯卧撑要怎么写。</p>
+<p>运行结果<br><img src="/2020/02/09/javabase6-xh/for.png" alt="运行结果"><br>不一样的实现方法，和 while 循环对比记忆，效果更佳。另外，for 语句中赋值、循环条件以及迭代部分都可以为空语句（但分号不能省略），三者均为空的时候，相当于一个无限循环。来思考一下当赋值语句，条件语句，迭代语句分别为空时，做20个俯卧撑要怎么写。</p>
 <ol>
 <li>赋值语句为空<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;<span class="comment">//就是简单的放到外面</span></span><br><span class="line">		<span class="keyword">for</span> (; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
-<li>条件语句为空（又见 break 关键字）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (i &gt; <span class="number">20</span>)</span><br><span class="line">				<span class="keyword">break</span>;<span class="comment">//这里我们碰到了昨天在 switch 语句中出现的 break 关键字，在这里的作用是结束循环，如果没有它，没有循环条件限制，循环就会一直下去。</span></span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个俯卧撑"</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
+<li>条件语句为空（又见 break 关键字）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (i &gt; <span class="number">20</span>)</span><br><span class="line">				<span class="keyword">break</span>;<span class="comment">//这里碰到了昨天在 switch 语句中出现的 break 关键字，在这里的作用是结束循环，如果没有它，没有循环条件限制，循环就会一直下去。</span></span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个俯卧撑"</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
 <li>迭代语句为空<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">20</span>;) &#123;</span><br><span class="line">		System.out.println(<span class="string">"第"</span> + i + <span class="string">"个俯卧撑"</span>);</span><br><span class="line">		i++;<span class="comment">//简单的放到里面就可以了</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 三个代码都跑过了，没问题，不再上图了。请读者自己用for循环写个计算平均数的小程序，用上Scanner类，控制台输入数据。另外思考一下，空三个条件又该怎么写呢？（从三段代码里找答案）</li>
 </ol>
-<h4 id="for-嵌套"><a href="#for-嵌套" class="headerlink" title="for 嵌套"></a>for 嵌套</h4><p>for 也是可以嵌套的，用来解决复杂的循环逻辑，比如冒泡排序，就要用到双层for循环，我们到后面再说冒泡排序，我们今天举个输出九九乘法表的例子：</p>
+<h4 id="for-嵌套"><a href="#for-嵌套" class="headerlink" title="for 嵌套"></a>for 嵌套</h4><p>for 也是可以嵌套的，用来解决复杂的循环逻辑，比如冒泡排序，就要用到双层for循环，到后面再说冒泡排序，今天举个输出九九乘法表的例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//外循环，第一个因数取值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ;i &lt;= <span class="number">9</span> ; i++) &#123;</span><br><span class="line">			<span class="comment">//内循环，第二个因数取值</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= i; j++) &#123;</span><br><span class="line">				<span class="comment">//输出算式</span></span><br><span class="line">				System.out.print(i+<span class="string">"*"</span>+j+<span class="string">"="</span>+i*j+<span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//换行</span></span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/09/javabase6-xh/99cf.png" alt="乘法表"><br>不仅可以嵌套两套，for可以嵌套任意多套，但是随着层数增加，算法复杂度指数增加，也很少有嵌套多层的算法需求。</p>
 <h2 id="三、forEach-循环"><a href="#三、forEach-循环" class="headerlink" title="三、forEach 循环"></a>三、forEach 循环</h2><p>forEach 循环时for循环的特殊形式，多用于数组、列表等数据结构迭代，非常好用。它的一般结构是：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(类型 变量名:集合) &#123;</span><br><span class="line">    语句块;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们举个数组迭代的例子，还没讲到数据结构，但是在这里必须找个例子用，遍历一个字符串数组：</p>
+<p>举个数组迭代的例子，还没讲到数据结构，但是在这里必须找个例子用，遍历一个字符串数组：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//举个字符串数组</span></span><br><span class="line">	String[] names = &#123;<span class="string">"kangkang"</span>,<span class="string">"tom"</span>,<span class="string">"john"</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(String name : names) &#123;</span><br><span class="line">		System.out.println(<span class="string">"i am "</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/09/javabase6-xh/foreach.png" alt="轻松处理并输出"><br>for绝对可以完成foreach的工作，但是用for遍历数组的话就要通过数组下标循环遍历，还是 foreach 好用，程序员”懒”就是生产力啊！<br>循环结构就这么多内容，到这里，逻辑思考就多了起来，多多练习，祝早日变大佬！！</p>
 <hr>
@@ -331,7 +331,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -413,7 +413,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">28</span>
+                <span class="level-item tag">29</span>
             </span>
         </a></li>
             </ul>
@@ -426,7 +426,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 16.67px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.5px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.5px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 17.5px;">Java面向对象</a>
     </div>
 </div>
     
@@ -438,6 +438,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -515,25 +534,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -551,7 +551,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -572,7 +572,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -614,7 +614,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -667,6 +667,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/20/javabase28-lgjz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/ys.jpg" alt="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
@@ -741,25 +760,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -777,7 +777,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -798,7 +798,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -840,7 +840,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -910,7 +910,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

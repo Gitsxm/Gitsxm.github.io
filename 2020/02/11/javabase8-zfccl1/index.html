@@ -10,21 +10,21 @@
 <title>JAVA零基础筑基到修仙（八）——字符串处理（1） - MggBlog</title>
 
 
-    <meta name="description" content="我们在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，我们单独拿出来说一说。由于内容较多，需要一点一点讲，本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换。">
+    <meta name="description" content="在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，单独拿出来说一说。由于内容较多，需要一点一点讲，本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（八）——字符串处理（1）">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/11/javabase8-zfccl1/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/11/javabase8-zfccl1/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="我们在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，我们单独拿出来说一说。由于内容较多，需要一点一点讲，本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换。">
+<meta property="og:description" content="在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，单独拿出来说一说。由于内容较多，需要一点一点讲，本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/zfccl.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/zfccl.jpg">
 <meta property="article:published_time" content="2020-02-11T08:18:36.000Z">
-<meta property="article:modified_time" content="2020-02-17T10:01:28.527Z">
+<meta property="article:modified_time" content="2020-02-21T01:12:02.643Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java字符串处理">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/zfccl.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/zfccl.jpg">
 
 
 
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    19 分钟 读完 (大约 2780 个字)
+                    18 分钟 读完 (大约 2747 个字)
                 </span>
                 
                 
@@ -168,18 +168,18 @@
             
         </h1>
         <div class="content">
-            <p><em>我们在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，我们单独拿出来说一说。由于内容较多，需要一点一点讲，<strong>本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换</strong>。</em></p>
+            <p><em>在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，单独拿出来说一说。由于内容较多，需要一点一点讲，<strong>本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换</strong>。</em></p>
 <a id="more"></a>
 <hr>
 <h2 id="一、字符串的定义"><a href="#一、字符串的定义" class="headerlink" title="一、字符串的定义"></a>一、字符串的定义</h2><p>字符串有两种定义方式，直接定义和使用 String 类定义，无论是哪种定义方式，它的所有对象都是不可变对象，变量值的每一次改变都会指向一个新的对象，旧的对象还在内存里面（前面提到过引用型数据内存存储方法<a href="http://www.mggblog.ink/2020/02/06/javabase3-bsfgjzclbltj/">筑基到修仙（三）</a>）。</p>
 <blockquote>
 <p>简单说明一下，Java内存有一块特殊的区域，常量池，在编译时用来存储 final型数据和对象字面量，String类型数据就是对象字面量，常量池专门存储这些在编译时就已经能够确定的数据，防止频繁的创建于销毁对象，影响内存性能。有兴趣就要去详细了解虚拟机内存机制，对后期提升有帮助，我也只是略懂皮毛,下面说一下我对这个不可变对象的理解。</p>
 <blockquote>
-<p>在介绍数据类型时我们说过，内存内分为堆和栈，而引用型将变量名存放于栈上，使用指针指向位于堆上的对象，结合常量池我们举个例子比如：</p>
+<p>在介绍数据类型时说过，内存内分为堆和栈，而引用型将变量名存放于栈上，使用指针指向位于堆上的对象，结合常量池举个例子比如：</p>
 <p>首先有 String str = “abc” ， 新建另一个变量时 Sting str1 = “abc”  会现在常量池中搜索是否有”abc”,如果有就不会创建新的对象，只是添加一个指针引用。当变量重新赋值 str = “def” ，就会修改指针指向（常量池有就直接指向，没有就新建“def”对象），但是内存堆中 “abc” 依然存在，所以现在这个str与原str是两个对象。  </p>
 <p>用 String str3 = new String(“abc”) 这种方式创建，至少产生了一个对象，编译时会在常量池中查找是否有”abc”,有就指向，没有就创建，在运行时因为有 new 又会重新创建一个“abc”对象，所以说至少创建了一个，可能创建了俩对象。<br>举个例子更清楚：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1 &#x3D; &quot;abc&quot;;</span><br><span class="line">String str2 &#x3D; &quot;abc&quot;;</span><br><span class="line">String str3 &#x3D; new String(&quot;abc&quot;);</span><br><span class="line">System.out.println(str1 &#x3D;&#x3D; str2); &#x2F;&#x2F;true</span><br><span class="line">System.out.println(str1 &#x3D;&#x3D; str3); &#x2F;&#x2F;false</span><br><span class="line">str2 &#x3D; &quot;bcd&quot;;</span><br><span class="line">System.out.println(str1 &#x3D;&#x3D; str2); &#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
-<p>这里面又有一个坑就是字符串使用”==”比较其实是比较对象，只比较字符串值得话我们在后面<a href="http://www.mggblog.ink/2020/02/12/javabase10-zfccl3">筑基到修仙（十）</a>再做详细说明。</p>
+<p>这里面又有一个坑就是字符串使用”==”比较其实是比较对象，只比较字符串值得话在后面<a href="http://www.mggblog.ink/2020/02/12/javabase10-zfccl3">筑基到修仙（十）</a>再做详细说明。</p>
 </blockquote>
 </blockquote>
 <h3 id="直接定义字符串"><a href="#直接定义字符串" class="headerlink" title="直接定义字符串"></a>直接定义字符串</h3><p>直接定义就是使用 “” 号，引号内部是字符串内容，既可以直接声明变量与值，也可以先声明变量再赋值，举例如下：</p>
@@ -190,26 +190,26 @@
 举一个正常使用的例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	String str;</span><br><span class="line">	str = <span class="string">"Oh!awesome!"</span>;</span><br><span class="line">	String str1 = <span class="string">"这是我独享的moment"</span>;</span><br><span class="line">	System.out.println(str);</span><br><span class="line">	System.out.println(str1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/02/11/javabase8-zfccl1/str1.png" alt="运行结果"></li>
 </ol>
-<h3 id="使用-String-类定义（包含了使用-length-方法获取字符串长度）"><a href="#使用-String-类定义（包含了使用-length-方法获取字符串长度）" class="headerlink" title="使用 String 类定义（包含了使用.length 方法获取字符串长度）"></a>使用 String 类定义（包含了使用.length 方法获取字符串长度）</h3><p>直接定义的字符串和使用 String 类定义产生的都是 String 类对象，我们打开jdk API帮助文档来认识一下这个 String 类。<br>首先说明是 String 类的身份信息和初始化示例：<br><img src="/2020/02/11/javabase8-zfccl1/strapi1.png" alt="基本信息"><br>然后是构造方法摘要，包含构造方法和众多重载构造方法（重载我们后面再说，就是和构造方法名相同，参数不同）：<br><img src="/2020/02/11/javabase8-zfccl1/strapi2.png" alt="构造方法"><br>方法摘要，包含当前jdk支持的所有方法，jdk版本不同包含的方法不一样，有的会过时，也有会新增，但是不会有特别大的变化，通过 对象.方法（）; 调用。<br><img src="/2020/02/11/javabase8-zfccl1/strapi3.png" alt="方法摘要"><br>最后是构造详解与方法详解：<br><img src="/2020/02/11/javabase8-zfccl1/gzxj.png" alt="构造详解"><br><img src="/2020/02/11/javabase8-zfccl1/ffxj.png" alt="方法详解"><br>我们通过例子学习如何使用 String 类，和 String 类方法，下面代码使用了获取字符串长度的类方法，获取字符串长度在很多地方非常重要，比如数据迭代，数据输入长度限制等：</p>
+<h3 id="使用-String-类定义（包含了使用-length-方法获取字符串长度）"><a href="#使用-String-类定义（包含了使用-length-方法获取字符串长度）" class="headerlink" title="使用 String 类定义（包含了使用.length 方法获取字符串长度）"></a>使用 String 类定义（包含了使用.length 方法获取字符串长度）</h3><p>直接定义的字符串和使用 String 类定义产生的都是 String 类对象，打开jdk API帮助文档来认识一下这个 String 类。<br>首先说明是 String 类的身份信息和初始化示例：<br><img src="/2020/02/11/javabase8-zfccl1/strapi1.png" alt="基本信息"><br>然后是构造方法摘要，包含构造方法和众多重载构造方法（重载后面再说，就是和构造方法名相同，参数不同）：<br><img src="/2020/02/11/javabase8-zfccl1/strapi2.png" alt="构造方法"><br>方法摘要，包含当前jdk支持的所有方法，jdk版本不同包含的方法不一样，有的会过时，也有会新增，但是不会有特别大的变化，通过 对象.方法（）; 调用。<br><img src="/2020/02/11/javabase8-zfccl1/strapi3.png" alt="方法摘要"><br>最后是构造详解与方法详解：<br><img src="/2020/02/11/javabase8-zfccl1/gzxj.png" alt="构造详解"><br><img src="/2020/02/11/javabase8-zfccl1/ffxj.png" alt="方法详解"><br>通过例子学习如何使用 String 类，和 String 类方法，下面代码使用了获取字符串长度的类方法，获取字符串长度在很多地方非常重要，比如数据迭代，数据输入长度限制等：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	String str = <span class="keyword">new</span> String();</span><br><span class="line">	str = <span class="string">"i am kangkang"</span>;</span><br><span class="line">	String str1 = <span class="keyword">new</span> String(<span class="string">"i am jhon"</span>);<span class="comment">//使用重载构造方法</span></span><br><span class="line">	<span class="keyword">int</span> long1 = str.length();<span class="comment">//调用length方法获取字符串长度</span></span><br><span class="line">	<span class="keyword">int</span> long2 = str1.length();</span><br><span class="line">	System.out.println(str);</span><br><span class="line">	System.out.println(str1);</span><br><span class="line">	System.out.println(<span class="string">"str的长度是："</span>+long1);</span><br><span class="line">	System.out.println(<span class="string">"str1的长度是："</span>+long2);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/11/javabase8-zfccl1/gzcs.png" alt="运行结果"><br>还有其他常用构造方法，比如用字符数组初始化字符串，再此不再举例，读者自己练一下，体会一下如何使用帮助文档（字符数组声明  char[] ch ={‘a’,’a’,’b’} 或者 {56，80} 看一下如果里面不带单引号的数字输出时什么，涉及到ASCII码知识）。</p>
 <blockquote>
-<p>我们说一下另两个也会用到的字符串类 StringBuffer 和 StringBuilder：</p>
+<p>说一下另两个也会用到的字符串类 StringBuffer 和 StringBuilder：</p>
 <p>这两个类最常用的是StringBuffer，一句话表述两个的区别是，StringBuffer 为线程安全类，StringBuilder 非线程安全类，因为还没说到线程我们不多做解释，字面意思，两个类功能差不多的化你使用哪个，肯定是安全的那个，所以通常 StringBuilder 很少用到。</p>
-<p>因为有文档，我们不在这里长篇叙述 StringBuffer 类的各种信息，只说什么时候使用，使用时与 String  类有什么不同：</p>
+<p>因为有文档，不在这里长篇叙述 StringBuffer 类的各种信息，只说什么时候使用，使用时与 String  类有什么不同：</p>
 <ol>
-<li>StringBuffer 类是我们需要特别长字符串的时候使用，比如要通过字符串写一段超长的SQL语句（数据库查询语言），由于内存存储机制，使用 String 类对象可能会导致内存性能下降(说是这么说，我到现在还没遇到过出问题)，这时候我们用 StringBuffer。buffer的意思是缓冲区，就是在创建对象时就创建缓冲区，对内存进行优化。</li>
+<li>StringBuffer 类是需要特别长字符串的时候使用，比如要通过字符串写一段超长的SQL语句（数据库查询语言），由于内存存储机制，使用 String 类对象可能会导致内存性能下降(说是这么说，我到现在还没遇到过出问题)，这时候用 StringBuffer。buffer的意思是缓冲区，就是在创建对象时就创建缓冲区，对内存进行优化。</li>
 <li>String 对象可以直接赋值，而且对象不可变（在内存中栈的位置不变，变得是堆中数据得位置），改变对象值就相当于建了一个新的对象。StringBuffer 需要通过构造方法来初始化，而且对象可变，值得改变不会新建对象，不会浪费内存性能，所以当有大量需要拼接得字符串时推荐使用StringBuffer。</li>
 <li>最常用得不同点，拼接方法不同，StringBuffer 不能用 “+”拼接，需要append()方法。<br>写个Demo:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		StringBuffer str = <span class="keyword">new</span> StringBuffer(<span class="string">" i am kangkang ,"</span>);</span><br><span class="line">		str .append(<span class="string">"i am a handsome boy"</span>);</span><br><span class="line">		<span class="comment">//拼接方法也不一样</span></span><br><span class="line">		String str1 = <span class="string">" i am sicong ,"</span>;</span><br><span class="line">		str1 += <span class="string">"i am rich"</span>;</span><br><span class="line">		System.out.println(str);</span><br><span class="line">		System.out.println(str1);</span><br><span class="line">	&#125;</span><br><span class="line">&gt; </span><br></pre></td></tr></table></figure>
 运行结果<br><img src="/2020/02/11/javabase8-zfccl1/buffer.png" alt="运行结果"></li>
 </ol>
 </blockquote>
-<h2 id="二、字符串拼接"><a href="#二、字符串拼接" class="headerlink" title="二、字符串拼接"></a>二、字符串拼接</h2><p>在开发中字符串拼接的需求太多了，比如说参数传过来人员相关数据，需要拼接各个属性成为一个完整的句子，那我们来实践一下吧。</p>
+<h2 id="二、字符串拼接"><a href="#二、字符串拼接" class="headerlink" title="二、字符串拼接"></a>二、字符串拼接</h2><p>在开发中字符串拼接的需求太多了，比如说参数传过来人员相关数据，需要拼接各个属性成为一个完整的句子，来实践一下吧。</p>
 <ol>
-<li>String 类型字符串使用 “+” 来拼接，这个方法我们用过很多次了，不举例了。</li>
-<li>String 类型字符串使用concat（）方法来拼接，这个我们还没有提到过，从他开始吧：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	String[] person = &#123; <span class="string">" he was "</span>, <span class="string">" kangkang,"</span>, <span class="string">" handsome "</span>, <span class="string">" and "</span>, <span class="string">"rich"</span> &#125;;</span><br><span class="line">	String boy = <span class="string">"the boy said that:"</span>;</span><br><span class="line">	<span class="keyword">for</span> (String str : person) &#123;</span><br><span class="line">		<span class="comment">// boy += str ;</span></span><br><span class="line">		boy = boy.concat(str);<span class="comment">// 与“+”效果一样</span></span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(boy);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>String 类型字符串使用 “+” 来拼接，这个方法用过很多次了，不举例了。</li>
+<li>String 类型字符串使用concat（）方法来拼接，这个还没有提到过，从他开始吧：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	String[] person = &#123; <span class="string">" he was "</span>, <span class="string">" kangkang,"</span>, <span class="string">" handsome "</span>, <span class="string">" and "</span>, <span class="string">"rich"</span> &#125;;</span><br><span class="line">	String boy = <span class="string">"the boy said that:"</span>;</span><br><span class="line">	<span class="keyword">for</span> (String str : person) &#123;</span><br><span class="line">		<span class="comment">// boy += str ;</span></span><br><span class="line">		boy = boy.concat(str);<span class="comment">// 与“+”效果一样</span></span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(boy);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 结果和 + 效果没有区别<br><img src="/2020/02/11/javabase8-zfccl1/hand.png" alt="运行结果"><br>这两种方法喜欢哪种用哪种。</li>
-<li>StringBuffer 刚才我们说过了，使用 append（） 方法也不再举例了。</li>
+<li>StringBuffer 刚才说过了，使用 append（） 方法也不再举例了。</li>
 <li>其他类型与字符串拼接，直接拼就行了，其他类型会自动转为字符串类型（隐式转换），有不能拼的编译器会给提示：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">double</span> d = <span class="number">0.99</span>;</span><br><span class="line">	<span class="keyword">char</span> c = <span class="string">'A'</span>;</span><br><span class="line">	<span class="keyword">boolean</span> b = <span class="keyword">true</span> ;</span><br><span class="line">	<span class="keyword">float</span> f = <span class="number">9.9999f</span>;</span><br><span class="line">	System.out.println(<span class="string">"test is "</span>+i+d+c+b+f);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/02/11/javabase8-zfccl1/pj.png" alt="运行结果"></li>
 </ol>
@@ -361,7 +361,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -443,7 +443,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">28</span>
+                <span class="level-item tag">29</span>
             </span>
         </a></li>
             </ul>
@@ -456,7 +456,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 16.67px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.5px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.5px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 17.5px;">Java面向对象</a>
     </div>
 </div>
     
@@ -468,6 +468,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -545,25 +564,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -581,7 +581,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -602,7 +602,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -644,7 +644,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -697,6 +697,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/20/javabase28-lgjz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/ys.jpg" alt="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
@@ -771,25 +790,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -807,7 +807,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -828,7 +828,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -870,7 +870,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -940,7 +940,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

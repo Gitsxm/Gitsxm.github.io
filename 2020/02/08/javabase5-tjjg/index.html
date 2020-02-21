@@ -10,20 +10,20 @@
 <title>JAVA零基础筑基到修仙（五）——条件结构 - MggBlog</title>
 
 
-    <meta name="description" content="条件结构和后面的循环结构我们统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。">
+    <meta name="description" content="条件结构和后面的循环结构统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（五）——条件结构">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/08/javabase5-tjjg/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/08/javabase5-tjjg/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="条件结构和后面的循环结构我们统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。">
+<meta property="og:description" content="条件结构和后面的循环结构统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/tjjgbg.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/tjjgbg.jpg">
 <meta property="article:published_time" content="2020-02-08T11:57:27.000Z">
-<meta property="article:modified_time" content="2020-02-17T10:02:54.086Z">
+<meta property="article:modified_time" content="2020-02-21T01:08:39.805Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/tjjgbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/tjjgbg.jpg">
 
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    14 分钟 读完 (大约 2125 个字)
+                    14 分钟 读完 (大约 2113 个字)
                 </span>
                 
                 
@@ -167,7 +167,7 @@
             
         </h1>
         <div class="content">
-            <p><em>条件结构和后面的循环结构我们统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。</em></p>
+            <p><em>条件结构和后面的循环结构统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。</em></p>
 <a id="more"></a>
 <hr>
 <h2 id="一、if……else……"><a href="#一、if……else……" class="headerlink" title="一、if……else……"></a>一、if……else……</h2><p>为什么需要条件结构，举个例子，过年小明家有邻居来拜年，邻居带着女儿，小姐姐甚是漂亮，小明想要搭话，那该怎么称呼呢，姐姐？还是小姐姐？这就需要来个年龄判断了:</p>
@@ -193,16 +193,16 @@
 <li><em>default</em><br>表示“默认”，即其他情况都不满足。default 后要紧跟冒号，default 块和 case 块的先后顺序可以变动，不会影响程序执行结果。通常，default 块放在末尾，也可以省略不写。</li>
 <li><em>break</em><br>表示“停止”，即跳出当前结构。<br>如果在 case 分支语句的末尾没有 break 语句，有可能触发多个 case 分支。那么就会接着执行下一个 case 分支语句。这种情况相当危险，常常会引发错误。所以不到非使用不可，咱不用这个。</li>
 </ol>
-<p>我们举两个例子来结束switch的学习，一个正确用法，一个错误用法。<br>小明期末考试结束，成绩90分以上算优秀，他妈说考一个优秀对应奖励一本寒假作业，一个都没有奖励3本，还有一顿打（小明太幸福了），小明这个寒假过的快不快乐呢？我们用switch语句演示一下。<br>先来正确的：</p>
+<p>举两个例子来结束switch的学习，一个正确用法，一个错误用法。<br>小明期末考试结束，成绩90分以上算优秀，他妈说考一个优秀对应奖励一本寒假作业，一个都没有奖励3本，还有一顿打（小明太幸福了），小明这个寒假过的快不快乐呢？用switch语句演示一下。<br>先来正确的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.print(<span class="string">"请输入小明获优个数："</span>);</span><br><span class="line">		<span class="keyword">int</span> best = input.nextInt();</span><br><span class="line">		<span class="comment">// 我们假设小明一共考三个科目。</span></span><br><span class="line">		<span class="keyword">if</span> (best &gt; <span class="number">3</span> || best &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"小明：谢谢别乱输入！"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">switch</span> (best) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励一本"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励两本"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励三本"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>: <span class="comment">//0个</span></span><br><span class="line">			System.out.println(<span class="string">"奖励三本，一顿毒打"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>控制台输入2，看结果：<br><img src="/2020/02/08/javabase5-tjjg/2bjl.png" alt="小明得到两本"><br>如果我们忘了加break会怎样：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.print(<span class="string">"请输入小明获优个数："</span>);</span><br><span class="line">		<span class="keyword">int</span> best = input.nextInt();</span><br><span class="line">		<span class="comment">// 我们假设小明一共考三个科目。</span></span><br><span class="line">		<span class="keyword">if</span> (best &gt; <span class="number">3</span> || best &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"小明：谢谢别乱输入！"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">switch</span> (best) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励一本"</span>);</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励两本"</span>);</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励三本"</span>);</span><br><span class="line">		<span class="keyword">default</span>: <span class="comment">//0个</span></span><br><span class="line">			System.out.println(<span class="string">"奖励三本，一顿毒打"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>我们继续输入2：<br><img src="/2020/02/08/javabase5-tjjg/mb.png" alt="小明获得了叠加奖励"><br>小明这下要高兴坏了呢，哈哈哈。忘记break，从匹配那条开始下面的代码都会执行，这是严重的逻辑错误。</p>
+<p>控制台输入2，看结果：<br><img src="/2020/02/08/javabase5-tjjg/2bjl.png" alt="小明得到两本"><br>如果忘了加break会怎样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		System.out.print(<span class="string">"请输入小明获优个数："</span>);</span><br><span class="line">		<span class="keyword">int</span> best = input.nextInt();</span><br><span class="line">		<span class="comment">// 假设小明一共考三个科目。</span></span><br><span class="line">		<span class="keyword">if</span> (best &gt; <span class="number">3</span> || best &lt; <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"小明：谢谢别乱输入！"</span>);</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">switch</span> (best) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励一本"</span>);</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励两本"</span>);</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.println(<span class="string">"奖励三本"</span>);</span><br><span class="line">		<span class="keyword">default</span>: <span class="comment">//0个</span></span><br><span class="line">			System.out.println(<span class="string">"奖励三本，一顿毒打"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>继续输入2：<br><img src="/2020/02/08/javabase5-tjjg/mb.png" alt="小明获得了叠加奖励"><br>小明这下要高兴坏了呢，哈哈哈。忘记break，从匹配那条开始下面的代码都会执行，这是严重的逻辑错误。</p>
 <p>另外代码中if判断的地方为要判断多个条件做了实例，用上了“||”短路或，还有花括号内部用了 return 。“return” 在Java中代表结束，在一个方法中，出现return意味着方法的结束，return 可用在任何方法里， return null/true/false/“”/…  则需要用在有返回值的方法里。方法前有“void”关键字 则说明无返回值，否则有返回值，需要返回什么类型的返回值就要把“void” 换成什么类型，简单举个例子：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String who = str();<span class="comment">//声明变量来获得返回值</span></span><br><span class="line">		System.out.println(who);</span><br><span class="line">		System.out.println(str());<span class="comment">//也可以不用新建对象</span></span><br><span class="line">	&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">str</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"This is kangkang"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/08/javabase5-tjjg/fhz.png" alt="体会一下"></p>
 <h2 id="三、if-or-switch"><a href="#三、if-or-switch" class="headerlink" title="三、if or switch ?"></a>三、if or switch ?</h2><p>if 和 switch 可以变通，那该怎么选择呢？理论上，条件分支越多，switch 的优势越明显，所以本着物尽其用的原则，在分支少的时候用 if ,分支多的时候用 switch 。</p>
-<p>如果没有编程基础，确实不太容易接收，“无论遇到什么困难我们都不要怕……加油！奥力给！！！”（巨魔吟唱）。随着内容越来越深入，代码越来越复杂，为保证写代码美观、快捷，在此说两个eclipse里常用快捷键，”Alt+/“代码提示，”ctrl+shift+f”代码自动格式化，以及自己设置额key 用 sout 回车打出 System.out.println，注释模板等；感兴趣可以去百度搜一搜，挺好玩的。</p>
+<p>如果没有编程基础，确实不太容易接收，“我们无论遇到什么困难，都不要怕……加油！奥力给！！！”（巨魔吟唱）。随着内容越来越深入，代码越来越复杂，为保证写代码美观、快捷，在此说两个eclipse里常用快捷键，”Alt+/“代码提示，”ctrl+shift+f”代码自动格式化，以及自己设置 key 用 sout 回车打出 System.out.println，注释模板等；感兴趣可以去百度搜一搜，挺好玩的。</p>
 <hr>
 <h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>每天一篇，坚持住，今天自己搭个gitlab+本地nginx看了一堆博客随便点开，内容图片都一样，我承认优秀博客不少，但是又相当多的博客都是整篇抄来抄去，自己都不去操作验证，导致找一个适合自己电脑环境而且方法完整正确好难好难，浪费了大量时间。我的知识也都是网络上学的，知道网络博客一大抄的坑，所以我想让我写的每篇博客的内容都有自己实践过，保证正确性。看csdn的博客真的太难了。</p>
 
@@ -333,7 +333,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -415,7 +415,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">28</span>
+                <span class="level-item tag">29</span>
             </span>
         </a></li>
             </ul>
@@ -428,7 +428,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 16.67px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.5px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.5px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 17.5px;">Java面向对象</a>
     </div>
 </div>
     
@@ -440,6 +440,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -517,25 +536,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -553,7 +553,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -574,7 +574,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -616,7 +616,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -669,6 +669,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/20/javabase28-lgjz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/ys.jpg" alt="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
@@ -743,25 +762,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -779,7 +779,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -800,7 +800,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -842,7 +842,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -912,7 +912,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

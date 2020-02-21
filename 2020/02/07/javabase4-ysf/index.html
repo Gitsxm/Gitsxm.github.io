@@ -10,20 +10,20 @@
 <title>JAVA零基础筑基到修仙（四）——运算符 - MggBlog</title>
 
 
-    <meta name="description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
+    <meta name="description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA零基础筑基到修仙（四）——运算符">
-<meta property="og:url" content="https://gitsxm.github.io/2020/02/07/javabase4-ysf/index.html">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/07/javabase4-ysf/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
+<meta property="og:description" content="觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，这篇讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitsxm.github.io/gallery/ysfbg.jpg">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/ysfbg.jpg">
 <meta property="article:published_time" content="2020-02-07T06:54:43.000Z">
-<meta property="article:modified_time" content="2020-02-17T10:04:29.899Z">
+<meta property="article:modified_time" content="2020-02-21T01:11:58.110Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitsxm.github.io/gallery/ysfbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/ysfbg.jpg">
 
 
 
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    18 分钟 读完 (大约 2707 个字)
+                    18 分钟 读完 (大约 2679 个字)
                 </span>
                 
                 
@@ -167,11 +167,11 @@
             
         </h1>
         <div class="content">
-            <p><em>觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，<strong>这篇我们讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。</strong></em>  </p>
+            <p><em>觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，<strong>这篇讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。</strong></em>  </p>
 <a id="more"></a>
 <hr>
 <h2 id="一、算数运算符"><a href="#一、算数运算符" class="headerlink" title="一、算数运算符"></a>一、算数运算符</h2><p>故名思意，就是算数用的，加减乘除，分为一元和二元两种：</p>
-<h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><p>一元运算符就是一个元素就可以用，有三个 -、++（自增运算符）、--（自减运算符），自增、自减我们一起带过，不再单独说。<br><img src="/2020/02/07/javabase4-ysf/yyysf.png" alt="一元运算符"><br>++a表示a=a+1,--a表示a=a-1，除了 - 其他两个有运算先后之分，在变量前面先计算,在变量后面则要运行完本条代码后再计算，举例：</p>
+<h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><p>一元运算符就是一个元素就可以用，有三个 -、++（自增运算符）、--（自减运算符），自增、自减一起带过，不再单独说。<br><img src="/2020/02/07/javabase4-ysf/yyysf.png" alt="一元运算符"><br>++a表示a=a+1,--a表示a=a-1，除了 - 其他两个有运算先后之分，在变量前面先计算,在变量后面则要运行完本条代码后再计算，举例：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">		System.out.println(-a);<span class="comment">//取反</span></span><br><span class="line">		System.out.println(++a);<span class="comment">//先运算a=a+1，再输出，输出2;  a=2</span></span><br><span class="line">		System.out.println(a++);<span class="comment">//先输出a,输出2,再运算a=a+1,   a=3</span></span><br><span class="line">		System.out.println(--a);<span class="comment">//先运算a=a-1,再输出，输出2;   a=2,</span></span><br><span class="line">		System.out.println(a--);<span class="comment">//先输出a，输出2，再运算a=a-1, a=1;</span></span><br><span class="line">		System.out.println(a);<span class="comment">//输出a,a=1;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2020/02/07/javabase4-ysf/yyys.png" alt="运行结果"></p>
 <h3 id="二元运算符"><a href="#二元运算符" class="headerlink" title="二元运算符"></a>二元运算符</h3><p>就是常见的加减乘除等形式，另外还有求模。<br><img src="/2020/02/07/javabase4-ysf/eyysf.png" alt="二元运算符"><br>加减乘除的运算优先级和数学上是一样的，括号内有最高优先级。进行算术运算时应注意以下两点：</p>
@@ -180,30 +180,33 @@
 <li>两个整数进行除法运算，其结果仍为整数。如果整数与实数进行除法运算，则结果为实数。<br>举个例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">float</span> k = <span class="number">1f</span>;</span><br><span class="line">		System.out.println(j/i);</span><br><span class="line">		System.out.println(k/i);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 运行结果<br><img src="/2020/02/07/javabase4-ysf/zylx.png" alt="变量类型不同结果不同"><br>建议写几个加减乘除综合运算（带上取余），用上不同类型，看看结果是不是和想象中一样，光看或者复制我的代码是效果不会很好。</li>
 </ul>
-<h2 id="二、赋值运算符（-）"><a href="#二、赋值运算符（-）" class="headerlink" title="二、赋值运算符（=）"></a>二、赋值运算符（=）</h2><p>赋值是这种格式 [变量名称=表达式内容] ，不要把 = 想象成数学中的等号，比如 a=b+1 要理解成将b+1的值赋予a,读代码顺序从右往左。<br>赋值运算符可以与算数运算符组合，如 a+=2 等同于 a=a+2 下面列举了常用组合：<br><img src="/2020/02/07/javabase4-ysf/fzzh.png" alt="变量类型不同结果不同"><br>这样的好处是让代码更简洁，易读，易维护，我们动手试一下：</p>
+<h2 id="二、赋值运算符（-）"><a href="#二、赋值运算符（-）" class="headerlink" title="二、赋值运算符（=）"></a>二、赋值运算符（=）</h2><p>赋值是这种格式 [变量名称=表达式内容] ，不要把 = 想象成数学中的等号，比如 a=b+1 要理解成将b+1的值赋予a,读代码顺序从右往左。<br>赋值运算符可以与算数运算符组合，如 a+=2 等同于 a=a+2 下面列举了常用组合：<br><img src="/2020/02/07/javabase4-ysf/fzzh.png" alt="变量类型不同结果不同"><br>这样的好处是让代码更简洁，易读，易维护，动手试一下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">double</span> price = <span class="number">10.25</span>; <span class="comment">// 定义商品的单价，赋值为10.25</span></span><br><span class="line">	    <span class="keyword">double</span> total = <span class="number">0</span>; <span class="comment">// 定义总价初始为0</span></span><br><span class="line">	    <span class="keyword">int</span> count = <span class="number">2</span>; <span class="comment">// 定义购买数量，赋值为2</span></span><br><span class="line">	    price -= <span class="number">1.25</span>; <span class="comment">// 减去降价得到当前单价</span></span><br><span class="line">	    count *= <span class="number">5</span>; <span class="comment">// 现在需要购买10个，即原来数量的5倍</span></span><br><span class="line">	    total = price * count; <span class="comment">// 总价=当前单价*数量</span></span><br><span class="line">	    System.out.printf(<span class="string">"商品当前的单价为：%4.2f \n"</span>, price); <span class="comment">// 输出当前单价</span></span><br><span class="line">	    System.out.printf(<span class="string">"购买商品的数量为：%d \n"</span>, count); <span class="comment">// 输出购买数量</span></span><br><span class="line">	    System.out.printf(<span class="string">"总价为：%4.2f \n"</span>, total); <span class="comment">// 输出总价</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果<br><img src="/2020/02/07/javabase4-ysf/zhys.png" alt="组合运算"></p>
-<h2 id="三、逻辑运算符（-amp-amp-、-、-）"><a href="#三、逻辑运算符（-amp-amp-、-、-）" class="headerlink" title="三、逻辑运算符（&amp;&amp;、||、!）"></a>三、逻辑运算符（&amp;&amp;、||、!）</h2><p>逻辑运算符把各个运算的关系表达式连接起来组成一个复杂的逻辑表达式，以判断程序中的表达式是否成立，判断的结果是 true 或 false。包含逻辑与、或、非和短路与、或。逻辑运算符是对布尔型变量进行运算，其结果也是布尔型：<br><img src="/2020/02/07/javabase4-ysf/ljysf.png" alt="逻辑运算符"><br>短路的意思我们举个例子解释一下：</p>
+<h2 id="三、逻辑运算符（-amp-amp-、-、-）"><a href="#三、逻辑运算符（-amp-amp-、-、-）" class="headerlink" title="三、逻辑运算符（&amp;&amp;、||、!）"></a>三、逻辑运算符（&amp;&amp;、||、!）</h2><p>逻辑运算符把各个运算的关系表达式连接起来组成一个复杂的逻辑表达式，以判断程序中的表达式是否成立，判断的结果是 true 或 false。包含逻辑与、或、非和短路与、或。逻辑运算符是对布尔型变量进行运算，其结果也是布尔型：<br><img src="/2020/02/07/javabase4-ysf/ljysf.png" alt="逻辑运算符"><br>短路的意思举个例子解释一下：</p>
 <ul>
 <li>&amp;&amp; 与 &amp; 区别：如果 a 为 false，则不计算 b（因为不论 b 为何值，结果都为 false）</li>
-<li>|| 与 | 区别：如果 a 为 true，则不计算 b（因为不论 b 为何值，结果都为 true）<br>我们在敲代码时基本很少用到逻辑与、或，常用的都是短路与、或，而且提倡多用短路，节省系统资源。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">boolean</span> a = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br><span class="line">		System.out.println(!a);</span><br><span class="line">		System.out.println(a&amp;b);</span><br><span class="line">		System.out.println(a&amp;a);</span><br><span class="line">		System.out.println(a&amp;&amp;b);</span><br><span class="line">		System.out.println(a&amp;&amp;a);</span><br><span class="line">		System.out.println(a|b);</span><br><span class="line">		System.out.println(a|a);</span><br><span class="line">		System.out.println(a||b);</span><br><span class="line">		System.out.println(a||a);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2020/02/07/javabase4-ysf/ljys.png" alt="逻辑运算"><br>看看和自己想象中的结果是否相同。</li>
+<li>|| 与 | 区别：如果 a 为 true，则不计算 b（因为不论 b 为何值，结果都为 true）</li>
+<li>在敲代码时基本很少用到逻辑与、或，常用的都是短路与、或，而且提倡多用短路，节省系统资源。</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">boolean</span> a = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br><span class="line">		System.out.println(!a);</span><br><span class="line">		System.out.println(a&amp;b);</span><br><span class="line">		System.out.println(a&amp;a);</span><br><span class="line">		System.out.println(a&amp;&amp;b);</span><br><span class="line">		System.out.println(a&amp;&amp;a);</span><br><span class="line">		System.out.println(a|b);</span><br><span class="line">		System.out.println(a|a);</span><br><span class="line">		System.out.println(a||b);</span><br><span class="line">		System.out.println(a||a);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/02/07/javabase4-ysf/ljys.png" alt="逻辑运算"><br>看看和自己想象中的结果是否相同。</p>
 <h2 id="四、关系运算符（比较运算符）"><a href="#四、关系运算符（比较运算符）" class="headerlink" title="四、关系运算符（比较运算符）"></a>四、关系运算符（比较运算符）</h2><p>关系运算符也叫比较运算符，一个字”比“。大于、小于、等于、不等于、小于等于、大于等于，相比结果为布尔型：<br><img src="/2020/02/07/javabase4-ysf/gxysf.png" alt="关系运算符"><br>关系运算符的优先级为：&gt;、&lt;、&gt;=、&lt;= 具有相同的优先级，并且高于具有相同优先级的 !=、==。关系运算符的优先级高于赋值运算符而低于算术运算符，结合方向是自左向右。<br>关系表达式通常用于 Java 程序的逻辑判断语句的条件表达式中。使用关系表达式要注意以下几点：</p>
 <ul>
 <li>运算符 &gt;=、==、！=、&lt;= 是两个字符构成的一个运算符，用空格从中分开写就会产生语法错误。例如 x&gt; =y; 是错误的，但是可以写成x &gt;= y; 在运算符的两侧增加空格会提高可读性。同样将运算符写反，例如 =&gt;、=&lt;、=! 等形式会产生语法错误。</li>
 <li>由于计算机内存放的实数与实际的实数存在着一定的误差，如果对浮点数进行 ==（相等）或 !=（不相等）的比较，容易产生错误结果，应该尽量避免。</li>
 <li>不要将“==”写成“=”。（在进行if条件判断时常会写错）</li>
 </ul>
-<p>这里我们补充个以后写测试类经常会用到的类，控制台输入类$\color{red}{ Scanner }$，我们打开jdk文档看一下，ctrl+f 搜索 scanner （百度也许更快，不过我觉得自己看文档更有逼格，人生不是为了装逼就毫无意义）：<br><img src="/2020/02/07/javabase4-ysf/scanner.png" alt="Scanner类"><br><img src="/2020/02/07/javabase4-ysf/scanner2.png" alt="Scanner类"><br>文档中给出了用法示例，以及各种方法接下来做个练习在控制台输入两个数比较大小（输完第一个数按回车输第二个）：</p>
+<p>这里补充个以后写测试类经常会用到的类，控制台输入类$\color{red}{ Scanner }$，打开jdk文档看一下，ctrl+f 搜索 scanner （百度也许更快，不过我觉得自己看文档更有逼格，人生不是为了装逼就毫无意义）：<br><img src="/2020/02/07/javabase4-ysf/scanner.png" alt="Scanner类"><br><img src="/2020/02/07/javabase4-ysf/scanner2.png" alt="Scanner类"><br>文档中给出了用法示例，以及各种方法接下来做个练习在控制台输入两个数比较大小（输完第一个数按回车输第二个）：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> number1, number2; <span class="comment">// 定义变量，保存输入的两个数</span></span><br><span class="line">	    System.out.print(<span class="string">"请输入第一个整数(number1)："</span>);</span><br><span class="line">	    Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	    number1 = input.nextInt(); <span class="comment">// 输入第一个数</span></span><br><span class="line">	    System.out.print(<span class="string">"请输入第二个整数(number2)："</span>);</span><br><span class="line">	    input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">	    number2 = input.nextInt(); <span class="comment">// 输入第二个数</span></span><br><span class="line">	    System.out.printf(<span class="string">"number1=%d,number2=%d\n"</span>, number1, number2); <span class="comment">// 输出这两个数</span></span><br><span class="line">	    <span class="comment">// 判断用户输入的两个数是否相等</span></span><br><span class="line">	    <span class="keyword">if</span> (number1 == number2) &#123;</span><br><span class="line">	        System.out.println(<span class="string">"number1 和 number2 相等。"</span>);</span><br><span class="line">	    &#125;</span><br><span class="line">	    <span class="comment">// 判断用户输入的两个数据是否相等</span></span><br><span class="line">	    <span class="keyword">if</span> (number1 != number2) &#123;</span><br><span class="line">	        System.out.println(<span class="string">"number1 和 number2 不相等。"</span>);</span><br><span class="line">	        <span class="comment">// 判断用户输入的数1是否大于数2</span></span><br><span class="line">	        <span class="keyword">if</span> (number1 &gt; number2) &#123;</span><br><span class="line">	            System.out.println(<span class="string">"number1 大于 number2。"</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="comment">// 判断用户输入的数1是否小于数2</span></span><br><span class="line">	        <span class="keyword">if</span> (number1 &lt; number2) &#123;</span><br><span class="line">	            System.out.println(<span class="string">"number1 小于 number2。"</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/07/javabase4-ysf/bj.png" alt="比较结果"><br>这里面我们用到了if条件结构，到后面单独说一下吧。</p>
-<h2 id="五、位运算符"><a href="#五、位运算符" class="headerlink" title="五、位运算符"></a>五、位运算符</h2><h3 id="位逻辑运算符"><a href="#位逻辑运算符" class="headerlink" title="位逻辑运算符"></a>位逻辑运算符</h3><p>位逻辑运算用于二进制数的计算，两个数对位上与、或、非、抑或、即位取反。上图：<br><img src="/2020/02/07/javabase4-ysf/wljysf.png" alt="位逻辑运算符"><br>举个例子，计算5&amp;12，我们将计算过程画出来：<br><img src="/2020/02/07/javabase4-ysf/yys.png" alt="5&amp;12"><br>我们看到对位上都为1该位对应的结果为1否则为零，最终计算结果转为十进制为4，那么或（|）运算是对应位置有1就得1，抑或运算（^）是对位相同为1，不同为0，取反（~）是对应位置直接取反，1变0，0变1，我们不再一一举例。</p>
+<p>运行结果<br><img src="/2020/02/07/javabase4-ysf/bj.png" alt="比较结果"><br>这里面用到了if条件结构，到后面单独说一下吧。</p>
+<h2 id="五、位运算符"><a href="#五、位运算符" class="headerlink" title="五、位运算符"></a>五、位运算符</h2><h3 id="位逻辑运算符"><a href="#位逻辑运算符" class="headerlink" title="位逻辑运算符"></a>位逻辑运算符</h3><p>位逻辑运算用于二进制数的计算，两个数对位上与、或、非、抑或、即位取反。上图：<br><img src="/2020/02/07/javabase4-ysf/wljysf.png" alt="位逻辑运算符"><br>举个例子，计算5&amp;12，将计算过程画出来：<br><img src="/2020/02/07/javabase4-ysf/yys.png" alt="5&amp;12"><br>看到对位上都为1该位对应的结果为1否则为零，最终计算结果转为十进制为4，那么或（|）运算是对应位置有1就得1，抑或运算（^）是对位相同为1，不同为0，取反（~）是对应位置直接取反，1变0，0变1，不再一一举例。</p>
 <h3 id="移位运算符（-gt-gt-、-lt-lt-）"><a href="#移位运算符（-gt-gt-、-lt-lt-）" class="headerlink" title="移位运算符（&gt;&gt;、&lt;&lt;）"></a>移位运算符（&gt;&gt;、&lt;&lt;）</h3><p>移位运算同样对于二进制来说的：</p>
 <ul>
 <li>&gt;&gt; 右移位 例8 &gt;&gt; 1结果为4</li>
-<li>&lt;&lt; 左移位 例9 &lt;&lt; 2结果为36<br>我们联系下左移位运算：例如11 &lt;&lt; 1 结果为22<br><img src="/2020/02/07/javabase4-ysf/zyw.png" alt="11 &lt;&lt; 1"><br>我们发现左移一位结果时原来的二倍，根据二进制转十进制的计算方法，其实就是左移一位就乘二。同理右移一位是除二，我们不再一一举例。</li>
+<li>&lt;&lt; 左移位 例9 &lt;&lt; 2结果为36</li>
 </ul>
+<p>练习下左移位运算：例如11 &lt;&lt; 1 结果为22<br><img src="/2020/02/07/javabase4-ysf/zyw.png" alt="11 &lt;&lt; 1"><br>发现左移一位结果时原来的二倍，根据二进制转十进制的计算方法，其实就是左移一位就乘二。同理右移一位是除二，不再一一举例。</p>
 <h3 id="复合位赋值运算符"><a href="#复合位赋值运算符" class="headerlink" title="复合位赋值运算符"></a>复合位赋值运算符</h3><p>所有的二进制位运算符都有一种将赋值与位运算组合在一起的简写形式。复合位赋值运算符由赋值运算符与位逻辑运算符和位移运算符组合而成：<br><img src="/2020/02/07/javabase4-ysf/fh.png" alt="复合位赋值运算符"><br>其实和+=、-=、一样的理解方法，平时很少用到，不再举例了。</p>
 <h2 id="六、三目运算符（值-条件-表达式1-表达式2）"><a href="#六、三目运算符（值-条件-表达式1-表达式2）" class="headerlink" title="六、三目运算符（值=条件?表达式1:表达式2）"></a>六、三目运算符（值=条件?表达式1:表达式2）</h2><p>判断是否符合条件，符合运行表达式1，不符合运行表达式2，得出结果。因为右三个因数，所以叫三目运算符，它相当于一个 if……else 条件结构，相比普通if条件结构代码简洁，执行效率高。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> i = input.nextInt();</span><br><span class="line">		System.out.println(i &gt; <span class="number">10</span> ? <span class="string">"i大于十"</span> :<span class="string">"i小于十"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -338,7 +341,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            28
+                            29
                         </p>
                     </a>
                 </div>
@@ -420,7 +423,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">28</span>
+                <span class="level-item tag">29</span>
             </span>
         </a></li>
             </ul>
@@ -433,7 +436,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 16.67px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 16.67px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.5px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.5px;">Java字符串处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 17.5px;">Java面向对象</a>
     </div>
 </div>
     
@@ -445,6 +448,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -522,25 +544,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -558,7 +561,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -579,7 +582,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -621,7 +624,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -674,6 +677,25 @@
         
         <article class="media">
             
+            <a href="/2020/02/21/javabase29-main/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time></div>
+                    <a href="/2020/02/21/javabase29-main/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十九）—— main() 方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/20/javabase28-lgjz/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/ys.jpg" alt="JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）">
@@ -748,25 +770,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/19/javabase24-oop-class/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-19T00:47:36.000Z">2020-02-19</time></div>
-                    <a href="/2020/02/19/javabase24-oop-class/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -784,7 +787,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">28</span>
+                    <span class="level-item tag">29</span>
                 </span>
             </a>
         </li>
@@ -805,7 +808,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">28</span>
+                        <span class="tag is-grey">29</span>
                     </a>
                 </div>
                 
@@ -847,7 +850,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -917,7 +920,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://Gitsxm.github.io',
+        url: 'http://www.mggblog.ink',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {

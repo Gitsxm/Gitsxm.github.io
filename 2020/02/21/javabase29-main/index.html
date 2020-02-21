@@ -7,23 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（七）——Debug - MggBlog</title>
+<title>JAVA零基础筑基到修仙（二十九）—— main() 方法 - MggBlog</title>
 
 
-    <meta name="description" content="人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”，把给程序找毛病的行为叫“Debug”，中文叫调试。">
+    <meta name="description" content="Java中，mian 方法是所有程序的入口，与其他方法有很大的不同，从开始到现在 main 方法已经用过很多次了，但是从来没有详细说明过 main 方法的特点，本篇内容来补充这个知识点。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（七）——Debug">
-<meta property="og:url" content="http://www.mggblog.ink/2020/02/10/javabase7-debug/index.html">
+<meta property="og:title" content="JAVA零基础筑基到修仙（二十九）—— main() 方法">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/21/javabase29-main/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”，把给程序找毛病的行为叫“Debug”，中文叫调试。">
+<meta property="og:description" content="Java中，mian 方法是所有程序的入口，与其他方法有很大的不同，从开始到现在 main 方法已经用过很多次了，但是从来没有详细说明过 main 方法的特点，本篇内容来补充这个知识点。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/gallery/debugbg.jpg">
-<meta property="article:published_time" content="2020-02-10T15:34:00.000Z">
-<meta property="article:modified_time" content="2020-02-21T01:12:01.406Z">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/main.jpg">
+<meta property="article:published_time" content="2020-02-21T01:45:43.000Z">
+<meta property="article:modified_time" content="2020-02-21T02:37:26.484Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java面向对象">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/gallery/debugbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/main.jpg">
 
 
 
@@ -82,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（七）——Debug" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法" height="28">
             
             </a>
         </div>
@@ -136,7 +137,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/debugbg.jpg" alt="JAVA零基础筑基到修仙（七）——Debug">
+            <img class="thumbnail" src="/gallery/main.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法">
         </span>
     </div>
     
@@ -144,7 +145,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-10T15:34:00.000Z">2020-02-10</time>
+                <time class="level-item has-text-grey" datetime="2020-02-21T01:45:43.000Z">2020-02-21</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
@@ -154,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 660 个字)
+                    4 分钟 读完 (大约 606 个字)
                 </span>
                 
                 
@@ -163,16 +164,35 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（七）——Debug
+                JAVA零基础筑基到修仙（二十九）—— main() 方法
             
         </h1>
         <div class="content">
-            <p><em>人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”，把给程序找毛病的行为叫“Debug”，中文叫调试。</em></p>
+            <p><em>Java中，mian 方法是所有程序的入口，与其他方法有很大的不同，从开始到现在 main 方法已经用过很多次了，但是从来没有详细说明过 main 方法的特点，本篇内容来补充这个知识点。</em></p>
 <a id="more"></a>
 <hr>
-<p>咱们生病了有专门的医生看病，但是程序病了可没有专门帮你调bug的人，所以debug的事在是太重要了，说着我就打开了eclipse。<br>eclipse 上 debug 的操作比较简单，先使用debug来查看一下程序如何运行，变量如何变化，熟悉一下使用到的各个按钮，用一个简单的循环，昨天的俯卧撑：<br>使用调试首先要打断点，在代码行最前双击，举个最简单的例子，看一下循环中，变量 i 如何变化：<br><img src="/2020/02/10/javabase7-debug/ddd.png" alt="打上断点"><br><img src="/2020/02/10/javabase7-debug/zan.png" alt="工具栏里找run，然后点debug"><br><img src="/2020/02/10/javabase7-debug/dkts.png" alt="遇到弹框点打开"><br><img src="/2020/02/10/javabase7-debug/qj.png" alt="简单看一下全局页面"><br>因为当前代码里没有实例方法调用，直接点下一步就行了step into 用在比如有一行代码是 jump()方法 可以通过into 跳到jump()方法内部查看。这里直接点step over就行了。<br><img src="/2020/02/10/javabase7-debug/into.png" alt="step into"><br><img src="/2020/02/10/javabase7-debug/over.png" alt="step over"><br><img src="/2020/02/10/javabase7-debug/jj.png" alt="随着不断点击变量i一直在增加"><br>偶们知道了，i++后，i增加了1。<br><img src="/2020/02/10/javabase7-debug/kzt.png" alt="控制台一段一段打出来"><br>疯狂点完二十下<br><img src="/2020/02/10/javabase7-debug/over1.png" alt="debug完了"><br>好了本次debug就算完成了，最重要的是要在debug中观察变量的变化是否符合逻辑，通常都会有恍然大悟的感觉。后面我回再补充遇到问题代码如何调试，本篇先告诉读者有这个东西，简单怎么使用。（我实在熬不动了）</p>
+<h2 id="Java-main-方法"><a href="#Java-main-方法" class="headerlink" title="Java main() 方法"></a>Java main() 方法</h2><p>main 方法有只有一种写法，格式为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过 main 方法代码发现：</p>
+<ul>
+<li>main 方法是公有的；</li>
+<li>main 方法是静态方法；（在当前类的 main 里调用其他方法，那这个方法也必须是 static 修饰）</li>
+<li>main 方法没有返回值；</li>
+<li>main 方法的参数是字符串数组。（用来接收执行 Java 程序的命令行参数。命令行参数作为字符串，按照顺序依次对应字符串数组中的元素。）</li>
+</ul>
+<p>一定要注意，main 方法的定义中只有参数名 args 是可以改变的，其他都是固定格式，不能添不能少。但是我们约定参数名和java规范中的名字一样，所以 args 也是不能改的。</p>
+<p>注意因为 static 修饰，main 方法里调用的所有方法必是静态方法，否者无法调用，举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	dogJump();</span><br><span class="line">	catJump();<span class="comment">//Cannot make a static reference to the non-static method catJump() from the type Test</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">dogJump</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"Dog jump!!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catJump</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="string">"Cat jump!!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>新建一个类，下面通过 Windows 命令行工具，查看 main 方法里参数的情况：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMain</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = args.length; <span class="comment">// 获取参数数量</span></span><br><span class="line">		System.out.println(<span class="string">"一共有 "</span> + n + <span class="string">" 个参数"</span>);</span><br><span class="line">		<span class="keyword">if</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			<span class="comment">// 判断参数个数是否大于0</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">				System.out.println(args[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行过程：<br><img src="/2020/02/21/javabase29-main/m.png" alt="通过控制台输入参数"></p>
+<p>可以发现 main 方法可以通过控制台传递字符串参数。</p>
+<p>一个程序只能有一个 main 方法，通常做测试用，比如写了几个类，需要一个入口来测试类中方法是否正确。我们称为单元测试，单元测试在开发中非常重要。</p>
+<p>后面会遇到 Junit ，一个专门用来做单元测试的工具，到时候再详细介绍用法。</p>
 <hr>
-<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>今天想把博客从github移到服务器上，本来想用gitlab的，但是调了半天搭好gitlab，page页总是配不好，不能用，最后晚上放弃了，采用了git仓库+nginx的方法，也有很多坑要填，熬到现在，熬不动了，特殊时期不敢生病啊。晚安！！</p>
 
         </div>
         
@@ -180,7 +200,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">Java面向对象</a>
                 </div>
             </div>
         </div>
@@ -216,17 +236,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/11/javabase8-zfccl1/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础筑基到修仙（八）——字符串处理（1）</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/09/javabase6-xh/">
-                <span class="level-item">JAVA零基础筑基到修仙（六）——循环</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/20/javabase28-lgjz/">
+                <span class="level-item">JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -856,7 +869,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（七）——Debug" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十九）—— main() 方法" height="28">
                 
                 </a>
                 <p class="is-size-7">
