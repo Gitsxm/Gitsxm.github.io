@@ -7,19 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数） - MggBlog</title>
 
 
     <meta name="description" content="在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。所以说类是对象的抽象，对象是类的具体。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
+<meta property="og:title" content="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）">
 <meta property="og:url" content="http://www.mggblog.ink/2020/02/19/javabase24-oop-class/index.html">
 <meta property="og:site_name" content="MggBlog">
 <meta property="og:description" content="在面向对象中，类和对象是最基本、最重要的组成单元。类实际上是表示一个客观世界某类群体的一些基本特征抽象。对象就是表示一个个具体的东西。所以说类是对象的抽象，对象是类的具体。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/oop2.jpg">
 <meta property="article:published_time" content="2020-02-19T00:47:36.000Z">
-<meta property="article:modified_time" content="2020-02-21T01:13:33.293Z">
+<meta property="article:modified_time" content="2020-02-21T04:12:27.348Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java面向对象">
@@ -83,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）" height="28">
             
             </a>
         </div>
@@ -137,7 +137,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法">
+            <img class="thumbnail" src="/gallery/oop2.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）">
         </span>
     </div>
     
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    21 分钟 读完 (大约 3091 个字)
+                    23 分钟 读完 (大约 3458 个字)
                 </span>
                 
                 
@@ -164,7 +164,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法
+                JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）
             
         </h1>
         <div class="content">
@@ -277,6 +277,16 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = <span class="number">10</span>;</span><br><span class="line">String s = <span class="string">"kk"</span>;</span><br><span class="line">Car car1 = <span class="keyword">new</span> Car;</span><br><span class="line"><span class="keyword">double</span> speed =  <span class="number">120.0</span>;</span><br><span class="line"></span><br><span class="line">printf(sum,s,car1,d);<span class="comment">// 调用方法时 给的参数叫 实际参数 实参</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>还要提醒一点：在方法内部注意变量的作用域 看好花括号 “ {} “</p>
+<h3 id="类方法的可变参数"><a href="#类方法的可变参数" class="headerlink" title="类方法的可变参数"></a>类方法的可变参数</h3><p>可变参数的意思就是方法的参数数量可以变化，在开发过程中会经常遇到参数个数无法确定的情况，这时候就需要可变参数了。</p>
+<p>可变参数的语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">methodName(&#123;paramList&#125;,paramType…paramName);</span><br></pre></td></tr></table></figure>
+<p>其中，methodName 表示方法名称；paramList 表示方法的固定参数列表；paramType 表示可变参数的类型；… 是声明可变参数的标识；paramName 表示可变参数名称。</p>
+<p><em>注意：可变参数必须定义在参数列表的最后。</em></p>
+<p>举个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Kbcs</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"有其他参数方法"</span>);</span><br><span class="line">		kbParam(<span class="string">"kk"</span>, <span class="number">10</span>, <span class="keyword">new</span> <span class="keyword">double</span>[] &#123; <span class="number">8.8</span>, <span class="number">9.9</span>, <span class="number">123.4</span> &#125;);</span><br><span class="line">		System.out.println(<span class="string">"无其他参数方法"</span>);</span><br><span class="line">		kbParam2(<span class="number">8.8</span>, <span class="number">9.9</span>, <span class="number">123.4</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: kbParam</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 有其他参数</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> i</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> ds</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">kbParam</span><span class="params">(String name, <span class="keyword">int</span> i, <span class="keyword">double</span>... ds)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"可变参数个数："</span> + ds.length);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">double</span> d : ds) &#123;</span><br><span class="line">			System.out.println(d);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: kbParam2</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 无其他参数</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> ds</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">kbParam2</span><span class="params">(<span class="keyword">double</span>... ds)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"可变参数个数："</span> + ds.length);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">double</span> d : ds) &#123;</span><br><span class="line">			System.out.println(d);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/19/javabase24-oop-class/cs.png" alt="有无其他参数，带入参数方法不一样"></p>
+<p>当有其他参数时，可变参数要放在后面，并且需要 new 创建对应类型的数组对象，填写参数。</p>
+<p>当没有其他参数时，可以直接写对应类型的参数。</p>
 <hr>
 <h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>这部分知识内容多，需要多练，多体会，基础要打牢。</p>
 
@@ -962,7 +972,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）" height="28">
                 
                 </a>
                 <p class="is-size-7">
