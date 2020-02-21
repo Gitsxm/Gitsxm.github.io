@@ -7,21 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: Java - MggBlog</title>
+<title>JAVA零基础筑基到修仙（三十）——构造方法 - MggBlog</title>
 
 
-    <meta name="description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MggBlog">
-<meta property="og:url" content="http://www.mggblog.ink/tags/Java/page/3/index.html">
+    <meta name="description" content="构造方法是类的特殊方法，创建类时会默认创建一个没有参数，没有具体方法体的构造方法，称为无参构造，还可以自己写有参数的构造完成类初始化，下面详细说说构造方法的用法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（三十）——构造方法">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/21/javabase30-gzff/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
+<meta property="og:description" content="构造方法是类的特殊方法，创建类时会默认创建一个没有参数，没有具体方法体的构造方法，称为无参构造，还可以自己写有参数的构造完成类初始化，下面详细说说构造方法的用法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/constructor.jpg">
+<meta property="article:published_time" content="2020-02-21T07:59:32.000Z">
+<meta property="article:modified_time" content="2020-02-21T09:11:46.102Z">
 <meta property="article:author" content="Mgg">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java面向对象">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/constructor.jpg">
 
 
 
@@ -80,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法" height="28">
             
             </a>
         </div>
@@ -129,627 +132,155 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/constructor.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-21T07:59:32.000Z">2020-02-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 分钟 读完 (大约 1024 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JAVA零基础筑基到修仙（三十）——构造方法
+            
+        </h1>
+        <div class="content">
+            <p><em>构造方法是类的特殊方法，创建类时会默认创建一个没有参数，没有具体方法体的构造方法，称为无参构造，还可以自己写有参数的构造完成类初始化，下面详细说说构造方法的用法。</em></p>
+<a id="more"></a>
+<hr>
+<p>方法名与类名一模一样的方法称为构造方法。</p>
+<p>构造方法有以下特点：</p>
+<ul>
+<li>方法名必须与类名相同</li>
+<li>可以有 0 个、1 个或多个参数</li>
+<li>没有任何返回值，包括 void</li>
+<li>默认返回类型就是对象类型本身</li>
+<li>只能与 new 运算符结合使用</li>
+</ul>
+<p>值得注意的是，如果为构造方法定义了返回值类型或使用 void 声明构造方法没有返回值，编译时不会出错，但 Java 会把这个所谓的构造方法当成普通方法来处理。</p>
+<p>构造方法是在创建对象时使用的，其他任何修饰符对他来说没有意义。</p>
+<p>构造方法的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">public</span> String gender;</span><br><span class="line">	<span class="keyword">public</span> String addr;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 无参构造</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = <span class="string">"mgg"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 有参构造</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> gender</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> addr</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String gender, String addr)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.gender = gender;</span><br><span class="line">		<span class="keyword">this</span>.addr = addr;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>写个测试类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="comment">//无参构造</span></span><br><span class="line">	Person person = <span class="keyword">new</span> Person();</span><br><span class="line">	System.out.println(person.name);</span><br><span class="line">	System.out.println(<span class="string">"下面为有参构造："</span>);</span><br><span class="line">	<span class="comment">//有参构造</span></span><br><span class="line">	Person person2 = <span class="keyword">new</span> Person(<span class="string">"kangkang"</span>,<span class="string">"男"</span>,<span class="string">"幻想乡木吉镇比利街001号"</span>);</span><br><span class="line">	System.out.println(person2.name);</span><br><span class="line">	System.out.println(person2.gender);</span><br><span class="line">	System.out.println(person2.addr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：<br><img src="/2020/02/21/javabase30-gzff/c.png" alt="两种构造用法"></p>
+<p>提示：无参数的构造方法也被称为 Nullary 构造方法。只有编译程序自动加入的构造方法，才称为默认构造函数。如果自行编写无参数、没有内容的构造函数，就不称为默认构造函数了（只是 Nullary 构造函数）。虽然只是名词定义，不过认证考试时要区别一下两者的不同。</p>
+<p>如果在类中没有定义任何一个构造方法，则 Java 会自动为该类生成一个默认的构造方法。默认的构造方法不包含任何参数，并且方法体为空。</p>
+<p>如果类中写了有参数的构造方法，但是还想使用 Person p = new Person() 创建对象，必须手动在 Person 中添加无参构造。</p>
+<p>有参数的构造方法是对无参构造的重载，前面已经多次提到过了，而且根据需要，可以创建任意参数的构造方法。</p>
+<blockquote>
+<p>重载（overload）的含义：方法名相同参数不同，无论是参数的类别，还是参数的个数。<br>区别于重写（overwrite）：在类继承时可以重写父类方法，方法名和参数完全一致，方法体不同。另一个在实现了类接口是必须重写接口中的抽象方法。</p>
+</blockquote>
+<p>举一个重写父类方法的例子：</p>
+<p>父类 Person 类，新添加了 work 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	<span class="keyword">public</span> String gender;</span><br><span class="line">	<span class="keyword">public</span> String addr;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 无参构造</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = <span class="string">"mgg"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 有参构造</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> gender</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> addr</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, String gender, String addr)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">		<span class="keyword">this</span>.gender = gender;</span><br><span class="line">		<span class="keyword">this</span>.addr = addr;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: work   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 普通人工作 </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Person work"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>子类 Doctor 类 重写了父类 work 方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Doctor</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 重写了父类 work 医生的工作是救人</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"healing petients"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建父类对象</span></span><br><span class="line">	Person p = <span class="keyword">new</span> Person(<span class="string">"kangkang"</span>, <span class="string">"男"</span>, <span class="string">"幻想乡木吉镇比利街001号"</span>);</span><br><span class="line">	p.work();</span><br><span class="line">	Doctor doc = <span class="keyword">new</span> Doctor();</span><br><span class="line">	doc.work();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/21/javabase30-gzff/cx.png" alt="重写父类 work 方法"></p>
+<p>重写与重载的区别要记牢，虽然没人去抓概念，但是如果在什么场合说混了那就太难堪了。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag">Java面向对象</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/12/javabase10-zfccl3/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/zfccl3bg.jpg" alt="JAVA零基础筑基到修仙（十）——字符串处理（3）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-12T13:49:55.000Z">2020-02-12</time>
                 
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1084 个字)
-                </span>
-                
-                
-            </div>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/12/javabase10-zfccl3/">JAVA零基础筑基到修仙（十）——字符串处理（3）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em><strong>本篇内容：字符串的比较和查找。</strong>字符串比较在代码中非常常见，多用于判断和验证，如根据字符串内容执行不同的代码，验证是否符合逻辑规则否则抛出异常等等，下面根据实际方法来说一下。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/12/javabase10-zfccl3/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/12/javabase9-zfccl2/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/zfccl2bg.jpg" alt="JAVA零基础筑基到修仙（九）——字符串处理（2）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-12T05:45:47.000Z">2020-02-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1296 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/12/javabase9-zfccl2/">JAVA零基础筑基到修仙（九）——字符串处理（2）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>接着上篇字符串处理继续,<strong>本篇内容包括字符串的大小写转换、除去空格、子字符串提取、分割和替换</strong>。讲这些方法的目的不是记住这个方法如何使用，而是在于看过后心里能有个印象，有这个方法可以用，下次有用到时直接去查文档就行了，由于不想篇幅过长，还剩字符串比较和查找，下一篇再说。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/12/javabase9-zfccl2/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/11/javabase8-zfccl1/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/zfccl.jpg" alt="JAVA零基础筑基到修仙（八）——字符串处理（1）">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-11T08:18:36.000Z">2020-02-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    18 分钟 读完 (大约 2747 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/11/javabase8-zfccl1/">JAVA零基础筑基到修仙（八）——字符串处理（1）</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>在敲第一个Java程序”Helloworld”的时候就用到了字符串，后面程序举例中很多动作直接用字符串模拟，字符串广泛应用于日常编程，Java中无内置字符串类型，提供了 一个专门创建和操作的类 String ，单独拿出来说一说。由于内容较多，需要一点一点讲，<strong>本篇内容包括字符串的定义与获取字符串长度，字符串拼接，String 类型与 int 类型转换</strong>。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/11/javabase8-zfccl1/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/10/javabase7-debug/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/debugbg.jpg" alt="JAVA零基础筑基到修仙（七）——Debug">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-10T15:34:00.000Z">2020-02-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 分钟 读完 (大约 660 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/10/javabase7-debug/">JAVA零基础筑基到修仙（七）——Debug</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>人生病了找医生，而且“望闻问切”不再是中医的专利，医生只有对病人身体了解的够清楚，才能找出病灶所在。程序也是一样，随着代码越来越复杂，出了问题很难用眼找出来，特别是逻辑问题相当难找，程序问题称为“bug”，把给程序找毛病的行为叫“Debug”，中文叫调试。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/10/javabase7-debug/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/09/javabase6-xh/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/xhbg.jpg" alt="JAVA零基础筑基到修仙（六）——循环">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-09T12:30:39.000Z">2020-02-09</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    12 分钟 读完 (大约 1797 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/09/javabase6-xh/">JAVA零基础筑基到修仙（六）——循环</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。<strong>本篇要求做到如下几点：理解循环含义;会用while结构;会用for/foreach结构。</strong></em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/09/javabase6-xh/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/08/javabase5-tjjg/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/tjjgbg.jpg" alt="JAVA零基础筑基到修仙（五）——条件结构">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-08T11:57:27.000Z">2020-02-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    14 分钟 读完 (大约 2113 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/08/javabase5-tjjg/">JAVA零基础筑基到修仙（五）——条件结构</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>条件结构和后面的循环结构统称为流程控制。条件结构式代码中最频繁使用的代码块，功能简单粗暴，有说去年再steam上大卖的《太吾绘卷》就是用一堆条件代码写的，哈哈哈谁知道是不是真的呢。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/08/javabase5-tjjg/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/07/javabase4-ysf/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/ysfbg.jpg" alt="JAVA零基础筑基到修仙（四）——运算符">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-07T06:54:43.000Z">2020-02-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    18 分钟 读完 (大约 2679 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/07/javabase4-ysf/">JAVA零基础筑基到修仙（四）——运算符</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>觉得上篇概念性的东西讲的太多了，参考了别的地方的资料，过了一天看了看感觉没必要将那么多概念，直接上代码加注释效果更佳，<strong>这篇讲运算符，分为算术运算符，赋值运算符，关系运算符，逻辑运算符，位逻辑运算符和三目运算符。</strong></em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/07/javabase4-ysf/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/06/javabase3-bsfgjzclbltj/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/lxbg.jpg" alt="JAVA零基础筑基到修仙（三）——标识符与关键字、常量与变量、作用域、数据类型和类型转换">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-06T10:55:50.000Z">2020-02-06</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    29 分钟 读完 (大约 4374 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/06/javabase3-bsfgjzclbltj/">JAVA零基础筑基到修仙（三）——标识符与关键字、常量与变量、作用域、数据类型和类型转换</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>本篇内容包括Java语言中标识符、关键字、常量、变量和数据类型的讲解，学任何一门语言，这些内容都是最基础也是最重要的，就像盖房子，不同的材料有不同的用处，让材料物尽其用才能盖好房子。实践是检验真理的唯一标准，学知识就要多实践，学计算机语言就要多敲代码，只有这样知识才能学得会，记得牢，技巧也用的熟。</em>  </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/06/javabase3-bsfgjzclbltj/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/05/javabase2-helloworld/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/helloworld-bg.jpg" alt="JAVA零基础筑基到修仙（二）——Hello world!">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-05T06:25:29.000Z">2020-02-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    22 分钟 读完 (大约 3350 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/05/javabase2-helloworld/">JAVA零基础筑基到修仙（二）——Hello world!</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>上一篇博客介绍了Java基本知识，接下来以在Windows上开发为例（不同的系统环境只是配置环境变量的方法不一样），正式开始Java的学习。本篇内容包含：Java开发环境配置，年轻人的第一个Java程序和Java集成开发环境（IDE）的使用。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/05/javabase2-helloworld/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/04/javabase1-jj/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/javabase-jj-bg.jpg" alt="JAVA零基础筑基到修仙（一）——JAVA简介">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-04T09:22:05.000Z">2020-02-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1286 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/04/javabase1-jj/">JAVA零基础筑基到修仙（一）——JAVA简介</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>虽然是复习Java知识，可能过于基础的前几个博客都没有必要写，但是本着善始善终原则，以及本身是强迫症患者，所以力求做到尽善尽美，还是写出来吧。书回正传，本篇博客将简单介绍关于JAVA的基础知识，用处不大，我尽量缩短篇幅，减少不必要的时间浪费。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/04/javabase1-jj/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/Java/page/2/">上一页</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/21/javabase29-main/">
+                <span class="level-item">JAVA零基础筑基到修仙（二十九）—— main() 方法</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/Java/page/4/">下一页</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/Java/page/2/">2</a></li>
-            
-            <li><a class="pagination-link is-current" href="/tags/Java/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
 </div>
 </div>
                 
@@ -1351,7 +882,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法" height="28">
                 
                 </a>
                 <p class="is-size-7">
