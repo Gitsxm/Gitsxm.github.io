@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/lxbg.jpg">
 <meta property="article:published_time" content="2020-02-06T10:55:50.000Z">
-<meta property="article:modified_time" content="2020-02-21T01:11:56.928Z">
+<meta property="article:modified_time" content="2020-02-21T14:27:04.147Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    29 分钟 读完 (大约 4374 个字)
+                    29 分钟 读完 (大约 4330 个字)
                 </span>
                 
                 
@@ -173,12 +173,16 @@
 <h2 id="一、标识符与关键字"><a href="#一、标识符与关键字" class="headerlink" title="一、标识符与关键字"></a>一、标识符与关键字</h2><h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>标识符分为两类，分别为关键字和用户自定义标识符。  </p>
 <ol>
 <li>关键字是有特殊含义的标识符，如 true、false 表示逻辑的真假。  </li>
-<li>用户自定义标识符是由用户按标识符构成规则生成的非保留字的标识符，如 abc 就是一个标识符。<br>提个醒：使用标识符时一定要注意，或者使用关键字，或者使用自定义的非关键字标识符。此外，标识符可以包含关键字，但不能与关键字重名。<br>Java中标识符用来定义方法、变量或者其他用户自定义的名称，它可以是一个字符，也可以是一个字符串。构成规则如下：</li>
+<li>用户自定义标识符是由用户按标识符构成规则生成的非保留字的标识符，如 abc 就是一个标识符。此外，标识符可以包含关键字，但不能与关键字重名。</li>
 </ol>
+<p>Java中标识符用来定义方法、变量或者其他用户自定义的名称，它可以是一个字符，也可以是一个字符串。构成规则如下：</p>
 <ul>
 <li>标识符由数字（0-9）和字母（A-Z 和 a-z）、美元符号（$）、下划线（_）以及 Unicode 字符集中符号大于 0xC0 的所有符号组合构成（各符号之间没有空格）。  </li>
 <li>标识符的第一个符号为字母、下划线和美元符号，后面可以是任何字母、数字、美元符号或下划线，不可以用数字开头。</li>
-<li>Java语言中区分大小写，例如boy与Boy是两个不同的字符串<br>提个醒：标识符是变量、类名、方法名的命名，命名提倡给予标识符正确含义，如定义两个男孩可以用boy_1与boy_2，不提倡用a、b定义（要养成好习惯，初学C语言深受老谭毒害）<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/bsf1.png" alt="标识符定义举例"><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3>关键字是说这个标识符有特定的用处，不能随便拿来用，如上图不能用“true”做变量名。每个jdk版本里关键字的数量是一定的，不同的jdk中关键字的数量可能不同。下面列举常见关键字：</li>
+<li>Java语言中区分大小写，例如boy与Boy是两个不同的字符串<br>提个醒：标识符是变量、类名、方法名的命名，命名提倡给予标识符正确含义，如定义两个男孩可以用boy_1与boy_2，不提倡用a、b定义（要养成好习惯，初学C语言深受老谭毒害）<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/bsf1.png" alt="标识符定义举例"></li>
+</ul>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>关键字是说这个标识符有特定的用处，不能随便拿来用，如上图不能用“true”做变量名。每个jdk版本里关键字的数量是一定的，不同的jdk中关键字的数量可能不同。下面列举常见关键字：</p>
+<ul>
 <li>数据类型：boolean、int、long、short、byte、float、double、char、class、interface。</li>
 <li>流程控制：if、else、do、while、for、switch、case、default、break、continue、return、try、catch、finally。</li>
 <li>修饰符：public、protected、private、final、void、static、strict、abstract、transient、synchronized、volatile、native。</li>
@@ -190,7 +194,7 @@
 <li>整型常量值，按进制分八进制、十进制、十六进制定义方法直接上图：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/dyzx.png" alt="定义整型与整型常量值"><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/cl.png" alt="常量无法更改"><br>整型（int）常量默认在内存中占 32 位，是具有整数类型的值，当运算过程中所需值超过 32 位长度时，可以把它表示为长整型（long）数值。长整型类型则要在数字后面加L或1，如697L表示一个长整型数，它在内存中占 64 位。</li>
 <li>实型常量值，两种形式，十进制型小数点形式如9.9，科学计数法如1.1e5或10&amp;E3,其中 e 之前必须有数字，且 e 之后的数字必须为整数。<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/sx.png" alt="实型常量值"><br>注意：小数定义有单精度和双精度只分，单精度在末尾要加上 f 。</li>
 <li>布尔类型常量值，true or false ，只有这两个值。<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/boolean.png" alt="布尔类型常量值"></li>
-<li>字符型和字符串型常量值，字符型如“A，a”,字符串型如“boy,girl”,还有一种转义字符，比如换行符“\n”：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zfx.png" alt="字符型常量值"><br>下面列举出常用转移符：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zyzf.png" alt="常用的转义字符"><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3>Java中变量的使用有特定规则，必须先声明后使用，指定类型的变量只能接收该类型的值。<strong>声明变量的方法为 [数据类型 变量名 = 值]（例如 String boy = “kangkang”，也可以是 [数据类型 变量名],如 String boy; ）。</strong>在上面说各类型常量值的时候已经用到了变量声明；<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/bl.png" alt="声明变量"><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/smbl.png" alt="一次声明多个变量"><br>声明变量要依据声明类型的类方法，比如String类型就有多种声明方法，这就需要查Java API文档点开对应类，去研究研究这个类究竟有多少使用方法，Java提供了官方文档，有在线也有离线版，使用方法很简单，即使不懂，百度很容易就解决了。举个栗子：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/api.png" alt="刚才的字符串类型变量声明用到了该构造方法"><br>以后碰到不懂得类，可以翻翻api文档，知识学的很快的，<strong>变大佬必备</strong>。<br>变量标识符的命名规范如下：</li>
+<li>字符型和字符串型常量值，字符型如“A，a”,字符串型如“boy,girl”,还有一种转义字符，比如换行符“\n”：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zfx.png" alt="字符型常量值"><br>下面列举出常用转义字符：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/zyzf.png" alt="常用的转义字符"><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3>Java中变量的使用有特定规则，必须先声明后使用，指定类型的变量只能接收该类型的值。<strong>声明变量的方法为 [数据类型 变量名 = 值]（例如 String boy = “kangkang”，也可以是 [数据类型 变量名],如 String boy; ）。</strong>在上面说各类型常量值的时候已经用到了变量声明；<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/bl.png" alt="声明变量"><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/smbl.png" alt="一次声明多个变量"><br>声明变量要依据声明类型的类方法，比如String类型就有多种声明方法，这就需要查Java API文档点开对应类，去研究研究这个类究竟有多少使用方法，Java提供了官方文档，有在线也有离线版，使用方法很简单，即使不懂，百度很容易就解决了。举个栗子：<br><img src="/2020/02/06/javabase3-bsfgjzclbltj/api.png" alt="刚才的字符串类型变量声明用到了该构造方法"><br>以后碰到不懂得类，可以翻翻api文档，知识学的很快的，<strong>变大佬必备</strong>。<br>变量标识符的命名规范如下：</li>
 </ol>
 <ul>
 <li>首字符必须是字母、下划线（―）、美元符号（$）或者人民币符号（¥）。</li>
@@ -213,7 +217,7 @@
 <li>方法局部变量（方法内定义）： 从定义这个变量开始到方法结束这一段时间内有效。</li>
 <li>代码块局部变量（代码块内定义）：从定义这个变量开始到代码块结束这一段时间内有效。</li>
 </ol>
-<p><strong>局部变量在使用前必须被程序员主动初始化值。</strong><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jberr.png" alt="局部变量没初始值无法通过编译"></p>
+<p><strong>局部变量在使用前必须先初始化值。</strong><br><img src="/2020/02/06/javabase3-bsfgjzclbltj/jberr.png" alt="局部变量没初始值无法通过编译"></p>
 <h4 id="方法局部变量"><a href="#方法局部变量" class="headerlink" title="方法局部变量"></a>方法局部变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">3</span>,j = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span> (i &gt; <span class="number">2</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">"i="</span>+i);</span><br><span class="line">			System.out.println(<span class="string">"j="</span>+j);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"i="</span>+i);</span><br><span class="line">		System.out.println(<span class="string">"j="</span>+j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/2020/02/06/javabase3-bsfgjzclbltj/jbbl.png" alt="方法局部变量"></p>
 <h4 id="方法参数变量"><a href="#方法参数变量" class="headerlink" title="方法参数变量"></a>方法参数变量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//调用方法</span></span><br><span class="line">		Test.add(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> i)</span><span class="comment">//方法参数变量</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">10</span>;<span class="comment">//方法局部变量</span></span><br><span class="line">		System.out.println(<span class="string">"i+j="</span>+i+j);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -374,7 +378,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            30
+                            32
                         </p>
                     </a>
                 </div>
@@ -456,7 +460,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">30</span>
+                <span class="level-item tag">32</span>
             </span>
         </a></li>
             </ul>
@@ -481,6 +485,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase32-dg/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/dg.jpg" alt="JAVA零基础筑基到修仙（三十二）——递归算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T12:02:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase32-dg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（三十二）——递归算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase31-xgff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/gc.jpg" alt="JAVAl零基础筑基到修仙（三十一）——析构方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T01:24:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase31-xgff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVAl零基础筑基到修仙（三十一）——析构方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -539,44 +581,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase27-doc/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/doc.jpg" alt="JAVA零基础筑基到修仙（二十七）——注释">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T07:24:38.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase27-doc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十七）——注释</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase26-newobj/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86281.jpg" alt="JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T03:09:14.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase26-newobj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -594,7 +598,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">30</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -615,7 +619,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
@@ -657,7 +661,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -710,6 +714,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/22/javabase32-dg/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/dg.jpg" alt="JAVA零基础筑基到修仙（三十二）——递归算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T12:02:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase32-dg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（三十二）——递归算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase31-xgff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/gc.jpg" alt="JAVAl零基础筑基到修仙（三十一）——析构方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T01:24:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase31-xgff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVAl零基础筑基到修仙（三十一）——析构方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/21/javabase30-gzff/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/constructor.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法">
@@ -765,44 +807,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase27-doc/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/doc.jpg" alt="JAVA零基础筑基到修仙（二十七）——注释">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T07:24:38.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase27-doc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十七）——注释</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase26-newobj/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86281.jpg" alt="JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T03:09:14.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase26-newobj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -820,7 +824,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">30</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -841,7 +845,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
@@ -883,7 +887,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 

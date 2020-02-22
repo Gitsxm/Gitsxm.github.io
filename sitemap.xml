@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.mggblog.ink/2020/02/22/javabase32-dg/</loc>
+    
+    <lastmod>2020-02-22T13:57:23.665Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/22/javabase31-xgff/</loc>
+    
+    <lastmod>2020-02-22T02:34:07.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/06/javabase3-bsfgjzclbltj/</loc>
+    
+    <lastmod>2020-02-21T14:27:04.147Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/05/javabase2-helloworld/</loc>
+    
+    <lastmod>2020-02-21T14:23:49.794Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/04/javabase1-jj/</loc>
+    
+    <lastmod>2020-02-21T14:18:38.664Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.mggblog.ink/2020/02/21/javabase30-gzff/</loc>
     
-    <lastmod>2020-02-21T09:11:46.102Z</lastmod>
+    <lastmod>2020-02-21T14:17:54.413Z</lastmod>
     
   </url>
   
@@ -159,27 +194,6 @@
     <loc>http://www.mggblog.ink/2020/02/07/javabase4-ysf/</loc>
     
     <lastmod>2020-02-21T01:11:58.110Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mggblog.ink/2020/02/06/javabase3-bsfgjzclbltj/</loc>
-    
-    <lastmod>2020-02-21T01:11:56.928Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mggblog.ink/2020/02/05/javabase2-helloworld/</loc>
-    
-    <lastmod>2020-02-21T01:11:54.828Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mggblog.ink/2020/02/04/javabase1-jj/</loc>
-    
-    <lastmod>2020-02-21T01:11:23.973Z</lastmod>
     
   </url>
   

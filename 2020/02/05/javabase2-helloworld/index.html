@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/helloworld-bg.jpg">
 <meta property="article:published_time" content="2020-02-05T06:25:29.000Z">
-<meta property="article:modified_time" content="2020-02-21T01:11:54.828Z">
+<meta property="article:modified_time" content="2020-02-21T14:23:49.794Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -170,10 +170,39 @@
             <p><em>上一篇博客介绍了Java基本知识，接下来以在Windows上开发为例（不同的系统环境只是配置环境变量的方法不一样），正式开始Java的学习。本篇内容包含：Java开发环境配置，年轻人的第一个Java程序和Java集成开发环境（IDE）的使用。</em></p>
 <a id="more"></a>
 <hr>
-<h2 id="一、安装Java开发和运行环境"><a href="#一、安装Java开发和运行环境" class="headerlink" title="一、安装Java开发和运行环境"></a>一、安装Java开发和运行环境</h2><p>想要运行Java程序，系统需要具备Java运行环境，也就是Java Runtime Environment,简称JRE。但是如果要开发Java程序，需要的是Java Development Kit,Java程序开发工具包，也就是常说的JDK。一半只有服务器才会安装单独的JRE环境，开发人员需要两个都有，只需要去甲骨文官网下载JDK就可以，安装文件中包含了JDK和JRE。<br>百度直接搜索“jdk”，找到甲骨文官网jdk下载页，我习惯使用jdk8,以jdk8的安装为例（jdk并不是越新越好，现在还有相当多的企业项目用的是jdk6,新的jdk含有新的Java规范，不同的jdk环境编译出的class文件不一样，如果开发人员jdk需要升级，服务器上的jre也要跟着升级，否则旧的环境无法运行新的规范，造成宕机，如果是重要应用，就是生产事故了。所以很多企业级应用开发人员出于稳定考虑，在当前环境满处生产需要时，不会去冒然去升级jdk版本）：<br><img src="/2020/02/05/javabase2-helloworld/bdjdk.png" alt="百度搜索jdk"><br>然后找到版本信息，我是Win10 64位系统选择x64版本，32位系统选择i586版本（虽然64位系统可以安装32位版本，但是为了防止出现各种莫名其妙的错误，最好版本对应）<br><img src="/2020/02/05/javabase2-helloworld/jdkdown.png" alt="JDK支持各种系统环境"><br>下载时可能会让你登录，否者下载不开始，用邮箱注册个账号就行了（现在网络快多了，前几年下载那叫一个慢）。下载好了，开始安装（我安装的是8u181版本，小版本不一样安装没有差别）：<br><img src="/2020/02/05/javabase2-helloworld/jdkinstall.png" alt="打开安装"><br>一直点下一步就可以了（当然推荐你改一下安装位置，只要知道装在哪里就行了，后面配置环境要用）<br><img src="/2020/02/05/javabase2-helloworld/jdkinstall1.png" alt="安装完毕关掉"><br>如果安装完找不到了咋办，卸载重新装，很快的这次记好了。<br><img src="/2020/02/05/javabase2-helloworld/uninstalljdk.png" alt="注意这两个要都卸载掉"><br>安装完成打开Windows控制台，win+r调出运行输入cmd回车（也可以使用Win10快速检索win+q,输入cmd，需要管理员权限的控制台时这个方式更好用）输入java -version<br><img src="/2020/02/05/javabase2-helloworld/hj3.png" alt="java -version"><br>说明安装成功了，接下来配置环境变量，右击此电脑选择属性，选择高级系统设置，点击环境变量，在下面系统变量里新建”JAVA_HOME”和”CLASSPATH”两个变量，JAVA_HOME中的值为刚才安装Java选定的位置，<br><img src="/2020/02/05/javabase2-helloworld/jdkwz.png" alt="jdk安装位置"><br>我的位置是”C:\Program Files\Java\jdk1.8.0_181”,复制进去保存。在CLASSPATH中输入”.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;”（复制时别复制冒号，注意开头分号前面有”.”）<br><img src="/2020/02/05/javabase2-helloworld/hj1.png" alt="两项添加完"><br>然后找到”Path”，点击编辑添加依次输入”%JAVA_HOME%\bin”和”%JAVA_HOME%\jre\bin”保存（不同系统可能页面显示的不一样不是这种的话需要用分号隔开，这样”%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;”）<br><img src="/2020/02/05/javabase2-helloworld/hj2.png" alt="修改Path"><br>修改成功后保存完成关闭面板，打开新的控制台输入”javac”回车，如果成功出现下图内容，则说明环境配置成功，接下来就可以进行开发学习了，如果不成功，请仔细检查环境变量配置步骤中的内容是否正确。<br><img src="/2020/02/05/javabase2-helloworld/hj5.png" alt="javac是编译程序"></p>
+<h2 id="一、安装Java开发和运行环境"><a href="#一、安装Java开发和运行环境" class="headerlink" title="一、安装Java开发和运行环境"></a>一、安装Java开发和运行环境</h2><p>想要运行Java程序，系统需要具备Java运行环境，也就是Java Runtime Environment,简称JRE。但是如果要开发Java程序，需要的是Java Development Kit,Java程序开发工具包，也就是常说的JDK。一般只有服务器才会安装单独的JRE环境，开发人员需要两个都有，只需要去甲骨文官网下载JDK就可以，安装文件中包含了JDK和JRE。  </p>
+<p>百度直接搜索“jdk”，找到甲骨文官网jdk下载页，我习惯使用jdk8,以jdk8的安装为例（jdk并不是越新越好，现在还有相当多的企业项目用的是jdk6,新的jdk含有新的Java规范，不同的jdk环境编译出的class文件不一样，如果开发人员jdk需要升级，服务器上的jre也要跟着升级，否则旧的环境无法运行新的规范，造成宕机，如果是重要应用，就是生产事故了。所以很多企业级应用开发人员出于稳定考虑，在当前环境满处生产需要时，不会去冒然去升级jdk版本）：</p>
+<p><img src="/2020/02/05/javabase2-helloworld/bdjdk.png" alt="百度搜索jdk"></p>
+<p>然后找到版本信息，我是Win10 64位系统选择x64版本，32位系统选择i586版本（虽然64位系统可以安装32位版本，但是为了防止出现各种莫名其妙的错误，最好版本对应）</p>
+<p><img src="/2020/02/05/javabase2-helloworld/jdkdown.png" alt="JDK支持各种系统环境"></p>
+<p>下载时可能会让你登录，否则下载不开始，用邮箱注册个账号就行了（现在网络快多了，前几年下载那叫一个慢）。下载好了，开始安装（我安装的是8u181版本，小版本不一样安装没有差别）：</p>
+<p><img src="/2020/02/05/javabase2-helloworld/jdkinstall.png" alt="打开安装"></p>
+<p>一直点下一步就可以了（当然推荐你改一下安装位置，只要知道装在哪里就行了，后面配置环境要用）</p>
+<p><img src="/2020/02/05/javabase2-helloworld/jdkinstall1.png" alt="安装完毕关掉"></p>
+<p>如果安装完找不到了咋办，卸载重新装，很快的这次记好了。</p>
+<p><img src="/2020/02/05/javabase2-helloworld/uninstalljdk.png" alt="注意这两个要都卸载掉"></p>
+<p>安装完成打开Windows控制台，win+r调出运行输入cmd回车（也可以使用Win10快速检索win+q,输入cmd，需要管理员权限的控制台时这个方式更好用）输入java -version</p>
+<p><img src="/2020/02/05/javabase2-helloworld/hj3.png" alt="java -version"></p>
+<p>说明安装成功了，接下来配置环境变量，右击此电脑选择属性，选择高级系统设置，点击环境变量，在下面系统变量里新建”JAVA_HOME”和”CLASSPATH”两个变量，JAVA_HOME中的值为刚才安装Java选定的位置，</p>
+<p><img src="/2020/02/05/javabase2-helloworld/jdkwz.png" alt="jdk安装位置"></p>
+<p>我的位置是”C:\Program Files\Java\jdk1.8.0_181”,复制进去保存。在CLASSPATH中输入”.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;”（复制时别复制引号，注意开头分号前面有”.”）</p>
+<p><img src="/2020/02/05/javabase2-helloworld/hj1.png" alt="两项添加完"></p>
+<p>然后找到”Path”，点击编辑添加依次输入”%JAVA_HOME%\bin”和”%JAVA_HOME%\jre\bin”保存（不同系统可能页面显示的不一样不是这种的话需要用分号隔开，这样”%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;”）</p>
+<p><img src="/2020/02/05/javabase2-helloworld/hj2.png" alt="修改Path"></p>
+<p>修改成功后保存完成关闭面板，打开新的控制台输入”javac”回车，如果成功出现下图内容，则说明环境配置成功，接下来就可以进行开发学习了，如果不成功，请仔细检查环境变量配置步骤中的内容是否正确。</p>
+<p><img src="/2020/02/05/javabase2-helloworld/hj5.png" alt="javac是编译程序"></p>
 <h2 id="二、Hello-world"><a href="#二、Hello-world" class="headerlink" title="二、Hello world!"></a>二、Hello world!</h2><p>终于可以开始敲代码了，接下来有请年轻人的第一个Java程序”Hello world!”闪亮登场（传统艺能，传统艺能……）！在本地磁盘D新建”Demo”文件夹,打开文件夹新建Hello.txt记事本文件（”.txt”是文件扩展名，如果新建记事本不显示扩展名，请百度”如何显示文件扩展名”，比较简单，这里没有截图），在记事本中输入如下代码：</p>
 <figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello world!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>保存记事本然后修改扩展名为”.java”，提示可能无法使用点确定（文件名字可以不叫”Hello”,但是一定要与代码中”public class”后面的名字一模一样，注意区分大小写,代码中符号都是英文符号）。<br><img src="/2020/02/05/javabase2-helloworld/hello1.png" alt="Hello.java"><br>然后打开控制台进入Demo,我的在D盘，打开cmd后直接输入”d:”回车，然后”cd demo”进入demo文件夹（Windows里文件名是不区分大小写的）。输入”javac Hello.java”回车，如果代码没有错误就什么都不显示，否则会报出异常。如下图：<br><img src="/2020/02/05/javabase2-helloworld/errjava.png" alt="代码有误缺少一个分号"><br><img src="/2020/02/05/javabase2-helloworld/javac.png" alt="代码无误，编译完成生成.class文件"><br>然后我们通过”java”命令运行文件（注意不用带文件扩展名）：<br><img src="/2020/02/05/javabase2-helloworld/java.png" alt="运行.class文件"><br>如图，我们成功打印出了设定内容”Hello world!”,第一个Java程序完成（呱唧呱唧<del>~</del>）。那么我们来稍微了解一下代码是怎么回事吧：<br><img src="/2020/02/05/javabase2-helloworld/code.png" alt="Hello.java"><br>有间隔的每个字段意义都不同，我来一一说明：</p>
+
+<p>保存记事本然后修改扩展名为”.java”，提示可能无法使用点确定（文件名字可以不叫”Hello”,但是一定要与代码中”public class”后面的名字一模一样，注意区分大小写,代码中符号都是英文符号）。</p>
+<p><img src="/2020/02/05/javabase2-helloworld/hello1.png" alt="Hello.java"></p>
+<p>然后打开控制台进入Demo,我的在D盘，打开cmd后直接输入”d:”回车，然后”cd demo”进入demo文件夹（Windows里文件名是不区分大小写的）。输入”javac Hello.java”回车，如果代码没有错误就什么都不显示，否则会报出异常。如下图：</p>
+<p><img src="/2020/02/05/javabase2-helloworld/errjava.png" alt="代码有误缺少一个分号"><br><img src="/2020/02/05/javabase2-helloworld/javac.png" alt="代码无误，编译完成生成.class文件"></p>
+<p>然后我们通过”java”命令运行文件（注意不用带文件扩展名）：</p>
+<p><img src="/2020/02/05/javabase2-helloworld/java.png" alt="运行.class文件"></p>
+<p>如图，我们成功打印出了设定内容”Hello world!”,第一个Java程序完成（呱唧呱唧<del>~</del>）。那么我们来稍微了解一下代码是怎么回事吧：</p>
+<p><img src="/2020/02/05/javabase2-helloworld/code.png" alt="Hello.java"></p>
+<p>有间隔的每个字段意义都不同，我来一一说明：</p>
 <ul>
 <li>关键字class用来定义一个类，Hello是类的名称；</li>
 <li>在Java程序中，所有的语句都必须放在某个类中；</li>
@@ -188,8 +217,13 @@
 <li>String[]是字符串类型的数组；</li>
 <li>在Java中，类名称一般首字母大写；</li>
 <li>使用System.out.println()将信息输出到控制台上，即打印出来。<br>解析完代码，你是否对Java代码规范有了一知半解了呢，试着修改代码按照刚才的步骤在控制台打出更多内容吧。这次使用上注释，注释不会被编译，有两种形式一种为“// ……”,可以注释掉同行的代码，一种是代码段注释“/<em>……</em>/”，注释掉一段代码（注意使用英文，当前开发环境简陋，使用中文可能导致编码异常）：<figure class="highlight java"><figcaption><span>Hello.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* This class mean to print "Hello world!"</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">// print Hello world!</span></span><br><span class="line">		System.out.println(<span class="string">"Hello world!"</span>);</span><br><span class="line">		System.out.println(<span class="string">"I am Zhangsan"</span>);</span><br><span class="line">		<span class="comment">/*System</span></span><br><span class="line"><span class="comment">			.out</span></span><br><span class="line"><span class="comment">				.println("I am a girl");*/</span></span><br><span class="line">		<span class="comment">//System.out.println("I am a boy");</span></span><br><span class="line">		System.out.println(<span class="string">"I am a boy"</span>);</span><br><span class="line">		System.out.println(<span class="string">"I am 10 years old "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-编译运行！<br><img src="/2020/02/05/javabase2-helloworld/java1.png" alt="注释掉的代码不会执行"><br>通过”javadoc”命令可以将注释内容提取，生成一个文件方便查阅，来试试看：<br><img src="/2020/02/05/javabase2-helloworld/javadoc.png" alt="javadoc"><br>生成了一堆文件<br><img src="/2020/02/05/javabase2-helloworld/javadoc2.png" alt="javadoc"><br>打开index.html<br><img src="/2020/02/05/javabase2-helloworld/javadoc3.png" alt="javadoc"><br>到此为止，对Java初体验结束，初学者是不是感觉收货满满，这是是Java的冰山一角，她的众多优秀特性到后面再慢慢了解。<h2 id="三、集成开发环境（IDE）"><a href="#三、集成开发环境（IDE）" class="headerlink" title="三、集成开发环境（IDE）"></a>三、集成开发环境（IDE）</h2>Java开发人员常用的开发软件有三个，分别是Eclipse、Myeclipse、Idea（剩下的都是些小众的，我也不了解）我说一说我对这三个软件的理解：<h3 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h3>Eclipse轻量，简洁，操作简便，对电脑配置要求较低，并且开源免费，更适合Java初学者。缺点是简洁到几乎没有插件，后面很多开发必须插件都需要自己安装，好在eclipse提供插件支持，可以再软件里一键安装。<br><img src="/2020/02/05/javabase2-helloworld/eclipse1.png" alt="eclipse"><br><img src="/2020/02/05/javabase2-helloworld/eclipse2.png" alt="eclipse工作界面"><h3 id="Myeclipse"><a href="#Myeclipse" class="headerlink" title="Myeclipse"></a>Myeclipse</h3>它是Eclipse的定制版本，对电脑配置要求较高，而且收费，集众多生产插件于一身，免除了自己装插件的烦恼，相比eclipse功能更完善（毕竟花了钱的）。<br><img src="/2020/02/05/javabase2-helloworld/myeclipse.png" alt="Myeclipse"><br><img src="/2020/02/05/javabase2-helloworld/myeclipse1.png" alt="Myeclipse工作界面基本和eclipse一样"><h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3>相对于先前两个，IDEA是重量级的集成开发工具，对电脑配置要求高，支持多种语言开发，拥有丰富的开源插件生态，功能相当完善，是众多开发者的首选工具，大佬必备（意义简单粗暴），这么优秀的工具肯定是需要掏钱的，官方推出了完整版和社区版（阉割版），社区版是免费的。但是在国内网络现在的大环境下，搜索破解方法还是相当简单的（这么喜欢你你竟然要收我们钱？哈哈哈……），不过在国人版权意识逐渐苏醒的今天，我呼吁有能力的开发者尽量使用正版软件（哎吆我插会儿腰……嘿嘿嘿）。<br><img src="/2020/02/05/javabase2-helloworld/idea.png" alt="IDEA"><br><img src="/2020/02/05/javabase2-helloworld/idea1.png" alt="IDEA工作界面（我使用了主题插件）"><br>开发工具介绍完毕，作为Java初学者建议使用eclipse，虽然一步到位使用IDEA更好，但是IDEA相对来说对电脑配置要求高，如果配置跟不上会卡顿，严重影响开发体验，撇去性能不谈，IDEA自动保存，但是没有自动编译，需要手动编译（虽然可以自己设置自动编译，但我劝你别），eclipse点击保存的时候自动编译。所以等以后碰到语言多了，比如学习Spring boot或者开发项目需要同时操作好几门语言，这时候一个IDEA就可以完全搞定了。好了开发工具搞定，顺便在eclipse上撸个”Hello world!”吧。  <h2 id="四、在eclipse上运行Hello-world"><a href="#四、在eclipse上运行Hello-world" class="headerlink" title="四、在eclipse上运行Hello world"></a>四、在eclipse上运行Hello world</h2>安装eclipse需要验证环境变量，如果环境变量没安装好，eclipse无法正常安装，<a href="https://www.eclipse.org/downloads/">下载地址</a>。<br>安装过程（这种种边下载边安装的形式，耐心等待安装完成，也可以点击下载页下载按钮地下的 Download Packages 整包下载）：<br><img src="/2020/02/05/javabase2-helloworld/eclipseinstall.png" alt="安装eclipse"><br>安装完成首次打开会让你选择工作空间，也就是你的项目要放的目录,默认或自己设都行。<br><img src="/2020/02/05/javabase2-helloworld/eclipse3.png" alt="设置工作空间"><br>进入界面点击工具栏File&gt;new&gt;java project(如果没有选择project然后搜索java project)&gt;填写项目信息&gt;完成，如图：<br><img src="/2020/02/05/javabase2-helloworld/eclipse4.png" alt="新建Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava.png" alt="选择Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava1.png" alt="填写工程信息"><br><img src="/2020/02/05/javabase2-helloworld/newjava2.png" alt="完成"><br>若遇到弹窗提示点Ok就可以了。<br>点开工程&gt;右击src&gt;new&gt;class&gt;填写类信息&gt;finish<br><img src="/2020/02/05/javabase2-helloworld/newclass.png" alt="new class"><br>打开Demo类<br><img src="/2020/02/05/javabase2-helloworld/demojava.png" alt="入口代码都已经生成好了"><br>在光标处敲入System.out.println(“Hello world!”); 保存，代码正确会自动编译，代码错误会有提示，没有错误点运行。<br><img src="/2020/02/05/javabase2-helloworld/rundemo.png" alt="运行"><br>运行成功<br><img src="/2020/02/05/javabase2-helloworld/rundemo2.png" alt="运行成功"></li>
+编译运行！<br><img src="/2020/02/05/javabase2-helloworld/java1.png" alt="注释掉的代码不会执行"><br>通过”javadoc”命令可以将注释内容提取，生成一个文件方便查阅，来试试看：<br><img src="/2020/02/05/javabase2-helloworld/javadoc.png" alt="javadoc"><br>生成了一堆文件<br><img src="/2020/02/05/javabase2-helloworld/javadoc2.png" alt="javadoc"><br>打开index.html<br><img src="/2020/02/05/javabase2-helloworld/javadoc3.png" alt="javadoc"><br>到此为止，对Java初体验结束，初学者是不是感觉收货满满，这是是Java的冰山一角，她的众多优秀特性到后面再慢慢了解。</li>
 </ul>
+<h2 id="三、集成开发环境（IDE）"><a href="#三、集成开发环境（IDE）" class="headerlink" title="三、集成开发环境（IDE）"></a>三、集成开发环境（IDE）</h2><p>Java开发人员常用的开发软件有三个，分别是Eclipse、Myeclipse、Idea（剩下的都是些小众的，我也不了解）我说一说我对这三个软件的理解：</p>
+<h3 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h3><p>Eclipse轻量，简洁，操作简便，对电脑配置要求较低，并且开源免费，更适合Java初学者。缺点是简洁到几乎没有插件，后面很多开发必须插件都需要自己安装，好在eclipse提供插件支持，可以在软件里一键安装。<br><img src="/2020/02/05/javabase2-helloworld/eclipse1.png" alt="eclipse"><br><img src="/2020/02/05/javabase2-helloworld/eclipse2.png" alt="eclipse工作界面"></p>
+<h3 id="Myeclipse"><a href="#Myeclipse" class="headerlink" title="Myeclipse"></a>Myeclipse</h3><p>它是Eclipse的定制版本，对电脑配置要求较高，而且收费，集众多生产插件于一身，免除了自己装插件的烦恼，相比eclipse功能更完善（毕竟花了钱的）。<br><img src="/2020/02/05/javabase2-helloworld/myeclipse.png" alt="Myeclipse"><br><img src="/2020/02/05/javabase2-helloworld/myeclipse1.png" alt="Myeclipse工作界面基本和eclipse一样"></p>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><p>相对于先前两个，IDEA是重量级的集成开发工具，对电脑配置要求高，支持多种语言开发，拥有丰富的开源插件生态，功能相当完善，是众多开发者的首选工具，大佬必备（意义简单粗暴），这么优秀的工具肯定是需要掏钱的，官方推出了完整版和社区版（阉割版），社区版是免费的。但是在国内网络现在的大环境下，搜索破解方法还是相当简单的（这么喜欢你你竟然要收我们钱？哈哈哈……），不过在国人版权意识逐渐苏醒的今天，我呼吁有能力的开发者尽量使用正版软件（哎吆我插会儿腰……嘿嘿嘿）。<br><img src="/2020/02/05/javabase2-helloworld/idea.png" alt="IDEA"><br><img src="/2020/02/05/javabase2-helloworld/idea1.png" alt="IDEA工作界面（我使用了主题插件）"><br>开发工具介绍完毕，做为Java初学者建议使用eclipse，虽然一步到位使用IDEA更好，但是IDEA相对来说对电脑配置要求高，如果配置跟不上会卡顿，严重影响开发体验，撇去性能不谈，IDEA自动保存，但是没有自动编译，需要手动编译（虽然可以自己设置自动编译，但我劝你别），eclipse点击保存的时候自动编译。所以等以后碰到语言多了，比如学习Spring boot或者开发项目需要同时操作好几门语言，这时候一个IDEA就可以完全搞定了。好了开发工具搞定，顺便在eclipse上撸个”Hello world!”吧。  </p>
+<h2 id="四、在eclipse上运行Hello-world"><a href="#四、在eclipse上运行Hello-world" class="headerlink" title="四、在eclipse上运行Hello world"></a>四、在eclipse上运行Hello world</h2><p>安装eclipse需要验证环境变量，如果环境变量没安装好，eclipse无法正常安装，<a href="https://www.eclipse.org/downloads/">下载地址</a>。<br>安装过程（这种是边下载边安装的形式，耐心等待安装完成，也可以点击下载页下载按钮地下的 Download Packages 整包下载）：<br><img src="/2020/02/05/javabase2-helloworld/eclipseinstall.png" alt="安装eclipse"><br>安装完成首次打开会让你选择工作空间，也就是你的项目要放的目录,默认或自己设都行。<br><img src="/2020/02/05/javabase2-helloworld/eclipse3.png" alt="设置工作空间"><br>进入界面点击工具栏File&gt;new&gt;java project(如果没有选择project然后搜索java project)&gt;填写项目信息&gt;完成，如图：<br><img src="/2020/02/05/javabase2-helloworld/eclipse4.png" alt="新建Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava.png" alt="选择Java工程"><br><img src="/2020/02/05/javabase2-helloworld/newjava1.png" alt="填写工程信息"><br><img src="/2020/02/05/javabase2-helloworld/newjava2.png" alt="完成"><br>若遇到弹窗提示点Ok就可以了。<br>点开工程&gt;右击src&gt;new&gt;class&gt;填写类信息&gt;finish<br><img src="/2020/02/05/javabase2-helloworld/newclass.png" alt="new class"><br>打开Demo类<br><img src="/2020/02/05/javabase2-helloworld/demojava.png" alt="入口代码都已经生成好了"><br>在光标处敲入System.out.println(“Hello world!”); 保存，代码正确会自动编译，代码错误会有提示，没有错误点运行。<br><img src="/2020/02/05/javabase2-helloworld/rundemo.png" alt="运行"><br>运行成功<br><img src="/2020/02/05/javabase2-helloworld/rundemo2.png" alt="运行成功"></p>
 <p>以上是这篇博客的全部内容，从环境变量配置到集成环境运行代码都很顺利，初学者如果哪里有不懂，欢迎邮件交流，感谢您的阅读。</p>
 <hr>
 <h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>写博客是真的累，坐了一下午，不过程序员就要坐的住，哈哈，前期工作都已完成，接下来开始学习Java正经内容，待续……</p>
@@ -321,7 +355,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            30
+                            32
                         </p>
                     </a>
                 </div>
@@ -403,7 +437,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">30</span>
+                <span class="level-item tag">32</span>
             </span>
         </a></li>
             </ul>
@@ -428,6 +462,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase32-dg/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/dg.jpg" alt="JAVA零基础筑基到修仙（三十二）——递归算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T12:02:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase32-dg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（三十二）——递归算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase31-xgff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/gc.jpg" alt="JAVAl零基础筑基到修仙（三十一）——析构方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T01:24:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase31-xgff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVAl零基础筑基到修仙（三十一）——析构方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -486,44 +558,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase27-doc/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/doc.jpg" alt="JAVA零基础筑基到修仙（二十七）——注释">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T07:24:38.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase27-doc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十七）——注释</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase26-newobj/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86281.jpg" alt="JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T03:09:14.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase26-newobj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -541,7 +575,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">30</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -562,7 +596,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
@@ -604,7 +638,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -657,6 +691,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/22/javabase32-dg/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/dg.jpg" alt="JAVA零基础筑基到修仙（三十二）——递归算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T12:02:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase32-dg/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（三十二）——递归算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/22/javabase31-xgff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/gc.jpg" alt="JAVAl零基础筑基到修仙（三十一）——析构方法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-22T01:24:13.000Z">2020-02-22</time></div>
+                    <a href="/2020/02/22/javabase31-xgff/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVAl零基础筑基到修仙（三十一）——析构方法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/21/javabase30-gzff/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/constructor.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法">
@@ -712,44 +784,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase27-doc/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/doc.jpg" alt="JAVA零基础筑基到修仙（二十七）——注释">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T07:24:38.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase27-doc/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十七）——注释</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/20/javabase26-newobj/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/86281.jpg" alt="JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-20T03:09:14.000Z">2020-02-20</time></div>
-                    <a href="/2020/02/20/javabase26-newobj/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -767,7 +801,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">30</span>
+                    <span class="level-item tag">32</span>
                 </span>
             </a>
         </li>
@@ -788,7 +822,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">30</span>
+                        <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
@@ -830,7 +864,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
                         <span class="tag">Java面向对象</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
