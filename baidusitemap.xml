@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase37-instanceof/</loc>
+    <lastmod>2020-02-23</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase36-dt/</loc>
+    <lastmod>2020-02-23</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/18/javabase23-oop1/</loc>
+    <lastmod>2020-02-23</lastmod>
+  </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/23/javabase33-fz/</loc>
     <lastmod>2020-02-23</lastmod>
   </url>  <url>
@@ -35,9 +44,6 @@
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/20/javabase28-lgjz/</loc>
-    <lastmod>2020-02-21</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/18/javabase23-oop1/</loc>
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/20/javabase27-doc/</loc>
