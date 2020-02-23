@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/super.jpg">
 <meta property="article:published_time" content="2020-02-23T03:31:22.000Z">
-<meta property="article:modified_time" content="2020-02-23T04:49:35.469Z">
+<meta property="article:modified_time" content="2020-02-23T06:40:54.988Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java继承多态">
@@ -155,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 684 个字)
+                    5 分钟 读完 (大约 686 个字)
                 </span>
                 
                 
@@ -171,7 +171,7 @@
             <p><em>由于子类不能继承父类的构造方法，因此，如果要调用父类的构造方法，可以使用 super 关键字。super 可以用来访问父类的构造方法、普通方法和属性。</em></p>
 <a id="more"></a>
 <hr>
-<p>super 关键字前面也有说过，是在说 this 关键字的时候，this 代表的是当前基类， super 代表父类，它的功能是：</p>
+<p>super 关键字在说 this 关键字的时候顺带说了一下，this 代表的是当前基类， super 代表父类，它的功能是：</p>
 <ol>
 <li>在子类的构造方法中显式的调用父类构造方法</li>
 <li>访问父类的成员方法和变量。</li>
@@ -183,7 +183,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String type;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 无参构造</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 有参构造</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> type</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Cat</span><span class="params">(String type, String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(name);</span><br><span class="line">		<span class="keyword">this</span>.type = type;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Test 测试类：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Cat cat1 = <span class="keyword">new</span> Cat();</span><br><span class="line">		Cat cat2 = <span class="keyword">new</span> Cat(<span class="string">"狸花猫"</span>, <span class="string">"花花"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="/2020/02/23/javabase35-super/t1.png" alt="super只想父类构造"></p>
+<p>运行结果：<br><img src="/2020/02/23/javabase35-super/t1.png" alt="super指向父类构造"></p>
 <p>通过 Cat 两个构造方法，我们看到通过 Super 可以分别调用父类 Animal 的有参和无参构造方法，而且和 this() 一样，要放在方法代码第一行。</p>
 <h2 id="super-访问父类成员"><a href="#super-访问父类成员" class="headerlink" title="super 访问父类成员"></a>super 访问父类成员</h2><p>访问父类成员与 this 访问基类成员的方法一样，就是 super.成员</p>
 <p>我们把上面的 Animal 和 Cat 类改改：</p>
@@ -195,7 +195,7 @@
 <p>测试类 Test：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Cat cat2 = <span class="keyword">new</span> Cat(<span class="string">"狸花猫"</span>, <span class="string">"花花"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>运行结果：<br><img src="/2020/02/23/javabase35-super/t2.png" alt="super调用成员"></p>
+<p>运行结果：<br><img src="/2020/02/23/javabase35-super/t2.png" alt="调用成员属性和方法"></p>
 <p>如果是基类中独有的属性和方法，可以省略 this 。</p>
 <blockquote>
 <p>super() 与 this() 都不能再 static 环境中使用。</p>
