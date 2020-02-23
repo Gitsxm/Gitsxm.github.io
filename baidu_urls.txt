@@ -1,3 +1,3 @@
-http://www.mggblog.ink/2020/02/23/javabase35-super/
-http://www.mggblog.ink/2020/02/23/javabase34-jc/
-http://www.mggblog.ink/2020/02/23/javabase33-fz/
+https://gitsxm.github.io/2020/02/23/javabase35-super/
+https://gitsxm.github.io/2020/02/23/javabase34-jc/
+https://gitsxm.github.io/2020/02/23/javabase33-fz/
