@@ -5,9 +5,9 @@
   <subtitle>MggBlog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://gitsxm.github.io/"/>
+  <link href="http://www.mggblog.ink/"/>
   <updated>2020-02-23T06:46:41.249Z</updated>
-  <id>https://gitsxm.github.io/</id>
+  <id>http://www.mggblog.ink/</id>
   
   <author>
     <name>Mgg</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十五）—— super 关键字</title>
-    <link href="https://gitsxm.github.io/2020/02/23/javabase35-super/"/>
-    <id>https://gitsxm.github.io/2020/02/23/javabase35-super/</id>
+    <link href="http://www.mggblog.ink/2020/02/23/javabase35-super/"/>
+    <id>http://www.mggblog.ink/2020/02/23/javabase35-super/</id>
     <published>2020-02-23T03:31:22.000Z</published>
     <updated>2020-02-23T06:46:41.249Z</updated>
     
@@ -32,19 +32,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java继承多态" scheme="https://Gitsxm.github.io/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
+      <category term="Java继承多态" scheme="http://www.mggblog.ink/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十四）——继承</title>
-    <link href="https://gitsxm.github.io/2020/02/23/javabase34-jc/"/>
-    <id>https://gitsxm.github.io/2020/02/23/javabase34-jc/</id>
+    <link href="http://www.mggblog.ink/2020/02/23/javabase34-jc/"/>
+    <id>http://www.mggblog.ink/2020/02/23/javabase34-jc/</id>
     <published>2020-02-23T02:28:42.000Z</published>
     <updated>2020-02-23T06:47:38.975Z</updated>
     
@@ -57,19 +57,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java继承多态" scheme="https://Gitsxm.github.io/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
+      <category term="Java继承多态" scheme="http://www.mggblog.ink/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十三）——类的封装</title>
-    <link href="https://gitsxm.github.io/2020/02/23/javabase33-fz/"/>
-    <id>https://gitsxm.github.io/2020/02/23/javabase33-fz/</id>
+    <link href="http://www.mggblog.ink/2020/02/23/javabase33-fz/"/>
+    <id>http://www.mggblog.ink/2020/02/23/javabase33-fz/</id>
     <published>2020-02-23T01:27:36.000Z</published>
     <updated>2020-02-23T06:48:13.835Z</updated>
     
@@ -82,19 +82,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java继承多态" scheme="https://Gitsxm.github.io/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
+      <category term="Java继承多态" scheme="http://www.mggblog.ink/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十二）——递归算法</title>
-    <link href="https://gitsxm.github.io/2020/02/22/javabase32-dg/"/>
-    <id>https://gitsxm.github.io/2020/02/22/javabase32-dg/</id>
+    <link href="http://www.mggblog.ink/2020/02/22/javabase32-dg/"/>
+    <id>http://www.mggblog.ink/2020/02/22/javabase32-dg/</id>
     <published>2020-02-22T12:02:13.000Z</published>
     <updated>2020-02-22T13:57:23.665Z</updated>
     
@@ -107,19 +107,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十一）——析构方法</title>
-    <link href="https://gitsxm.github.io/2020/02/22/javabase31-xgff/"/>
-    <id>https://gitsxm.github.io/2020/02/22/javabase31-xgff/</id>
+    <link href="http://www.mggblog.ink/2020/02/22/javabase31-xgff/"/>
+    <id>http://www.mggblog.ink/2020/02/22/javabase31-xgff/</id>
     <published>2020-02-22T01:24:13.000Z</published>
     <updated>2020-02-22T14:00:48.690Z</updated>
     
@@ -132,19 +132,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（三十）——构造方法</title>
-    <link href="https://gitsxm.github.io/2020/02/21/javabase30-gzff/"/>
-    <id>https://gitsxm.github.io/2020/02/21/javabase30-gzff/</id>
+    <link href="http://www.mggblog.ink/2020/02/21/javabase30-gzff/"/>
+    <id>http://www.mggblog.ink/2020/02/21/javabase30-gzff/</id>
     <published>2020-02-21T07:59:32.000Z</published>
     <updated>2020-02-21T14:17:54.413Z</updated>
     
@@ -157,19 +157,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十九）—— main() 方法</title>
-    <link href="https://gitsxm.github.io/2020/02/21/javabase29-main/"/>
-    <id>https://gitsxm.github.io/2020/02/21/javabase29-main/</id>
+    <link href="http://www.mggblog.ink/2020/02/21/javabase29-main/"/>
+    <id>http://www.mggblog.ink/2020/02/21/javabase29-main/</id>
     <published>2020-02-21T01:45:43.000Z</published>
     <updated>2020-02-21T02:37:26.484Z</updated>
     
@@ -182,19 +182,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十八）——类中常见关键字（访问权限、static、final）</title>
-    <link href="https://gitsxm.github.io/2020/02/20/javabase28-lgjz/"/>
-    <id>https://gitsxm.github.io/2020/02/20/javabase28-lgjz/</id>
+    <link href="http://www.mggblog.ink/2020/02/20/javabase28-lgjz/"/>
+    <id>http://www.mggblog.ink/2020/02/20/javabase28-lgjz/</id>
     <published>2020-02-20T11:49:51.000Z</published>
     <updated>2020-02-21T02:27:38.571Z</updated>
     
@@ -207,19 +207,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十七）——注释</title>
-    <link href="https://gitsxm.github.io/2020/02/20/javabase27-doc/"/>
-    <id>https://gitsxm.github.io/2020/02/20/javabase27-doc/</id>
+    <link href="http://www.mggblog.ink/2020/02/20/javabase27-doc/"/>
+    <id>http://www.mggblog.ink/2020/02/20/javabase27-doc/</id>
     <published>2020-02-20T07:24:38.000Z</published>
     <updated>2020-02-21T01:14:44.977Z</updated>
     
@@ -232,19 +232,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十六）——创建对象（显式、隐式）</title>
-    <link href="https://gitsxm.github.io/2020/02/20/javabase26-newobj/"/>
-    <id>https://gitsxm.github.io/2020/02/20/javabase26-newobj/</id>
+    <link href="http://www.mggblog.ink/2020/02/20/javabase26-newobj/"/>
+    <id>http://www.mggblog.ink/2020/02/20/javabase26-newobj/</id>
     <published>2020-02-20T03:09:14.000Z</published>
     <updated>2020-02-21T01:14:43.609Z</updated>
     
@@ -257,19 +257,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十五）—— this 关键字</title>
-    <link href="https://gitsxm.github.io/2020/02/19/javabase25-this/"/>
-    <id>https://gitsxm.github.io/2020/02/19/javabase25-this/</id>
+    <link href="http://www.mggblog.ink/2020/02/19/javabase25-this/"/>
+    <id>http://www.mggblog.ink/2020/02/19/javabase25-this/</id>
     <published>2020-02-19T10:09:17.000Z</published>
     <updated>2020-02-21T01:14:17.756Z</updated>
     
@@ -282,19 +282,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十四）——类的概念、定义、类属性、类方法（含可变参数）</title>
-    <link href="https://gitsxm.github.io/2020/02/19/javabase24-oop-class/"/>
-    <id>https://gitsxm.github.io/2020/02/19/javabase24-oop-class/</id>
+    <link href="http://www.mggblog.ink/2020/02/19/javabase24-oop-class/"/>
+    <id>http://www.mggblog.ink/2020/02/19/javabase24-oop-class/</id>
     <published>2020-02-19T00:47:36.000Z</published>
     <updated>2020-02-21T04:12:27.348Z</updated>
     
@@ -307,19 +307,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十三）——对象概念、面向对象的三个特征</title>
-    <link href="https://gitsxm.github.io/2020/02/18/javabase23-oop1/"/>
-    <id>https://gitsxm.github.io/2020/02/18/javabase23-oop1/</id>
+    <link href="http://www.mggblog.ink/2020/02/18/javabase23-oop1/"/>
+    <id>http://www.mggblog.ink/2020/02/18/javabase23-oop1/</id>
     <published>2020-02-18T13:37:28.000Z</published>
     <updated>2020-02-21T01:16:45.650Z</updated>
     
@@ -332,19 +332,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java面向对象" scheme="https://Gitsxm.github.io/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <category term="Java面向对象" scheme="http://www.mggblog.ink/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十二）——选择排序</title>
-    <link href="https://gitsxm.github.io/2020/02/18/javabase22-xzpx/"/>
-    <id>https://gitsxm.github.io/2020/02/18/javabase22-xzpx/</id>
+    <link href="http://www.mggblog.ink/2020/02/18/javabase22-xzpx/"/>
+    <id>http://www.mggblog.ink/2020/02/18/javabase22-xzpx/</id>
     <published>2020-02-18T01:43:31.000Z</published>
     <updated>2020-02-21T00:35:29.646Z</updated>
     
@@ -357,19 +357,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十一）——快速排序</title>
-    <link href="https://gitsxm.github.io/2020/02/17/javabase21-kspx/"/>
-    <id>https://gitsxm.github.io/2020/02/17/javabase21-kspx/</id>
+    <link href="http://www.mggblog.ink/2020/02/17/javabase21-kspx/"/>
+    <id>http://www.mggblog.ink/2020/02/17/javabase21-kspx/</id>
     <published>2020-02-17T14:47:29.000Z</published>
     <updated>2020-02-21T01:13:14.130Z</updated>
     
@@ -382,19 +382,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（二十）——冒泡排序</title>
-    <link href="https://gitsxm.github.io/2020/02/17/javabase20-px/"/>
-    <id>https://gitsxm.github.io/2020/02/17/javabase20-px/</id>
+    <link href="http://www.mggblog.ink/2020/02/17/javabase20-px/"/>
+    <id>http://www.mggblog.ink/2020/02/17/javabase20-px/</id>
     <published>2020-02-17T07:32:04.000Z</published>
     <updated>2020-02-21T01:12:14.826Z</updated>
     
@@ -407,19 +407,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（十九）——数组查询、复制</title>
-    <link href="https://gitsxm.github.io/2020/02/16/javabase19-array-s-c/"/>
-    <id>https://gitsxm.github.io/2020/02/16/javabase19-array-s-c/</id>
+    <link href="http://www.mggblog.ink/2020/02/16/javabase19-array-s-c/"/>
+    <id>http://www.mggblog.ink/2020/02/16/javabase19-array-s-c/</id>
     <published>2020-02-16T07:23:04.000Z</published>
     <updated>2020-02-21T01:12:13.442Z</updated>
     
@@ -432,19 +432,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（十八）——二维、多维数组及常用方法</title>
-    <link href="https://gitsxm.github.io/2020/02/16/javabase18-array2/"/>
-    <id>https://gitsxm.github.io/2020/02/16/javabase18-array2/</id>
+    <link href="http://www.mggblog.ink/2020/02/16/javabase18-array2/"/>
+    <id>http://www.mggblog.ink/2020/02/16/javabase18-array2/</id>
     <published>2020-02-16T02:14:12.000Z</published>
     <updated>2020-02-21T01:12:11.795Z</updated>
     
@@ -457,19 +457,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（十七）——数组简介和一维数组</title>
-    <link href="https://gitsxm.github.io/2020/02/15/javabase17-array/"/>
-    <id>https://gitsxm.github.io/2020/02/15/javabase17-array/</id>
+    <link href="http://www.mggblog.ink/2020/02/15/javabase17-array/"/>
+    <id>http://www.mggblog.ink/2020/02/15/javabase17-array/</id>
     <published>2020-02-15T08:30:43.000Z</published>
     <updated>2020-02-21T01:12:09.152Z</updated>
     
@@ -482,19 +482,19 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java数组" scheme="https://Gitsxm.github.io/tags/Java%E6%95%B0%E7%BB%84/"/>
+      <category term="Java数组" scheme="http://www.mggblog.ink/tags/Java%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JAVA零基础筑基到修仙（十六）——数据类型封装类</title>
-    <link href="https://gitsxm.github.io/2020/02/15/javabase16-sjfzl/"/>
-    <id>https://gitsxm.github.io/2020/02/15/javabase16-sjfzl/</id>
+    <link href="http://www.mggblog.ink/2020/02/15/javabase16-sjfzl/"/>
+    <id>http://www.mggblog.ink/2020/02/15/javabase16-sjfzl/</id>
     <published>2020-02-15T02:00:05.000Z</published>
     <updated>2020-02-17T09:56:50.357Z</updated>
     
@@ -507,12 +507,12 @@
     </summary>
     
     
-      <category term="Java基础学习" scheme="https://Gitsxm.github.io/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Java基础学习" scheme="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="Java" scheme="https://Gitsxm.github.io/tags/Java/"/>
+      <category term="Java" scheme="http://www.mggblog.ink/tags/Java/"/>
     
-      <category term="Java内置包装类" scheme="https://Gitsxm.github.io/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/"/>
+      <category term="Java内置包装类" scheme="http://www.mggblog.ink/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/"/>
     
   </entry>
   
