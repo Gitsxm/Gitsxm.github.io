@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/ec.jpg">
 <meta property="article:published_time" content="2020-02-24T13:34:55.000Z">
-<meta property="article:modified_time" content="2020-02-24T15:31:25.366Z">
+<meta property="article:modified_time" content="2020-02-24T15:59:19.989Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java异常处理">
@@ -170,6 +170,7 @@
         <div class="content">
             <p><em>在程序执行中难免会遇到一些错误，且难以避免，称为异常，有时候是代码逻辑上的错误，比如用 0 做了除数，有些事物理错误，比如 jvm 内存溢出，本篇内容学习如何处理异常。</em></p>
 <a id="more"></a>
+<hr>
 <h2 id="Java异常处理"><a href="#Java异常处理" class="headerlink" title="Java异常处理"></a>Java异常处理</h2><p>异常发生的原因通常分为：</p>
 <ul>
 <li>输入非法数据</li>
@@ -297,7 +298,39 @@
 <td>请求的方法不存在</td>
 </tr>
 </tbody></table>
-<h3 id="三、异常方法"><a href="#三、异常方法" class="headerlink" title="三、异常方法"></a>三、异常方法</h3><p>下面的列表是 Throwable 类的主要方法:<br>方法 | 说明 |<br>———|———-|<br>public String getMessage()           |    返回关于发生的异常的详细信息。这个消息在Throwable 类的构造函数中初始化了。          |<br>public Throwable getCause()          |    返回一个Throwable 对象代表异常原因。          |<br>public String toString()          |    使用getMessage()的结果返回类的串级名字。          |<br>public void printStackTrace()          |    打印toString()结果和栈层次到System.err，即错误输出流。          |<br>public StackTraceElement [] getStackTrace()          |    返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。          |<br>public Throwable fillInStackTrace()          |    用当前的调用栈层次填充Throwable 对象栈层次，添加到栈层次任何先前信息中。          |</p>
+<h3 id="三、异常方法"><a href="#三、异常方法" class="headerlink" title="三、异常方法"></a>三、异常方法</h3><p>下面的列表是 Throwable 类的主要方法:</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public String getMessage()</td>
+<td>返回关于发生的异常的详细信息。这个消息在Throwable 类的构造函数中初始化了。</td>
+</tr>
+<tr>
+<td>public Throwable getCause()</td>
+<td>返回一个Throwable 对象代表异常原因。</td>
+</tr>
+<tr>
+<td>public String toString()</td>
+<td>使用getMessage()的结果返回类的串级名字。</td>
+</tr>
+<tr>
+<td>public void printStackTrace()</td>
+<td>打印toString()结果和栈层次到System.err，即错误输出流。</td>
+</tr>
+<tr>
+<td>public StackTraceElement [] getStackTrace()</td>
+<td>返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。</td>
+</tr>
+<tr>
+<td>public Throwable fillInStackTrace()</td>
+<td>用当前的调用栈层次填充Throwable 对象栈层次，添加到栈层次任何先前信息中。</td>
+</tr>
+</tbody></table>
 <p>这些方法常常在try catch 块中使用。</p>
 <h3 id="四、捕获异常"><a href="#四、捕获异常" class="headerlink" title="四、捕获异常"></a>四、捕获异常</h3><p>在前面博客已有提到 try catch 块，下面单独说一下。</p>
 <p>使用 try 和 catch 关键字可以捕获异常。try/catch 代码块放在异常可能发生的地方。</p>
