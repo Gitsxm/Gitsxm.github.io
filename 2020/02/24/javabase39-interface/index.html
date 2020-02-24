@@ -7,21 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: Java基础学习 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（三十九）——接口（Interface） - MggBlog</title>
 
 
-    <meta name="description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MggBlog">
-<meta property="og:url" content="http://www.mggblog.ink/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/index.html">
+    <meta name="description" content="抽象类中可以有抽象方法也可以有普通方法，Java为我们提供了一个专门收纳抽象方法的抽象类型——接口（interface），接口与类是两种不同的概念。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（三十九）——接口（Interface）">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/24/javabase39-interface/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="建博客目的是整理自己的知识，如果可以帮到你那真的是幸会幸会。（如有侵权请及时邮箱联系）">
+<meta property="og:description" content="抽象类中可以有抽象方法也可以有普通方法，Java为我们提供了一个专门收纳抽象方法的抽象类型——接口（interface），接口与类是两种不同的概念。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/jk.jpg">
+<meta property="article:published_time" content="2020-02-24T02:53:16.000Z">
+<meta property="article:modified_time" content="2020-02-24T04:08:49.043Z">
 <meta property="article:author" content="Mgg">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java继承多态">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/images/og_image.png">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/jk.jpg">
 
 
 
@@ -80,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（三十九）——接口（Interface）" height="28">
             
             </a>
         </div>
@@ -129,25 +132,13 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">Java基础学习</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-image">
-        <a href="/2020/02/24/javabase39-interface/" class="image is-7by1">
+        <span  class="image is-7by1">
             <img class="thumbnail" src="/gallery/jk.jpg" alt="JAVA零基础筑基到修仙（三十九）——接口（Interface）">
-        </a>
+        </span>
     </div>
     
     <div class="card-content article ">
@@ -173,21 +164,94 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/02/24/javabase39-interface/">JAVA零基础筑基到修仙（三十九）——接口（Interface）</a>
+                JAVA零基础筑基到修仙（三十九）——接口（Interface）
             
         </h1>
         <div class="content">
             <p><em>抽象类中可以有抽象方法也可以有普通方法，Java为我们提供了一个专门收纳抽象方法的抽象类型——接口（interface），接口与类是两种不同的概念。</em></p>
+<a id="more"></a>
+<hr>
+<p>与类对比理解：<br><strong>接口与类相似点：</strong></p>
+<ul>
+<li>一个接口可以有多个方法。</li>
+<li>接口文件保存在 .java 结尾的文件中，文件名使用接口名。</li>
+<li>接口的字节码文件保存在 .class 结尾的文件中。</li>
+<li>接口相应的字节码文件必须在与包名称相匹配的目录结构中。</li>
+</ul>
+<p><strong>接口与类的区别：</strong></p>
+<ul>
+<li>接口不能用于实例化对象。</li>
+<li>接口没有构造方法。</li>
+<li>接口中所有的方法必须是抽象方法。</li>
+<li>接口不能包含成员变量，除了 static 和 final 变量。</li>
+<li>接口不是被类继承了，而是要被类实现。</li>
+<li>接口支持多继承。</li>
+</ul>
+<p><strong>接口特性</strong></p>
+<ul>
+<li>接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 public abstract（只能是 public abstract，其他修饰符都会报错）。</li>
+<li>接口中可以含有变量，但是接口中的变量会被隐式的指定为 public static final 变量（并且只能是 public，用 private 修饰会报编译错误）。</li>
+<li>接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法。</li>
+</ul>
+<p><strong>抽象类和接口的区别</strong></p>
+<ol>
+<li>抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行。</li>
+<li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的。</li>
+<li>接口中不能含有静态代码块以及静态方法(用 static 修饰的方法)，而抽象类是可以有静态代码块和静态方法。</li>
+<li>一个类只能继承一个抽象类，而一个类却可以实现多个接口</li>
+</ol>
+<h2 id="一、接口声明"><a href="#一、接口声明" class="headerlink" title="一、接口声明"></a>一、接口声明</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[public] interface interface_name [extends interface1_name[, interface2_name,…]] &#123;</span><br><span class="line">    <span class="comment">// 接口体，其中可以包含定义常量和声明方法</span></span><br><span class="line">    [<span class="keyword">public</span>] [<span class="keyword">static</span>] [<span class="keyword">final</span>] type constant_name = value;    <span class="comment">// 定义常量</span></span><br><span class="line">    [<span class="keyword">public</span>] [<span class="keyword">abstract</span>] <span class="function">returnType <span class="title">method_name</span><span class="params">(parameter_list)</span></span>;    <span class="comment">// 声明方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对以上语法的说明如下：</p>
+<ul>
+<li>public 表示接口的修饰符，当没有修饰符时，则使用默认的修饰符，此时该接口的访问权限仅局限于所属的包；</li>
+<li>interface_name 表示接口的名称。接口名应与类名采用相同的命名规则，即如果仅从语法角度来看，接口名只要是合法的标识符即可。如果要遵守 Java 可读性规范，则接口名应由多个有意义的单词连缀而成，每个单词首字母大写，单词与单词之间无需任何分隔符。</li>
+<li>extends 表示接口的继承关系；</li>
+<li>interface1_name 表示要继承的接口名称；</li>
+<li>constant_name 表示变量名称，一般是 static 和 final 型的；</li>
+<li>returnType 表示方法的返回值类型；</li>
+<li>parameter_list 表示参数列表，在接口中的方法是没有方法体的。</li>
+</ul>
+<p>动手创建一个接口 Animal ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="comment">//全局常量动物园名字</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String zoo = <span class="string">"幻想乡动物园"</span>;</span><br><span class="line">    <span class="comment">//饲养员</span></span><br><span class="line">	String feeder = <span class="string">"kangkang"</span>; <span class="comment">// 推荐这样定义，因为默认的修饰就是  public static final</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: run   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 动物 run 抽象方法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: jump   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 动物 jump 抽象方法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span></span>;<span class="comment">//推荐这样定义 默认修饰为  public abstract</span></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: eat   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 动物 eat 抽象方法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;<span class="comment">//推荐这样定义 默认修饰为  public abstract</span></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: sleep   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: 动物 sleep 抽象方法</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;<span class="comment">//推荐这样定义 默认修饰为  public abstract</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>提醒一下：接口中的常量必须有初始值，否则无法通过编译。推荐不使用修饰符修饰，默认即可，保持代码简洁（但是团队开发中需要看规范如何要求）。</p>
+<h2 id="二、接口的实现"><a href="#二、接口的实现" class="headerlink" title="二、接口的实现"></a>二、接口的实现</h2><p>Java允许一个类实现多个接口，以补充类单继承的不足。继承使用 extends 关键字，实现则使用 implements 关键字，语法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;public&gt; class &lt;class_name&gt; [extends superclass_name] [implements interface1_name[, interface2_name…]] &#123;</span><br><span class="line">    <span class="comment">// 主体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对以上语法的说明如下：</p>
+<ul>
+<li>public：类的修饰符；</li>
+<li>superclass_name：需要继承的父类名称；</li>
+<li>interface1_name：要实现的接口名称。</li>
+</ul>
+<p>实现接口需要注意以下几点：</p>
+<ol>
+<li>实现接口与继承父类相似，一样可以获得所实现接口里定义的常量和方法。如果一个类需要实现多个接口，则多个接口之间以逗号分隔。</li>
+<li>一个类可以继承一个父类，并同时实现多个接口，implements 部分必须放在 extends 部分之后。</li>
+<li>一个类实现了一个或多个接口之后，这个类必须完全实现这些接口里所定义的全部抽象方法（也就是重写这些抽象方法）；否则，该类将保留从父接口那里继承到的抽象方法，该类也必须定义成抽象类。</li>
+</ol>
+<p>Demo：<br>创建 Lion 类 实现 Animal 接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Lion</span> <span class="keyword">implements</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"Lion run"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jump</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"Lion jump"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"Lion eat"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"Lion sleep"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果实现接口的类是抽象类，那么就没必要实现该接口的方法。</p>
+</blockquote>
+<p>测试类 Test：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Lion lion = <span class="keyword">new</span> Lion();</span><br><span class="line">		lion.eat();</span><br><span class="line">		lion.run();</span><br><span class="line">		lion.jump();</span><br><span class="line">		lion.sleep();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/2020/02/24/javabase39-interface/t.png" alt="运行结果"></p>
+<h2 id="三、接口继承"><a href="#三、接口继承" class="headerlink" title="三、接口继承"></a>三、接口继承</h2><p>和类以一样，使用 extends 关键字继承父接口，不同的是接口支持多继承，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Biology</span>,<span class="title">Animal</span></span>&#123;</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 猫爬树</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span>: climbTree   </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span>: TODO </span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span>: MGG</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">climbTree</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建了 Cat 接口继承了 Biology（生物），Animal（动物） 接口，只使用了一个 extends 关键字，后面的多个接口用 “ , “ 隔开。</p>
+<p>当新建类实现 Cat 接口时，这个类就要重写 Cat 接口内的所有抽象方法。</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/24/javabase39-interface/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/" rel="tag">Java继承多态</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -195,564 +259,62 @@
 
 
 
-
-
-
-
-
-    
 <div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/24/javabase38-abstract/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/ab.jpg" alt="JAVA零基础筑基到修仙（三十八）—— 抽象类">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-24T01:46:42.000Z">2020-02-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1062 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2020/02/24/javabase38-abstract/">JAVA零基础筑基到修仙（三十八）—— 抽象类</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</em></p>
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
         </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/24/javabase38-abstract/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
 
 
 
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/23/javabase37-instanceof/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/in.jpg" alt="JAVA零基础筑基到修仙（三十七）—— instanceof 关键字详解">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-23T15:21:41.000Z">2020-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 728 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/23/javabase37-instanceof/">JAVA零基础筑基到修仙（三十七）—— instanceof 关键字详解</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>严格来说 instanceof 是 Java 中的一个双目运算符，由于它是由字母组成的，所以也是 Java 的保留关键字。在 Java 中可以使用 instanceof 关键字判断一个对象是否为一个类（或接口、抽象类、父类）的实例。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/23/javabase37-instanceof/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/23/javabase36-dt/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/dt.jpg" alt="JAVA零基础筑基到修仙（三十六）——多态">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-23T07:12:58.000Z">2020-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 分钟 读完 (大约 1392 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/23/javabase36-dt/">JAVA零基础筑基到修仙（三十六）——多态</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>多态性是面向对象编程的又一个重要特征，它是指在父类中定义的属性和方法被子类继承之后，可以具有不同的数据类型或表现出不同的行为，这使得同一个属性或方法在父类及其各个子类中具有不同的含义。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/23/javabase36-dt/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/23/javabase35-super/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/super.jpg" alt="JAVA零基础筑基到修仙（三十五）—— super 关键字">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-23T03:31:22.000Z">2020-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 686 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/23/javabase35-super/">JAVA零基础筑基到修仙（三十五）—— super 关键字</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>由于子类不能继承父类的构造方法，因此，如果要调用父类的构造方法，可以使用 super 关键字。super 可以用来访问父类的构造方法、普通方法和属性。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/23/javabase35-super/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/23/javabase34-jc/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/jc.jpg" alt="JAVA零基础筑基到修仙（三十四）——继承">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-23T02:28:42.000Z">2020-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 分钟 读完 (大约 827 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/23/javabase34-jc/">JAVA零基础筑基到修仙（三十四）——继承</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>继承是面向对象的三大特征之一。继承和现实生活中的“继承”的相似之处是保留一些父辈的特性，从而减少代码冗余，提高程序运行效率。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/23/javabase34-jc/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/23/javabase33-fz/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/fz.jpg" alt="JAVA零基础筑基到修仙（三十三）——类的封装">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-23T01:27:36.000Z">2020-02-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 分钟 读完 (大约 707 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/23/javabase33-fz/">JAVA零基础筑基到修仙（三十三）——类的封装</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>封装在讲对象和类的时候已经多多少少有说过，接下来的内容会把封装，继承，多态单独说说，有前面的预习，现在看起来就简单多了。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/23/javabase33-fz/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/22/javabase32-dg/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/dg.jpg" alt="JAVA零基础筑基到修仙（三十二）——递归算法">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-22T12:02:13.000Z">2020-02-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8 分钟 读完 (大约 1190 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/22/javabase32-dg/">JAVA零基础筑基到修仙（三十二）——递归算法</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>递归算法简单说就是方法调用自己，对递归我也就懂这么一点，学习递归是一个很长的过程，从“学会”、“学好”到“用好”得有很长时间的积累，本篇内容简单说说什么是递归，和什么时候用递归，再深了我也不懂了，以后再补充吧。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/22/javabase32-dg/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/22/javabase31-xgff/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/gc.jpg" alt="JAVA零基础筑基到修仙（三十一）——析构方法">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-22T01:24:13.000Z">2020-02-22</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 分钟 读完 (大约 970 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/22/javabase31-xgff/">JAVA零基础筑基到修仙（三十一）——析构方法</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>析构函数的作用和构造函数相反，析构函数被用来在对象不再被使用时销毁对象，释放内存空间（例如用 new 创造出来的空间），而且系统自动执行。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/22/javabase31-xgff/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/02/21/javabase30-gzff/" class="image is-7by1">
-            <img class="thumbnail" src="/gallery/constructor.jpg" alt="JAVA零基础筑基到修仙（三十）——构造方法">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-21T07:59:32.000Z">2020-02-21</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 分钟 读完 (大约 1024 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/02/21/javabase30-gzff/">JAVA零基础筑基到修仙（三十）——构造方法</a>
-            
-        </h1>
-        <div class="content">
-            <p><em>构造方法是类的特殊方法，创建类时会默认创建一个没有参数，没有具体方法体的构造方法，称为无参构造，还可以自己写有参数的构造完成类初始化，下面详细说说构造方法的用法。</em></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/21/javabase30-gzff/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/0/">上一页</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/24/javabase38-abstract/">
+                <span class="level-item">JAVA零基础筑基到修仙（三十八）—— 抽象类</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/2/">下一页</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/page/4/">4</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
 </div>
 </div>
                 
@@ -1368,7 +930,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="MggBlog" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（三十九）——接口（Interface）" height="28">
                 
                 </a>
                 <p class="is-size-7">
