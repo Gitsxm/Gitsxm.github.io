@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.mggblog.ink/2020/02/26/javabase48-fx/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/20/javabase28-lgjz/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/21/javabase30-gzff/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/22/javabase31-xgff/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase33-fz/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase34-jc/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase35-super/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase36-dt/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/23/javabase37-instanceof/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/24/javabase38-abstract/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/24/javabase39-interface/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/24/javabase40-inner/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/24/javabase41-exception/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/25/javabase42-log/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/25/javabase43-collection/</loc>
+    <lastmod>2020-02-26</lastmod>
+  </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/25/javabase44-list/</loc>
     <lastmod>2020-02-26</lastmod>
   </url>  <url>
@@ -10,47 +55,14 @@
     <loc>http://www.mggblog.ink/2020/02/26/javabase46-map/</loc>
     <lastmod>2020-02-26</lastmod>
   </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/25/javabase43-collection/</loc>
+    <loc>http://www.mggblog.ink/2020/02/26/javabase47-collections/</loc>
     <lastmod>2020-02-26</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/04/javabase1-jj/</loc>
     <lastmod>2020-02-25</lastmod>
   </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/25/javabase42-log/</loc>
-    <lastmod>2020-02-25</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/24/javabase41-exception/</loc>
-    <lastmod>2020-02-25</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/23/javabase36-dt/</loc>
-    <lastmod>2020-02-24</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/24/javabase40-inner/</loc>
-    <lastmod>2020-02-24</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/24/javabase39-interface/</loc>
-    <lastmod>2020-02-24</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/24/javabase38-abstract/</loc>
-    <lastmod>2020-02-24</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/23/javabase37-instanceof/</loc>
-    <lastmod>2020-02-23</lastmod>
-  </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/18/javabase23-oop1/</loc>
     <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/23/javabase33-fz/</loc>
-    <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/23/javabase34-jc/</loc>
-    <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/23/javabase35-super/</loc>
-    <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/22/javabase31-xgff/</loc>
-    <lastmod>2020-02-22</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/22/javabase32-dg/</loc>
     <lastmod>2020-02-22</lastmod>
@@ -61,16 +73,10 @@
     <loc>http://www.mggblog.ink/2020/02/05/javabase2-helloworld/</loc>
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/21/javabase30-gzff/</loc>
-    <lastmod>2020-02-21</lastmod>
-  </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/19/javabase24-oop-class/</loc>
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/21/javabase29-main/</loc>
-    <lastmod>2020-02-21</lastmod>
-  </url>  <url>
-    <loc>http://www.mggblog.ink/2020/02/20/javabase28-lgjz/</loc>
     <lastmod>2020-02-21</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/20/javabase27-doc/</loc>

@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://www.mggblog.ink/gallery/collect.jpg">
 <meta property="article:published_time" content="2020-02-25T07:47:16.000Z">
-<meta property="article:modified_time" content="2020-02-26T02:01:30.535Z">
+<meta property="article:modified_time" content="2020-02-26T13:16:23.511Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java集合">
@@ -309,6 +309,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	List list1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	List list2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	<span class="comment">// 为集合添加元素</span></span><br><span class="line">	list1.add(<span class="number">3</span>);</span><br><span class="line">	list1.add(<span class="number">2</span>);</span><br><span class="line">	list1.add(<span class="number">22</span>);</span><br><span class="line">	list1.add(<span class="number">33</span>);</span><br><span class="line">	list1.add(<span class="number">11</span>);</span><br><span class="line">	<span class="comment">// 判断集合是否为空</span></span><br><span class="line">	System.out.println(<span class="string">"list1 if empty? "</span> + list1.isEmpty());</span><br><span class="line">	<span class="comment">// 获取长度</span></span><br><span class="line">	System.out.println(<span class="string">"list1 长度： "</span> + list1.size());</span><br><span class="line">	<span class="comment">// 判断是否存在指定元素</span></span><br><span class="line">	System.out.println(<span class="string">"list1 exist 11? "</span> + list1.contains(<span class="number">11</span>));</span><br><span class="line">	<span class="comment">// 遍历集合list1</span></span><br><span class="line">	System.out.print(<span class="string">"list1 中元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list1)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 通过list1 为list2 赋值</span></span><br><span class="line">	list2.addAll(list1);</span><br><span class="line">	<span class="comment">// 遍历list2</span></span><br><span class="line">	System.out.print(<span class="string">"list1为list2赋值后 list2包含元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list2)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 通过索引获取元素</span></span><br><span class="line">	System.out.println(<span class="string">"list2 索引为3的元素："</span> + list2.get(<span class="number">3</span>));</span><br><span class="line">	<span class="comment">// 为list2 添加元素</span></span><br><span class="line">	list2.add(<span class="number">10</span>);</span><br><span class="line">	<span class="comment">// 移除 list2 中 在list1中没有的元素 10</span></span><br><span class="line">	list2.retainAll(list1);</span><br><span class="line">	<span class="comment">// retainAll后 遍历list2 元素</span></span><br><span class="line">	System.out.print(<span class="string">"retainAll后遍历list2 元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list2)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 移除list2 所有元素</span></span><br><span class="line">	list2.removeAll(list2);</span><br><span class="line">	<span class="comment">// 移除后list2长度</span></span><br><span class="line">	System.out.println(<span class="string">"list2移除所有元素后长度："</span> + list2.size());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果：<br><img src="/2020/02/25/javabase43-collection/jhcz.png" alt="集合一般操作"></p>
 <p>在写代码时会发现在编辑器中会出现大量黄色下划线，这是因为没有为集合指定类型的警告，涉及到了泛型的知识，后面详细讲解。如果不指定类型的话默认设定为 Object ，警告并不会影响编译和运行，不用管。</p>
+<hr>
 
         </div>
         
@@ -437,7 +438,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            46
+                            48
                         </p>
                     </a>
                 </div>
@@ -519,7 +520,7 @@
                 <span class="level-item">Java基础学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">46</span>
+                <span class="level-item tag">48</span>
             </span>
         </a></li>
             </ul>
@@ -532,7 +533,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.86px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.86px;">Java字符串处理</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 11.43px;">Java异常处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15.71px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/" style="font-size: 17.14px;">Java继承多态</a> <a href="/tags/Java%E9%9B%86%E5%90%88/" style="font-size: 14.29px;">Java集合</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 18.57px;">Java面向对象</a>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 13.33px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 13.33px;">Java字符串处理</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 11.67px;">Java异常处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 15px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/" style="font-size: 16.67px;">Java继承多态</a> <a href="/tags/Java%E9%9B%86%E5%90%88/" style="font-size: 15px;">Java集合</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 18.33px;">Java面向对象</a>
     </div>
 </div>
     
@@ -544,6 +545,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/26/javabase48-fx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/fx.jpg" alt="JAVA零基础筑基到修仙（四十八）——泛型">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-26T12:01:46.000Z">2020-02-26</time></div>
+                    <a href="/2020/02/26/javabase48-fx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十八）——泛型</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/26/javabase47-collections/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/collections.jpg" alt="JAVA零基础筑基到修仙（四十七）——Collections 集合工具类">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-26T09:09:49.000Z">2020-02-26</time></div>
+                    <a href="/2020/02/26/javabase47-collections/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十七）——Collections 集合工具类</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -602,44 +641,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/25/javabase43-collection/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/collect.jpg" alt="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T07:47:16.000Z">2020-02-25</time></div>
-                    <a href="/2020/02/25/javabase43-collection/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十三）——集合、Collection 接口</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/25/javabase42-log/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/log.jpg" alt="JAVA零基础筑基到修仙（四十二）——Log日志记录">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T01:04:58.000Z">2020-02-25</time></div>
-                    <a href="/2020/02/25/javabase42-log/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十二）——Log日志记录</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -657,7 +658,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">48</span>
                 </span>
             </a>
         </li>
@@ -678,7 +679,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">46</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
@@ -734,7 +735,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9B%86%E5%90%88/">
                         <span class="tag">Java集合</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -794,6 +795,44 @@
         
         <article class="media">
             
+            <a href="/2020/02/26/javabase48-fx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/fx.jpg" alt="JAVA零基础筑基到修仙（四十八）——泛型">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-26T12:01:46.000Z">2020-02-26</time></div>
+                    <a href="/2020/02/26/javabase48-fx/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十八）——泛型</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/26/javabase47-collections/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/collections.jpg" alt="JAVA零基础筑基到修仙（四十七）——Collections 集合工具类">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-26T09:09:49.000Z">2020-02-26</time></div>
+                    <a href="/2020/02/26/javabase47-collections/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十七）——Collections 集合工具类</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/02/26/javabase46-map/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/map.jpg" alt="JAVA零基础筑基到修仙（四十六）——Map 集合">
@@ -849,44 +888,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/02/25/javabase43-collection/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/collect.jpg" alt="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T07:47:16.000Z">2020-02-25</time></div>
-                    <a href="/2020/02/25/javabase43-collection/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十三）——集合、Collection 接口</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/02/25/javabase42-log/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/log.jpg" alt="JAVA零基础筑基到修仙（四十二）——Log日志记录">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-25T01:04:58.000Z">2020-02-25</time></div>
-                    <a href="/2020/02/25/javabase42-log/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（四十二）——Log日志记录</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -904,7 +905,7 @@
                     <span class="level-item">二月 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">48</span>
                 </span>
             </a>
         </li>
@@ -925,7 +926,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
                         <span class="tag">Java</span>
-                        <span class="tag is-grey">46</span>
+                        <span class="tag is-grey">48</span>
                     </a>
                 </div>
                 
@@ -981,7 +982,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java%E9%9B%86%E5%90%88/">
                         <span class="tag">Java集合</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
