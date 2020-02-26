@@ -7,23 +7,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（六）——循环 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（四十六）——Map 集合 - MggBlog</title>
 
 
-    <meta name="description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
+    <meta name="description" content="Map 的结构就像学校的学生，每个学号对应一个学生，它存储的 key→value 键值对，key 与 value 一一对应， key 不可重复，value 值没有限制。本期内容介绍 Map 接口的两个实现类 HashMap 和 TreeMap。LinkedHashMap 是可以保证存入和读取顺序的链式存储，看过 LinkedList 后很容易理解，不再单独介绍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（六）——循环">
-<meta property="og:url" content="http://www.mggblog.ink/2020/02/09/javabase6-xh/index.html">
+<meta property="og:title" content="JAVA零基础筑基到修仙（四十六）——Map 集合">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/26/javabase46-map/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。本篇要求做到如下几点：理解循环含义;会用while结构;会用for&#x2F;foreach结构。">
+<meta property="og:description" content="Map 的结构就像学校的学生，每个学号对应一个学生，它存储的 key→value 键值对，key 与 value 一一对应， key 不可重复，value 值没有限制。本期内容介绍 Map 接口的两个实现类 HashMap 和 TreeMap。LinkedHashMap 是可以保证存入和读取顺序的链式存储，看过 LinkedList 后很容易理解，不再单独介绍。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
-<meta property="article:published_time" content="2020-02-09T12:30:39.000Z">
-<meta property="article:modified_time" content="2020-02-21T01:12:00.326Z">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/map.jpg">
+<meta property="article:published_time" content="2020-02-26T02:26:04.000Z">
+<meta property="article:modified_time" content="2020-02-26T04:11:35.856Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java集合">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/gallery/xhbg.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/map.jpg">
 
 
 
@@ -82,7 +83,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（六）——循环" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四十六）——Map 集合" height="28">
             
             </a>
         </div>
@@ -136,7 +137,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/xhbg.jpg" alt="JAVA零基础筑基到修仙（六）——循环">
+            <img class="thumbnail" src="/gallery/map.jpg" alt="JAVA零基础筑基到修仙（四十六）——Map 集合">
         </span>
     </div>
     
@@ -144,7 +145,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-09T12:30:39.000Z">2020-02-09</time>
+                <time class="level-item has-text-grey" datetime="2020-02-26T02:26:04.000Z">2020-02-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
@@ -154,7 +155,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    12 分钟 读完 (大约 1797 个字)
+                    10 分钟 读完 (大约 1475 个字)
                 </span>
                 
                 
@@ -163,46 +164,134 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（六）——循环
+                JAVA零基础筑基到修仙（四十六）——Map 集合
             
         </h1>
         <div class="content">
-            <p><em>从这篇内容开始Java核心内容——循环结构的学习，日常生活中的循环很常见，墙上钟表的指针一圈一圈的不停的转是一种循环，人体内的水每时每刻都在循环，再如鲁迅曾经说过“人类的本质是复读机”，复读也是循环。<strong>本篇要求做到如下几点：理解循环含义;会用while结构;会用for/foreach结构。</strong></em>  </p>
+            <p><em>Map 的结构就像学校的学生，每个学号对应一个学生，它存储的 key→value 键值对，key 与 value 一一对应， key 不可重复，value 值没有限制。本期内容介绍 Map 接口的两个实现类 <strong>HashMap</strong> 和 <strong>TreeMap</strong>。LinkedHashMap 是可以保证存入和读取顺序的链式存储，看过 LinkedList 后很容易理解，不再单独介绍。</em></p>
 <a id="more"></a>
 <hr>
-<h2 id="一、while循环"><a href="#一、while循环" class="headerlink" title="一、while循环"></a>一、while循环</h2><p>while循环的一般形式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(循环条件) &#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>循环条件判断为true他就一直循环直到为false为止，特点是先判断再执行。<br>为了锻炼肾体，我每天都坚持做俯卧撑和深蹲，各做20个，别嘲笑我菜。用while来做20个俯卧撑，</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt;= <span class="number">20</span> ) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/fwc.png" alt="运行结果"><br>就是这么简单，如果没有循环，我需要20个 System.out.println 改中间的数值烦死了，有没有发现，现在科技的的进步都是”懒“来驱动的，尤其在it行业，哈哈哈。<br>趁热打铁，再做个练习，计算一下5门考试科目的平均成绩，具体哪科就不说了啊，控制台输入五个数求平均值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">0</span>,score = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(i &lt; <span class="number">5</span> ) &#123;</span><br><span class="line">			score += input.nextInt();</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">double</span> avg = score/i;</span><br><span class="line">		System.out.println(<span class="string">"五科的平均分是："</span>+avg);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/pjf.png" alt="运行结果"><br>上面用的是 while 的常见形式，先判断后执行，它还有另一种先执行后判断的形式————“ do……while”形式，不过基本上很少用到。<br>do……while循环的一般形式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">循环操作</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span>(循环条件)</span><br></pre></td></tr></table></figure>
-<p>才做了20个俯卧撑，还有20个深蹲要做，用do……while来做一下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">do</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个深蹲！"</span>);</span><br><span class="line">			i++;</span><br><span class="line">		&#125; <span class="keyword">while</span> (i &lt;= <span class="number">20</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>有没有发现基本和上面while代码一模一样，还多了个do，所以用do……while多此一举，没必要，但是照顾到有些人善于顺时思维，有些人善于逆时思维，想用那个那个，可以达到一样的效果。</p>
-<p>while的代码结构很简单，但是有需要特别注意的问题即使，在写循环条件时一定要谨慎，否则会出现死循环或者不执行循环操作，死循环会导致程序崩溃。</p>
-<h2 id="二、for-循环"><a href="#二、for-循环" class="headerlink" title="二、for 循环"></a>二、for 循环</h2><p>除了while循环，还有for循环，for循环的循环条件可以使用局部变量，也可以使用外部变量，当使用局部变量时，程序最多循环多少次是已知的，而while循环只能使用外部变量，无法判断循环多少次。<br>for循环的一般形式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(赋值语句;条件语句;迭代语句)&#123;</span><br><span class="line">	循环操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用for循环来做俯卧撑20下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/for.png" alt="运行结果"><br>不一样的实现方法，和 while 循环对比记忆，效果更佳。另外，for 语句中赋值、循环条件以及迭代部分都可以为空语句（但分号不能省略），三者均为空的时候，相当于一个无限循环。来思考一下当赋值语句，条件语句，迭代语句分别为空时，做20个俯卧撑要怎么写。</p>
-<ol>
-<li>赋值语句为空<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;<span class="comment">//就是简单的放到外面</span></span><br><span class="line">		<span class="keyword">for</span> (; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"第"</span>+i+<span class="string">"个俯卧撑"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
-<li>条件语句为空（又见 break 关键字）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (i &gt; <span class="number">20</span>)</span><br><span class="line">				<span class="keyword">break</span>;<span class="comment">//这里碰到了昨天在 switch 语句中出现的 break 关键字，在这里的作用是结束循环，如果没有它，没有循环条件限制，循环就会一直下去。</span></span><br><span class="line">			System.out.println(<span class="string">"第"</span> + i + <span class="string">"个俯卧撑"</span>);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
-<li>迭代语句为空<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">20</span>;) &#123;</span><br><span class="line">		System.out.println(<span class="string">"第"</span> + i + <span class="string">"个俯卧撑"</span>);</span><br><span class="line">		i++;<span class="comment">//简单的放到里面就可以了</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-三个代码都跑过了，没问题，不再上图了。请读者自己用for循环写个计算平均数的小程序，用上Scanner类，控制台输入数据。另外思考一下，空三个条件又该怎么写呢？（从三段代码里找答案）</li>
-</ol>
-<h4 id="for-嵌套"><a href="#for-嵌套" class="headerlink" title="for 嵌套"></a>for 嵌套</h4><p>for 也是可以嵌套的，用来解决复杂的循环逻辑，比如冒泡排序，就要用到双层for循环，到后面再说冒泡排序，今天举个输出九九乘法表的例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		<span class="comment">//外循环，第一个因数取值</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ;i &lt;= <span class="number">9</span> ; i++) &#123;</span><br><span class="line">			<span class="comment">//内循环，第二个因数取值</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= i; j++) &#123;</span><br><span class="line">				<span class="comment">//输出算式</span></span><br><span class="line">				System.out.print(i+<span class="string">"*"</span>+j+<span class="string">"="</span>+i*j+<span class="string">"\t"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//换行</span></span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/99cf.png" alt="乘法表"><br>不仅可以嵌套两套，for可以嵌套任意多套，但是随着层数增加，算法复杂度指数增加，也很少有嵌套多层的算法需求。</p>
-<h2 id="三、forEach-循环"><a href="#三、forEach-循环" class="headerlink" title="三、forEach 循环"></a>三、forEach 循环</h2><p>forEach 循环时for循环的特殊形式，多用于数组、列表等数据结构迭代，非常好用。它的一般结构是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(类型 变量名:集合) &#123;</span><br><span class="line">    语句块;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>举个数组迭代的例子，还没讲到数据结构，但是在这里必须找个例子用，遍历一个字符串数组：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//举个字符串数组</span></span><br><span class="line">	String[] names = &#123;<span class="string">"kangkang"</span>,<span class="string">"tom"</span>,<span class="string">"john"</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(String name : names) &#123;</span><br><span class="line">		System.out.println(<span class="string">"i am "</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果<br><img src="/2020/02/09/javabase6-xh/foreach.png" alt="轻松处理并输出"><br>for绝对可以完成foreach的工作，但是用for遍历数组的话就要通过数组下标循环遍历，还是 foreach 好用，程序员”懒”就是生产力啊！<br>循环结构就这么多内容，到这里，逻辑思考就多了起来，多多练习，祝早日变大佬！！</p>
-<hr>
-<h2 id="小尾巴"><a href="#小尾巴" class="headerlink" title="小尾巴"></a>小尾巴</h2><p>憋尿博客，部署完赶紧溜了。完整版“巨魔吟唱”：当我们遇到什么困难都不要怕，微笑着面对它，战胜困难的唯一办法就是面对困难，坚持就是胜利，加油！奥力给！！！</p>
+<p>HashMap 通过 hash 算法来存取键值对象，存入和读取没有顺序。TreeMap可对键值对象进行排序（自然排序）。</p>
+<h2 id="一、HashMap-类"><a href="#一、HashMap-类" class="headerlink" title="一、HashMap 类"></a>一、HashMap 类</h2><p>HashMap 类是 Map 接口最常用的实现类，创建对象语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不指定类型</span></span><br><span class="line">HashMap map = <span class="keyword">new</span> HashMap();</span><br><span class="line"><span class="comment">//使用泛型，指定键值对的类型。</span></span><br><span class="line">HashMap&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>HashMap 类方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void clear()</td>
+<td>从这张地图中删除所有的映射。</td>
+</tr>
+<tr>
+<td>Object clone()</td>
+<td>返回此 HashMap实例的浅拷贝：键和值本身不被克隆。</td>
+</tr>
+<tr>
+<td>V compute(K key, BiFunction&lt;? super K,? super V,? extends V&gt; remappingFunction)</td>
+<td>尝试计算用于指定键和其当前映射的值的映射（或 null如果没有当前映射）。</td>
+</tr>
+<tr>
+<td>V computeIfAbsent(K key, Function&lt;? super K,? extends V&gt; mappingFunction)</td>
+<td>如果指定的键尚未与值相关联（或映射到 null ），则尝试使用给定的映射函数计算其值，并将其输入到此映射中，除非 null 。</td>
+</tr>
+<tr>
+<td>V computeIfPresent(K key, BiFunction&lt;? super K,? super V,? extends V&gt; remappingFunction)</td>
+<td>如果指定的密钥的值存在且非空，则尝试计算给定密钥及其当前映射值的新映射。</td>
+</tr>
+<tr>
+<td>boolean containsKey(Object key)</td>
+<td>如果此映射包含指定键的映射，则返回 true 。</td>
+</tr>
+<tr>
+<td>boolean containsValue(Object value)</td>
+<td>如果此地图将一个或多个键映射到指定值，则返回 true 。</td>
+</tr>
+<tr>
+<td>Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</td>
+<td>返回此地图中包含的映射的Set视图。</td>
+</tr>
+<tr>
+<td>void forEach(BiConsumer&lt;? super K,? super V&gt; action)</td>
+<td>对此映射中的每个条目执行给定的操作，直到所有条目都被处理或操作引发异常。</td>
+</tr>
+<tr>
+<td>V get(Object key)</td>
+<td>返回到指定键所映射的值，或 null如果此映射包含该键的映射。</td>
+</tr>
+<tr>
+<td>V getOrDefault(Object key, V defaultValue)</td>
+<td>返回到指定键所映射的值，或 defaultValue如果此映射包含该键的映射。</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>如果此地图不包含键值映射，则返回 true 。</td>
+</tr>
+<tr>
+<td>Set&lt;K&gt; keySet()</td>
+<td>返回此地图中包含的键的Set视图。</td>
+</tr>
+<tr>
+<td>V merge(K key, V value, BiFunction&lt;? super V,? super V,? extends V&gt; remappingFunction)</td>
+<td>如果指定的键尚未与值相关联或与null相关联，则将其与给定的非空值相关联。</td>
+</tr>
+<tr>
+<td>V put(K key, V value)</td>
+<td>将指定的值与此映射中的指定键相关联。</td>
+</tr>
+<tr>
+<td>void putAll(Map&lt;? extends K,? extends V&gt; m)</td>
+<td>将指定地图的所有映射复制到此地图。</td>
+</tr>
+<tr>
+<td>V putIfAbsent(K key, V value)</td>
+<td>如果指定的键尚未与某个值相关联（或映射到 null ），则将其与给定值相关联并返回 null ，否则返回当前值。</td>
+</tr>
+<tr>
+<td>V remove(Object key)</td>
+<td>从该地图中删除指定键的映射（如果存在）。</td>
+</tr>
+<tr>
+<td>boolean remove(Object key, Object value)</td>
+<td>仅当指定的密钥当前映射到指定的值时删除该条目。</td>
+</tr>
+<tr>
+<td>V replace(K key, V value)</td>
+<td>只有当目标映射到某个值时，才能替换指定键的条目。</td>
+</tr>
+<tr>
+<td>boolean replace(K key, V oldValue, V newValue)</td>
+<td>仅当当前映射到指定的值时，才能替换指定键的条目。</td>
+</tr>
+<tr>
+<td>void replaceAll(BiFunction&lt;? super K,? super V,? extends V&gt; function)</td>
+<td>将每个条目的值替换为对该条目调用给定函数的结果，直到所有条目都被处理或该函数抛出异常。</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>返回此地图中键值映射的数量。</td>
+</tr>
+<tr>
+<td>Collection&lt;V&gt; values()</td>
+<td>返回此地图中包含的值的Collection视图。</td>
+</tr>
+</tbody></table>
+<p>挑一些常用的方法举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		HashMap&lt;Integer, String&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</span><br><span class="line">		map.put(<span class="number">24</span>, <span class="string">"kangkang"</span>);</span><br><span class="line">		map.put(<span class="number">15</span>, <span class="string">"jane"</span>);</span><br><span class="line">		map.put(<span class="number">13</span>, <span class="string">"jhon"</span>);</span><br><span class="line">		map.put(<span class="number">5</span>, <span class="string">"emma"</span>);</span><br><span class="line">		map.put(<span class="number">10</span>, <span class="string">"lihua"</span>);</span><br><span class="line">		map.put(<span class="number">19</span>, <span class="string">"xiaoming"</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"HashMap 长度："</span> + map.size());</span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="comment">// 使用Iterator遍历</span></span><br><span class="line">		System.out.println(<span class="string">"Iterator 遍历："</span>);</span><br><span class="line">		Iterator&lt;Integer&gt; itr = map.keySet().iterator();</span><br><span class="line">		<span class="keyword">while</span> (itr.hasNext()) &#123;</span><br><span class="line">			<span class="keyword">int</span> key = itr.next();</span><br><span class="line">			System.out.println(key + <span class="string">" : "</span> + map.get(key) + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="comment">// 使用foreach遍历</span></span><br><span class="line">		System.out.println(<span class="string">"foreach 遍历："</span>);</span><br><span class="line">		<span class="keyword">for</span> (Integer i : map.keySet())</span><br><span class="line">			System.out.println(i + <span class="string">" : "</span> + map.get(i) + <span class="string">" "</span>);</span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="comment">// 是否存在 key=13 并获取值</span></span><br><span class="line">		<span class="keyword">if</span> (map.containsKey(<span class="number">13</span>))</span><br><span class="line">			System.out.println(<span class="string">"key=13 的值："</span> + map.get(<span class="number">13</span>));</span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="comment">// 删除 key = 13 的值</span></span><br><span class="line">		map.remove(<span class="number">13</span>);</span><br><span class="line">		System.out.println(<span class="string">"移除key=13 的值后遍历："</span>);</span><br><span class="line">		<span class="keyword">for</span> (Integer i : map.keySet())</span><br><span class="line">			System.out.println(i + <span class="string">" : "</span> + map.get(i) + <span class="string">" "</span>);</span><br><span class="line">		System.out.println(<span class="string">"---------------------"</span>);</span><br><span class="line">		<span class="comment">// 复制map 到 map2</span></span><br><span class="line">		HashMap&lt;Integer, String&gt; map2 = (HashMap) map.clone();</span><br><span class="line">		System.out.println(<span class="string">"map 复制到 map2遍历："</span>);</span><br><span class="line">		<span class="keyword">for</span> (Integer i : map2.keySet())</span><br><span class="line">			System.out.println(i + <span class="string">" : "</span> + map2.get(i) + <span class="string">" "</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/26/javabase46-map/t1.png" alt="hashmap常用方法"></p>
+<blockquote>
+<p>在添加键值对的过程中，如果 map 中已经有了该 key 值，添加时新 value 值会覆盖 旧 value 值。</p>
+</blockquote>
+<h2 id="二、TreeMap-类"><a href="#二、TreeMap-类" class="headerlink" title="二、TreeMap 类"></a>二、TreeMap 类</h2><p>TreeMap 可以对键值对进行自然排序，类方法与 TreeSet 内的方法用法大致相同，这里不再一一列举，可以查看 JDK 帮助文档。</p>
+<p>写个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		TreeMap&lt;Integer, String&gt; map = <span class="keyword">new</span> TreeMap&lt;Integer, String&gt;();</span><br><span class="line">		map.put(<span class="number">24</span>, <span class="string">"kangkang"</span>);</span><br><span class="line">		map.put(<span class="number">15</span>, <span class="string">"jane"</span>);</span><br><span class="line">		map.put(<span class="number">13</span>, <span class="string">"jhon"</span>);</span><br><span class="line">		map.put(<span class="number">5</span>, <span class="string">"emma"</span>);</span><br><span class="line">		map.put(<span class="number">10</span>, <span class="string">"lihua"</span>);</span><br><span class="line">		map.put(<span class="number">19</span>, <span class="string">"xiaoming"</span>);</span><br><span class="line">		<span class="comment">// 使用Iterator遍历</span></span><br><span class="line">		System.out.println(<span class="string">"Iterator 遍历："</span>);</span><br><span class="line">		Iterator&lt;Integer&gt; itr = map.keySet().iterator();</span><br><span class="line">		<span class="keyword">while</span> (itr.hasNext()) &#123;</span><br><span class="line">			<span class="keyword">int</span> key = itr.next();</span><br><span class="line">			System.out.println(key + <span class="string">" : "</span> + map.get(key) + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/26/javabase46-map/t2.png" alt="对键值对进行排序"></p>
+<p>发现 TreeMap 按照 key 值进行了自然排序，既然有了顺序，就可以使用方法获得：头部、尾部键值对，某个 key 值前面或者后面的键值对。</p>
+<p>根据 jdk 帮助文档提供的方法结合在 TreeSet 中相应的方法用法的体会，很好理解，就不再举例了。</p>
 
         </div>
         
@@ -210,7 +299,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E9%9B%86%E5%90%88/" rel="tag">Java集合</a>
                 </div>
             </div>
         </div>
@@ -246,17 +335,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/10/javabase7-debug/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础筑基到修仙（七）——Debug</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/08/javabase5-tjjg/">
-                <span class="level-item">JAVA零基础筑基到修仙（五）——条件结构</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/25/javabase45-set/">
+                <span class="level-item">JAVA零基础筑基到修仙（四十五）——Set 集合</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -928,7 +1010,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（六）——循环" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四十六）——Map 集合" height="28">
                 
                 </a>
                 <p class="is-size-7">

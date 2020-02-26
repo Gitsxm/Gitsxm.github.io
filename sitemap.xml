@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.mggblog.ink/2020/02/25/javabase45-set/</loc>
+    <loc>http://www.mggblog.ink/2020/02/25/javabase44-list/</loc>
     
-    <lastmod>2020-02-26T02:16:35.450Z</lastmod>
+    <lastmod>2020-02-26T04:12:39.928Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.mggblog.ink/2020/02/25/javabase44-list/</loc>
+    <loc>http://www.mggblog.ink/2020/02/25/javabase45-set/</loc>
     
-    <lastmod>2020-02-26T02:09:43.224Z</lastmod>
+    <lastmod>2020-02-26T04:12:34.641Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/26/javabase46-map/</loc>
+    
+    <lastmod>2020-02-26T04:11:35.856Z</lastmod>
     
   </url>
   
