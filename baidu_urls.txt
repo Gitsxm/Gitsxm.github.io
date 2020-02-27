@@ -1,3 +1,3 @@
+http://www.mggblog.ink/2020/02/27/javabase50-reflect1/
+http://www.mggblog.ink/2020/02/27/javabase49-enum/
 http://www.mggblog.ink/2020/02/26/javabase48-fx/
-http://www.mggblog.ink/2020/02/26/javabase47-collections/
-http://www.mggblog.ink/2020/02/26/javabase46-map/

@@ -7,24 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>JAVA零基础筑基到修仙（四十三）——集合、Collection 接口 - MggBlog</title>
+<title>JAVA零基础筑基到修仙（五十）——认识反射机制 - MggBlog</title>
 
 
-    <meta name="description" content="随着程序越来越复杂，数组已经不能满足数组存储的需要，况且声明数组需要设定长度，不够灵活。Java为开发者提供了内容丰富、功能强大的集合类，处于 java.util 包中，分为 Collection 和 Map 两个根接口，接下来详细讲解 Collection 接口。">
+    <meta name="description" content="Java 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 Java 语言的反射机制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口">
-<meta property="og:url" content="http://www.mggblog.ink/2020/02/25/javabase43-collection/index.html">
+<meta property="og:title" content="JAVA零基础筑基到修仙（五十）——认识反射机制">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/27/javabase50-reflect1/index.html">
 <meta property="og:site_name" content="MggBlog">
-<meta property="og:description" content="随着程序越来越复杂，数组已经不能满足数组存储的需要，况且声明数组需要设定长度，不够灵活。Java为开发者提供了内容丰富、功能强大的集合类，处于 java.util 包中，分为 Collection 和 Map 两个根接口，接下来详细讲解 Collection 接口。">
+<meta property="og:description" content="Java 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 Java 语言的反射机制。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://www.mggblog.ink/gallery/collect.jpg">
-<meta property="article:published_time" content="2020-02-25T07:47:16.000Z">
-<meta property="article:modified_time" content="2020-02-26T13:16:23.511Z">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/reflect1.jpg">
+<meta property="article:published_time" content="2020-02-27T03:13:00.000Z">
+<meta property="article:modified_time" content="2020-02-27T04:28:54.072Z">
 <meta property="article:author" content="Mgg">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="Java集合">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.mggblog.ink/gallery/collect.jpg">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/reflect1.jpg">
 
 
 
@@ -83,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口" height="28">
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（五十）——认识反射机制" height="28">
             
             </a>
         </div>
@@ -137,7 +136,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="/gallery/collect.jpg" alt="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口">
+            <img class="thumbnail" src="/gallery/reflect1.jpg" alt="JAVA零基础筑基到修仙（五十）——认识反射机制">
         </span>
     </div>
     
@@ -145,7 +144,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-25T07:47:16.000Z">2020-02-25</time>
+                <time class="level-item has-text-grey" datetime="2020-02-27T03:13:00.000Z">2020-02-27</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
@@ -155,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    11 分钟 读完 (大约 1710 个字)
+                    9 分钟 读完 (大约 1421 个字)
                 </span>
                 
                 
@@ -164,152 +163,131 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                JAVA零基础筑基到修仙（四十三）——集合、Collection 接口
+                JAVA零基础筑基到修仙（五十）——认识反射机制
             
         </h1>
         <div class="content">
-            <p><em>随着程序越来越复杂，数组已经不能满足数组存储的需要，况且声明数组需要设定长度，不够灵活。Java为开发者提供了内容丰富、功能强大的集合类，处于 java.util 包中，分为 Collection 和 Map 两个根接口，接下来详细讲解 Collection 接口。</em></p>
+            <p><em>Java 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 Java 语言的反射机制。</em></p>
 <a id="more"></a>
 <hr>
-<h2 id="一、集合简介"><a href="#一、集合简介" class="headerlink" title="一、集合简介"></a>一、集合简介</h2><p>Java 集合类型分为 Collection 和 Map，同为Java集合根接口，集合的众多功能来源于两个接口的子接口和实现类。<br><img src="/2020/02/25/javabase43-collection/jh.gif" alt="集合结构"></p>
-<p>下面对集合的接口和实现类分别做个简单的介绍：</p>
-<h3 id="集合接口："><a href="#集合接口：" class="headerlink" title="集合接口："></a>集合接口：</h3><table>
-<thead>
-<tr>
-<th>接口</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Iterator 接口</td>
-<td>集合的输出接口，主要用于遍历输出（即迭代访问）Collection 集合中的元素，Iterator 对象被称之为迭代器。迭代器接口是集合接口的父接口，实现类实现 Collection 时就必须实现 Iterator 接口。</td>
-</tr>
-<tr>
-<td>Collection 接口</td>
-<td>是 List、Set 和 Queue 的父接口，是存放一组单值的最大接口。所谓的单值是指集合中的每个元素都是一个对象。一般很少直接使用此接口直接操作。</td>
-</tr>
-<tr>
-<td>Queue 接口</td>
-<td>Queue 是 Java 提供的队列实现，有点类似于 List。</td>
-</tr>
-<tr>
-<td>Dueue 接口</td>
-<td>是 Queue 的一个子接口，为双向队列。</td>
-</tr>
-<tr>
-<td>List 接口</td>
-<td>是最常用的接口。是有序集合，允许有相同的元素。使用 List 能够精确地控制每个元素插入的位置，用户能够使用索引（元素在 List 中的位置，类似于数组下标）来访问 List 中的元素，与数组类似。</td>
-</tr>
-<tr>
-<td>Set 接口</td>
-<td>不能包含重复的元素。</td>
-</tr>
-<tr>
-<td>Map 接口</td>
-<td>是存放一对值的最大接口，即接口中的每个元素都是一对，以 key→value 的形式保存。</td>
-</tr>
-</tbody></table>
-<p>对于 Set、List、Queue 和 Map 这 4 种集合，Java 最常用的实现类分别是 HashSet、TreeSet、ArrayList、ArrayDueue、LinkedList 和 HashMap、TreeMap 等。</p>
-<h3 id="集合实现类"><a href="#集合实现类" class="headerlink" title="集合实现类"></a>集合实现类</h3><table>
-<thead>
-<tr>
-<th>类名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>HashSet</td>
-<td>为优化査询速度而设计的 Set。它是基于 HashMap 实现的，HashSet 底层使用 HashMap 来保存所有元素，实现比较简单</td>
-</tr>
-<tr>
-<td>TreeSet</td>
-<td>实现了 Set 接口，是一个有序的 Set，这样就能从 Set 里面提取一个有序序列</td>
-</tr>
-<tr>
-<td>ArrayList</td>
-<td>一个用数组实现的 List，能进行快速的随机访问，效率高而且实现了可变大小的数组</td>
-</tr>
-<tr>
-<td>ArrayDueue</td>
-<td>是一个基于数组实现的双端队列，按“先进先出”的方式操作集合元素</td>
-</tr>
-<tr>
-<td>LinkedList</td>
-<td>对顺序访问进行了优化，但随机访问的速度相对较慢。此外它还有 addFirst()、addLast()、getFirst()、getLast()、removeFirst() 和 removeLast() 等方法，能把它当成栈（Stack）或队列（Queue）来用</td>
-</tr>
-<tr>
-<td>HsahMap</td>
-<td>按哈希算法来存取键对象</td>
-</tr>
-<tr>
-<td>TreeMap</td>
-<td>可以对键对象进行排序</td>
-</tr>
-</tbody></table>
-<h2 id="二、Collection-接口详解"><a href="#二、Collection-接口详解" class="headerlink" title="二、Collection 接口详解"></a>二、Collection 接口详解</h2><p>Collection 接口是 List、Set 和 Queue 的父接口，通常不直接使用，通过 Collection 接口中的一些通用方法，可以实现集对集合的基本操作。</p>
-<p>Collection 接口中的常用方法：</p>
+<p>Java 反射机制是 Java 语言的一个重要特性。在学习 Java 反射机制前，大家应该先了解两个概念，编译期和运行期。</p>
+<p>编译期是指把源码交给编译器编译成计算机可以执行的文件的过程。在 Java 中也就是把 Java 代码编成 class 文件的过程。编译期只是做了一些翻译功能，并没有把代码放在内存中运行起来，而只是把代码当成文本进行操作，比如检查错误。</p>
+<p>运行期是把编译后的文件交给计算机执行，直到程序运行结束。所谓运行期就把在磁盘中的代码放到内存中执行起来。</p>
+<p>Java 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；这种动态获取信息以及动态调用对象方法的功能称为 Java 语言的反射机制。简单来说，反射机制指的是程序在运行时能够获取自身的信息。在 Java 中，只要给定类的名字，就可以通过反射机制来获得类的所有信息。</p>
+<p>Java 反射机制在服务器程序和中间件程序中得到了广泛运用。在服务器端，往往需要根据客户的请求，动态调用某一个对象的特定方法。此外，在 ORM 中间件的实现中，运用 Java 反射机制可以读取任意一个 JavaBean 的所有属性，或者给这些属性赋值。</p>
+<p>Java 反射机制主要提供了以下功能，这些功能都位于java.lang.reflect包。</p>
+<ul>
+<li>在运行时判断任意一个对象所属的类。</li>
+<li>在运行时构造任意一个类的对象。</li>
+<li>在运行时判断任意一个类所具有的成员变量和方法。</li>
+<li>在运行时调用任意一个对象的方法。</li>
+<li>生成动态代理。</li>
+</ul>
+<p>要想知道一个类的属性和方法，必须先获取到该类的字节码文件对象。获取类的信息时，使用的就是 Class 类中的方法。所以先要获取到每一个字节码文件（.class）对应的 Class 类型的对象.</p>
+<p>通过 Object 类提供的 getClass() 方法获取 Class 类型的对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class labelCls = label1.getClass();    <span class="comment">// label1为 JLabel 类的对象</span></span><br></pre></td></tr></table></figure>
+<p>利用 Class 类的对象 labelCls 可以访问 labelCls 对象的描述信息、JLabel 类的信息以及基类 Object 的信息。下表列出了通过反射可以访问的信息。</p>
 <table>
 <thead>
 <tr>
-<th>方法</th>
+<th>类型</th>
+<th>访问方法</th>
+<th>返回值类型</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>boolean add(E e)</td>
-<td>向集合中添加一个元素，如果集合对象被添加操作改变了，则返回 true。E 是元素的数据类型</td>
+<td>包路径</td>
+<td>getPackage()</td>
+<td>Package 对象</td>
+<td>获取该类的存放路径</td>
 </tr>
 <tr>
-<td>boolean addAll(Collection c)</td>
-<td>向集合中添加集合 c 中的所有元素，如果集合对象被添加操作改变了，则返回 true。</td>
+<td>类名称</td>
+<td>getName()</td>
+<td>String 对象</td>
+<td>获取该类的名称</td>
 </tr>
 <tr>
-<td>void clear()</td>
-<td>清除集合中的所有元素，将集合长度变为 0。</td>
+<td>继承类</td>
+<td>getSuperclass()</td>
+<td>Class 对象</td>
+<td>获取该类继承的类</td>
 </tr>
 <tr>
-<td>boolean contains(Object o)</td>
-<td>判断集合中是否存在指定元素</td>
+<td>实现接口</td>
+<td>getlnterfaces()</td>
+<td>Class 型数组</td>
+<td>获取该类实现的所有接口</td>
 </tr>
 <tr>
-<td>boolean containsAll(Collection c)</td>
-<td>判断集合中是否包含集合 c 中的所有元素</td>
+<td>构造方法</td>
+<td>getConstructors()</td>
+<td>Constructor 型数组</td>
+<td>获取所有权限为 public 的构造方法</td>
 </tr>
 <tr>
-<td>boolean isEmpty()</td>
-<td>判断集合是否为空</td>
+<td>构造方法</td>
+<td>getDeclaredContruectors()</td>
+<td>Constructor 对象</td>
+<td>获取当前对象的所有构造方法</td>
 </tr>
 <tr>
-<td>Iterator<E>iterator()</E></td>
-<td>返回一个 Iterator 对象，用于遍历集合中的元素</td>
+<td>方法</td>
+<td>getMethods()</td>
+<td>Methods 型数组</td>
+<td>获取所有权限为 public 的方法</td>
 </tr>
 <tr>
-<td>boolean remove(Object o)</td>
-<td>从集合中删除一个指定元素，当集合中包含了一个或多个元素 o 时，该方法只删除第一个符合条件的元素，该方法将返回 true。</td>
+<td>方法</td>
+<td>getDeclaredMethods()</td>
+<td>Methods 对象</td>
+<td>获取当前对象的所有方法</td>
 </tr>
 <tr>
-<td>boolean removeAll(Collection c)</td>
-<td>从集合中删除所有在集合 c 中出现的元素（相当于把调用该方法的集合减去集合 c）。如果该操作改变了调用该方法的集合，则该方法返回 true。</td>
+<td>成员变量</td>
+<td>getFields()</td>
+<td>Field 型数组</td>
+<td>获取所有权限为 public 的成员变量</td>
 </tr>
 <tr>
-<td>boolean retainAll(Collection c)</td>
-<td>从集合中删除集合 c 里不包含的元素（相当于把调用该方法的集合变成该集合和集合 c 的交集），如果该操作改变了调用该方法的集合，则该方法返回 true。</td>
+<td>成员变量</td>
+<td>getDeclareFileds()</td>
+<td>Field 对象</td>
+<td>获取当前对象的所有成员变量</td>
 </tr>
 <tr>
-<td>int size()</td>
-<td>返回集合中元素的个数</td>
+<td>内部类</td>
+<td>getClasses()</td>
+<td>Class 型数组</td>
+<td>获取所有权限为 public 的内部类</td>
 </tr>
 <tr>
-<td>Object[] toArray()</td>
-<td>把集合转换为一个数组，所有的集合元素变成对应的数组元素。</td>
+<td>内部类</td>
+<td>getDeclaredClasses()</td>
+<td>Class 型数组</td>
+<td>获取所有内部类</td>
+</tr>
+<tr>
+<td>内部类的声明类</td>
+<td>getDeclaringClass()</td>
+<td>Class 对象</td>
+<td>如果该类为内部类，则返回它的成员类，否则返回 null</td>
 </tr>
 </tbody></table>
-<p>这些方法源于 jdk 帮助文档，只需记住 Collection 为我们提供了操作集合的常用方法就可以，例如判断非空，存在，遍历，长度，新增，删减等方法，有需要但是不会用的话直接去查文档即可。</p>
-<p>用法举个例子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">	List list1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	List list2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line">	<span class="comment">// 为集合添加元素</span></span><br><span class="line">	list1.add(<span class="number">3</span>);</span><br><span class="line">	list1.add(<span class="number">2</span>);</span><br><span class="line">	list1.add(<span class="number">22</span>);</span><br><span class="line">	list1.add(<span class="number">33</span>);</span><br><span class="line">	list1.add(<span class="number">11</span>);</span><br><span class="line">	<span class="comment">// 判断集合是否为空</span></span><br><span class="line">	System.out.println(<span class="string">"list1 if empty? "</span> + list1.isEmpty());</span><br><span class="line">	<span class="comment">// 获取长度</span></span><br><span class="line">	System.out.println(<span class="string">"list1 长度： "</span> + list1.size());</span><br><span class="line">	<span class="comment">// 判断是否存在指定元素</span></span><br><span class="line">	System.out.println(<span class="string">"list1 exist 11? "</span> + list1.contains(<span class="number">11</span>));</span><br><span class="line">	<span class="comment">// 遍历集合list1</span></span><br><span class="line">	System.out.print(<span class="string">"list1 中元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list1)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 通过list1 为list2 赋值</span></span><br><span class="line">	list2.addAll(list1);</span><br><span class="line">	<span class="comment">// 遍历list2</span></span><br><span class="line">	System.out.print(<span class="string">"list1为list2赋值后 list2包含元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list2)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 通过索引获取元素</span></span><br><span class="line">	System.out.println(<span class="string">"list2 索引为3的元素："</span> + list2.get(<span class="number">3</span>));</span><br><span class="line">	<span class="comment">// 为list2 添加元素</span></span><br><span class="line">	list2.add(<span class="number">10</span>);</span><br><span class="line">	<span class="comment">// 移除 list2 中 在list1中没有的元素 10</span></span><br><span class="line">	list2.retainAll(list1);</span><br><span class="line">	<span class="comment">// retainAll后 遍历list2 元素</span></span><br><span class="line">	System.out.print(<span class="string">"retainAll后遍历list2 元素："</span>);</span><br><span class="line">	<span class="keyword">for</span> (Object i : list2)</span><br><span class="line">		System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">	System.out.println();</span><br><span class="line">	<span class="comment">// 移除list2 所有元素</span></span><br><span class="line">	list2.removeAll(list2);</span><br><span class="line">	<span class="comment">// 移除后list2长度</span></span><br><span class="line">	System.out.println(<span class="string">"list2移除所有元素后长度："</span> + list2.size());</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="/2020/02/25/javabase43-collection/jhcz.png" alt="集合一般操作"></p>
-<p>在写代码时会发现在编辑器中会出现大量黄色下划线，这是因为没有为集合指定类型的警告，涉及到了泛型的知识，后面详细讲解。如果不指定类型的话默认设定为 Object ，警告并不会影响编译和运行，不用管。</p>
-<hr>
+<p>在调用 getFields() 和 getMethods() 方法时将会依次获取权限为 public 的字段和变量，然后将包含从超类中继承到的成员变量和方法。而通过 getDeclareFields() 和 getDeclareMethod() 只是获取在本类中定义的成员变量和方法。</p>
+<p>Java 反射机制的优缺点<br>优点：</p>
+<ul>
+<li>能够运行时动态获取类的实例，大大提高系统的灵活性和扩展性。</li>
+<li>与 Java 动态编译相结合，可以实现无比强大的功能。</li>
+<li>对于 Java 这种先编译再运行的语言，能够让我们很方便的创建灵活的代码，这些代码可以在运行时装配，无需在组件之间进行源代码的链接，更加容易实现面向对象。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>反射会消耗一定的系统资源，因此，如果不需要动态地创建一个对象，那么就不需要用反射；</li>
+<li>反射调用方法时可以忽略权限检查，获取这个类的私有方法和属性，因此可能会破坏类的封装性而导致安全问题。</li>
+</ul>
+<p>Java 反射机制在一般的 Java 应用开发中很少使用，即便是 Java EE 阶段也很少使用。</p>
 
         </div>
         
@@ -317,7 +295,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/Java%E9%9B%86%E5%90%88/" rel="tag">Java集合</a>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
                 </div>
             </div>
         </div>
@@ -353,17 +331,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/25/javabase44-list/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">JAVA零基础筑基到修仙（四十四）——List 集合</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/25/javabase42-log/">
-                <span class="level-item">JAVA零基础筑基到修仙（四十二）——Log日志记录</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/27/javabase49-enum/">
+                <span class="level-item">JAVA零基础筑基到修仙（四十九）——枚举</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1035,7 +1006,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（四十三）——集合、Collection 接口" height="28">
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（五十）——认识反射机制" height="28">
                 
                 </a>
                 <p class="is-size-7">

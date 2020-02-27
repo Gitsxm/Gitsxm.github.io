@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.mggblog.ink/2020/02/26/javabase48-fx/</loc>
-    <lastmod>2020-02-26</lastmod>
+    <lastmod>2020-02-27</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/27/javabase50-reflect1/</loc>
+    <lastmod>2020-02-27</lastmod>
+  </url>  <url>
+    <loc>http://www.mggblog.ink/2020/02/27/javabase49-enum/</loc>
+    <lastmod>2020-02-27</lastmod>
   </url>  <url>
     <loc>http://www.mggblog.ink/2020/02/20/javabase28-lgjz/</loc>
     <lastmod>2020-02-26</lastmod>
