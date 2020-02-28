@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>JAVA零基础筑基到修仙（五十四）——字节流 - MggBlog</title>
+
+
+    <meta name="description" content="将数据以字节码的形式输入输出，InputStream 是所有字节输入流的父类，OutStream 是所有字节输出流的父类，两者同为抽象方法，继承的子类重写这些抽象方法，本篇将介绍如何使用输出出入流。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA零基础筑基到修仙（五十四）——字节流">
+<meta property="og:url" content="http://www.mggblog.ink/2020/02/28/javabase54-bytestream/index.html">
+<meta property="og:site_name" content="MggBlog">
+<meta property="og:description" content="将数据以字节码的形式输入输出，InputStream 是所有字节输入流的父类，OutStream 是所有字节输出流的父类，两者同为抽象方法，继承的子类重写这些抽象方法，本篇将介绍如何使用输出出入流。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://www.mggblog.ink/gallery/bytes.jpg">
+<meta property="article:published_time" content="2020-02-28T01:22:59.000Z">
+<meta property="article:modified_time" content="2020-02-28T10:38:37.731Z">
+<meta property="article:author" content="Mgg">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.mggblog.ink/gallery/bytes.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/m-icon.jpg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="MggBlog" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（五十四）——字节流" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Gitsxm/Gitsxm.github.io">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/gallery/bytes.jpg" alt="JAVA零基础筑基到修仙（五十四）——字节流">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-28T01:22:59.000Z">2020-02-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    18 分钟 读完 (大约 2671 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                JAVA零基础筑基到修仙（五十四）——字节流
+            
+        </h1>
+        <div class="content">
+            <p><em>将数据以字节码的形式输入输出，InputStream 是所有字节输入流的父类，OutStream 是所有字节输出流的父类，两者同为抽象方法，继承的子类重写这些抽象方法，本篇将介绍如何使用输出出入流。</em></p>
+<a id="more"></a>
+<hr>
+<h2 id="一、字节输入流"><a href="#一、字节输入流" class="headerlink" title="一、字节输入流"></a>一、字节输入流</h2><p>InputStream 类及其子类的对象表示字节输入流，InputStream 类的常用子类如下。</p>
+<ul>
+<li>ByteArrayInputStream 类：将字节数组转换为字节输入流，从中读取字节。</li>
+<li>FileInputStream 类：从文件中读取数据。</li>
+<li>PipedInputStream 类：连接到一个 PipedOutputStream（管道输出流）。</li>
+<li>SequenceInputStream 类：将多个字节输入流串联成一个字节输入流。</li>
+<li>ObjectInputStream 类：将对象反序列化。</li>
+</ul>
+<p>使用 InputStream 类的方法可以从流中读取一个或一批字节。</p>
+<p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int read()</td>
+<td>从输入流中读取一个 8 位的字节，并把它转换为 0~255 的整数，最后返回整数。如果返回 -1，则表示已经到了输入流的末尾。为了提高 I/O 操作的效率，建议尽量使用 read() 方法的另外两种形式</td>
+</tr>
+<tr>
+<td>int read(byte[] b)</td>
+<td>从输入流中读取若干字节，并把它们保存到参数 b 指定的字节数组中。 该方法返回读取的字节数。如果返回 -1，则表示已经到了输入流的末尾</td>
+</tr>
+<tr>
+<td>int read(byte[] b, int off, int len)</td>
+<td>从输入流中读取若干字节，并把它们保存到参数 b 指定的字节数组中。其中，off 指定在字节数组中开始保存数据的起始下标；len 指定读取的字节数。该方法返回实际读取的字节数。如果返回 -1，则表示已经到了输入流的末尾</td>
+</tr>
+<tr>
+<td>void close()</td>
+<td>关闭输入流。在读操作完成后，应该关闭输入流，系统将会释放与这个输入流相关的资源。注意，InputStream 类本身的 close() 方法不执行任何操作，但是它的许多子类重写了 close() 方法</td>
+</tr>
+<tr>
+<td>int available()</td>
+<td>返回可以从输入流中读取的字节数</td>
+</tr>
+<tr>
+<td>long skip(long n)</td>
+<td>从输入流中跳过参数 n 指定数目的字节。该方法返回跳过的字节数</td>
+</tr>
+<tr>
+<td>void mark(int readLimit)</td>
+<td>在输入流的当前位置开始设置标记，参数 readLimit 则指定了最多被设置标记的字节数</td>
+</tr>
+<tr>
+<td>boolean markSupported()</td>
+<td>判断当前输入流是否允许设置标记，是则返回 true，否则返回 false</td>
+</tr>
+<tr>
+<td>void reset()</td>
+<td>将输入流的指针返回到设置标记的起始处</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：在使用 mark() 方法和 reset() 方法之前，需要判断该文件系统是否支持这两个方法，以避免对程序造成影响。</p>
+</blockquote>
+<h2 id="二、字节输出流"><a href="#二、字节输出流" class="headerlink" title="二、字节输出流"></a>二、字节输出流</h2><p>OutputStream 类及其子类的对象表示一个字节输出流。OutputStream 类的常用子类如下。</p>
+<ul>
+<li>ByteArrayOutputStream 类：向内存缓冲区的字节数组中写数据。</li>
+<li>FileOutputStream 类：向文件中写数据。</li>
+<li>PipedOutputStream 类：连接到一个 PipedlntputStream（管道输入流）。</li>
+<li>ObjectOutputStream 类：将对象序列化。</li>
+</ul>
+<p>利用 OutputStream 类的方法可以从流中写入一个或一批字节。</p>
+<p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>void write(int b)</td>
+<td>向输出流写入一个字节。这里的参数是 int 类型，但是它允许使用表达式，而不用强制转换成 byte 类型。为了提高 I/O 操作的效率，建议尽量使用write() 方法的另外两种形式</td>
+</tr>
+<tr>
+<td>void write(byte[] b)</td>
+<td>把参数 b 指定的字节数组中的所有字节写到输出流中</td>
+</tr>
+<tr>
+<td>void write(byte[] b,int off,int len)</td>
+<td>把参数 b 指定的字节数组中的若干字节写到输出流中。其中，off 指定字节数组中的起始下标，len 表示元素个数</td>
+</tr>
+<tr>
+<td>void close()</td>
+<td>关闭输出流。写操作完成后，应该关闭输出流。系统将会释放与这个输出流相关的资源。注意，OutputStream 类本身的 close() 方法不执行任何操作，但是它的许多子类重写了 close() 方法</td>
+</tr>
+<tr>
+<td>void flush()</td>
+<td>为了提高效率，在向输出流中写入数据时，数据一般会先保存到内存缓冲区中，只有当缓冲区中的数据达到一定程度时，缓冲区中的数据才会被写入输出流中。使用 flush() 方法则可以强制将缓冲区中的数据写入输出流，并清空缓冲区</td>
+</tr>
+</tbody></table>
+<h2 id="三、字节数组输入输出流"><a href="#三、字节数组输入输出流" class="headerlink" title="三、字节数组输入输出流"></a>三、字节数组输入输出流</h2><p><strong>1. 输入</strong><br>ByteArrayInputStream 类可以从内存的字节数组中读取数据，该类有如下两种构造方法重载形式。</p>
+<ul>
+<li>ByteArrayInputStream(byte[] buf)：创建一个字节数组输入流，字节数组类型的数据源由参数 buf 指定。</li>
+<li>ByteArrayInputStream(byte[] buf,int offse,int length)：创建一个字节数组输入流，其中，参数 buf 指定字节数组类型的数据源，offset 指定在数组中开始读取数据的起始下标位置，length 指定读取的元素个数。</li>
+</ul>
+<p><strong>2. 输出</strong><br>ByteArrayOutputStream 类可以向内存的字节数组中写入数据，该类的构造方法有如下两种重载形式。</p>
+<ul>
+<li>ByteArrayOutputStream()：创建一个字节数组输出流，输出流缓冲区的初始容量大小为 32 字节。</li>
+<li>ByteArrayOutputStream(int size)：创建一个字节数组输出流，输出流缓冲区的初始容量大小由参数 size 指定。</li>
+</ul>
+<p>ByteArrayOutputStream 类中除了有前面介绍的字节输出流中的常用方法以外，还有如下两个方法。<br>intsize()：返回缓冲区中的当前字节数。<br>byte[] toByteArray()：以字节数组的形式返回输出流中的当前内容。</p>
+<p>举个例子，从一个字节数组中读取数据然后存入到另一个字节数组：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="keyword">byte</span>[] byteData = <span class="keyword">new</span> <span class="keyword">byte</span>[] &#123; <span class="number">6</span>, <span class="number">0</span>, <span class="number">22</span>, <span class="number">45</span>, <span class="number">3</span>, <span class="number">55</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">99</span> &#125;; <span class="comment">// 声明一个字节数组</span></span><br><span class="line">		<span class="keyword">byte</span>[] newByteArr = <span class="keyword">new</span> <span class="keyword">byte</span>[byteData.length];</span><br><span class="line">		ByteArrayInputStream bais = <span class="keyword">new</span> ByteArrayInputStream(byteData);</span><br><span class="line">		ByteArrayOutputStream baos = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">		<span class="comment">// 读取字节数组</span></span><br><span class="line">		<span class="keyword">int</span> i = bais.read();</span><br><span class="line">		System.out.println(<span class="string">"byteData:"</span>);</span><br><span class="line">		<span class="keyword">while</span> (i != -<span class="number">1</span>) &#123;</span><br><span class="line">			System.out.print(i + <span class="string">" "</span>);</span><br><span class="line">			<span class="comment">// 向输入流写数据</span></span><br><span class="line">			baos.write(i);</span><br><span class="line">			i = bais.read();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 输入流转为数组</span></span><br><span class="line">		newByteArr = baos.toByteArray();</span><br><span class="line">		System.out.println(<span class="string">"\nnewByteArr:"</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">byte</span> b : newByteArr)</span><br><span class="line">			System.out.print(b + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="/2020/02/28/javabase54-bytestream/t1.png" alt="字节数组输入输出流"></p>
+<h2 id="四、文件输入输出流"><a href="#四、文件输入输出流" class="headerlink" title="四、文件输入输出流"></a>四、文件输入输出流</h2><p><strong>1. 输入</strong><br>FileInputStream 是 Java 流中比较常用的一种，它表示从文件系统的某个文件中获取输入字节。通过使用 FileInputStream 可以访问文件中的一个字节、一批字节或整个文件。</p>
+<p>在创建 FileInputStream 类的对象时，如果找不到指定的文件将拋出 FileNotFoundException 异常，该异常必须捕获或声明拋出。</p>
+<p>FileInputStream 常用的构造方法主要有如下两种重载形式。</p>
+<ul>
+<li>FileInputStream(File file)：通过打开一个到实际文件的连接来创建一个 FileInputStream，该文件通过文件系统中的 File 对象 file 指定。</li>
+<li>FileInputStream(String name)：通过打开一个到实际文件的链接来创建一个 FileInputStream，该文件通过文件系统中的路径名 name 指定。</li>
+</ul>
+<p><strong>2. 输出</strong><br>FileOutputStream 类继承自 OutputStream 类，重写和实现了父类中的所有方法。FileOutputStream 类的对象表示一个文件字节输出流，可以向流中写入一个字节或一批字节。在创建 FileOutputStream 类的对象时，如果指定的文件不存在，则创建一个新文件；如果文件已存在，则清除原文件的内容重新写入。</p>
+<p>FileOutputStream 类的构造方法主要有如下 4 种重载形式。</p>
+<ul>
+<li>FileOutputStream(File file)：创建一个文件输出流，参数 file 指定目标文件。</li>
+<li>FileOutputStream(File file,boolean append)：创建一个文件输出流，参数 file 指定目标文件，append 指定是否将数据添加到目标文件的内容末尾，如果为 true，则在末尾添加；如果为 false，则覆盖原有内容；其默认值为 false。</li>
+<li>FileOutputStream(String name)：创建一个文件输出流，参数 name 指定目标文件的文件路径信息。</li>
+<li>FileOutputStream(String name,boolean append)：创建一个文件输出流，参数 name 和 append 的含义同上。</li>
+</ul>
+<blockquote>
+<p>注意：使用构造方法 FileOutputStream(String name,boolean append) 创建一个文件输出流对象，它将数据附加在现有文件的末尾。该字符串 name 指明了原文件，如果只是为了附加数据而不是重写任何已有的数据，布尔类型参数 append 的值应为 true。</p>
+</blockquote>
+<p>对文件输出流有如下四点说明：</p>
+<ol>
+<li>在 FileOutputStream 类的构造方法中指定目标文件时，目标文件可以不存在。</li>
+<li>目标文件的名称可以是任意的，例如 D:\\abc、D:\\abc.de 和 D:\\abc.de.fg 等都可以，可以使用记事本等工具打开并浏览这些文件中的内容。</li>
+<li>目标文件所在目录必须存在，否则会拋出 java.io.FileNotFoundException 异常。</li>
+<li>目标文件的名称不能是已存在的目录。例如 D 盘下已存在 Java 文件夹，那么就不能使用 Java 作为文件名，即不能使用 D:\\Java，否则抛出 java.io.FileNotFoundException 异常。</li>
+</ol>
+<p>举个例子：读取一个文件内容，并输出到另一文件中（用到了之前创建过的文件，没有的话自己手动创建一个）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		String path = <span class="string">"d:\\"</span>;</span><br><span class="line">		File f = <span class="keyword">new</span> File(path + <span class="string">"filetest.txt"</span>);</span><br><span class="line">		FileInputStream fis = <span class="keyword">null</span>;</span><br><span class="line">		<span class="comment">// 写入</span></span><br><span class="line">		File f2 = <span class="keyword">new</span> File(path + <span class="string">"filetest2.txt"</span>);</span><br><span class="line">		<span class="keyword">if</span> (!f2.exists())</span><br><span class="line">			f2.createNewFile();</span><br><span class="line">		FileOutputStream fos = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			fis = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line">			fos = <span class="keyword">new</span> FileOutputStream(f2);</span><br><span class="line">			<span class="comment">// 创建数组接收每次读取字节</span></span><br><span class="line">			<span class="keyword">byte</span>[] b = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">5</span>];</span><br><span class="line">			<span class="comment">// 每次读取字节数</span></span><br><span class="line">			<span class="keyword">int</span> i;</span><br><span class="line">			<span class="keyword">while</span> ((i = fis.read(b)) != -<span class="number">1</span>) &#123;</span><br><span class="line">				<span class="comment">// 字节转为字符串输出</span></span><br><span class="line">				System.out.println(<span class="keyword">new</span> String(b, <span class="number">0</span>, i));</span><br><span class="line">				<span class="comment">// 写入filetest2.txt</span></span><br><span class="line">				fos.write(b, <span class="number">0</span>, i);</span><br><span class="line">				System.out.println(<span class="string">"filetest2.txt写入成功"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			<span class="comment">// TODO Auto-generated catch block</span></span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 文件输入输出流一定记着关闭</span></span><br><span class="line">			fis.close();</span><br><span class="line">			fos.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p><img src="/2020/02/28/javabase54-bytestream/t2.png" alt="文件读取与写入"></p>
+<p>可以去 D 盘看看有没有操作成功。</p>
+<hr>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/28/javabase55-charstream/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">JAVA零基础筑基到修仙（五十五）——字符流</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/02/27/javabase53-file/">
+                <span class="level-item">JAVA零基础筑基到修仙（五十三）——File 文件操作类</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'aXkJw27WmTJa38tMmsliduMV-gzGzoHsz',
+        app_key: 'oj7Yo8LsSLQyHsB4usS6UxvM',
+        placeholder: '来造作啊！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/mggimage.jpg" alt="Mgg">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Mgg
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>XingTai,HeBei,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            56
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            1
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            10
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/Gitsxm" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Gitsxm">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Envelop" href="mailto:837564471@qq.com">
+                
+                <i class="fa fa-envelope-open"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
+            <span class="level-start">
+                <span class="level-item">Java基础学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">56</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/" style="font-size: 12.86px;">Java内置包装类</a> <a href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/" style="font-size: 12.86px;">Java字符串处理</a> <a href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" style="font-size: 11.43px;">Java异常处理</a> <a href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java数字处理</a> <a href="/tags/Java%E6%95%B0%E7%BB%84/" style="font-size: 14.29px;">Java数组</a> <a href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/" style="font-size: 10px;">Java时间日期处理</a> <a href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/" style="font-size: 17.14px;">Java继承多态</a> <a href="/tags/Java%E9%9B%86%E5%90%88/" style="font-size: 15.71px;">Java集合</a> <a href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" style="font-size: 18.57px;">Java面向对象</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase56-transtream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zhl.jpg" alt="JAVA零基础筑基到修仙（五十六）——转换流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T12:37:23.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase56-transtream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十六）——转换流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase55-charstream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/chars.jpg" alt="JAVA零基础筑基到修仙（五十五）——字符流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T03:48:45.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase55-charstream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十五）——字符流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase54-bytestream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bytes.jpg" alt="JAVA零基础筑基到修仙（五十四）——字节流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T01:22:59.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase54-bytestream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十四）——字节流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/javabase53-file/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/file.jpg" alt="JAVA零基础筑基到修仙（五十三）——File 文件操作类">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T14:18:54.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/javabase53-file/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十三）——File 文件操作类</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/javabase52-stream1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/stream.jpg" alt="JAVA零基础筑基到修仙（五十二）——输入、输出流简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:27:08.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/javabase52-stream1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十二）——输入、输出流简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">56</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">56</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/">
+                        <span class="tag">Java内置包装类</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java异常处理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
+                        <span class="tag">Java数组</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/">
+                        <span class="tag">Java继承多态</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E9%9B%86%E5%90%88/">
+                        <span class="tag">Java集合</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                        <span class="tag">Java面向对象</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase56-transtream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/zhl.jpg" alt="JAVA零基础筑基到修仙（五十六）——转换流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T12:37:23.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase56-transtream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十六）——转换流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase55-charstream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/chars.jpg" alt="JAVA零基础筑基到修仙（五十五）——字符流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T03:48:45.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase55-charstream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十五）——字符流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/javabase54-bytestream/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/bytes.jpg" alt="JAVA零基础筑基到修仙（五十四）——字节流">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T01:22:59.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/javabase54-bytestream/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十四）——字节流</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/javabase53-file/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/file.jpg" alt="JAVA零基础筑基到修仙（五十三）——File 文件操作类">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T14:18:54.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/javabase53-file/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十三）——File 文件操作类</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/27/javabase52-stream1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/stream.jpg" alt="JAVA零基础筑基到修仙（五十二）——输入、输出流简介">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-27T13:27:08.000Z">2020-02-27</time></div>
+                    <a href="/2020/02/27/javabase52-stream1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">JAVA零基础筑基到修仙（五十二）——输入、输出流简介</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Java基础学习</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">56</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java/">
+                        <span class="tag">Java</span>
+                        <span class="tag is-grey">56</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%86%85%E7%BD%AE%E5%8C%85%E8%A3%85%E7%B1%BB/">
+                        <span class="tag">Java内置包装类</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java字符串处理</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java异常处理</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E5%AD%97%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java数字处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%95%B0%E7%BB%84/">
+                        <span class="tag">Java数组</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86/">
+                        <span class="tag">Java时间日期处理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/">
+                        <span class="tag">Java继承多态</span>
+                        <span class="tag is-grey">8</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E9%9B%86%E5%90%88/">
+                        <span class="tag">Java集合</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                        <span class="tag">Java面向对象</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/mggimage.jpg" alt="JAVA零基础筑基到修仙（五十四）——字节流" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Mgg&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'http://www.mggblog.ink',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
