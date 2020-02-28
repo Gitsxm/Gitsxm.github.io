@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.mggblog.ink/2020/02/28/javabase56-transtream/</loc>
-    
-    <lastmod>2020-02-28T13:21:42.584Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.mggblog.ink/2020/02/28/javabase54-bytestream/</loc>
     
-    <lastmod>2020-02-28T10:38:37.731Z</lastmod>
+    <lastmod>2020-02-28T13:26:40.631Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.mggblog.ink/2020/02/28/javabase55-charstream/</loc>
     
-    <lastmod>2020-02-28T10:38:27.779Z</lastmod>
+    <lastmod>2020-02-28T13:25:44.063Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mggblog.ink/2020/02/28/javabase56-transtream/</loc>
+    
+    <lastmod>2020-02-28T13:21:42.584Z</lastmod>
     
   </url>
   
